@@ -1,11 +1,12 @@
-
 import React from 'react';
-import { CheckCircle2, Star } from 'lucide-react';
-import { LeadForm } from './LeadForm';
-
+import { Download, Star, CheckCircle2 } from 'lucide-react';
 import profileImage from '../assets/profile.png';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenModal: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   return (
     <section className="relative overflow-hidden pt-12 pb-24 lg:pt-20 lg:pb-32 px-6">
       {/* Background Decorative Element */}
@@ -40,9 +41,15 @@ export const Hero: React.FC = () => {
             ))}
           </ul>
 
-          <div className="max-w-md mx-auto lg:mx-0">
-            <LeadForm />
-            <p className="mt-4 text-sm text-gray-500 font-medium text-center lg:text-left">
+          <div className="flex flex-col items-center lg:items-start gap-4">
+            <button
+              onClick={onOpenModal}
+              className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.05] active:scale-[0.98] transition-all duration-200 shadow-xl shadow-[#D4AF37]/20 text-lg"
+            >
+              <Download className="w-6 h-6" />
+              Baixar Checklist Gratuito
+            </button>
+            <p className="text-sm text-gray-500 font-medium">
               100% gratuito • Download imediato • Sem spam
             </p>
           </div>

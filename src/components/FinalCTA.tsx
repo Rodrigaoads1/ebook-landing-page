@@ -1,9 +1,11 @@
-
 import React from 'react';
-import { ShieldCheck, Zap, Diamond } from 'lucide-react';
-import { LeadForm } from './LeadForm';
+import { ShieldCheck, Zap, Diamond, Download } from 'lucide-react';
 
-export const FinalCTA: React.FC = () => {
+interface FinalCTAProps {
+  onOpenModal: () => void;
+}
+
+export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
   return (
     <section className="py-24 px-6 relative">
       <div className="max-w-4xl mx-auto">
@@ -24,8 +26,14 @@ export const FinalCTA: React.FC = () => {
               Baixe agora o checklist gratuito e descubra como identificar e corrigir os 7 sinais que estão drenando o seu faturamento mensal.
             </p>
 
-            <div className="max-w-md mx-auto mb-12">
-              <LeadForm />
+            <div className="mb-12">
+              <button
+                onClick={onOpenModal}
+                className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-4 px-10 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.05] active:scale-[0.98] transition-all duration-200 shadow-2xl shadow-[#D4AF37]/30 text-lg mx-auto"
+              >
+                <Download className="w-6 h-6" />
+                Baixar Checklist Gratuito
+              </button>
             </div>
 
             <div className="flex flex-wrap justify-center gap-6 md:gap-12">

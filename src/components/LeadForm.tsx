@@ -9,11 +9,27 @@ export const LeadForm: React.FC = () => {
         whatsapp: ''
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Aqui você integraria com seu sistema de email ou CRM
-        console.log('Lead capturado:', formData);
-        alert('Obrigado! Seu checklist será enviado em instantes.');
+
+        try {
+            const response = await fetch('https://formspree.io/f/rodrigorodrigues@migracaodigital.com', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                body: new FormData(e.target as HTMLFormElement)
+            });
+
+            if (response.ok) {
+                alert('Obrigado! Seus dados foram enviados. O checklist chegará no seu e-mail em instantes.');
+                setFormData({ name: '', email: '', whatsapp: '' });
+            } else {
+                alert('Ops! Ocorreu um erro ao enviar. Por favor, tente novamente.');
+            }
+        } catch (error) {
+            alert('Erro de conexão. Verifique sua internet.');
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
