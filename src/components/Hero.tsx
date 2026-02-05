@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
 
           <div className="flex flex-col items-center lg:items-start gap-4">
             <a
-              href="https://pay.kiwify.com.br/SEU_LINK_AQUI"
+              href="https://pay.kiwify.com.br/GhaKpCv"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.05] active:scale-[0.98] transition-all duration-200 shadow-xl shadow-[#D4AF37]/20 text-lg"

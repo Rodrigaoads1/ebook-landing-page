@@ -28,7 +28,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
 
             <div className="mb-12 text-center">
               <a
-                href="https://pay.kiwify.com.br/SEU_LINK_AQUI"
+                href="https://pay.kiwify.com.br/GhaKpCv"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-4 px-10 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.05] active:scale-[0.98] transition-all duration-200 shadow-2xl shadow-[#D4AF37]/30 text-lg mx-auto inline-flex"
