@@ -1,22 +1,19 @@
 
 import React from 'react';
-import { Hero } from './components/Hero';
-import { SocialProof } from './components/SocialProof';
-import { ContentSection } from './components/ContentSection';
-import { FinalCTA } from './components/FinalCTA';
-import { Footer } from './components/Footer';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { EbookPage } from './pages/EbookPage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
-      <main>
-        <Hero />
-        <SocialProof />
-        <ContentSection />
-        <FinalCTA />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/ebook" element={<EbookPage />} />
+        {/* Redirecionar qualquer outra coisa para a home ou ebook se preferir */}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
