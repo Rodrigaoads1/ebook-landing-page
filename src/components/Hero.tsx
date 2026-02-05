@@ -89,18 +89,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
               </div>
             </div>
 
-            {/* Floating Stat Card 2 - Right */}
-            <div className="absolute top-1/2 -right-10 bg-[#1a1a1a]/90 backdrop-blur-md border border-[#D4AF37]/30 p-3 rounded-2xl shadow-2xl animate-float-fast hidden md:block">
-              <div className="flex items-center gap-3">
-                <div className="bg-[#D4AF37]/20 p-2 rounded-xl">
-                  <User className="w-5 h-5 text-[#D4AF37] fill-[#D4AF37]" />
-                </div>
-                <div>
-                  <p className="text-white font-bold text-sm">2.500+</p>
-                  <p className="text-gray-500 text-[10px] uppercase tracking-wider font-semibold">Downloads</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
