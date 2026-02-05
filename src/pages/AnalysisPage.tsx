@@ -1,5 +1,8 @@
 import React from 'react';
-import { Target, Search, BarChart3, ArrowRight, ShieldCheck, Zap, Star, Layout, Users, Megaphone, CheckCircle, XCircle, ChevronRight } from 'lucide-react';
+import { Target, Search, BarChart3, ArrowRight, ShieldCheck, Zap, Star, Layout, Users, Megaphone, CheckCircle, XCircle, ChevronRight, MessageSquare } from 'lucide-react';
+import profileHero from '../assets/rodrigo_analise_hero.png';
+import profileDetail from '../assets/rodrigo_analise_perfil.png';
+import profileSide from '../assets/rodrigo_analise_detalhe.png';
 
 export function AnalysisPage() {
     return (
@@ -22,30 +25,44 @@ export function AnalysisPage() {
                     {/* Background Glows */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-[500px] bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none" />
 
-                    <div className="max-w-4xl mx-auto text-center relative z-10">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-400 text-xs font-bold uppercase tracking-[0.2em] mb-8">
-                            Análise Profissional de Presença Digital
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 text-center lg:text-left">
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-400 text-xs font-bold uppercase tracking-[0.2em] mb-8">
+                                Análise Profissional de Presença Digital
+                            </div>
+
+                            <h1 className="text-4xl md:text-7xl font-serif font-bold leading-[1.1] mb-8">
+                                Não é sobre aparecer mais. <br />
+                                <span className="text-[#D4AF37] italic">É sobre saber onde você está perdendo dinheiro.</span>
+                            </h1>
+
+                            <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                                Se você já tentou usar Instagram ou Google para atrair clientes e sentiu que algo não encaixa, provavelmente o problema não é esforço. <br />
+                                <strong className="text-white font-semibold">É falta de leitura estratégica.</strong>
+                            </p>
+
+                            <div className="flex flex-col items-center lg:items-start gap-6">
+                                <a
+                                    href="https://pay.kiwify.com.br/GhaKpCv"
+                                    className="w-full md:w-auto bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-6 px-12 rounded-full flex items-center justify-center gap-3 hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-[0_20px_50px_rgba(212,175,55,0.3)] text-xl group"
+                                >
+                                    Quero minha Análise Profissional
+                                    <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                                </a>
+                                <p className="text-gray-500 text-sm font-medium uppercase tracking-widest">Investimento Único: R$ 197,00</p>
+                            </div>
                         </div>
 
-                        <h1 className="text-4xl md:text-7xl font-serif font-bold leading-[1.1] mb-8">
-                            Não é sobre aparecer mais. <br />
-                            <span className="text-[#D4AF37] italic">É sobre saber onde você está perdendo dinheiro.</span>
-                        </h1>
-
-                        <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-                            Se você já tentou usar Instagram ou Google para atrair clientes e sentiu que algo não encaixa, provavelmente o problema não é esforço. <br />
-                            <strong className="text-white font-semibold">É falta de leitura estratégica.</strong>
-                        </p>
-
-                        <div className="flex flex-col items-center gap-6">
-                            <a
-                                href="https://pay.kiwify.com.br/GhaKpCv"
-                                className="w-full md:w-auto bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-6 px-12 rounded-full flex items-center justify-center gap-3 hover:scale-[1.05] active:scale-[0.98] transition-all duration-300 shadow-[0_20px_50px_rgba(212,175,55,0.3)] text-xl group"
-                            >
-                                Quero minha Análise Profissional
-                                <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                            </a>
-                            <p className="text-gray-500 text-sm font-medium uppercase tracking-widest">Investimento Único: R$ 197,00</p>
+                        {/* Image: Terno Branco */}
+                        <div className="relative">
+                            <div className="absolute -inset-4 bg-[#D4AF37]/20 blur-[100px] rounded-full opacity-50" />
+                            <div className="relative rounded-[40px] overflow-hidden border border-white/10 shadow-2xl">
+                                <img
+                                    src={profileHero}
+                                    alt="Rodrigo Rodrigues - Estrategista"
+                                    className="w-full h-auto grayscale-[20%] brightness-95"
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -80,16 +97,31 @@ export function AnalysisPage() {
                     </div>
                 </section>
 
-                {/* Sophisticated Positioning Section */}
+                {/* Sophisticated Positioning Section (With Black T-Shirt Image) */}
                 <section className="py-32 px-6">
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold mb-10 leading-relaxed">
-                            Essa análise não é básica. <br />
-                            E não é para curiosos.
-                        </h2>
-                        <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
-                            <p>Ela existe para quem quer entender o que está acontecendo por trás dos números, da aparência do perfil e da sensação de “estar fazendo algo”.</p>
-                            <p className="text-white text-xl font-bold italic">Aqui você não recebe dicas genéricas. Você recebe clareza estratégica.</p>
+                    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div className="order-2 lg:order-1">
+                            <div className="relative rounded-[40px] overflow-hidden border border-white/10 shadow-3xl">
+                                <img
+                                    src={profileDetail}
+                                    alt="Análise Detalhada"
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="order-1 lg:order-2">
+                            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-10 leading-relaxed">
+                                Essa análise não é básica. <br />
+                                E não é para curiosos.
+                            </h2>
+                            <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
+                                <p>Ela existe para quem quer entender o que está acontecendo por trás dos números, da aparência do perfil e da sensação de “estar fazendo algo”.</p>
+                                <p className="text-white text-xl font-bold italic border-l-2 border-[#D4AF37] pl-6">
+                                    Aqui você não recebe dicas genéricas. <br />
+                                    Você recebe clareza estratégica.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -104,44 +136,63 @@ export function AnalysisPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {[
-                                "Por que sua presença digital não gera intenção real de compra",
-                                "Onde sua comunicação perde força sem você perceber",
-                                "Quais sinais o mercado te dá (e você ignora)",
-                                "Se o problema é visibilidade, posicionamento ou conversão",
-                                "Qual canal está sendo mal utilizado no seu caso",
-                                "Onde está o 'furo' real do seu balde de faturamento"
+                                { t: "Por que sua presença digital não gera intenção real de compra", i: Target },
+                                { t: "Onde sua comunicação perde força sem você perceber", i: MessageSquare },
+                                { t: "Quais sinais o mercado te dá (e você ignora)", i: Search },
+                                { t: "Se o problema é visibilidade, posicionamento ou conversão", i: BarChart3 },
+                                { t: "Qual canal está sendo mal utilizado no seu caso", i: Megaphone },
+                                { t: "Onde está o 'furo' real do seu balde de faturamento", i: Layout }
                             ].map((item, i) => (
-                                <div key={i} className="p-8 border-l border-[#D4AF37]/30 bg-black/40 hover:bg-white/[0.03] transition-colors">
-                                    <p className="text-gray-300 leading-relaxed">{item}</p>
+                                <div key={i} className="p-8 border border-white/5 bg-black/40 hover:bg-white/[0.03] transition-all hover:border-[#D4AF37]/50 rounded-2xl group">
+                                    <item.i className="w-8 h-8 text-[#D4AF37] mb-6 opacity-30 group-hover:opacity-100 transition-opacity" />
+                                    <p className="text-gray-300 leading-relaxed">{item.t}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* "The Problem Isn't Where They Thought" Section */}
+                {/* "The Problem Isn't Where They Thought" Section (With Profile Image) */}
                 <section className="py-32 px-6 bg-gradient-to-b from-black to-[#0a0a0a]">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <blockquote className="text-2xl md:text-4xl font-serif italic mb-16 text-[#D4AF37]">
-                            “Muitos profissionais descobrem que o problema não está onde eles achavam.”
-                        </blockquote>
+                    <div className="max-w-6xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
+                            <div>
+                                <blockquote className="text-3xl md:text-5xl font-serif italic mb-12 text-[#D4AF37] leading-tight">
+                                    “Muitos profissionais descobrem que o problema não está onde eles achavam.”
+                                </blockquote>
+                                <p className="text-gray-400 text-xl leading-relaxed mb-12">
+                                    Isso muda tudo. Quando você entende onde estancar o vazamento, a venda deixa de ser pesada e a previsibilidade começa a aparecer.
+                                </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left border-t border-white/10 pt-16">
-                            <div>
-                                <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-xs opacity-50">01. O QUE CORRIGIR</h4>
-                                <p className="text-gray-400 text-sm">Ações cirúrgicas no que realmente impede a venda.</p>
+                                <div className="grid grid-cols-1 gap-8 text-left border-t border-white/10 pt-16">
+                                    <div className="flex items-center gap-6">
+                                        <span className="text-4xl font-serif font-bold text-white/10">01</span>
+                                        <div>
+                                            <h4 className="text-white font-bold uppercase tracking-widest text-xs">O QUE CORRIGIR</h4>
+                                            <p className="text-gray-500 text-sm">Ações cirúrgicas no que realmente impede a venda.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-6">
+                                        <span className="text-4xl font-serif font-bold text-white/10">02</span>
+                                        <div>
+                                            <h4 className="text-white font-bold uppercase tracking-widest text-xs">O QUE PARAR</h4>
+                                            <p className="text-gray-500 text-sm">Eliminar o desperdício de energia e dinheiro.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-xs opacity-50">02. O QUE PARAR</h4>
-                                <p className="text-gray-400 text-sm">Eliminar o desperdício de energia e dinheiro.</p>
-                            </div>
-                            <div>
-                                <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-xs opacity-50">03. O QUE CONSTRUIR</h4>
-                                <p className="text-gray-400 text-sm">A fundação necessária antes de escalar.</p>
+
+                            <div className="relative">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
+                                <img
+                                    src={profileSide}
+                                    alt="Leitura Estratégica"
+                                    className="w-full h-auto rounded-[80px_20px_80px_20px] grayscale filter brightness-75"
+                                />
                             </div>
                         </div>
 
-                        <div className="mt-20 flex flex-wrap justify-center gap-8 md:gap-16">
+                        <div className="flex flex-wrap justify-center gap-8 md:gap-16">
                             <span className="flex items-center gap-2 text-gray-500 font-bold text-xs uppercase tracking-widest"><Zap className="w-4 h-4 text-[#D4AF37]" /> Sem exposição forçada</span>
                             <span className="flex items-center gap-2 text-gray-500 font-bold text-xs uppercase tracking-widest"><Zap className="w-4 h-4 text-[#D4AF37]" /> Sem teatrinho</span>
                             <span className="flex items-center gap-2 text-gray-500 font-bold text-xs uppercase tracking-widest"><Zap className="w-4 h-4 text-[#D4AF37]" /> Sem fórmulas mágicas</span>
