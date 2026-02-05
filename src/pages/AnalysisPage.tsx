@@ -44,7 +44,7 @@ export function AnalysisPage() {
 
                             <div className="flex flex-col items-center lg:items-start gap-4">
                                 <a
-                                    href="https://pay.kiwify.com.br/GhaKpCv"
+                                    href="https://pay.kiwify.com.br/O86KbBl"
                                     className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.05] active:scale-[0.98] transition-all duration-200 shadow-xl shadow-[#D4AF37]/20 text-lg group"
                                 >
                                     Quero minha Análise Profissional — R$ 197
@@ -277,7 +277,7 @@ export function AnalysisPage() {
                             <p className="text-gray-500 uppercase tracking-widest text-xs font-bold mb-10">Um valor pequeno perto do que você perde insistindo no caminho errado.</p>
 
                             <a
-                                href="https://pay.kiwify.com.br/GhaKpCv"
+                                href="https://pay.kiwify.com.br/O86KbBl"
                                 className="inline-flex bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-6 px-16 rounded-full items-center gap-3 hover:scale-[1.05] transition-all shadow-2xl shadow-[#D4AF37]/20 text-lg group"
                             >
                                 Quero minha Análise Profissional
