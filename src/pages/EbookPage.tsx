@@ -15,7 +15,7 @@ export function EbookPage() {
         <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
             <main>
                 <Hero onOpenModal={openModal} />
-                <ContentSection />
+                <ContentSection onOpenModal={openModal} />
                 <FinalCTA onOpenModal={openModal} />
             </main>
             <Footer />
