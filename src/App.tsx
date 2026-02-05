@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 import { EbookPage } from './pages/EbookPage';
 import { AnalysisPage } from './pages/AnalysisPage';
+import { BioPage } from './pages/BioPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/ebook" element={<EbookPage />} />
         <Route path="/analise-profissional-de-presenca-digital-02" element={<AnalysisPage />} />
+        <Route path="/links" element={<BioPage />} />
         {/* Redirecionar qualquer outra coisa para a home ou ebook se preferir */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
