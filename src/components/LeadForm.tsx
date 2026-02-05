@@ -46,26 +46,27 @@ export const LeadForm: React.FC = () => {
         setIsSubmitting(true);
 
         try {
-            // URL corrigida para envio direto no Formspree (sem o /f/)
-            const response = await fetch('https://formspree.io/rodrigorodrigues@migracaodigital.com', {
+            // Usando FormSubmit.co via AJAX que é mais amigável para e-mail direto
+            const response = await fetch('https://formsubmit.co/ajax/rodrigorodrigues@migracaodigital.com', {
                 method: 'POST',
                 headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify({
+                    Nome: formData.name,
+                    Email: formData.email,
+                    WhatsApp: formData.whatsapp,
+                    _subject: `Novo Lead Ebook: ${formData.name}`,
+                    _template: 'table'
+                })
             });
 
             if (response.ok) {
-                alert('Sucesso! Verifique seu e-mail (e a caixa de spam) para confirmar o recebimento do checklist.');
+                alert('Solicitação enviada! Verifique seu e-mail para baixar o checklist.');
                 setFormData({ name: '', email: '', whatsapp: '' });
             } else {
-                const data = await response.json();
-                if (data.error && data.error.includes('verified')) {
-                    alert('AVISO: O e-mail de destino ainda não foi verificado no Formspree. Por favor, verifique a caixa de entrada de rodrigorodrigues@migracaodigital.com e clique no link de "Confirm Email" enviado pelo Formspree nas últimas horas.');
-                } else {
-                    alert('Ops! Ocorreu um erro ao enviar. Por favor, tente novamente mais tarde.');
-                }
+                alert('Houve um problema. Por favor, tente novamente em instantes.');
             }
         } catch (error) {
             alert('Erro de conexão. Verifique sua internet.');
