@@ -75,13 +75,15 @@ export const ContentSection: React.FC<ContentSectionProps> = ({ onOpenModal }) =
         </div>
 
         <div className="flex justify-center">
-          <button
-            onClick={onOpenModal}
+          <a
+            href="https://pay.kiwify.com.br/SEU_LINK_AQUI"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-4 px-10 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.05] active:scale-[0.98] transition-all duration-200 shadow-2xl shadow-[#D4AF37]/30 text-lg group"
           >
-            Quero o checklist completo
+            Quero o Checklist — R$ 19,90
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
       </div>
     </section>

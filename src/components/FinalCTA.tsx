@@ -23,31 +23,33 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
             </h2>
 
             <p className="text-gray-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
-              Baixe agora o checklist gratuito e descubra como identificar e corrigir os 7 sinais que estão drenando o seu faturamento mensal.
+              Garanta agora o checklist estratégico e descubra como identificar e corrigir os 7 sinais que estão drenando o seu faturamento mensal por um preço promocional.
             </p>
 
-            <div className="mb-12">
-              <button
-                onClick={onOpenModal}
-                className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-4 px-10 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.05] active:scale-[0.98] transition-all duration-200 shadow-2xl shadow-[#D4AF37]/30 text-lg mx-auto"
+            <div className="mb-12 text-center">
+              <a
+                href="https://pay.kiwify.com.br/SEU_LINK_AQUI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-4 px-10 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.05] active:scale-[0.98] transition-all duration-200 shadow-2xl shadow-[#D4AF37]/30 text-lg mx-auto inline-flex"
               >
                 <Download className="w-6 h-6" />
-                Baixar Checklist Gratuito
-              </button>
+                Garantir Checklist — Apenas R$ 19,90
+              </a>
             </div>
 
             <div className="flex flex-wrap justify-center gap-6 md:gap-12">
               <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <ShieldCheck className="w-5 h-5 text-[#D4AF37]" />
-                100% Gratuito
+                Pagamento Seguro
               </div>
               <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <Zap className="w-5 h-5 text-[#D4AF37]" />
-                Download Imediato
+                Acesso Imediato
               </div>
               <div className="flex items-center gap-2 text-gray-400 text-sm">
                 <Diamond className="w-5 h-5 text-[#D4AF37]" />
-                Conteúdo Exclusivo
+                Preço Promocional
               </div>
             </div>
           </div>

@@ -17,7 +17,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         <div className="z-10 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] text-sm font-semibold tracking-wide uppercase mb-8">
             <Star className="w-4 h-4 fill-[#D4AF37]" />
-            Checklist Gratuito
+            Oferta Especial: R$ 19,90
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6">
@@ -25,14 +25,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-            Um guia estratégico desenhado exclusivamente para empresários, profissionais liberais e prestadores de serviço que buscam clareza operacional e retenção de faturamento.
+            O guia definitivo para empresários e profissionais liberais identificarem exatamente onde o faturamento está escorrendo pelas mãos.
           </p>
 
           <ul className="space-y-4 mb-10 inline-block lg:block text-left">
             {[
-              'Identificar os 7 sinais críticos de perda de clientes',
-              'Estratégias comprovadas para reverter cada situação',
-              'Checklist prático para implementar hoje mesmo'
+              'Diagnóstico dos 7 sinais críticos de perda de clientes',
+              'O plano de ação imediata para estancar os furos',
+              'Acesso vitalício ao material estratégico'
             ].map((benefit, idx) => (
               <li key={idx} className="flex items-center gap-3 text-gray-300">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0" />
@@ -42,15 +42,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           </ul>
 
           <div className="flex flex-col items-center lg:items-start gap-4">
-            <button
-              onClick={onOpenModal}
+            <a
+              href="https://pay.kiwify.com.br/SEU_LINK_AQUI"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-4 px-8 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.05] active:scale-[0.98] transition-all duration-200 shadow-xl shadow-[#D4AF37]/20 text-lg"
             >
               <Download className="w-6 h-6" />
-              Baixar Checklist Gratuito
-            </button>
+              Quero o Checklist — R$ 19,90
+            </a>
             <p className="text-sm text-gray-500 font-medium">
-              100% gratuito • Download imediato • Sem spam
+              Acesso imediato • Pagamento Seguro • Entrega via E-mail
             </p>
           </div>
         </div>
