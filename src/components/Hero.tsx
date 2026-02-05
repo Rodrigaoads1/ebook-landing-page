@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { CheckCircle2, Star, Download } from 'lucide-react';
-import { Button } from './Button';
+import { CheckCircle2, Star } from 'lucide-react';
+import { LeadForm } from './LeadForm';
 
 import profileImage from '../assets/profile.png';
 
@@ -40,12 +40,9 @@ export const Hero: React.FC = () => {
             ))}
           </ul>
 
-          <div className="flex flex-col items-center lg:items-start gap-4">
-            <Button size="lg" className="w-full sm:w-auto">
-              <Download className="w-5 h-5 mr-2" />
-              Baixar Checklist Gratuito
-            </Button>
-            <p className="text-sm text-gray-500 font-medium">
+          <div className="max-w-md mx-auto lg:mx-0">
+            <LeadForm />
+            <p className="mt-4 text-sm text-gray-500 font-medium text-center lg:text-left">
               100% gratuito • Download imediato • Sem spam
             </p>
           </div>
