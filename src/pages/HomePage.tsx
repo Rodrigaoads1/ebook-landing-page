@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, Zap, ShieldCheck, ChevronRight, MessageSquare, BarChart3, Users, Globe, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { Target, Zap, ShieldCheck, ChevronRight, MessageSquare, MessageCircle, BarChart3, Users, Globe, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import profileImg from '../assets/rodrigo_analise_extra.png';
 
 export function HomePage() {
