@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { Target, Zap, ShieldCheck, ChevronRight, MessageSquare, MessageCircle, BarChart3, Users, Globe, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import profileImg from '../assets/rodrigo_analise_extra.png';
 
@@ -15,6 +15,7 @@ export function HomePage() {
                     <div className="hidden md:flex items-center gap-8">
                         <a href="#solucoes" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Soluções</a>
                         <a href="#metodo" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">O Método</a>
+                        <Link to="/blog" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Blog</Link>
                         <a href="#rodrigo" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">O Estrategista</a>
                         <a
                             href="https://wa.me/5511999999999"
@@ -232,9 +233,10 @@ export function HomePage() {
                     <div className="flex gap-12 text-xs uppercase tracking-widest text-gray-500">
                         <div className="flex flex-col gap-4">
                             <h5 className="text-white font-black mb-2">Páginas</h5>
-                            <a href="/ebook" className="hover:text-[#D4AF37]">Checklist 7 Sinais</a>
-                            <a href="/analise-profissional-de-presenca-digital-02" className="hover:text-[#D4AF37]">Análise Profissional</a>
-                            <a href="/bio-instagram" className="hover:text-[#D4AF37]">Links Oficiais</a>
+                            <Link to="/blog" className="hover:text-[#D4AF37]">Blog de Estratégia</Link>
+                            <Link to="/ebook" className="hover:text-[#D4AF37]">Checklist 7 Sinais</Link>
+                            <Link to="/analise-profissional-de-presenca-digital-02" className="hover:text-[#D4AF37]">Análise Profissional</Link>
+                            <Link to="/bio-instagram" className="hover:text-[#D4AF37]">Links Oficiais</Link>
                         </div>
                         <div className="flex flex-col gap-4">
                             <h5 className="text-white font-black mb-2">Comunicação</h5>
