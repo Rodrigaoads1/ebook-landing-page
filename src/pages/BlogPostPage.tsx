@@ -2,172 +2,153 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { posts } from '../data/posts';
 import { SEOHelmet } from '../components/SEOHelmet';
-import { ArrowLeft, Calendar, MessageCircle, Zap, Users, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Calendar, MessageCircle, Zap, Users, ArrowRight, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 
 export function BlogPostPage() {
     const { slug } = useParams<{ slug: string }>();
-    const post = posts.find(p => p.slug === slug);
-    const [scrollProgress, setScrollProgress] = React.useState(0);
-
-    const relatedPosts = posts.filter(p => p.slug !== slug).slice(0, 2);
-
-    React.useEffect(() => {
-        const handleScroll = () => {
-            const totalWidth = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (window.pageYOffset / totalWidth) * 100;
-            setScrollProgress(progress);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const post = posts.find((p) => p.slug === slug);
 
     if (!post) {
-        return <Navigate to="/blog" />;
+        return <Navigate to="/blog" replace />;
     }
 
-    const paragraphs = post.content.split('</p>');
-    const middleIndex = Math.floor(paragraphs.length / 2);
-
-    const contentWithBanners = paragraphs.map((p, i) => {
-        let content = p + (p.trim() ? '</p>' : '');
-
-        if (i === 0) {
-            content = content.replace('<p>', '<p class="capitular text-white text-xl md:text-2xl leading-relaxed font-light">');
-        }
-
-        if (i === middleIndex && paragraphs.length > 2) {
-            return content + `
-                <div class="my-20 p-12 bg-white/[0.03] backdrop-blur-xl border border-[#D4AF37]/30 rounded-[40px] text-center relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 to-transparent pointer-events-none" />
-                    <Zap class="w-12 h-12 text-[#D4AF37] mx-auto mb-8 animate-pulse" />
-                    <h4 class="text-3xl font-heading font-bold mb-6 text-white tracking-tighter">Sua empresa merece o posicionamento de elite.</h4>
-                    <p class="text-gray-400 text-lg mb-10 font-light max-w-xl mx-auto">Nossa metodologia já escalou o faturamento de centenas de negócios através de dados e psicologia de conversão.</p>
-                    <a href="https://wa.me/5511999999999" class="inline-flex items-center gap-4 bg-[#D4AF37] text-black text-[10px] font-black uppercase tracking-[0.3em] py-5 px-12 rounded-2xl hover:scale-105 transition-all shadow-2xl shadow-[#D4AF37]/20">Quero meu Diagnóstico Free</a>
-                </div>
-            `;
-        }
-        return content;
-    }).join('');
-
     return (
-        <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
+        <div className="min-h-screen bg-[#050505] text-[#D1D1D1] font-sans selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
             <SEOHelmet
-                title={post.title}
-                description={post.metaDescription}
-                slug={post.slug}
-                article={true}
+                title={`${post.title} | Migração Digital`}
+                description={post.excerpt}
             />
 
-            {/* Reading Progress Line */}
-            <div className="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] z-[200] transition-all duration-300" style={{ width: `${scrollProgress}%` }} />
+            {/* Reading Progress Bar */}
+            <div className="fixed top-0 left-0 w-full h-1 z-[110] bg-[#121212]">
+                <div className="h-full bg-[#D4AF37] shadow-[0_0_10px_#D4AF37]" style={{ width: '35%' }} />
+            </div>
 
-            {/* Nano-Navbar (Same as BlogPage) */}
-            <header className="fixed top-0 w-full z-[100] py-6 px-6 md:px-12">
-                <div className="max-w-7xl mx-auto flex justify-between items-center bg-black/40 backdrop-blur-3xl border border-white/5 rounded-3xl py-4 px-8 shadow-2xl">
-                    <Link to="/blog" className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 hover:text-white transition-all group">
-                        <ArrowLeft className="w-4 h-4 text-[#D4AF37] group-hover:-translate-x-2 transition-transform" /> Voltar ao Pensamento
+            {/* Sticky Navigation */}
+            <header className="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-xl border-b border-[#D4AF37]/10 py-6 px-6 md:px-12">
+                <div className="max-w-7xl mx-auto flex justify-between items-center">
+                    <Link to="/blog" className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-[#D4AF37] hover:text-white transition-all group">
+                        <ArrowLeft className="w-4 h-4 group-hover:-translate-x-2 transition-transform" /> Voltar ao Blog
                     </Link>
-                    <Link to="/" className="text-xl font-heading font-bold tracking-tighter">MIGRAÇÃO<span className="text-[#D4AF37]">DIGITAL</span></Link>
-                    <div className="hidden md:flex gap-6">
-                        {['LinkedIn', 'Insta'].map(s => <button key={s} className="text-[10px] font-black uppercase tracking-widest text-gray-600 hover:text-white transition-all">{s}</button>)}
-                    </div>
-                </div>
-            </header>
-
-            <main className="pt-48 pb-32 relative">
-                <div className="max-w-4xl mx-auto px-6">
-
-                    <header className="mb-20">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.4em] mb-12">
-                            {post.category} &bull; 5 min de leitura
-                        </div>
-                        <h1 className="text-5xl md:text-8xl font-heading font-bold mb-12 leading-[0.95] tracking-tighter">
-                            {post.title}
-                        </h1>
-
-                        <div className="flex items-center gap-6 mb-16 border-b border-white/5 pb-12">
-                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#D4AF37] to-[#B8960C] p-[2px]">
-                                <div className="w-full h-full rounded-2xl bg-black overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Autor" className="w-full h-full object-cover grayscale" />
-                                </div>
-                            </div>
-                            <div>
-                                <h4 className="text-white font-heading font-bold text-xl">{post.author}</h4>
-                                <p className="text-gray-600 text-[10px] font-black uppercase tracking-widest">Estrategista Digital Sênior</p>
-                            </div>
-                        </div>
-
-                        <div className="aspect-[21/9] rounded-[40px] overflow-hidden border border-white/5 bg-white/[0.02] shadow-2xl">
-                            <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
-                        </div>
-                    </header>
-
-                    <div
-                        className="prose prose-invert prose-gold max-w-none text-gray-400 text-xl leading-[1.7] font-light mb-32"
-                        dangerouslySetInnerHTML={{ __html: contentWithBanners }}
-                    />
-
-                    {/* End of Article "Bento" CTA */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-32">
-                        <div className="p-12 bg-white/[0.02] border border-white/10 rounded-[40px] group">
-                            <Users className="w-10 h-10 text-[#D4AF37] mb-8" />
-                            <h3 className="text-3xl font-heading font-bold mb-4">Alcance o topo do seu nicho.</h3>
-                            <p className="text-gray-500 font-light mb-10 leading-relaxed text-sm">Pare de perder clientes para o amadorismo. Nossos cases provam que técnica e design vendem.</p>
-                            <a href="https://wa.me/5511999999999" className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.3em] flex items-center gap-2 group-hover:gap-4 transition-all">Falar com o Rodrigo <ArrowRight className="w-4 h-4" /></a>
-                        </div>
-                        <div className="p-12 bg-gradient-to-br from-[#D4AF37]/5 to-transparent border border-[#D4AF37]/20 rounded-[40px] flex flex-col justify-between">
-                            <div>
-                                <Zap className="w-10 h-10 text-[#D4AF37] mb-8" />
-                                <h3 className="text-3xl font-heading font-bold mb-4">Checklist Grátis</h3>
-                                <p className="text-gray-500 font-light text-sm mb-8">Saiba exatamente o que está errado na sua estratégia atual.</p>
-                            </div>
-                            <a href="https://pay.kiwify.com.br/GhaKpCv" className="bg-[#D4AF37] text-black text-[10px] font-black uppercase tracking-[0.3em] py-5 px-8 rounded-2xl text-center hover:shadow-xl transition-all">Baixar Agora</a>
-                        </div>
-                    </div>
-
-                    {/* Infinite Content Link */}
-                    <div className="pt-24 border-t border-white/5 flex flex-col items-center">
-                        <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-700 mb-16">Continuar a Jornada</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
-                            {relatedPosts.map(rp => (
-                                <Link key={rp.id} to={`/blog/${rp.slug}`} className="group block">
-                                    <div className="aspect-video rounded-[30px] overflow-hidden mb-8 border border-white/5">
-                                        <img src={rp.coverImage} alt={rp.title} className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700" />
-                                    </div>
-                                    <h5 className="text-2xl font-heading font-bold group-hover:text-[#D4AF37] transition-all tracking-tight leading-tight">{rp.title}</h5>
-                                </Link>
+                    <div className="hidden md:flex items-center gap-6">
+                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-600">Compartilhar:</span>
+                        <div className="flex gap-4">
+                            {[Facebook, Twitter, Linkedin].map((Icon, i) => (
+                                <button key={i} className="text-[#D4AF37] hover:text-white transition-all"><Icon className="w-4 h-4" /></button>
                             ))}
                         </div>
                     </div>
                 </div>
+            </header>
+
+            <main className="pt-40 pb-32">
+                <article className="max-w-4xl mx-auto px-6">
+
+                    {/* Post Meta */}
+                    <div className="flex flex-col items-center text-center mb-16">
+                        <div className="inline-block px-4 py-1.5 bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.3em] mb-8 rounded-sm">
+                            {post.category}
+                        </div>
+                        <h1 className="text-4xl md:text-7xl font-serif font-bold text-white mb-10 leading-[1.1] tracking-tight">
+                            {post.title}
+                        </h1>
+                        <div className="flex items-center gap-8 text-[11px] font-black text-gray-500 uppercase tracking-widest">
+                            <span className="flex items-center gap-2"><Calendar className="w-4 h-4 text-[#D4AF37]" /> {post.date}</span>
+                            <span className="flex items-center gap-2 text-white"><Users className="w-4 h-4 text-[#D4AF37]" /> Rodrigo Ads</span>
+                        </div>
+                    </div>
+
+                    {/* Featured Image Block (Luxury Style) */}
+                    <div className="relative aspect-video bg-[#121212] rounded-sm overflow-hidden mb-20 border border-white/5 group">
+                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 transition-all duration-[3s]" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                        <div className="absolute inset-0 border-[20px] border-black/20 pointer-events-none" />
+                    </div>
+
+                    {/* Content Column */}
+                    <div className="prose prose-invert prose-lg max-w-none">
+                        <div className="text-gray-400 font-light leading-relaxed space-y-8 text-xl">
+                            {/* Drop Cap Effect */}
+                            <p className="first-letter:text-8xl first-letter:font-serif first-letter:font-bold first-letter:text-[#D4AF37] first-letter:mr-4 first-letter:float-left first-letter:leading-[1] first-line:uppercase first-line:tracking-widest first-line:text-white">
+                                {post.content.split('\n\n')[0]}
+                            </p>
+
+                            {post.content.split('\n\n').slice(1, 3).map((para, i) => (
+                                <p key={i}>{para}</p>
+                            ))}
+
+                            {/* MID-ARTICLE CONVERSION BANNER (Luxury Style) */}
+                            <div className="my-20 p-12 bg-[#121212] border border-[#D4AF37]/20 rounded-sm relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 p-8 opacity-10">
+                                    <Zap className="w-32 h-32 text-[#D4AF37]" />
+                                </div>
+                                <div className="relative z-10">
+                                    <h3 className="text-3xl font-serif font-bold text-white mb-6 leading-tight">Precisa de ajuda para implementar essas estratégias?</h3>
+                                    <p className="text-gray-500 mb-10 max-w-xl font-light">Agende uma consultoria gratuita com nossa equipe e descubra como escalar seus resultados com quem domina o mercado.</p>
+                                    <a href="https://wa.me/5511999999999" className="inline-block bg-[#D4AF37] text-black text-[10px] font-black uppercase tracking-[0.3em] py-5 px-10 rounded-sm hover:bg-white transition-all shadow-xl">
+                                        Agendar Consultoria Gratuita &rarr;
+                                    </a>
+                                </div>
+                            </div>
+
+                            {post.content.split('\n\n').slice(3).map((para, i) => (
+                                <p key={i}>{para}</p>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Footer CTA Section */}
+                    <div className="mt-32 pt-20 border-t border-white/5">
+                        <div className="bg-gradient-to-br from-[#121212] to-black p-16 border border-[#D4AF37]/30 rounded-sm text-center relative overflow-hidden">
+                            <div className="absolute top-[-20%] left-[-10%] w-64 h-64 bg-[#D4AF37]/5 blur-[100px] rounded-full" />
+                            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8 tracking-tight relative z-10">Domine o seu mercado agora.</h2>
+                            <p className="text-gray-500 text-lg mb-12 max-w-2xl mx-auto font-light relative z-10">O próximo nível de escala exige parceiros que entendem de tecnologia e posicionamento de elite.</p>
+                            <div className="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
+                                <a href="https://wa.me/5511999999999" className="bg-[#D4AF37] text-black text-[11px] font-black uppercase tracking-[0.3em] py-5 px-12 rounded-sm hover:bg-white transition-all shadow-2xl">Quero Escalar Agora</a>
+                                <Link to="/blog" className="bg-black border border-white/10 text-white text-[11px] font-black uppercase tracking-[0.3em] py-5 px-12 rounded-sm hover:border-[#D4AF37] transition-all">Ver Outros Artigos</Link>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Related Posts */}
+                    <div className="mt-32">
+                        <h3 className="text-[12px] font-black uppercase tracking-[0.4em] text-[#D4AF37] mb-12">Artigos Relacionados</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                            {posts.slice(0, 2).map((p, i) => (
+                                <article key={i} className="group bg-[#121212] border border-white/5 rounded-sm overflow-hidden flex flex-col hover:border-[#D4AF37]/20 transition-all">
+                                    <div className="aspect-video bg-black flex items-center justify-center relative border-b border-white/5">
+                                        <div className="text-[80px] font-serif font-bold text-black border-[1px] border-[#D4AF37]/20 px-6 py-0 leading-none select-none opacity-20">
+                                            {i === 0 ? 'T' : 'R'}
+                                        </div>
+                                    </div>
+                                    <div className="p-10">
+                                        <div className="flex items-center gap-4 text-[9px] font-black text-gray-600 uppercase tracking-widest mb-4">
+                                            <span>{p.date}</span> &bull; <span>5 min</span>
+                                        </div>
+                                        <h4 className="text-xl font-serif font-bold text-white mb-6 group-hover:text-[#D4AF37] transition-all line-clamp-2 leading-tight">{p.title}</h4>
+                                        <Link to={`/blog/${p.slug}`} className="text-[#D4AF37] text-[9px] font-black uppercase tracking-[0.3em] flex items-center gap-2">Explorar <ArrowRight className="w-3 h-3" /></Link>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                </article>
             </main>
 
-            <footer className="py-24 bg-[#030303] border-t border-white/5 text-center px-6">
-                <Link to="/" className="text-2xl font-heading font-bold mb-8 block">MIGRAÇÃO<span className="text-[#D4AF37]">DIGITAL</span></Link>
-                <div className="flex justify-center gap-12 text-[9px] font-black uppercase tracking-[0.4em] text-gray-700">
-                    <p>&copy; 2026 Inteligência de Mercado</p>
-                    <button className="hover:text-white transition-colors">Privacidade</button>
-                    <button className="hover:text-white transition-colors">Termos</button>
+            {/* Newsletter Integration */}
+            <section className="bg-black py-32 border-t border-white/5">
+                <div className="max-w-4xl mx-auto px-6 text-center">
+                    <Mail className="w-12 h-12 text-[#D4AF37] mx-auto mb-8" />
+                    <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6 tracking-tight">Receba estratégias exclusivas toda semana</h2>
+                    <p className="text-gray-500 text-lg mb-12 font-light max-w-2xl mx-auto">
+                        +2.000 empresários já recebem nossas dicas semanais sobre tráfego pago, SEO e conversão.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+                        <input type="email" placeholder="Seu melhor e-mail" className="flex-grow bg-[#121212] border border-white/10 text-white rounded-sm py-5 px-8 focus:outline-none focus:border-[#D4AF37] transition-all" />
+                        <button className="bg-[#D4AF37] text-black text-[11px] font-black uppercase tracking-[0.2em] px-12 py-5 rounded-sm hover:bg-white transition-all">Quero receber</button>
+                    </div>
                 </div>
-            </footer>
-
-            <style>{`
-                .prose h3 { color: #D4AF37; font-family: 'Space Grotesk', sans-serif; font-size: 3rem; font-weight: 700; margin-top: 5rem; margin-bottom: 2.5rem; line-height: 1; letter-spacing: -0.04em; }
-                .prose p { margin-bottom: 2.5rem; color: #9CA3AF; }
-                .prose strong { color: white; font-weight: 700; }
-                .prose blockquote { border-left: 2px solid #D4AF37; padding: 2rem 0 2rem 3rem; font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.25rem; color: white; line-height: 1.3; margin: 4rem 0; opacity: 0.9; }
-                .capitular::first-letter {
-                    float: left;
-                    font-family: 'Playfair Display', serif;
-                    font-size: 5rem;
-                    line-height: 0.85;
-                    padding-top: 0.5rem;
-                    padding-right: 1rem;
-                    color: #D4AF37;
-                    font-weight: 700;
-                    text-shadow: 0 0 20px rgba(212,175,55,0.3);
-                }
-            `}</style>
+            </section>
         </div>
     );
 }
