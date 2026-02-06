@@ -6,108 +6,143 @@ import { ArrowRight, Calendar, User } from 'lucide-react';
 
 export function BlogPage() {
     return (
-        <div className="min-h-screen bg-[#050505] text-white font-sans">
+        <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
             <SEOHelmet
                 title="Blog e Estratégias de SEO Local"
                 description="Artigos sobre marketing digital, SEO local e posicionamento para empresas em Campo Grande RJ e região."
             />
 
-            {/* Nav Simplificada */}
-            <nav className="fixed top-0 w-full z-[100] bg-black/50 backdrop-blur-xl border-b border-white/5 py-5 px-6">
+            {/* Nav Minimalista */}
+            <nav className="fixed top-0 w-full z-[100] bg-black/40 backdrop-blur-2xl border-b border-white/5 py-6 px-6">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="text-xl md:text-2xl font-black bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] bg-clip-text text-transparent tracking-tighter">
+                    <Link to="/" className="text-2xl font-black bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] bg-clip-text text-transparent tracking-tighter">
                         MIGRAÇÃO DIGITAL
                     </Link>
-                    <Link to="/" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Voltar para Home</Link>
+                    <div className="flex items-center gap-8">
+                        <Link to="/" className="text-xs uppercase font-bold tracking-widest text-gray-400 hover:text-[#D4AF37] transition-colors">Home</Link>
+                        <a href="https://wa.me/5511999999999" className="hidden md:block text-[10px] font-black uppercase tracking-[0.2em] px-6 py-3 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all">
+                            Agendar Diagnóstico
+                        </a>
+                    </div>
                 </div>
             </nav>
 
-            <main className="pt-32 pb-20 px-6">
+            <main className="pt-40 pb-32 px-6">
                 <div className="max-w-7xl mx-auto">
-                    <header className="mb-20 text-center">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] mb-8">
-                            SEO Local • Estratégia • Vendas
+                    {/* Editorial Header */}
+                    <header className="mb-24 flex flex-col items-center text-center">
+                        <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/[0.03] border border-white/10 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.4em] mb-12 animate-fade-in">
+                            Explorando a Nova Economia Digital
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-serif font-bold mb-6">
-                            Venda Mais com <br />
-                            <span className="text-[#D4AF37] italic">Estratégias de Elite.</span>
+                        <h1 className="text-6xl md:text-9xl font-serif font-bold mb-8 tracking-tighter leading-[0.9]">
+                            O Pensamento <br />
+                            <span className="text-[#D4AF37] italic">Estratégico.</span>
                         </h1>
-                        <p className="text-gray-400 text-xl max-w-3xl mx-auto font-light leading-relaxed">
-                            Não criamos apenas conteúdo. Construímos autoridade para atrair clientes que pesquisam e estão prontos para comprar o seu serviço. Especialistas em resultados locais.
+                        <p className="text-gray-500 text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                            Insight, análise e direção para quem não aceita resultados comuns. <br />
+                            <span className="text-white/60">Onde a tecnologia encontra o posicionamento de elite.</span>
                         </p>
                     </header>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                        {/* Lado Esquerdo: Posts */}
-                        <div className="space-y-12">
-                            <h3 className="text-sm font-black uppercase tracking-[0.4em] text-gray-600 mb-8 border-b border-white/5 pb-4">Últimas do Blog</h3>
-                            {posts.map((post) => (
-                                <Link
-                                    key={post.id}
-                                    to={`/blog/${post.slug}`}
-                                    className="group block bg-[#0a0a0a] border border-white/5 rounded-[40px] overflow-hidden hover:border-[#D4AF37]/30 transition-all duration-500"
-                                >
-                                    <div className="aspect-[16/9] overflow-hidden">
+                    {/* Featured Layout Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+                        {/* Feed Principal */}
+                        <div className="lg:col-span-8 space-y-24">
+                            {posts.map((post, idx) => (
+                                <article key={post.id} className="group flex flex-col gap-8 transition-all duration-700">
+                                    <Link to={`/blog/${post.slug}`} className="relative aspect-[21/9] w-full overflow-hidden rounded-[40px] border border-white/5">
+                                        <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-all duration-700 z-10" />
                                         <img
                                             src={post.coverImage}
                                             alt={post.title}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1.5s]"
                                         />
-                                    </div>
-                                    <div className="p-8">
-                                        <div className="flex items-center gap-6 text-[10px] text-gray-500 mb-6 font-black uppercase tracking-widest">
-                                            <span className="flex items-center gap-2 transition-colors group-hover:text-[#D4AF37]"><Calendar className="w-3 h-3" /> {post.date}</span>
-                                            <span className="flex items-center gap-2"><User className="w-3 h-3" /> {post.author}</span>
+                                        <div className="absolute top-8 left-8 z-20">
+                                            <span className="px-5 py-2 rounded-full bg-black/60 backdrop-blur-md border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] font-black uppercase tracking-widest">
+                                                SEO Local
+                                            </span>
                                         </div>
-                                        <h2 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-[#D4AF37] transition-colors leading-tight">{post.title}</h2>
-                                        <p className="text-gray-500 mb-6 font-light leading-relaxed line-clamp-2">{post.excerpt}</p>
-                                        <div className="flex items-center gap-2 text-[#D4AF37] font-black uppercase tracking-widest text-xs">
-                                            Ver Estratégia <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                                    </Link>
+
+                                    <div className="max-w-3xl">
+                                        <div className="flex items-center gap-6 text-[10px] text-gray-600 mb-6 font-black uppercase tracking-[0.3em]">
+                                            <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> {post.date}</span>
+                                            <span className="text-[#D4AF37]">{post.author}</span>
+                                            <span className="hidden md:block">8 min de leitura</span>
                                         </div>
+                                        <Link to={`/blog/${post.slug}`}>
+                                            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 group-hover:text-[#D4AF37] group-hover:italic transition-all duration-500 leading-tight">
+                                                {post.title}
+                                            </h2>
+                                        </Link>
+                                        <p className="text-gray-500 text-lg font-light leading-relaxed mb-8 line-clamp-3">
+                                            {post.excerpt}
+                                        </p>
+                                        <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-3 text-white text-xs font-black uppercase tracking-[0.3em] group/btn">
+                                            Ler Artigo Completo
+                                            <ArrowRight className="w-4 h-4 text-[#D4AF37] group-hover/btn:translate-x-3 transition-transform" />
+                                        </Link>
                                     </div>
-                                </Link>
+                                </article>
                             ))}
                         </div>
 
-                        {/* Lado Direito: Call To Actions / Sales Sidebar */}
-                        <div className="lg:sticky lg:top-32 space-y-8">
-                            <div className="p-10 bg-[#121212] border border-[#D4AF37]/20 rounded-[40px] relative overflow-hidden">
-                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#D4AF37] to-[#B8960C]" />
-                                <h4 className="text-2xl font-serif font-bold mb-4">Sua empresa está invisível no Google?</h4>
-                                <p className="text-gray-500 mb-8 font-light leading-relaxed">
-                                    Cuidamos da sua presença digital para que você seja o primeiro a ser encontrado quando um cliente pesquisar em Campo Grande ou qualquer região de atuação.
-                                </p>
-                                <a
-                                    href="https://wa.me/5511999999999"
-                                    className="w-full bg-[#D4AF37] text-black font-black py-5 rounded-2xl flex items-center justify-center gap-3 hover:scale-[1.02] transition-all"
-                                >
-                                    Falar com Consultor
-                                </a>
-                            </div>
+                        {/* Sidebar Minimalista */}
+                        <aside className="lg:col-span-4 lg:pl-12">
+                            <div className="lg:sticky lg:top-40 space-y-16">
+                                {/* Newsletter / CTA */}
+                                <div className="p-12 rounded-[40px] bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 relative overflow-hidden group">
+                                    <div className="absolute -top-12 -right-12 w-32 h-32 bg-[#D4AF37]/10 blur-[60px] rounded-full group-hover:bg-[#D4AF37]/20 transition-all" />
+                                    <h3 className="text-2xl font-serif font-bold mb-6">Receba nossa inteligência semanal.</h3>
+                                    <p className="text-gray-500 text-sm mb-8 leading-relaxed font-light">Estratégias que não publicamos abertamente. Direto no seu e-mail.</p>
+                                    <div className="space-y-4">
+                                        <input
+                                            type="email"
+                                            placeholder="Seu melhor e-mail"
+                                            className="w-full bg-black/40 border border-white/10 rounded-2xl py-4 px-6 text-sm focus:outline-none focus:border-[#D4AF37]/50 transition-colors"
+                                        />
+                                        <button className="w-full bg-[#D4AF37] text-black text-[10px] font-black uppercase tracking-[0.3em] py-5 rounded-2xl hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-[#D4AF37]/10">
+                                            Inscrever-se Agora
+                                        </button>
+                                    </div>
+                                </div>
 
-                            <div className="p-10 border border-white/5 rounded-[40px] bg-white/[0.01]">
-                                <h4 className="text-xl font-bold mb-6 italic text-[#D4AF37]">Nossas Soluções Locais:</h4>
-                                <ul className="space-y-4">
-                                    {[
-                                        "Otimização de Google Meu Negócio",
-                                        "SEO Nativo para Bairros e Cidades",
-                                        "Geração de Leads Qualificados",
-                                        "Análise de Concorrência Digital"
-                                    ].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-gray-400 text-sm">
-                                            <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
+                                {/* Categorias */}
+                                <div className="space-y-8">
+                                    <h4 className="text-[10px] text-gray-600 font-black uppercase tracking-[0.4em] border-b border-white/5 pb-4">Tópicos</h4>
+                                    <div className="flex flex-wrap gap-3">
+                                        {['Estratégia', 'SEO Local', 'Vendas', 'IA', 'Mindset'].map(tag => (
+                                            <button key={tag} className="px-5 py-2 rounded-full border border-white/10 text-gray-500 text-[10px] font-bold uppercase tracking-widest hover:border-[#D4AF37]/50 hover:text-[#D4AF37] transition-all">
+                                                {tag}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Conversão Final */}
+                                <div className="p-10 border border-[#D4AF37]/20 rounded-[40px] bg-black text-center">
+                                    <h4 className="text-xl font-serif font-bold mb-4 italic">Sua empresa no Próximo Nível.</h4>
+                                    <p className="text-gray-500 text-xs mb-8">Pare de tentar. Comece a posicionar.</p>
+                                    <a href="https://wa.me/5511999999999" className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.4em] hover:brightness-125">
+                                        Falar com Rodrigo &rarr;
+                                    </a>
+                                </div>
                             </div>
-                        </div>
+                        </aside>
+
                     </div>
                 </div>
             </main>
 
-            <footer className="py-20 border-t border-white/5 bg-black text-center">
-                <p className="text-gray-700 text-[10px] uppercase tracking-[0.4em]">&copy; 2026 Migração Digital — Todos os direitos reservados.</p>
+            <footer className="py-24 border-t border-white/5 bg-black">
+                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
+                    <div className="text-center md:text-left">
+                        <span className="text-lg font-black tracking-tighter text-white">MIGRAÇÃO DIGITAL</span>
+                        <p className="text-gray-700 text-[10px] uppercase tracking-[0.3em] mt-3 italic">Estratégias de Elite para Negócios de Elite.</p>
+                    </div>
+                    <p className="text-gray-800 text-[9px] uppercase tracking-[0.4em]">&copy; 2026 Todos os direitos reservados.</p>
+                </div>
             </footer>
         </div>
     );
