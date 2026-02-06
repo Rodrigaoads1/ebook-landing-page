@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, User, ArrowRight, Search, Tag, Mail, MessageCircle, BarChart3, Users, Zap, TrendingUp, ShieldCheck } from 'lucide-react';
+import { Calendar, User, ArrowRight, Search, Tag, Mail, MessageCircle, BarChart3, Users, Zap, TrendingUp, ShieldCheck, ChevronRight } from 'lucide-react';
 import { posts } from '../data/posts';
 import { SEOHelmet } from '../components/SEOHelmet';
 
@@ -10,10 +10,7 @@ const categories = [
     'SEO Local',
     'Meta Ads',
     'GA4',
-    'Landing Pages',
-    'Instagram Orgânico',
-    'Escolha de Agência',
-    'Remarketing'
+    'Landing Pages'
 ];
 
 export function BlogPage() {
@@ -23,221 +20,227 @@ export function BlogPage() {
         : posts.filter(post => post.category === activeCategory);
 
     const featuredPost = posts[0];
+    const restPosts = filteredPosts.slice(1);
 
     return (
-        <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
+        <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] overflow-x-hidden">
             <SEOHelmet
-                title="Blog Migração Digital | Inteligência em Marketing"
-                description="Conteúdo estratégico sobre tráfego pago, SEO e conversão para elevar o faturamento da sua empresa."
+                title="Blog Migração Digital | Intel de Elite"
+                description="O blog definitivo para empresários que buscam o posicionamento de elite e ROI previsível."
             />
 
-            {/* Header Sticky */}
-            <header className="fixed top-0 w-full z-[100] bg-black/60 backdrop-blur-2xl border-b border-white/5 py-4 px-6 md:px-12">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-gradient-to-br from-[#D4AF37] to-[#B8960C] rounded-lg flex items-center justify-center font-black text-black text-lg">MD</div>
-                        <span className="text-xl font-heading font-bold tracking-tighter">MIGRAÇÃO<span className="text-[#D4AF37]">DIGITAL</span></span>
+            {/* Premium Glowing Backgrounds */}
+            <div className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden z-0">
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#D4AF37]/5 blur-[120px] rounded-full" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#D4AF37]/5 blur-[120px] rounded-full" />
+            </div>
+
+            {/* Nano-Navbar */}
+            <header className="fixed top-0 w-full z-[100] py-6 px-6 md:px-12 transition-all duration-500">
+                <div className="max-w-7xl mx-auto flex justify-between items-center bg-black/40 backdrop-blur-3xl border border-white/5 rounded-3xl py-4 px-8 shadow-2xl">
+                    <Link to="/" className="flex items-center gap-3 group">
+                        <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#B8960C] rounded-xl flex items-center justify-center font-black text-black text-xl shadow-[0_0_20px_rgba(212,175,55,0.3)] group-hover:scale-110 transition-transform">MD</div>
+                        <span className="text-2xl font-heading font-bold tracking-tighter">MIGRAÇÃO<span className="text-[#D4AF37]">DIGITAL</span></span>
                     </Link>
 
-                    <nav className="hidden lg:flex items-center gap-8">
-                        {['Tráfego', 'SEO', 'Conversão', 'Estratégia'].map(item => (
-                            <button key={item} className="text-[10px] font-black uppercase tracking-widest text-gray-500 hover:text-[#D4AF37] transition-colors">{item}</button>
+                    <nav className="hidden lg:flex items-center gap-10">
+                        {['Tráfego', 'SEO', 'Cases', 'Estratégia'].map(item => (
+                            <button key={item} className="text-[11px] font-black uppercase tracking-[0.2em] text-gray-500 hover:text-white transition-all relative group">
+                                {item}
+                                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#D4AF37] group-hover:w-full transition-all duration-300" />
+                            </button>
                         ))}
                     </nav>
 
-                    <div className="flex items-center gap-6">
-                        <Link to="/" className="hidden md:block text-[10px] font-black uppercase tracking-widest text-gray-400">Home</Link>
-                        <a href="https://wa.me/5511999999999" className="text-[10px] font-black uppercase tracking-[0.2em] px-6 py-3 rounded-xl bg-[#D4AF37] text-black hover:scale-105 transition-all shadow-lg shadow-[#D4AF37]/20">
-                            Fale Conosco
-                        </a>
-                    </div>
+                    <a href="https://wa.me/5511999999999" className="text-[11px] font-black uppercase tracking-[0.2em] px-8 py-4 rounded-2xl bg-[#D4AF37] text-black hover:bg-[#F4D03F] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all">
+                        Agendar Diagnóstico
+                    </a>
                 </div>
             </header>
 
-            <main className="pt-32 pb-32 px-6">
+            <main className="pt-40 pb-32 px-6 relative z-10">
                 <div className="max-w-7xl mx-auto">
 
-                    {/* Hero Section with Stats */}
-                    <section className="mb-24 py-16 text-center lg:text-left">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                            <div>
-                                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.3em] mb-8">
-                                    <Zap className="w-3 h-3 fill-[#D4AF37]" stroke="none" />
-                                    Blog Oficial da Agência
-                                </div>
-                                <h1 className="text-5xl md:text-7xl font-heading font-bold mb-8 leading-[0.95] tracking-tight">
-                                    Inteligência que <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F4D03F]">Escala Faturamento.</span>
-                                </h1>
-                                <p className="text-gray-500 text-lg mb-12 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                                    Análises profundas e estratégias práticas para empresas que buscam o posicionamento de elite no mercado digital.
-                                </p>
-
-                                {/* Stats Cards */}
-                                <div className="grid grid-cols-3 gap-4 mb-12">
-                                    {[
-                                        { label: 'ROI Médio', val: '8x', icon: TrendingUp },
-                                        { label: 'Clientes', val: '120+', icon: Users },
-                                        { label: 'Retenção', val: '95%', icon: ShieldCheck }
-                                    ].map((stat, i) => (
-                                        <div key={i} className="p-4 bg-white/[0.02] border border-white/5 rounded-2xl text-center md:text-left">
-                                            <stat.icon className="w-5 h-5 text-[#D4AF37] mb-3 mx-auto md:ml-0" />
-                                            <div className="text-2xl font-heading font-bold text-white mb-1">{stat.val}</div>
-                                            <div className="text-[10px] text-gray-600 font-black uppercase tracking-widest">{stat.label}</div>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                <Link to={`/blog/${featuredPost.slug}`} className="inline-flex items-center gap-4 px-8 py-5 rounded-2xl border border-[#D4AF37]/30 text-[#D4AF37] font-black uppercase tracking-[0.2em] text-xs hover:bg-[#D4AF37]/5 transition-all">
-                                    Artigo em Destaque <ArrowRight className="w-4 h-4" />
-                                </Link>
+                    {/* Header Intro */}
+                    <header className="mb-20 text-center lg:text-left flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+                        <div>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.3em] mb-6">
+                                <Zap className="w-3 h-3 fill-[#D4AF37]" stroke="none" />
+                                Inteligência Estratégica 4.0
                             </div>
+                            <h1 className="text-6xl md:text-8xl font-heading font-bold mb-4 leading-[0.9] tracking-tighter">
+                                Insights para <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F4D03F] to-[#D4AF37] bg-[length:200%_auto] animate-gradient">Negócios de Elite.</span>
+                            </h1>
+                        </div>
+                        <p className="text-gray-500 text-lg max-w-md font-light leading-relaxed mb-4">
+                            Onde o alto faturamento encontra a previsibilidade tecnológica. O canal oficial da Migração Digital.
+                        </p>
+                    </header>
 
-                            {/* Featured Post Visual */}
-                            <div className="relative group">
-                                <div className="absolute -inset-4 bg-[#D4AF37]/5 blur-[100px] rounded-full group-hover:bg-[#D4AF37]/10 transition-all" />
-                                <Link to={`/blog/${featuredPost.slug}`} className="block relative aspect-[4/3] rounded-[40px] overflow-hidden border border-white/10 shadow-2xl">
-                                    <img src={featuredPost.coverImage} alt={featuredPost.title} className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110" />
-                                    <div className="absolute inset-x-0 bottom-0 p-10 bg-gradient-to-t from-black via-black/60 to-transparent">
-                                        <span className="px-4 py-1.5 rounded-full bg-[#D4AF37] text-black text-[9px] font-black uppercase mb-4 inline-block">{featuredPost.category}</span>
-                                        <h2 className="text-2xl md:text-3xl font-heading font-bold text-white group-hover:text-[#D4AF37] transition-all">{featuredPost.title}</h2>
+                    {/* Category Selector (Pills) */}
+                    <div className="mb-12 flex flex-wrap items-center gap-3">
+                        {categories.map(cat => (
+                            <button
+                                key={cat}
+                                onClick={() => setActiveCategory(cat)}
+                                className={`px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-500 border ${activeCategory === cat ? 'bg-[#D4AF37] border-[#D4AF37] text-black shadow-xl shadow-[#D4AF37]/20 scale-105' : 'bg-white/5 border-white/5 text-gray-500 hover:border-white/20 hover:text-white'}`}
+                            >
+                                {cat}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* BENTO GRID START */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 auto-rows-[minmax(200px,auto)]">
+
+                        {/* FEATURED POST (Big Card) */}
+                        <article className="lg:col-span-8 lg:row-span-2 group relative rounded-[40px] overflow-hidden border border-white/5 bg-black">
+                            <Link to={`/blog/${featuredPost.slug}`} className="block h-full w-full relative">
+                                <img src={featuredPost.coverImage} alt={featuredPost.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
+                                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-700 z-10" />
+
+                                <div className="absolute bottom-0 left-0 p-12 z-20 w-full">
+                                    <span className="px-4 py-1.5 rounded-full bg-[#D4AF37] text-black text-[9px] font-black uppercase mb-6 inline-block tracking-widest">ARTIGO EM DESTAQUE</span>
+                                    <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 leading-tight group-hover:text-[#D4AF37] transition-all tracking-tighter">
+                                        {featuredPost.title}
+                                    </h2>
+                                    <div className="flex items-center gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-gray-400">
+                                        <span className="flex items-center gap-2"><Calendar className="w-4 h-4 text-[#D4AF37]" /> {featuredPost.date}</span>
+                                        <span className="flex items-center gap-2 text-white"><ArrowRight className="w-4 h-4 text-[#D4AF37]" /> Ler agora</span>
                                     </div>
-                                </Link>
+                                </div>
+                            </Link>
+                        </article>
+
+                        {/* STATS MODULE (High Fidelity) */}
+                        <div className="lg:col-span-4 lg:row-span-1 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[40px] p-10 flex flex-col justify-between group hover:border-[#D4AF37]/30 transition-all">
+                            <div className="flex justify-between items-start">
+                                <BarChart3 className="w-10 h-10 text-[#D4AF37]" />
+                                <span className="text-[10px] font-black uppercase tracking-widest text-gray-600 italic">Autoridade MD</span>
+                            </div>
+                            <div className="space-y-6">
+                                {[
+                                    { l: 'ROI Médio', v: '8.4x', c: 'text-[#D4AF37]' },
+                                    { l: 'Investimento Gerido', v: 'R$ 2.5M+', c: 'text-white' },
+                                    { l: 'Taxa de Retenção', v: '95%', c: 'text-[#D4AF37]' }
+                                ].map((s, i) => (
+                                    <div key={i} className="flex justify-between items-end border-b border-white/5 pb-3">
+                                        <span className="text-[10px] font-black uppercase text-gray-500 tracking-widest">{s.l}</span>
+                                        <span className={`text-2xl font-heading font-bold ${s.c}`}>{s.v}</span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                    </section>
 
-                    {/* Category Filter Bar */}
-                    <nav className="mb-20 pb-4 border-b border-white/5 flex items-center justify-between gap-8 overflow-x-auto">
-                        <div className="flex items-center gap-4 min-w-max">
-                            {categories.map(cat => (
-                                <button
-                                    key={cat}
-                                    onClick={() => setActiveCategory(cat)}
-                                    className={`px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${activeCategory === cat ? 'bg-[#D4AF37] text-black shadow-lg shadow-[#D4AF37]/20 scale-105' : 'bg-white/5 text-gray-500 hover:text-white'}`}
-                                >
-                                    {cat}
-                                </button>
-                            ))}
-                        </div>
-                        <div className="relative hidden xl:block">
-                            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600" />
-                            <input type="text" placeholder="Buscar artigo..." className="bg-white/5 border border-white/10 rounded-full py-2 pl-12 pr-6 text-xs text-gray-400 focus:outline-none focus:border-[#D4AF37]/50 w-64" />
-                        </div>
-                    </nav>
-
-                    {/* Main Content Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-
-                        {/* Posts Feed */}
-                        <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-12">
-                            {filteredPosts.map((post) => (
-                                <article key={post.id} className="group flex flex-col transition-all duration-500">
-                                    <Link to={`/blog/${post.slug}`} className="relative aspect-video rounded-3xl overflow-hidden mb-8 border border-white/5">
-                                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                                        <div className="absolute top-4 left-4">
-                                            <span className="px-3 py-1 rounded bg-black/60 backdrop-blur-md border border-white/10 text-[9px] font-bold text-[#D4AF37] uppercase tracking-widest">{post.category}</span>
-                                        </div>
-                                    </Link>
-                                    <div className="flex items-center gap-4 text-[9px] font-black uppercase tracking-widest text-gray-600 mb-4">
-                                        <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" /> {post.date}</span>
-                                        <span className="text-[#D4AF37]">{post.author}</span>
-                                    </div>
-                                    <Link to={`/blog/${post.slug}`}>
-                                        <h3 className="text-xl md:text-2xl font-heading font-bold mb-4 group-hover:text-[#D4AF37] transition-all leading-snug">{post.title}</h3>
-                                    </Link>
-                                    <p className="text-gray-500 text-sm font-light leading-relaxed mb-6 line-clamp-2">{post.excerpt}</p>
-                                    <Link to={`/blog/${post.slug}`} className="mt-auto flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white group-hover:text-[#D4AF37] transition-all">
-                                        Ler Completo <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
-                                    </Link>
-                                </article>
-                            ))}
-                        </div>
-
-                        {/* Strategic Sidebar */}
-                        <aside className="lg:col-span-4 space-y-16">
-
-                            {/* Lead Magnet CTA */}
-                            <div className="p-10 bg-gradient-to-br from-white/[0.04] to-transparent border border-white/10 rounded-[40px] relative overflow-hidden group">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/10 blur-[60px] rounded-full group-hover:bg-[#D4AF37]/20 transition-all" />
-                                <Zap className="w-10 h-10 text-[#D4AF37] mb-8" />
-                                <h4 className="text-2xl font-heading font-bold mb-4">Checklist: Os 7 Sinais que você está Perdendo Clientes</h4>
-                                <p className="text-gray-500 text-sm mb-8 leading-relaxed font-light">Identifique onde o faturamento do seu negócio está escorrendo pelas mãos.</p>
-                                <a href="https://pay.kiwify.com.br/GhaKpCv" className="block w-full text-center bg-white text-black text-[10px] font-black uppercase tracking-[0.3em] py-5 rounded-2xl hover:bg-[#D4AF37] transition-all shadow-xl">
-                                    Baixar Checklist Agora
+                        {/* LEAD MAGNET MODULE (Bento style) */}
+                        <div className="lg:col-span-4 lg:row-span-1 bg-gradient-to-br from-[#D4AF37]/5 to-[#D4AF37]/20 border border-[#D4AF37]/20 rounded-[40px] p-10 relative overflow-hidden group">
+                            <div className="absolute top-[-20%] right-[-20%] w-64 h-64 bg-[#D4AF37]/20 blur-[80px] rounded-full group-hover:bg-[#D4AF37]/30 transition-all" />
+                            <div className="relative z-10 h-full flex flex-col justify-between">
+                                <div>
+                                    <Zap className="w-10 h-10 text-[#D4AF37] mb-6 animate-pulse" />
+                                    <h3 className="text-2xl font-heading font-bold mb-4 tracking-tight leading-tight">Os 7 Sinais que sua Empresa está Perdendo Dinheiro no Digital</h3>
+                                </div>
+                                <a href="https://pay.kiwify.com.br/GhaKpCv" className="flex items-center justify-between bg-black text-white px-8 py-5 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] hover:scale-105 transition-all shadow-2xl">
+                                    Baixar Checklist <ChevronRight className="w-4 h-4 ml-2" />
                                 </a>
                             </div>
+                        </div>
 
-                            {/* Newsletter */}
-                            <div className="space-y-8">
-                                <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 border-b border-white/5 pb-4">Newsletter Estratégica</h4>
-                                <p className="text-gray-500 text-sm font-light leading-relaxed">Assine para receber novos artigos e estudos de caso exclusivos no seu e-mail.</p>
-                                <div className="space-y-4">
-                                    <input type="email" placeholder="Seu melhor e-mail" className="w-full bg-white/5 border border-white/10 rounded-xl py-4 px-6 text-sm focus:outline-none focus:border-[#D4AF37]/50 transition-colors" />
-                                    <button className="w-full bg-white/5 text-white text-[10px] font-black uppercase tracking-[0.2em] py-5 rounded-xl border border-white/10 hover:bg-white hover:text-black transition-all">Inscrever-se</button>
-                                </div>
+                        {/* REST OF POSTS (Grid of 3) */}
+                        {restPosts.map((post, idx) => (
+                            <article key={post.id} className="lg:col-span-4 lg:row-span-1 group relative rounded-[40px] overflow-hidden border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all">
+                                <Link to={`/blog/${post.slug}`} className="block h-full p-8 flex flex-col">
+                                    <div className="relative aspect-video rounded-3xl overflow-hidden mb-8 border border-white/5">
+                                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+                                        <div className="absolute top-4 left-4">
+                                            <span className="px-3 py-1.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 text-[9px] font-bold text-[#D4AF37] uppercase tracking-widest">{post.category}</span>
+                                        </div>
+                                    </div>
+                                    <div className="mb-4 flex items-center gap-4 text-[9px] font-black uppercase tracking-widest text-gray-600">
+                                        <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> {post.date}</span>
+                                        <span>3 min leitura</span>
+                                    </div>
+                                    <h3 className="text-xl font-heading font-bold mb-6 flex-grow group-hover:text-[#D4AF37] transition-all leading-tight">{post.title}</h3>
+                                    <div className="mt-auto flex items-center justify-between text-[9px] font-black uppercase tracking-widest text-gray-500 group-hover:text-white transition-all">
+                                        Explorar Artigo <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                                    </div>
+                                </Link>
+                            </article>
+                        ))}
+
+                        {/* NEWSLETTER MODULE (Small & Wide) */}
+                        <div className="lg:col-span-12 lg:row-span-1 bg-white/[0.02] border border-white/5 rounded-[40px] p-12 flex flex-col lg:flex-row items-center justify-between gap-12 group hover:border-[#D4AF37]/20 transition-all">
+                            <div className="max-w-xl text-center lg:text-left">
+                                <h4 className="text-3xl font-heading font-bold mb-4">Mantenha a sua agência atualizada com o <span className="text-[#D4AF37]">Inner Circle.</span></h4>
+                                <p className="text-gray-500 font-light leading-relaxed">Assine para receber insights técnicos e estratégicos semanais que não publicamos abertamente.</p>
                             </div>
-
-                            {/* Popular Tags */}
-                            <div className="space-y-8">
-                                <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 border-b border-white/5 pb-4">Tags Populares</h4>
-                                <div className="flex flex-wrap gap-2">
-                                    {['Google Ads', 'SEO', 'Conversion', 'ROI', 'Branding', 'IA'].map(tag => (
-                                        <button key={tag} className="px-4 py-2 bg-white/5 border border-white/5 rounded-lg text-[10px] text-gray-500 hover:border-[#D4AF37]/30 hover:text-white transition-all">#{tag}</button>
-                                    ))}
-                                </div>
+                            <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-4">
+                                <input type="email" placeholder="Seu melhor e-mail corporativo" className="min-w-[300px] bg-black border border-white/10 rounded-2xl py-5 px-8 text-sm focus:outline-none focus:border-[#D4AF37] transition-all font-light" />
+                                <button className="bg-white text-black text-[10px] font-black uppercase tracking-[0.3em] px-12 py-5 rounded-2xl hover:bg-[#D4AF37] transition-all shadow-xl">Inscrever-se</button>
                             </div>
-
-                        </aside>
+                        </div>
 
                     </div>
+                    {/* BENTO GRID END */}
+
                 </div>
             </main>
 
-            {/* Footer Descrito */}
-            <footer className="pt-24 pb-12 bg-black border-t border-white/5">
-                <div className="max-w-7xl mx-auto px-6">
+            {/* HIGH FIDELITY FOOTER */}
+            <footer className="pt-32 pb-16 bg-[#030303] relative overflow-hidden border-t border-white/5">
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-24">
-                        <div className="lg:col-span-1">
-                            <Link to="/" className="text-2xl font-heading font-bold mb-6 block">MIGRAÇÃO<span className="text-[#D4AF37]">DIGITAL</span></Link>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-8">Elevando padrões de posicionamento e tecnologia para negócios que não aceitam o comum.</p>
-                            <div className="flex gap-4">
-                                {['LinkedIn', 'Insta', 'X'].map(s => <button key={s} className="w-8 h-8 rounded-lg border border-white/10 flex items-center justify-center text-[10px] font-black text-gray-500 hover:border-[#D4AF37] hover:text-white transition-all">{s}</button>)}
+                        <div className="lg:col-span-2">
+                            <Link to="/" className="text-3xl font-heading font-bold mb-8 block">MIGRAÇÃO<span className="text-[#D4AF37]">DIGITAL</span></Link>
+                            <p className="text-gray-500 text-lg max-w-sm mb-12 font-light leading-relaxed italic">"Transformando complexidade tecnológica em vantagem competitiva de mercado."</p>
+                            <div className="flex gap-6">
+                                {['LinkedIn', 'Instagram', 'X (Twitter)', 'Email'].map(social => (
+                                    <button key={social} className="text-[10px] font-black uppercase tracking-widest text-gray-700 hover:text-[#D4AF37] transition-all">{social}</button>
+                                ))}
                             </div>
                         </div>
                         <div>
-                            <h4 className="text-[10px] font-black uppercase tracking-widest mb-8 text-white">Serviços</h4>
-                            <ul className="space-y-4 text-gray-600 text-sm">
-                                <li>Tráfego Pago (Google/Meta)</li>
-                                <li>SEO Local Estratégico</li>
-                                <li>Gestão de Dados & GA4</li>
-                                <li>Otimização de Conversão</li>
+                            <h5 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-500 mb-10">Agência</h5>
+                            <ul className="space-y-6 text-sm font-light text-gray-600">
+                                <li><button className="hover:text-white transition-colors">Nossa Metodologia</button></li>
+                                <li><button className="hover:text-white transition-colors">Vagas Abertas</button></li>
+                                <li><button className="hover:text-white transition-colors">Contate um Estrategista</button></li>
+                                <li><button className="hover:text-white transition-colors">Políticas</button></li>
                             </ul>
                         </div>
-                        <div>
-                            <h4 className="text-[10px] font-black uppercase tracking-widest mb-8 text-white">Sobre</h4>
-                            <ul className="space-y-4 text-gray-600 text-sm">
-                                <li>Nossa História</li>
-                                <li>Casos de Sucesso</li>
-                                <li>Carreiras</li>
-                                <li>Contato</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-[10px] font-black uppercase tracking-widest mb-8 text-[#D4AF37]">Consultoria</h4>
-                            <p className="text-gray-600 text-sm mb-6">Pronto para acelerar? Agende um diagnóstico gratuito e profissional.</p>
-                            <a href="https://wa.me/5511999999999" className="text-white text-[10px] font-black uppercase tracking-widest border-b border-[#D4AF37] pb-1 hover:brightness-125 transition-all">Link para WhatsApp &rarr;</a>
+                        <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/5">
+                            <h5 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#D4AF37] mb-6">Diagnóstico Gratuito</h5>
+                            <p className="text-gray-500 text-xs mb-8 leading-relaxed">Você está a uma conversa de descobrir os gargalos do seu crescimento.</p>
+                            <a href="https://wa.me/5511999999999" className="text-white text-[10px] font-black uppercase tracking-widest border-b border-[#D4AF37] pb-2 hover:brightness-125 transition-all inline-block">Fale Agora com o Rodrigo</a>
                         </div>
                     </div>
-                    <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black uppercase tracking-widest text-gray-700">
-                        <p>&copy; 2026 Migração Digital — Todos os direitos reservados.</p>
-                        <div className="flex gap-8">
-                            <button className="hover:text-white">Privacidade</button>
-                            <button className="hover:text-white">Termos</button>
+                    <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+                        <p className="text-[9px] font-black uppercase tracking-[0.4em] text-gray-800">&copy; 2026 Migração Digital &bull; Todos os direitos reservados.</p>
+                        <div className="flex items-center gap-4">
+                            <div className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+                            <span className="text-[9px] font-black uppercase tracking-[0.4em] text-gray-700">Digital Intelligence Core Active</span>
                         </div>
                     </div>
                 </div>
             </footer>
+
+            <style>{`
+                @keyframes gradient {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+                .animate-gradient {
+                    background-size: 200% auto;
+                    animation: gradient 5s ease infinite;
+                }
+                body {
+                    background-color: #050505;
+                    color: white;
+                }
+            `}</style>
         </div>
     );
 }
