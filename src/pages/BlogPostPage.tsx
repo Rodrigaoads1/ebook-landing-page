@@ -115,10 +115,8 @@ export function BlogPostPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                             {posts.slice(0, 2).map((p, i) => (
                                 <article key={i} className="group bg-[#F9F9F9] border border-gray-100 rounded-sm overflow-hidden flex flex-col hover:border-[#B8960C]/20 transition-all shadow-sm">
-                                    <div className="aspect-video bg-white flex items-center justify-center relative border-b border-gray-100">
-                                        <div className="text-[80px] font-serif font-bold text-gray-50 border-[1px] border-[#B8960C]/10 px-6 py-0 leading-none select-none">
-                                            {i === 0 ? 'T' : 'R'}
-                                        </div>
+                                    <div className="aspect-video bg-white flex items-center justify-center relative border-b border-gray-100 overflow-hidden">
+                                        <img src={p.coverImage} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale-[0.2] group-hover:grayscale-0" />
                                     </div>
                                     <div className="p-10">
                                         <div className="flex items-center gap-4 text-[9px] font-black text-gray-400 uppercase tracking-widest mb-4">

@@ -108,11 +108,9 @@ export function BlogPage() {
                         <div className="space-y-6">
                             {featuredPosts.map((post, idx) => (
                                 <article key={post.id} className="group bg-[#F9F9F9] border border-gray-100 rounded-sm overflow-hidden flex flex-col md:flex-row items-center hover:border-[#B8960C]/20 transition-all shadow-sm hover:shadow-md">
-                                    {/* Letter Block Thumb */}
-                                    <div className="w-full md:w-[400px] h-[250px] bg-white border-r border-gray-100 flex items-center justify-center relative shrink-0">
-                                        <div className="text-[120px] font-serif font-bold text-gray-50 border-[1px] border-[#B8960C]/30 px-8 py-0 leading-none select-none">
-                                            {idx === 0 ? 'T' : 'S'}
-                                        </div>
+                                    {/* Real Image Thumb */}
+                                    <div className="w-full md:w-[400px] h-[250px] bg-white border-r border-gray-100 relative shrink-0 overflow-hidden">
+                                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale-[0.5] group-hover:grayscale-0" />
                                         <div className="absolute top-6 left-6">
                                             <span className="px-3 py-1 bg-[#B8960C] text-white text-[9px] font-black uppercase tracking-widest">{post.category}</span>
                                         </div>
@@ -159,9 +157,7 @@ export function BlogPage() {
                                 {restPosts.map((post, idx) => (
                                     <article key={post.id} className="group bg-[#F9F9F9] border border-gray-100 rounded-sm overflow-hidden hover:border-[#B8960C]/20 transition-all flex flex-col shadow-sm">
                                         <div className="aspect-video bg-white flex items-center justify-center relative border-b border-gray-100 overflow-hidden">
-                                            <div className="text-[80px] font-serif font-bold text-gray-50 border-[1px] border-[#B8960C]/20 px-6 py-0 leading-none select-none group-hover:scale-110 transition-all duration-700">
-                                                {post.category.charAt(0)}
-                                            </div>
+                                            <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale-[0.2] group-hover:grayscale-0" />
                                             <div className="absolute top-4 left-4">
                                                 <span className="px-2 py-1 border border-gray-100 text-gray-500 text-[8px] font-black uppercase tracking-widest bg-white/80 backdrop-blur-md shadow-sm">{post.category}</span>
                                             </div>
