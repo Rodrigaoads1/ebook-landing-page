@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/ebook" element={<EbookPage />} />
         <Route path="/analise-profissional-de-presenca-digital-02" element={<AnalysisPage />} />
-        <Route path="/links" element={<BioPage />} />
+        <Route path="/bio-instagram" element={<BioPage />} />
         {/* Redirecionar qualquer outra coisa para a home ou ebook se preferir */}
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
