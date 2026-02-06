@@ -68,7 +68,7 @@ export const ContentSection: React.FC<ContentSectionProps> = ({ onOpenModal }) =
               <div className="bg-[#D4AF37]/10 w-14 h-14 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-[#D4AF37]/20 transition-all duration-300">
                 <sign.icon className="w-7 h-7 text-[#D4AF37]" />
               </div>
-              <h3 className="text-white font-bold text-xl mb-3">{sign.title}</h3>
+              <h3 className="text-white font-serif font-bold text-xl mb-3">{sign.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed">{sign.description}</p>
             </div>
           ))}
