@@ -4,6 +4,7 @@ import profileHero from '../assets/rodrigo_analise_hero.png';
 import profileDetail from '../assets/rodrigo_analise_perfil.png';
 import profileSide from '../assets/rodrigo_analise_detalhe.png';
 import profileExtra from '../assets/rodrigo_analise_extra.png';
+import { SocialProof } from '../components/SocialProof';
 
 export function AnalysisPage() {
     return (
@@ -295,6 +296,8 @@ export function AnalysisPage() {
                         </p>
                     </div>
                 </section>
+
+                <SocialProof />
             </main>
 
             <footer className="py-20 border-t border-white/5 text-center">

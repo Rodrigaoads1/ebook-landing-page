@@ -1,6 +1,7 @@
 import React from 'react';
 import { Youtube, Star, ArrowRight, Instagram, MessageCircle, ExternalLink, Download, Target, Play } from 'lucide-react';
 import profileImg from '../assets/rodrigo_analise_hero.png';
+import { SocialProof } from '../components/SocialProof';
 
 export function BioPage() {
     const links = [
@@ -93,6 +94,10 @@ export function BioPage() {
                             <ExternalLink className={`w-4 h-4 opacity-30 group-hover:opacity-100 transition-opacity ${link.highlight ? 'text-black' : 'text-white'}`} />
                         </a>
                     ))}
+                </div>
+
+                <div className="w-full mt-12 bg-black/40 rounded-3xl overflow-hidden border border-white/5">
+                    <SocialProof />
                 </div>
 
                 {/* Footer Brand */}

@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { posts } from '../data/posts';
 import { SEOHelmet } from '../components/SEOHelmet';
 import { ArrowLeft, Calendar, MessageCircle, Zap, Users, ArrowRight, Share2, Facebook, Twitter, Linkedin, Mail } from 'lucide-react';
+import { SocialProof } from '../components/SocialProof';
 
 export function BlogPostPage() {
     const { slug } = useParams<{ slug: string }>();
@@ -95,6 +96,8 @@ export function BlogPostPage() {
                             ))}
                         </div>
                     </div>
+
+                    <SocialProof />
 
                     {/* Footer CTA Section */}
                     <div className="mt-32 pt-20 border-t border-gray-100">
