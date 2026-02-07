@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight, Search, Tag, Mail, MessageCircle, BarChart3, Users, Zap, TrendingUp, ShieldCheck, ChevronRight, Share2 } from 'lucide-react';
 import { posts } from '../data/posts';
 import { SEOHelmet } from '../components/SEOHelmet';
+import { SocialProof } from '../components/SocialProof';
 
 const categories = [
     'Todos',
@@ -133,6 +134,8 @@ export function BlogPage() {
                             ))}
                         </div>
                     </div>
+
+                    <SocialProof />
 
                     {/* SECTION: TODOS OS ARTIGOS */}
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">

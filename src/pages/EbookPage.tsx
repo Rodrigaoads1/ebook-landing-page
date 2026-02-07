@@ -4,6 +4,7 @@ import { ContentSection } from '../components/ContentSection';
 import { FinalCTA } from '../components/FinalCTA';
 import { Footer } from '../components/Footer';
 import { LeadModal } from '../components/LeadModal';
+import { SocialProof } from '../components/SocialProof';
 
 export function EbookPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,6 +17,7 @@ export function EbookPage() {
             <main>
                 <Hero onOpenModal={openModal} />
                 <ContentSection onOpenModal={openModal} />
+                <SocialProof />
                 <FinalCTA onOpenModal={openModal} />
             </main>
             <Footer />

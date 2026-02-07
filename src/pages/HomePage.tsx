@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Target, Zap, ShieldCheck, ChevronRight, MessageSquare, MessageCircle, BarChart3, Users, Globe, ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import profileImg from '../assets/rodrigo_analise_extra.png';
+import { SocialProof } from '../components/SocialProof';
 
 export function HomePage() {
     return (
@@ -151,6 +152,8 @@ export function HomePage() {
                         </div>
                     </div>
                 </section>
+
+                <SocialProof />
 
                 {/* Authority Profile */}
                 <section id="rodrigo" className="py-32 px-6 bg-[#050505]">
