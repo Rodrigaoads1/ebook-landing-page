@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Phone, Mail, User, Loader2 } from 'lucide-react';
+import { Send, Phone, Mail, User, MapPin, Globe, Loader2 } from 'lucide-react';
 
 export const LeadForm: React.FC = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -7,7 +7,9 @@ export const LeadForm: React.FC = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        whatsapp: ''
+        whatsapp: '',
+        neighborhood: '',
+        city: ''
     });
 
     const validateEmail = (email: string) => {
@@ -46,7 +48,6 @@ export const LeadForm: React.FC = () => {
         setIsSubmitting(true);
 
         try {
-            // Usando FormSubmit.co via AJAX que é mais amigável para e-mail direto
             const response = await fetch('https://formsubmit.co/ajax/rodrigorodrigues@migracaodigital.com', {
                 method: 'POST',
                 headers: {
@@ -57,16 +58,18 @@ export const LeadForm: React.FC = () => {
                     Nome: formData.name,
                     Email: formData.email,
                     WhatsApp: formData.whatsapp,
-                    _subject: `Novo Lead Ebook: ${formData.name}`,
+                    Bairro: formData.neighborhood,
+                    Cidade: formData.city,
+                    _subject: `Novo Lead Premium: ${formData.name}`,
                     _template: 'table'
                 })
             });
 
             if (response.ok) {
-                alert('Solicitação enviada! Verifique seu e-mail para baixar o checklist.');
-                setFormData({ name: '', email: '', whatsapp: '' });
+                alert('Solicitação enviada com sucesso! Entraremos em contato em breve.');
+                setFormData({ name: '', email: '', whatsapp: '', neighborhood: '', city: '' });
             } else {
-                alert('Houve um problema. Por favor, tente novamente em instantes.');
+                alert('Houve um problema. Por favor, tente novamente.');
             }
         } catch (error) {
             alert('Erro de conexão. Verifique sua internet.');
@@ -95,9 +98,9 @@ export const LeadForm: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="w-full space-y-4 bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm">
+        <form onSubmit={handleSubmit} className="w-full space-y-4 bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-md">
             <div className="relative">
-                <User className={`absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 ${errors.name ? 'text-red-400' : 'text-[#D4AF37]/50'}`} />
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#D4AF37]/50" />
                 <input
                     required
                     disabled={isSubmitting}
@@ -106,60 +109,88 @@ export const LeadForm: React.FC = () => {
                     placeholder="Seu nome completo"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`w-full bg-black/40 border ${errors.name ? 'border-red-500/50' : 'border-white/10'} rounded-lg py-3 pl-10 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37]/50 transition-colors disabled:opacity-50`}
+                    className="w-full bg-black/40 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#D4AF37]/50 transition-colors"
                 />
             </div>
 
-            <div className="relative">
-                <Mail className={`absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 ${errors.email ? 'text-red-400' : 'text-[#D4AF37]/50'}`} />
-                <input
-                    required
-                    disabled={isSubmitting}
-                    type="email"
-                    name="email"
-                    placeholder="Seu melhor e-mail"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={`w-full bg-black/40 border ${errors.email ? 'border-red-500/50' : 'border-white/10'} rounded-lg py-3 pl-10 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37]/50 transition-colors disabled:opacity-50`}
-                />
-                {errors.email && <p className="text-[10px] text-red-400 mt-1 ml-1">{errors.email}</p>}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#D4AF37]/50" />
+                    <input
+                        required
+                        disabled={isSubmitting}
+                        type="email"
+                        name="email"
+                        placeholder="E-mail profissional"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className={`w-full bg-black/40 border ${errors.email ? 'border-red-500/50' : 'border-white/10'} rounded-xl py-4 pl-12 pr-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#D4AF37]/50 transition-colors`}
+                    />
+                </div>
+                <div className="relative">
+                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#D4AF37]/50" />
+                    <input
+                        required
+                        disabled={isSubmitting}
+                        type="tel"
+                        name="whatsapp"
+                        placeholder="WhatsApp"
+                        value={formData.whatsapp}
+                        onChange={handleChange}
+                        className={`w-full bg-black/40 border ${errors.whatsapp ? 'border-red-500/50' : 'border-white/10'} rounded-xl py-4 pl-12 pr-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#D4AF37]/50 transition-colors`}
+                    />
+                </div>
             </div>
 
-            <div className="relative">
-                <Phone className={`absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 ${errors.whatsapp ? 'text-red-400' : 'text-[#D4AF37]/50'}`} />
-                <input
-                    required
-                    disabled={isSubmitting}
-                    type="tel"
-                    name="whatsapp"
-                    placeholder="WhatsApp (ex: 21 99999-9999)"
-                    value={formData.whatsapp}
-                    onChange={handleChange}
-                    className={`w-full bg-black/40 border ${errors.whatsapp ? 'border-red-500/50' : 'border-white/10'} rounded-lg py-3 pl-10 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37]/50 transition-colors disabled:opacity-50`}
-                />
-                {errors.whatsapp && <p className="text-[10px] text-red-400 mt-1 ml-1">{errors.whatsapp}</p>}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="relative">
+                    <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#D4AF37]/50" />
+                    <input
+                        required
+                        disabled={isSubmitting}
+                        type="text"
+                        name="neighborhood"
+                        placeholder="Bairro"
+                        value={formData.neighborhood}
+                        onChange={handleChange}
+                        className="w-full bg-black/40 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#D4AF37]/50 transition-colors"
+                    />
+                </div>
+                <div className="relative">
+                    <Globe className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#D4AF37]/50" />
+                    <input
+                        required
+                        disabled={isSubmitting}
+                        type="text"
+                        name="city"
+                        placeholder="Cidade"
+                        value={formData.city}
+                        onChange={handleChange}
+                        className="w-full bg-black/40 border border-white/10 rounded-xl py-4 pl-12 pr-4 text-white placeholder-gray-600 focus:outline-none focus:border-[#D4AF37]/50 transition-colors"
+                    />
+                </div>
             </div>
 
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#D4AF37]/20 disabled:grayscale disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-black py-5 rounded-xl flex items-center justify-center gap-3 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-xl shadow-[#D4AF37]/20 disabled:grayscale"
             >
                 {isSubmitting ? (
                     <>
-                        <Loader2 className="w-5 h-5 animate-spin" />
-                        Enviando...
+                        <Loader2 className="w-6 h-6 animate-spin" />
+                        Processando...
                     </>
                 ) : (
                     <>
-                        <Send className="w-5 h-5" />
-                        Quero Receber Agora
+                        <Send className="w-6 h-6" />
+                        Verificar Disponibilidade
                     </>
                 )}
             </button>
 
-            <p className="text-[10px] text-gray-500 text-center uppercase tracking-widest">
-                🔐 Seus dados estão 100% seguros
+            <p className="text-[10px] text-gray-600 text-center uppercase tracking-[0.3em] font-black">
+                🔒 Seus dados estão protegidos pela Migração Digital
             </p>
         </form>
     );

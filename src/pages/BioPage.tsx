@@ -1,109 +1,115 @@
+
 import React from 'react';
-import { Youtube, Star, ArrowRight, Instagram, MessageCircle, ExternalLink, Download, Target, Play } from 'lucide-react';
+import { Youtube, Star, Instagram, MessageCircle, ExternalLink, Download, Target, ShieldCheck } from 'lucide-react';
 import profileImg from '../assets/rodrigo_analise_hero.png';
 import { SocialProof } from '../components/SocialProof';
+import { Link } from 'react-router-dom';
 
 export function BioPage() {
     const links = [
         {
-            title: "Checklist: 7 Sinais (R$ 19,90)",
-            subtitle: "Identifique onde você está perdendo dinheiro",
+            title: "Checklist Estratégico (R$ 19,90)",
+            subtitle: "Identifique exatamente onde você perde dinheiro",
             url: "/ebook",
             icon: Download,
-            highlight: false
-        },
-        {
-            title: "Análise Profissional (R$ 197)",
-            subtitle: "Diagnóstico individual da sua presença digital",
-            url: "/analise-profissional-de-presenca-digital-02",
-            icon: Target,
             highlight: true
         },
         {
-            title: "Meu Canal no YouTube",
-            subtitle: "Conteúdo estratégico semanal gratuito",
-            url: "https://www.youtube.com/@Rodrigorodrigues-md",
-            icon: Youtube,
+            title: "Diagnóstico GPS (R$ 197)",
+            subtitle: "Análise individual da sua estrutura atual",
+            url: "/analise-profissional-de-presenca-digital-02",
+            icon: Target,
             highlight: false
         },
         {
-            title: "O que dizem os clientes",
-            subtitle: "Avaliações no Google (Agência Migração Digital)",
-            url: "https://www.google.com/search?q=Ag%C3%AAncia+Migra%C3%A7%C3%A3o+Digital#lrd=0x94ce59560dc7d8f3:0x39d1d1f2f2d1d1f2,1",
+            title: "Blog Migração Digital",
+            subtitle: "Estratégias de alto nível para sua empresa",
+            url: "/blog",
             icon: Star,
+            highlight: false
+        },
+        {
+            title: "Canal no YouTube",
+            subtitle: "Conteúdo denso sobre funis e previsibilidade",
+            url: "https://www.youtube.com/@Rodrigorodrigues-md",
+            icon: Youtube,
             highlight: false
         }
     ];
 
     return (
-        <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col items-center py-12 px-6 relative overflow-hidden">
+        <div className="min-h-screen bg-[#050505] text-white flex flex-col items-center py-12 px-6 relative overflow-hidden selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
             {/* Background Glows */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-xl h-96 bg-[#D4AF37]/5 blur-[100px] rounded-full" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-xl h-[500px] bg-[#D4AF37]/5 blur-[120px] rounded-full" />
 
             <div className="max-w-md w-full relative z-10 flex flex-col items-center">
                 {/* Profile Header */}
-                <div className="relative mb-6">
-                    <div className="absolute inset-0 bg-[#D4AF37]/20 blur-2xl rounded-full" />
-                    <div className="relative w-32 h-32 rounded-full border-2 border-[#D4AF37]/30 p-1 overflow-hidden">
+                <div className="relative mb-8 group">
+                    <div className="absolute inset-[-20px] bg-[#D4AF37]/10 blur-[50px] rounded-full opacity-60 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative w-36 h-36 rounded-[40px] border-2 border-white/10 p-1.5 overflow-hidden rotate-3 group-hover:rotate-0 transition-transform duration-500 bg-black shadow-2xl">
                         <img
                             src={profileImg}
                             alt="Rodrigo Rodrigues"
-                            className="w-full h-full object-cover rounded-full grayscale-[20%]"
+                            className="w-full h-full object-cover rounded-[32px] grayscale-[10%] contrast-110"
                         />
                     </div>
                 </div>
 
-                <div className="text-center mb-10">
-                    <h1 className="text-2xl font-serif font-bold mb-2">Rodrigo Rodrigues</h1>
-                    <p className="text-gray-400 text-sm tracking-widest uppercase font-medium">Estrategista Digital</p>
-                    <div className="flex gap-4 mt-4 justify-center">
-                        <a href="https://www.youtube.com/@Rodrigorodrigues-md" className="text-gray-500 hover:text-[#D4AF37] transition-colors"><Youtube className="w-5 h-5" /></a>
-                        <a href="#" className="text-gray-500 hover:text-[#D4AF37] transition-colors"><Instagram className="w-5 h-5" /></a>
-                        <a href="#" className="text-gray-500 hover:text-[#D4AF37] transition-colors"><MessageCircle className="w-5 h-5" /></a>
+                <div className="text-center mb-12">
+                    <h1 className="text-3xl font-serif font-bold mb-3 tracking-tight">Rodrigo Rodrigues</h1>
+                    <p className="text-[#D4AF37] text-[10px] font-black tracking-[0.4em] uppercase mb-6">Estrategista Digital | Vendas Previsíveis</p>
+                    <p className="text-gray-500 text-sm font-light leading-relaxed max-w-[280px] mx-auto italic">
+                        "Marketing sem estratégia é só barulho."
+                    </p>
+
+                    <div className="flex gap-6 mt-8 justify-center">
+                        <a href="https://www.youtube.com/@Rodrigorodrigues-md" className="text-gray-600 hover:text-[#D4AF37] transition-all"><Youtube className="w-5 h-5" /></a>
+                        <a href="https://instagram.com/migracaodigital" className="text-gray-600 hover:text-[#D4AF37] transition-all"><Instagram className="w-5 h-5" /></a>
+                        <a href="https://wa.me/5511999999999" className="text-gray-600 hover:text-[#D4AF37] transition-all"><MessageCircle className="w-5 h-5" /></a>
                     </div>
                 </div>
 
                 {/* Links Stack */}
-                <div className="w-full space-y-4">
+                <div className="w-full space-y-5">
                     {links.map((link, idx) => (
-                        <a
+                        <Link
                             key={idx}
-                            href={link.url}
+                            to={link.url.startsWith('http') ? { pathname: link.url } : link.url}
                             target={link.url.startsWith('http') ? "_blank" : "_self"}
-                            rel="noopener noreferrer"
+                            rel={link.url.startsWith('http') ? "noopener noreferrer" : ""}
                             className={`
-                                group w-full flex items-center p-4 rounded-2xl border transition-all duration-300
+                                group w-full flex items-center p-5 rounded-[28px] border transition-all duration-500
                                 ${link.highlight
-                                    ? 'bg-gradient-to-r from-[#D4AF37] to-[#B8960C] border-transparent text-black shadow-xl shadow-[#D4AF37]/20 scale-[1.02]'
-                                    : 'bg-[#141414] border-white/5 hover:border-[#D4AF37]/40 text-white hover:bg-[#1a1a1a]'
+                                    ? 'bg-gradient-to-r from-[#D4AF37] to-[#B8960C] border-transparent text-black shadow-[0_15px_40px_rgba(212,175,55,0.2)] hover:shadow-[0_20px_50px_rgba(212,175,55,0.3)] hover:scale-[1.03]'
+                                    : 'bg-white/[0.03] border-white/5 hover:border-[#D4AF37]/40 text-white hover:bg-white/[0.05] hover:scale-[1.01]'
                                 }
                             `}
                         >
                             <div className={`
-                                w-12 h-12 rounded-xl flex items-center justify-center shrink-0
-                                ${link.highlight ? 'bg-black/10' : 'bg-[#D4AF37]/10'}
+                                w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg
+                                ${link.highlight ? 'bg-black/10' : 'bg-black/40 border border-white/5 group-hover:border-[#D4AF37]/20'}
                             `}>
-                                <link.icon className={`w-6 h-6 ${link.highlight ? 'text-black' : 'text-[#D4AF37]'}`} />
+                                <link.icon className={`w-7 h-7 ${link.highlight ? 'text-black' : 'text-[#D4AF37]'}`} />
                             </div>
 
-                            <div className="ml-4 flex-grow">
-                                <h3 className={`font-bold ${link.highlight ? 'text-black' : 'text-white'}`}>{link.title}</h3>
-                                <p className={`text-xs ${link.highlight ? 'text-black/70' : 'text-gray-500'}`}>{link.subtitle}</p>
+                            <div className="ml-5 flex-grow text-left">
+                                <h3 className={`font-bold text-lg leading-tight ${link.highlight ? 'text-black' : 'text-white'}`}>{link.title}</h3>
+                                <p className={`text-xs mt-1 ${link.highlight ? 'text-black/60 font-medium' : 'text-gray-600 font-light'}`}>{link.subtitle}</p>
                             </div>
-
-                            <ExternalLink className={`w-4 h-4 opacity-30 group-hover:opacity-100 transition-opacity ${link.highlight ? 'text-black' : 'text-white'}`} />
-                        </a>
+                        </Link>
                     ))}
                 </div>
 
-                <div className="w-full mt-12 bg-black/40 rounded-3xl overflow-hidden border border-white/5">
+                <div className="w-full mt-20 bg-white/[0.02] border border-white/5 rounded-[48px] overflow-hidden shadow-3xl">
                     <SocialProof />
                 </div>
 
                 {/* Footer Brand */}
-                <div className="mt-16 text-center">
-                    <p className="text-gray-600 text-[10px] uppercase tracking-[0.3em] font-bold">Desenvolvido pela</p>
-                    <h2 className="text-sm font-bold bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] bg-clip-text text-transparent">MIGRAÇÃO DIGITAL</h2>
+                <div className="mt-24 text-center pb-12">
+                    <div className="flex items-center justify-center gap-2 text-gray-700 text-[10px] font-black uppercase tracking-[0.4em] mb-4">
+                        <ShieldCheck className="w-4 h-4 text-[#D3AF37]/30" />
+                        Migração Digital 2026
+                    </div>
                 </div>
             </div>
         </div>
