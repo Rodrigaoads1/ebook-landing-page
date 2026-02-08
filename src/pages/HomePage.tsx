@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Target, Zap, ShieldCheck, ArrowUpRight, CheckCircle2, HelpCircle, MessageCircle } from 'lucide-react';
+import { Target, Zap, ShieldCheck, ArrowUpRight, CheckCircle2, HelpCircle, MessageCircle, XCircle, Download } from 'lucide-react';
 import profileImg from '../assets/rodrigo_analise_extra.png';
 import { SocialProof } from '../components/SocialProof';
 
@@ -30,52 +30,84 @@ export function HomePage() {
 
             <main>
                 {/* [HERO] SECTION */}
-                <section className="relative pt-32 pb-24 md:pt-48 md:pb-40 px-6 overflow-hidden">
+                <section className="relative pt-32 pb-24 md:pt-48 md:pb-40 px-6 overflow-hidden bg-[#050505]">
+                    {/* Background Decorative Element */}
                     <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[600px] bg-[#D4AF37]/10 blur-[150px] rounded-full pointer-events-none" />
                     <div className="absolute bottom-[10%] left-[-10%] w-[50%] h-[500px] bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none" />
 
                     <div className="max-w-7xl mx-auto text-center relative z-10">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] mb-8 animate-fade-in">
-                            Estratégia • Previsibilidade • Estrutura
+                        <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-sm font-black uppercase tracking-[0.4em] mb-12 animate-fade-in shadow-2xl shadow-[#D4AF37]/10">
+                            Marketing de Elite • Vendas Previsíveis • Autoridade
                         </div>
 
-                        <h1 className="text-4xl md:text-8xl font-serif font-bold leading-[1.05] tracking-tight mb-8">
+                        <h1 className="text-4xl md:text-[7.5rem] font-serif font-bold leading-[0.9] tracking-tighter mb-10 text-white">
                             Marketing sem estratégia <br className="hidden md:block" />
-                            é só <span className="text-[#D4AF37] italic">barulho.</span>
+                            é só <span className="text-[#D4AF37] italic decoration-[#D4AF37]/20 underline underline-offset-[20px]">barulho.</span>
                         </h1>
 
-                        <p className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-                            Desenho sistemas de aquisição previsíveis para profissionais liberais, clínicas e empresas de serviços que cansaram de depender apenas de indicações e posts aleatórios.
-                        </p>
+                        <div className="max-w-4xl mx-auto mb-16 space-y-6">
+                            <h2 className="text-xl md:text-3xl font-serif text-[#D4AF37] font-medium leading-relaxed italic">
+                                "Não vendo marketing. Vendo estrutura comercial e previsibilidade para empresas, clínicas e profissionais liberais."
+                            </h2>
+                            <p className="text-lg md:text-xl text-gray-500 font-light leading-relaxed">
+                                Desenho sistemas de aquisição para quem cansou do marketing de fachada e busca converter autoridade técnica em faturamento real.
+                            </p>
+                        </div>
 
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
                             <Link
                                 to="/ebook"
-                                className="w-full md:w-auto bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-black py-6 px-12 rounded-2xl flex items-center justify-center gap-3 hover:scale-[1.05] hover:shadow-[0_20px_50px_rgba(212,175,55,0.3)] transition-all text-xl"
+                                className="w-full md:w-auto bg-gradient-to-br from-[#D4AF37] via-[#B8960C] to-[#8A6D3B] text-black font-black py-8 px-14 rounded-3xl flex items-center justify-center gap-4 hover:scale-[1.05] hover:shadow-[0_30px_60px_rgba(212,175,55,0.3)] transition-all text-2xl group border border-white/20"
                             >
-                                Baixar Checklist Estratégico
-                                <ArrowUpRight className="w-6 h-6" />
+                                <Zap className="w-8 h-8 group-hover:fill-black transition-all" />
+                                Começar Minha Migração
                             </Link>
                         </div>
                     </div>
                 </section>
 
-                {/* [DORES] SECTION */}
-                <section className="py-24 bg-[#080808] border-y border-white/5 px-6">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Por que sua estrutura atual <br/>não gera previsibilidade?</h2>
+                {/* [DORES DE ELITE] SECTION */}
+                <section className="py-32 bg-[#080808] border-y border-white/5 px-6 relative overflow-hidden">
+                    <div className="max-w-7xl mx-auto relative z-10">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
+                            <div>
+                                <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight">
+                                    Pare de perder dinheiro com <br /><span className="text-[#D4AF37] italic">Marketing de Fachada.</span>
+                                </h2>
+                                <p className="text-xl text-gray-400 font-light leading-relaxed mb-10">
+                                    Muitas agências entregam curtidas, seguidores e posts bonitos. <br />
+                                    <span className="text-white font-medium">Eu entrego estrutura de vendas, processos e previsibilidade de caixa.</span>
+                                </p>
+                            </div>
+                            <div className="bg-white/[0.02] border border-white/10 p-12 rounded-[40px] shadow-3xl">
+                                <h3 className="text-2xl font-serif font-bold mb-6 text-white italic">"Sua agenda está vazia?"</h3>
+                                <p className="text-gray-500 mb-8 leading-relaxed">
+                                    Pare de brincar de marketing e comece a faturar de verdade. O erro não está no seu serviço, está no seu funil de aquisição.
+                                </p>
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                                        <XCircle className="w-5 h-5 text-red-500/50" /> Dependência de indicações
+                                    </div>
+                                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                                        <XCircle className="w-5 h-5 text-red-500/50" /> Posts que não convertem
+                                    </div>
+                                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                                        <XCircle className="w-5 h-5 text-red-500/50" /> Leads curiosos e sem verba
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {[
-                                { title: "Indicações Instáveis", desc: "Você vive o ciclo do 'mês bom e mês ruim' porque não controla a entrada de novos leads." },
-                                { title: "Marketing de Esperança", desc: "Posta conteúdo e faz anúncios sem um funil claro, esperando que alguém apareça." },
-                                { title: "Invisibilidade Digital", desc: "Sua competência técnica é alta, mas seu posicionamento online não reflete sua autoridade." },
-                                { title: "Dependência Vital", desc: "O processo de vendas depende 100% de você. Se você para, o faturamento estaciona." }
+                                { title: "Vulnerabilidade Comercial", desc: "Você vive o ciclo do 'mês bom e mês ruim' porque não controla a entrada de novos negócios." },
+                                { title: "Invisibilidade de Elite", desc: "Sua competência técnica é alta, mas seu posicionamento online é comum e não atrai o High-Ticket." },
+                                { title: "Dreno de Tempo", desc: "Você gasta horas educando leads que nunca vão comprar, em vez de filtrar no automático." },
+                                { title: "Falta de Rastreio", desc: "Não sabe de onde vem o lucro nem o custo de aquisição. Joga dinheiro no escuro." }
                             ].map((item, i) => (
-                                <div key={i} className="p-8 bg-white/5 border border-white/10 rounded-3xl hover:border-[#D4AF37]/40 transition-all group">
-                                    <h3 className="text-xl font-bold mb-4 text-[#D4AF37]">{item.title}</h3>
-                                    <p className="text-gray-400 font-light leading-relaxed">{item.desc}</p>
+                                <div key={i} className="p-8 bg-black/40 border border-white/5 rounded-3xl hover:border-[#D4AF37]/40 transition-all group backdrop-blur-sm">
+                                    <h3 className="text-xl font-bold mb-4 text-[#D4AF37] uppercase tracking-tighter">{item.title}</h3>
+                                    <p className="text-gray-500 text-sm font-light leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -107,6 +139,49 @@ export function HomePage() {
                     </div>
                 </section>
 
+                {/* [ESCADA DE VALOR] SECTION */}
+                <section className="py-24 px-6 bg-[#0a0a0a]">
+                    <div className="max-w-7xl mx-auto text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Como podemos <span className="text-[#D4AF37]">trabalhar juntos?</span></h2>
+                        <p className="text-gray-500 font-light">Uma jornada pensada para cada momento do seu negócio.</p>
+                    </div>
+
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {/* Passo 1 */}
+                        <div className="p-10 rounded-[40px] bg-white/[0.02] border border-white/5 flex flex-col items-center text-center">
+                            <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8">
+                                <Download className="w-8 h-8 text-[#D4AF37]" />
+                            </div>
+                            <h3 className="text-xl font-bold mb-4">O Mapa (Ebook)</h3>
+                            <p className="text-gray-500 text-sm mb-8 leading-relaxed">Identifique os gargalos que estão drenando seu lucro hoje.</p>
+                            <p className="text-[#D4AF37] font-black text-2xl mb-8">R$ 19,90</p>
+                            <Link to="/ebook" className="w-full py-4 rounded-xl border border-[#D4AF37]/30 text-[#D4AF37] font-bold hover:bg-[#D4AF37] hover:text-black transition-all">Garantir Meu Mapa</Link>
+                        </div>
+
+                        {/* Passo 2 */}
+                        <div className="p-10 rounded-[40px] bg-[#D4AF37]/5 border border-[#D4AF37]/30 flex flex-col items-center text-center scale-105 shadow-2xl shadow-[#D4AF37]/5 z-10">
+                            <div className="w-16 h-16 bg-[#D4AF37]/20 rounded-2xl flex items-center justify-center mb-8">
+                                <Target className="w-8 h-8 text-[#D4AF37]" />
+                            </div>
+                            <h3 className="text-xl font-bold mb-4">O GPS (Análise)</h3>
+                            <p className="text-white text-sm mb-8 leading-relaxed">Um diagnóstico individual e cirúrgico da sua presença digital.</p>
+                            <p className="text-[#D4AF37] font-black text-2xl mb-8">R$ 197,00</p>
+                            <Link to="/analise-profissional-de-presenca-digital-02" className="w-full py-4 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-black hover:scale-[1.02] transition-all">Solicitar Meu GPS</Link>
+                        </div>
+
+                        {/* Passo 3 */}
+                        <div className="p-10 rounded-[40px] bg-white/[0.02] border border-white/5 flex flex-col items-center text-center">
+                            <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8">
+                                <ShieldCheck className="w-8 h-8 text-[#D4AF37]" />
+                            </div>
+                            <h3 className="text-xl font-bold mb-4">A Estrutura (Consultoria)</h3>
+                            <p className="text-gray-500 text-sm mb-8 leading-relaxed">Implementação completa do sistema de aquisição previsível.</p>
+                            <p className="text-[#D4AF37] font-black text-lg mb-8 uppercase tracking-widest">Sob Consulta</p>
+                            <a href="https://wa.me/5511999999999" className="w-full py-4 rounded-xl border border-white/10 text-white font-bold hover:bg-white/5 transition-all">Falar com Estrategista</a>
+                        </div>
+                    </div>
+                </section>
+
                 {/* [SOCIAL PROOF / AUTHORITY] SECTION */}
                 <section id="sobre" className="py-32 px-6 bg-[#050505]">
                     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -130,7 +205,7 @@ export function HomePage() {
                                 O Estrategista
                             </div>
                             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">5 anos de mercado, <br /><span className="text-[#D4AF37]">50+ nichos atendidos.</span></h2>
-                            
+
                             <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-light">
                                 <p>Vi os bastidores de empresas reais — de clínicas a grandes operações de serviços. Descobri que experts vivem de indicações instáveis simplesmente por falta de um sistema digital estruturado.</p>
                                 <p>Meu trabalho é desenhar o funil completo: atração, conversão e venda. <strong className="text-white">"Marketing sem estratégia é só barulho."</strong></p>
@@ -167,7 +242,7 @@ export function HomePage() {
                         </h2>
 
                         <p className="text-xl md:text-2xl text-gray-400 mb-12 font-light leading-relaxed">
-                            O Checklist Estratégico: 7 sinais que sua clínica ou empresa está perdendo dinheiro. <br className="hidden md:block"/>
+                            O Checklist Estratégico: 7 sinais que sua clínica ou empresa está perdendo dinheiro. <br className="hidden md:block" />
                             <span className="text-white font-medium">Bônus: Análise gratuita do seu site para os primeiros 50 inscritos.</span>
                         </p>
 
