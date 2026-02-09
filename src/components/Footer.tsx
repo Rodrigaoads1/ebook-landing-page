@@ -13,9 +13,9 @@ export const Footer: React.FC = () => {
         </p>
 
         <div className="flex gap-8 text-[10px] font-black uppercase tracking-[0.3em] text-gray-700 mb-10">
-          <a href="#" className="hover:text-[#D4AF37] transition-colors">YouTube</a>
-          <a href="#" className="hover:text-[#D4AF37] transition-colors">WhatsApp</a>
-          <a href="#" className="hover:text-[#D4AF37] transition-colors">Instagram</a>
+          <a href="https://www.youtube.com/@Rodrigorodrigues-md" className="hover:text-[#D4AF37] transition-colors">YouTube</a>
+          <a href="https://wa.me/5521979043854?text=Olá%2C+encontrei+o+número+no+site+e+gostaria+de+mais+informações." className="hover:text-[#D4AF37] transition-colors">WhatsApp</a>
+          <a href="https://www.instagram.com/rodrigomigracaodigital/" className="hover:text-[#D4AF37] transition-colors">Instagram</a>
         </div>
 
         <div className="pt-10 border-t border-white/5 w-full text-center">

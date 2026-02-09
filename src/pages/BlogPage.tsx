@@ -229,7 +229,7 @@ export function BlogPage() {
                             <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light italic">"A Migração Digital ajuda especialistas qualificados a ocuparem seu lugar de direito no mercado."</p>
                             <div className="flex gap-4">
                                 <a href="https://www.youtube.com/@Rodrigorodrigues-md" className="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-[#B8960C] transition-all">YouTube</a>
-                                <a href="https://wa.me/5511999999999" className="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-[#B8960C] transition-all">WhatsApp</a>
+                                <a href="https://wa.me/5521979043854?text=Olá%2C+vi+o+blog+e+gostaria+de+mais+informações." className="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-[#B8960C] transition-all">WhatsApp</a>
                             </div>
                         </div>
                         <div>
@@ -243,7 +243,7 @@ export function BlogPage() {
                         <div className="md:col-span-2">
                             <h5 className="text-[11px] font-black uppercase tracking-widest text-black mb-8">Posicionamento</h5>
                             <p className="text-gray-400 text-sm mb-8 font-light">Estrategista Digital | +5 anos de mercado | +50 nichos atendidos — clínicas, consultórios, empresas de serviços.</p>
-                            <a href="https://wa.me/5511999999999" className="inline-block bg-[#B8960C] text-white text-[10px] font-black uppercase tracking-[0.3em] py-5 px-10 rounded-sm hover:bg-black transition-all">Agendar Reunião</a>
+                            <a href="https://wa.me/5521979043854?text=Olá%2C+vi+o+blog+e+gostaria+de+agendar+uma+reunião." className="inline-block bg-[#B8960C] text-white text-[10px] font-black uppercase tracking-[0.3em] py-5 px-10 rounded-sm hover:bg-black transition-all">Agendar Reunião</a>
                         </div>
                     </div>
                     <div className="pt-16 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black uppercase tracking-[0.4em] text-gray-300">

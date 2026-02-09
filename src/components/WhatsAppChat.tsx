@@ -18,8 +18,8 @@ export const WhatsAppChat: React.FC = () => {
 
     const handleSendMessage = (e: React.FormEvent) => {
         e.preventDefault();
-        const message = "Olá, vim pelo site e gostaria de saber mais sobre o Sistema de Aquisição Previsível.";
-        const phone = "5511999999999"; // Substituir pelo número real do Rodrigo
+        const message = "Olá, encontrei o número no site e gostaria de mais informações.";
+        const phone = "5521979043854";
         window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
     };
 

@@ -177,7 +177,7 @@ export function HomePage() {
                             <h3 className="text-xl font-bold mb-4">A Estrutura (Consultoria)</h3>
                             <p className="text-gray-500 text-sm mb-8 leading-relaxed">Implementação completa do sistema de aquisição previsível.</p>
                             <p className="text-[#D4AF37] font-black text-lg mb-8 uppercase tracking-widest">Sob Consulta</p>
-                            <a href="https://wa.me/5511999999999" className="w-full py-4 rounded-xl border border-white/10 text-white font-bold hover:bg-white/5 transition-all">Falar com Estrategista</a>
+                            <a href="https://wa.me/5521979043854?text=Olá%2C+vi+a+consultoria+no+site+e+gostaria+de+mais+informações." className="w-full py-4 rounded-xl border border-white/10 text-white font-bold hover:bg-white/5 transition-all">Falar com Estrategista</a>
                         </div>
                     </div>
                 </section>
@@ -305,7 +305,7 @@ export function HomePage() {
                         <div className="flex flex-col gap-4">
                             <h5 className="text-white font-black mb-2">Comunicação</h5>
                             <a href="https://www.youtube.com/@Rodrigorodrigues-md" className="hover:text-[#D4AF37]">YouTube</a>
-                            <a href="https://wa.me/5511999999999" className="hover:text-[#D4AF37]">WhatsApp</a>
+                            <a href="https://wa.me/5521979043854?text=Olá%2C+encontrei+o+número+no+site+e+gostaria+de+mais+informações." className="hover:text-[#D4AF37]">WhatsApp</a>
                         </div>
                     </div>
                 </div>

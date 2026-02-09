@@ -127,7 +127,7 @@ export function BlogPostPage() {
                             <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto font-light relative z-10">Assuma o controle da sua aquisição de clientes com o Checklist Estratégico testado em 50+ nichos.</p>
                             <div className="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
                                 <Link to="/ebook" className="bg-[#B8960C] text-white text-[11px] font-black uppercase tracking-[0.3em] py-5 px-12 rounded-sm hover:bg-white hover:text-black transition-all shadow-xl shadow-[#B8960C]/20">Garantir Ebook R$ 19,90</Link>
-                                <a href="https://wa.me/5511999999999" className="bg-white/5 border border-white/20 text-white text-[11px] font-black uppercase tracking-[0.3em] py-5 px-12 rounded-sm hover:bg-white/10 transition-all flex items-center justify-center gap-2 font-bold"><ShieldCheck className="w-4 h-4 text-[#B8960C]" /> Falar com Estrategista</a>
+                                <a href="https://wa.me/5521979043854?text=Olá%2C+li+um+artigo+no+blog+e+gostaria+de+falar+com+um+estrategista." className="bg-white/5 border border-white/20 text-white text-[11px] font-black uppercase tracking-[0.3em] py-5 px-12 rounded-sm hover:bg-white/10 transition-all flex items-center justify-center gap-2 font-bold"><ShieldCheck className="w-4 h-4 text-[#B8960C]" /> Falar com Estrategista</a>
                             </div>
                         </div>
                     </div>
