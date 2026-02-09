@@ -16,14 +16,14 @@ export function HomePage() {
                     </span>
                     <div className="hidden md:flex items-center gap-8">
                         <a href="#metodo" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">O Método</a>
-                        <Link to="/blog" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Blog</Link>
-                        <a href="#sobre" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Sobre</a>
-                        <Link
-                            to="/ebook"
+                        <Link to="/blog" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Blog & Insights</Link>
+                        <a href="#sobre" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Quem Sou</a>
+                        <a
+                            href="#servicos"
                             className="bg-white/5 border border-white/10 px-5 py-2.5 rounded-full text-sm font-bold hover:bg-[#D4AF37] hover:text-black hover:border-transparent transition-all"
                         >
-                            Começar Agora
-                        </Link>
+                            Nossas Soluções
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -55,12 +55,15 @@ export function HomePage() {
                         </div>
 
                         <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                            <Link
-                                to="/ebook"
+                            <a
+                                href="#servicos"
                                 className="w-full md:w-auto bg-gradient-to-br from-[#D4AF37] via-[#B8960C] to-[#8A6D3B] text-black font-black py-8 px-14 rounded-3xl flex items-center justify-center gap-4 hover:scale-[1.05] hover:shadow-[0_30px_60px_rgba(212,175,55,0.3)] transition-all text-2xl group border border-white/20"
                             >
                                 <Zap className="w-8 h-8 group-hover:fill-black transition-all" />
-                                Começar Minha Migração
+                                Conhecer Soluções
+                            </a>
+                            <Link to="/blog" className="text-gray-400 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors border-b border-transparent hover:border-[#D4AF37] pb-1">
+                                Ler Artigos Estratégicos
                             </Link>
                         </div>
                     </div>
@@ -140,7 +143,7 @@ export function HomePage() {
                 </section>
 
                 {/* [ESCADA DE VALOR] SECTION */}
-                <section className="py-24 px-6 bg-[#0a0a0a]">
+                <section id="servicos" className="py-24 px-6 bg-[#0a0a0a]">
                     <div className="max-w-7xl mx-auto text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Como podemos <span className="text-[#D4AF37]">trabalhar juntos?</span></h2>
                         <p className="text-gray-500 font-light">Uma jornada pensada para cada momento do seu negócio.</p>
@@ -265,27 +268,27 @@ export function HomePage() {
 
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="inline-block px-4 py-1.5 bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.3em] mb-8 rounded-full">
-                            Oferta Exclusiva
+                            Próximo Passo
                         </div>
                         <h2 className="text-5xl md:text-7xl font-serif font-bold mb-8 tracking-tighter">
-                            A primeira vitória por <span className="text-[#D4AF37] italic">R$ 19,90.</span>
+                            Pronto para <span className="text-[#D4AF37] italic">Escalar?</span>
                         </h2>
 
                         <p className="text-xl md:text-2xl text-gray-400 mb-12 font-light leading-relaxed">
-                            O Checklist Estratégico: 7 sinais que sua clínica ou empresa está perdendo dinheiro. <br className="hidden md:block" />
-                            <span className="text-white font-medium">Bônus: Análise gratuita do seu site para os primeiros 50 inscritos.</span>
+                            Não deixe seu faturamento depender da sorte ou de indicações aleatórias. <br className="hidden md:block" />
+                            <span className="text-white font-medium">Vamos desenhar a estrutura de aquisição da sua empresa.</span>
                         </p>
 
                         <div className="flex flex-col items-center gap-8">
-                            <Link
-                                to="/ebook"
+                            <a
+                                href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+agendar+uma+reunião+estratégica."
                                 className="w-full md:w-auto bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-black py-8 px-16 rounded-[32px] flex items-center justify-center gap-3 hover:scale-[1.05] hover:shadow-[0_20px_50px_rgba(212,175,55,0.4)] transition-all text-2xl group"
                             >
-                                <Target className="w-8 h-8 group-hover:rotate-12 transition-transform" />
-                                Garantir Ebook + Bônus
-                            </Link>
+                                <Zap className="w-8 h-8 group-hover:fill-black transition-all" />
+                                Agendar Reunião Estratégica
+                            </a>
                             <div className="flex items-center gap-4 text-gray-500 text-xs font-black uppercase tracking-[0.3em]">
-                                <ShieldCheck className="w-5 h-5 text-[#D4AF37]" /> Apenas 50 vagas para o bônus de análise
+                                <ShieldCheck className="w-5 h-5 text-[#D4AF37]" /> Atenção Exclusiva de Senior
                             </div>
                         </div>
                     </div>
