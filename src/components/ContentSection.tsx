@@ -52,7 +52,7 @@ export const ContentSection: React.FC<ContentSectionProps> = ({ onOpenModal }) =
           <div className="inline-block px-4 py-1.5 bg-[#D4AF37]/10 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-6">
             O QUE ESTÁ EM JOGO
           </div>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Identifique os 7 Gargalos <br />que Travam sua Escala</h2>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Identifique os 7 Erros Ocultos <br />que Travam sua Escala</h2>
           <p className="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
             O Checklist Estratégico não é teoria. É um diagnóstico prático para empresas e profissionais que buscam previsibilidade.
           </p>

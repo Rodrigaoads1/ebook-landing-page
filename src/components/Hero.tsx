@@ -18,12 +18,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
         <div className="z-10 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] text-sm font-semibold tracking-wide uppercase mb-8">
             <Star className="w-4 h-4 fill-[#D4AF37]" />
-            Promoção 48h: R$ 19,90 + Bônus Análise
+            Material Exclusivo: R$ 19,90
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold leading-tight mb-6">
             7 Passos para <br />
-            Identificar <span className="text-[#D4AF37] italic">Gargalos de Vendas</span>
+            Identificar <span className="text-[#D4AF37] italic">Erros Ocultos</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
@@ -33,8 +33,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           <ul className="space-y-4 mb-10 inline-block lg:block text-left">
             {[
               'Checklist de 7 sinais críticos em qualquer nicho',
-              'Template de funil pronto para implementação',
-              'Bônus: Análise gratuita do seu site (Primeiros 50)'
+              'Correção de rota para recuperar seu lucro'
             ].map((benefit, idx) => (
               <li key={idx} className="flex items-center gap-3 text-gray-300 font-light">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0" />
@@ -54,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
               Garantir Checklist Agora — R$ 19,90
             </a>
             <p className="text-sm text-gray-500 font-medium uppercase tracking-widest text-[10px]">
-              Acesso imediato • Poucas vagas para o bônus de análise
+              Acesso imediato • Material em PDF • 7 Dias de Garantia
             </p>
           </div>
         </div>

@@ -16,15 +16,15 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-black uppercase tracking-widest mb-10">
               <Star className="w-4 h-4 fill-[#D4AF37]" />
-              Oferta válida por tempo limitado
+              Acesso Imediato
             </div>
 
             <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight">
-              Sua primeira vitória <br />por apenas <span className="text-[#D4AF37]">R$ 19,90</span>
+              Garanta seu Acesso <br />por apenas <span className="text-[#D4AF37]">R$ 19,90</span>
             </h2>
 
             <p className="text-gray-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed font-light">
-              Garanta o checklist estratégico e o template de funil agora. Se você for um dos primeiros 50, ainda leva uma análise profissional do seu site totalmente grátis.
+              Tenha em mãos o mapa exato dos erros que estão drenando o lucro da sua operação.
             </p>
 
             <div className="mb-12">
@@ -35,14 +35,14 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
                 className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-black py-6 px-12 rounded-2xl flex items-center justify-center gap-3 hover:scale-[1.05] active:scale-[0.98] transition-all duration-200 shadow-2xl shadow-[#D4AF37]/40 text-2xl mx-auto inline-flex group"
               >
                 <Download className="w-8 h-8 group-hover:bounce" />
-                Quero o Checklist + Bônus
+                Quero o Checklist Agora
               </a>
             </div>
 
             <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-[10px] uppercase font-black tracking-[0.2em] text-gray-500">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-[#D4AF37]" />
-                Download Imediato
+                7 Dias de Garantia
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-[#D4AF37]" />
@@ -50,7 +50,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
               </div>
               <div className="flex items-center gap-2">
                 <Star className="w-5 h-5 text-[#D4AF37]" />
-                Bônus: Análise Site (Consultar Vagas)
+                Material 100% Digital
               </div>
             </div>
           </div>
