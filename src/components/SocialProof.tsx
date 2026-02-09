@@ -1,16 +1,17 @@
-import React from 'react';
-import { Quote, Star, Globe, CheckCircle2, ArrowUpRight, Instagram } from 'lucide-react';
+import React, { useRef, useState, useEffect } from 'react';
+import { Quote, Star, Globe, CheckCircle2, ArrowUpRight, Instagram, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 
-// Placeholder for the "Prints" the user will send
+// --- DATA ---
 const resultsGallery = [
-   { id: 1, type: 'video', url: '/assets/social_proof/video_1.mp4', label: 'Resultado Verificado #1' },
-   { id: 2, type: 'image', url: '/assets/social_proof/print_1.png', label: 'Resultado Verificado #2' },
-   { id: 3, type: 'video', url: '/assets/social_proof/video_2.mp4', label: 'Resultado Verificado #3' },
-   { id: 4, type: 'image', url: '/assets/social_proof/print_2.png', label: 'Resultado Verificado #4' },
-   { id: 5, type: 'video', url: '/assets/social_proof/video_3.mp4', label: 'Resultado Verificado #5' },
-   { id: 6, type: 'image', url: '/assets/social_proof/print_3.png', label: 'Resultado Verificado #6' },
-   { id: 7, type: 'video', url: '/assets/social_proof/video_4.mp4', label: 'Resultado Verificado #7' },
-   { id: 8, type: 'image', url: '/assets/social_proof/print_4.png', label: 'Resultado Verificado #8' },
+   { id: 1, type: 'video', url: '/assets/social_proof/video_1.mp4', label: 'Dashboard em Tempo Real' },
+   { id: 2, type: 'image', url: '/assets/social_proof/print_1.png', label: 'Crescimento de Leads' },
+   { id: 3, type: 'video', url: '/assets/social_proof/video_2.mp4', label: 'Feedback de Cliente' },
+   { id: 4, type: 'image', url: '/assets/social_proof/print_2.png', label: 'Agenda Lotada' },
+   { id: 5, type: 'video', url: '/assets/social_proof/video_3.mp4', label: 'Análise de Métricas' },
+   { id: 6, type: 'image', url: '/assets/social_proof/print_3.png', label: 'Resultados Consolidados' },
+   { id: 7, type: 'video', url: '/assets/social_proof/video_4.mp4', label: 'Visão Geral da Conta' },
+   { id: 8, type: 'image', url: '/assets/social_proof/print_4.png', label: 'Escala de Vendas' },
 ];
 
 const videoTestimonials = [
@@ -21,30 +22,183 @@ const videoTestimonials = [
    { id: 5, url: '/assets/testimonials/depoimento_5.mp4', label: 'Parceiro Verificado' },
 ];
 
-export const SocialProof: React.FC = () => {
+// --- COMPONENTS ---
+
+// 1. Phone Mockup Frame
+const PhoneMockup = ({ children, className = '' }) => (
+   <div className={`relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[8px] rounded-[2.5rem] h-[500px] w-[280px] shadow-2xl flex flex-col justify-center items-center overflow-hidden ${className}`}>
+      {/* Notch */}
+      <div className="absolute top-0 w-32 h-6 bg-black rounded-b-xl z-20 left-1/2 transform -translate-x-1/2 flex justify-center items-center">
+         <div className="w-16 h-1 bg-gray-800 rounded-full opacity-30"></div>
+      </div>
+      {/* Screen Content */}
+      <div className="h-[calc(100%-4px)] w-[calc(100%-4px)] bg-[#050505] rounded-[2rem] overflow-hidden relative group">
+         {children}
+         {/* Glass Reflection */}
+         <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none z-10" />
+      </div>
+   </div>
+);
+
+// 2. Glass Card Mockup (for cleaner look)
+const GlassCardMockup = ({ children, label }) => (
+   <motion.div
+      whileHover={{ y: -10, scale: 1.02 }}
+      className="relative min-w-[260px] h-[460px] rounded-[24px] overflow-hidden border border-white/10 bg-[#111] shadow-2xl group cursor-pointer"
+   >
+      {children}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
+      <div className="absolute bottom-6 left-6 right-6 z-20">
+         <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#D4AF37] text-black text-[10px] font-black uppercase tracking-wider rounded-full mb-3 opacity-90">
+            Resultado Verificado <CheckCircle2 className="w-3 h-3" />
+         </div>
+         <p className="text-white font-bold leading-tight drop-shadow-lg text-lg">
+            {label}
+         </p>
+      </div>
+   </motion.div>
+);
+
+
+// 3. Draggable Carousel
+const DraggableCarousel = ({ items, renderItem }) => {
+   const scrollRef = useRef(null);
+   const [canScrollLeft, setCanScrollLeft] = useState(false);
+   const [canScrollRight, setCanScrollRight] = useState(true);
+
+   const checkScroll = () => {
+      if (scrollRef.current) {
+         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+         setCanScrollLeft(scrollLeft > 0);
+         setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+      }
+   };
+
+   useEffect(() => {
+      checkScroll();
+      window.addEventListener('resize', checkScroll);
+      return () => window.removeEventListener('resize', checkScroll);
+   }, [items]);
+
+   const scroll = (direction) => {
+      if (scrollRef.current) {
+         const { current } = scrollRef;
+         const scrollAmount = direction === 'left' ? -350 : 350;
+         current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+         setTimeout(checkScroll, 300); // Check after scroll animation
+      }
+   };
+
    return (
-      <section className="py-24 bg-[#050505] px-6 overflow-hidden border-t border-white/5">
-         <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-               <div className="inline-block px-4 py-1.5 bg-[#D4AF37]/10 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-6">
-                  Autoridade & Prova Social
+      <div className="relative group">
+         {/* Controls */}
+         <AnimatePresence>
+            {canScrollLeft && (
+               <motion.button
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 10 }}
+                  onClick={() => scroll('left')}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-30 p-3 bg-black/50 backdrop-blur-md border border-white/10 rounded-full text-white hover:bg-[#D4AF37] hover:text-black transition-all hidden md:flex"
+               >
+                  <ChevronLeft className="w-6 h-6" />
+               </motion.button>
+            )}
+         </AnimatePresence>
+         <AnimatePresence>
+            {canScrollRight && (
+               <motion.button
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  onClick={() => scroll('right')}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-30 p-3 bg-black/50 backdrop-blur-md border border-white/10 rounded-full text-white hover:bg-[#D4AF37] hover:text-black transition-all hidden md:flex"
+               >
+                  <ChevronRight className="w-6 h-6" />
+               </motion.button>
+            )}
+         </AnimatePresence>
+
+         {/* Scroll Container */}
+         <div
+            ref={scrollRef}
+            onScroll={checkScroll}
+            className="flex gap-6 overflow-x-auto pb-8 px-4 hide-scrollbar snap-x snap-mandatory scroll-smooth"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+         >
+            {items.map((item, index) => (
+               <div key={item.id} className="snap-center shrink-0 first:pl-4 last:pr-4">
+                  {renderItem(item, index)}
                </div>
-               <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6">Resultados <span className="text-[#D4AF37] italic">Auditáveis.</span></h2>
-               <p className="text-gray-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
-                  Abra a caixa preta da nossa operação. Sem depoimentos fabricados, apenas resultados reais.
+            ))}
+         </div>
+      </div>
+   );
+};
+
+
+export const SocialProof: React.FC = () => {
+   const sectionRef = useRef(null);
+   const { scrollYProgress } = useScroll({
+      target: sectionRef,
+      offset: ["start end", "end start"]
+   });
+
+   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
+
+   return (
+      <section ref={sectionRef} className="py-32 bg-[#050505] relative overflow-hidden">
+         {/* Background Elements */}
+         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#D4AF37]/5 rounded-full blur-[120px]" />
+            <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#4285F4]/5 rounded-full blur-[120px]" />
+         </div>
+
+         <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+            {/* --- HEADER --- */}
+            <motion.div
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8 }}
+               className="text-center mb-24"
+            >
+               <motion.div
+                  className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#D4AF37]/10 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.3em] rounded-full mb-8 border border-[#D4AF37]/20"
+                  whileHover={{ scale: 1.05 }}
+               >
+                  <Star className="w-3 h-3 fill-current" /> Autoridade Comprovada
+               </motion.div>
+
+               <h2 className="text-4xl md:text-7xl font-serif font-bold mb-8 text-white tracking-tight">
+                  Resultados <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F7E7CE] italic">Inquestionáveis.</span>
+               </h2>
+
+               <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
+                  Ultrapassamos a barreira das promessas. Aqui, mostramos a realidade nua e crua de operações que escalam.
                </p>
-            </div>
+            </motion.div>
 
-            {/* Google Reviews Live Badge Area */}
-            <div className="mb-24 relative group">
-               <div className="absolute inset-0 bg-gradient-to-r from-[#4285F4]/10 to-[#D4AF37]/5 blur-3xl opacity-50 rounded-[50px]" />
+            {/* --- GOOGLE REVIEWS BADGE --- */}
+            <motion.div
+               initial={{ opacity: 0, scale: 0.95 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8, delay: 0.2 }}
+               className="mb-32 relative group max-w-5xl mx-auto"
+            >
+               <div className="absolute inset-0 bg-gradient-to-r from-[#4285F4]/20 via-[#D4AF37]/10 to-[#34A853]/20 blur-3xl opacity-30 rounded-[60px] group-hover:opacity-50 transition-opacity duration-700" />
 
-               <div className="relative bg-[#0a0a0a] border border-white/5 rounded-[40px] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 hover:border-[#D4AF37]/20 transition-all duration-700 shadow-2xl">
+               <div className="relative bg-[#0a0a0a]/80 backdrop-blur-xl border border-white/10 rounded-[40px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-12 hover:border-[#D4AF37]/30 transition-all duration-500 shadow-2xl overflow-hidden">
+
+                  {/* Decorative Glow */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
 
                   {/* Left Side: Rating */}
-                  <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6">
-                     <div className="flex items-center gap-4 bg-white/5 px-6 py-3 rounded-full border border-white/10">
-                        {/* Google G Logo SVG */}
+                  <div className="flex flex-col items-center md:items-start text-center md:text-left gap-8 relative z-10">
+                     <div className="flex items-center gap-4 bg-white/5 px-6 py-3 rounded-full border border-white/10 hover:bg-white/10 transition-colors cursor-default">
                         <svg className="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
@@ -55,55 +209,59 @@ export const SocialProof: React.FC = () => {
                      </div>
 
                      <div className="space-y-2">
-                        <div className="flex items-center gap-4 justify-center md:justify-start">
-                           <span className="text-7xl font-serif font-bold text-white leading-none">5.0</span>
-                           <div className="flex flex-col gap-1">
-                              <div className="flex">
+                        <div className="flex items-center gap-6 justify-center md:justify-start">
+                           <span className="text-8xl font-serif font-bold text-white leading-none tracking-tighter">5.0</span>
+                           <div className="flex flex-col gap-2">
+                              <div className="flex gap-1">
                                  {[...Array(5)].map((_, i) => (
-                                    <Star key={i} className="w-6 h-6 text-[#FBBC05] fill-[#FBBC05]" />
+                                    <Star key={i} className="w-6 h-6 text-[#FBBC05] fill-[#FBBC05] drop-shadow-[0_0_8px_rgba(251,188,5,0.4)]" />
                                  ))}
                               </div>
-                              <span className="text-gray-500 text-xs uppercase tracking-wider font-bold">Excelência Máxima</span>
+                              <span className="text-gray-400 text-xs uppercase tracking-[0.2em] font-bold">Excelência Máxima</span>
                            </div>
                         </div>
                      </div>
                   </div>
 
-                  {/* Right Side: Call to Action to Verify */}
-                  <div className="flex-1 max-w-lg text-center md:text-right space-y-6">
-                     <p className="text-gray-400 text-lg font-light leading-relaxed">
-                        "Não criamos depoimentos. Nossos clientes falam por nós diretamente na plataforma mais confiável do mundo."
+                  {/* Right Side: Call to Action */}
+                  <div className="flex-1 max-w-lg text-center md:text-right space-y-8 relative z-10">
+                     <p className="text-gray-300 text-xl font-light leading-relaxed italic">
+                        "Não vendemos milagres. Entregamos consistência. Nossos clientes confirmam isso diariamente na plataforma mais transparente do mundo."
                      </p>
-                     <a
+                     <motion.a
                         href="https://www.google.com/maps"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 px-8 py-4 bg-[#D4AF37] text-black rounded-xl font-black uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-2xl hover:shadow-[#D4AF37]/50"
+                        whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(212, 175, 55, 0.3)" }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-[#D4AF37] text-black rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-xl"
                      >
-                        Ler Avaliações no Google <ArrowUpRight className="w-4 h-4" />
-                     </a>
+                        Verificar Avaliações <ArrowUpRight className="w-4 h-4" />
+                     </motion.a>
                   </div>
                </div>
-            </div>
+            </motion.div>
 
-            {/* Prints Gallery Section - REPLACES Instagram Stories */}
-            {/* Prints Gallery Section - REPLACES Instagram Stories */}
-            <div className="mb-12">
-               <div className="flex items-center justify-between mb-12">
-                  <div className="text-left">
-                     <h3 className="text-3xl font-serif font-bold text-white mb-2">Galeria de <span className="text-[#D4AF37]">Resultados</span></h3>
-                     <p className="text-gray-500 font-light">Capturas de tela reais de dashboards e feedbacks.</p>
+            {/* --- RESULTS GALLERY (CAROUSEL) --- */}
+            <div className="mb-32">
+               <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+                  <div className="text-left max-w-2xl">
+                     <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Galeria de <span className="text-[#D4AF37]">Bastidores</span></h3>
+                     <p className="text-gray-500 font-light text-lg">Swipe para ver capturas reais de dashboards, conversas e resultados brutos.</p>
                   </div>
-                  <Globe className="w-8 h-8 text-[#D4AF37] opacity-50" />
+                  <div className="hidden md:flex gap-2 text-[#D4AF37] opacity-60 text-sm font-mono items-center">
+                     <ChevronLeft className="w-4 h-4" /> ARRASTE PARA NAVEGAR <ChevronRight className="w-4 h-4" />
+                  </div>
                </div>
 
-               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                  {resultsGallery.map((item) => (
-                     <div key={item.id} className="group relative aspect-[9/16] bg-[#111] rounded-[24px] overflow-hidden border border-white/5 hover:border-[#D4AF37]/30 transition-all duration-500">
+               <DraggableCarousel
+                  items={resultsGallery}
+                  renderItem={(item) => (
+                     <GlassCardMockup label={item.label}>
                         {item.type === 'video' ? (
                            <video
                               src={item.url}
-                              className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000"
                               autoPlay
                               loop
                               muted
@@ -113,53 +271,46 @@ export const SocialProof: React.FC = () => {
                            <img
                               src={item.url}
                               alt={item.label}
-                              className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000"
                            />
                         )}
-
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
-
-                        <div className="absolute bottom-6 left-6 right-6">
-                           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#D4AF37] text-black text-[10px] font-black uppercase tracking-wider rounded-full mb-2 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                              Resultado Verificado
-                           </div>
-                           <p className="text-white font-bold leading-tight transform translate-y-2 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                              {item.label}
-                           </p>
-                        </div>
-                     </div>
-                  ))}
-               </div>
-
-               <p className="text-center text-gray-600 text-xs mt-8 uppercase tracking-widest font-bold mb-24">
-                  * Prints fornecidos pelos clientes e autorizados para divulgação.
-               </p>
+                     </GlassCardMockup>
+                  )}
+               />
             </div>
 
-            {/* Video Testimonials Section */}
+            {/* --- VIDEO TESTIMONIALS (CAROUSEL) --- */}
             <div className="mb-12">
-               <div className="text-left mb-12">
-                  <h3 className="text-3xl font-serif font-bold text-white mb-2">O que dizem os <span className="text-[#D4AF37]">Parceiros</span></h3>
-                  <p className="text-gray-500 font-light">Depoimentos reais de quem vive a migração digital.</p>
+               <div className="text-center mb-16">
+                  <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">A Voz da <span className="text-[#D4AF37]">Experiência</span></h3>
+                  <div className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full opacity-50" />
                </div>
 
-               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                  {videoTestimonials.map((video) => (
-                     <div key={video.id} className="group relative aspect-[9/16] bg-[#111] rounded-[24px] overflow-hidden border border-white/5 hover:border-[#D4AF37]/30 transition-all duration-500">
-                        {/* Video com controles para o usuário poder dar play e ouvir o áudio */}
+               <DraggableCarousel
+                  items={videoTestimonials}
+                  renderItem={(video) => (
+                     <PhoneMockup className="mx-4 group">
                         <video
                            src={video.url}
                            controls
-                           className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700"
+                           className="w-full h-full object-cover"
                            playsInline
                         />
-                        <div className="absolute top-4 left-4 p-2 bg-black/50 backdrop-blur-md rounded-lg pointer-events-none">
-                           <p className="text-[#D4AF37] font-black text-[10px] uppercase tracking-widest">
-                              Depoimento Real
+                        {/* Overlay for "Play" styling if native controls are hidden or custom poster is used */}
+                        {/* Using native controls for usability as requested */}
+                        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent pointer-events-none">
+                           <p className="text-white font-bold text-sm text-center opacity-80">
+                              {video.label}
                            </p>
                         </div>
-                     </div>
-                  ))}
+                     </PhoneMockup>
+                  )}
+               />
+
+               <div className="mt-16 text-center">
+                  <p className="text-gray-600 text-xs uppercase tracking-[0.2em] font-bold">
+                     * Conteúdo 100% autêntico e não roteirizado.
+                  </p>
                </div>
             </div>
 
