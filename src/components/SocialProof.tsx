@@ -3,14 +3,22 @@ import { Quote, Star, Globe, CheckCircle2, ArrowUpRight, Instagram } from 'lucid
 
 // Placeholder for the "Prints" the user will send
 const resultsGallery = [
-   { id: 1, type: 'video', url: '/assets/social_proof/video_1.mp4', label: 'Dashboard em Tempo Real' },
-   { id: 2, type: 'image', url: '/assets/social_proof/print_1.png', label: 'Crescimento de Leads' },
-   { id: 3, type: 'video', url: '/assets/social_proof/video_2.mp4', label: 'Feedback de Cliente' },
-   { id: 4, type: 'image', url: '/assets/social_proof/print_2.png', label: 'Agenda Lotada' },
-   { id: 5, type: 'video', url: '/assets/social_proof/video_3.mp4', label: 'Análise de Métricas' },
-   { id: 6, type: 'image', url: '/assets/social_proof/print_3.png', label: 'Resultados Consolidados' },
-   { id: 7, type: 'video', url: '/assets/social_proof/video_4.mp4', label: 'Visão Geral da Conta' },
-   { id: 8, type: 'image', url: '/assets/social_proof/print_4.png', label: 'Escala de Vendas' },
+   { id: 1, type: 'video', url: '/assets/social_proof/video_1.mp4', label: 'Resultado Verificado #1' },
+   { id: 2, type: 'image', url: '/assets/social_proof/print_1.png', label: 'Resultado Verificado #2' },
+   { id: 3, type: 'video', url: '/assets/social_proof/video_2.mp4', label: 'Resultado Verificado #3' },
+   { id: 4, type: 'image', url: '/assets/social_proof/print_2.png', label: 'Resultado Verificado #4' },
+   { id: 5, type: 'video', url: '/assets/social_proof/video_3.mp4', label: 'Resultado Verificado #5' },
+   { id: 6, type: 'image', url: '/assets/social_proof/print_3.png', label: 'Resultado Verificado #6' },
+   { id: 7, type: 'video', url: '/assets/social_proof/video_4.mp4', label: 'Resultado Verificado #7' },
+   { id: 8, type: 'image', url: '/assets/social_proof/print_4.png', label: 'Resultado Verificado #8' },
+];
+
+const videoTestimonials = [
+   { id: 1, url: '/assets/testimonials/depoimento_1.mp4', label: 'Parceiro Verificado' },
+   { id: 2, url: '/assets/testimonials/depoimento_2.mp4', label: 'Parceiro Verificado' },
+   { id: 3, url: '/assets/testimonials/depoimento_3.mp4', label: 'Parceiro Verificado' },
+   { id: 4, url: '/assets/testimonials/depoimento_4.mp4', label: 'Parceiro Verificado' },
+   { id: 5, url: '/assets/testimonials/depoimento_5.mp4', label: 'Parceiro Verificado' },
 ];
 
 export const SocialProof: React.FC = () => {
@@ -79,6 +87,7 @@ export const SocialProof: React.FC = () => {
             </div>
 
             {/* Prints Gallery Section - REPLACES Instagram Stories */}
+            {/* Prints Gallery Section - REPLACES Instagram Stories */}
             <div className="mb-12">
                <div className="flex items-center justify-between mb-12">
                   <div className="text-left">
@@ -121,9 +130,37 @@ export const SocialProof: React.FC = () => {
                      </div>
                   ))}
                </div>
-               <p className="text-center text-gray-600 text-xs mt-8 uppercase tracking-widest font-bold">
+
+               <p className="text-center text-gray-600 text-xs mt-8 uppercase tracking-widest font-bold mb-24">
                   * Prints fornecidos pelos clientes e autorizados para divulgação.
                </p>
+            </div>
+
+            {/* Video Testimonials Section */}
+            <div className="mb-12">
+               <div className="text-left mb-12">
+                  <h3 className="text-3xl font-serif font-bold text-white mb-2">O que dizem os <span className="text-[#D4AF37]">Parceiros</span></h3>
+                  <p className="text-gray-500 font-light">Depoimentos reais de quem vive a migração digital.</p>
+               </div>
+
+               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                  {videoTestimonials.map((video) => (
+                     <div key={video.id} className="group relative aspect-[9/16] bg-[#111] rounded-[24px] overflow-hidden border border-white/5 hover:border-[#D4AF37]/30 transition-all duration-500">
+                        {/* Video com controles para o usuário poder dar play e ouvir o áudio */}
+                        <video
+                           src={video.url}
+                           controls
+                           className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700"
+                           playsInline
+                        />
+                        <div className="absolute top-4 left-4 p-2 bg-black/50 backdrop-blur-md rounded-lg pointer-events-none">
+                           <p className="text-[#D4AF37] font-black text-[10px] uppercase tracking-widest">
+                              Depoimento Real
+                           </p>
+                        </div>
+                     </div>
+                  ))}
+               </div>
             </div>
 
          </div>
