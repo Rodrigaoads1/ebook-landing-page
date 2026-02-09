@@ -241,6 +241,7 @@ export function HomePage() {
 
                             <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-light">
                                 <p>Vi os bastidores de empresas reais — de clínicas a grandes operações de serviços. Descobri que experts vivem de indicações instáveis simplesmente por falta de um sistema digital estruturado.</p>
+                                <p>Você passou anos estudando para ser excelente no que faz, mas a faculdade nunca preencheu a lacuna de <strong className="text-white">como captar clientes de forma previsível</strong>. Estou aqui para preencher esse espaço.</p>
                                 <p>Meu trabalho é desenhar o funil completo: atração, conversão e venda. <strong className="text-white">"Marketing sem estratégia é só barulho."</strong></p>
                             </div>
 
@@ -302,11 +303,11 @@ export function HomePage() {
                         </div>
                         <div className="space-y-6">
                             {[
-                                { q: "Meu nicho é muito específico, funciona?", a: "Sim. Já atendemos mais de 50 nichos diferentes. O Sistema de Aquisição Previsível foca no comportamento de compra humano, que é universal." },
-                                { q: "Preciso ser um 'influencer' para dar certo?", a: "Absolutamente não. Nosso foco é estrutura comercial e anúncios. Você precisa ser um expert no seu serviço, não um criador de conteúdo em tempo integral." },
-                                { q: "Já tentei fazer tráfego pago e não tive resultado. Por que agora seria diferente?", a: "Provavelmente você injetou tráfego em uma estrutura fraca. Sem estratégia, o tráfego só acelera o desperdício de dinheiro. Nós corrigimos a estrutura antes." },
-                                { q: "Sou profissional autônomo. Esse sistema é para mim?", a: "É perfeito para você. O objetivo é criar um sistema que trabalha por você, filtrando os melhores clientes e economizando seu tempo de prospecção." },
-                                { q: "Como recebo o bônus da análise gratuita?", a: "Após garantir seu ebook por R$ 19,90, se você estiver entre as 50 primeiras vagas, nossa equipe entrará em contato para agendar o diagnóstico." }
+                                { q: "Meu nicho é muito específico, funciona?", a: "Sim. Já validamos essa estrutura em mais de 50 nichos. O Sistema de Aquisição Previsível foca no comportamento de compra humano, que é universal." },
+                                { q: "Preciso ser um 'influencer' para dar certo?", a: "Absolutamente não. Na verdade, postar todo dia sem estratégia é um erro. Nosso foco é estrutura comercial e ativos que vendem por você." },
+                                { q: "Já tentei fazer tráfego pago e não tive resultado. Por que agora seria diferente?", a: "Provavelmente você injetou tráfego em um 'balde furado'. Sem um funil que educa e qualifica, você só acelera o desperdício de dinheiro. Nós corrigimos a estrutura primeiro." },
+                                { q: "Como recebo o material do Ebook?", a: "O envio é imediato. Assim que o pagamento for confirmado, você receberá o link para download do PDF diretamente no seu e-mail." },
+                                { q: "Qual é a garantia?", a: "Oferecemos 7 dias de garantia incondicional. Se você sentir que o conteúdo não agrega valor ao seu negócio, devolvemos 100% do seu investimento." }
                             ].map((item, i) => (
                                 <div key={i} className="p-8 border border-white/5 bg-white/[0.02] rounded-3xl">
                                     <h4 className="text-lg font-bold mb-4 flex items-start gap-3">

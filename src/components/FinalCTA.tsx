@@ -24,7 +24,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenModal }) => {
             </h2>
 
             <p className="text-gray-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed font-light">
-              Tenha em mãos o mapa exato dos erros que estão drenando o lucro da sua operação.
+              Se você identificou 2 ou mais sinais, o seu negócio está em modo sobrevivência. Não é culpa sua — a faculdade não te ensinou a captar clientes. Este checklist é o seu primeiro passo para construir previsibilidade.
             </p>
 
             <div className="mb-12">

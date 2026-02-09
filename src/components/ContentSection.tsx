@@ -4,39 +4,39 @@ import { Target, TrendingDown, Users, ShieldX, BarChart3, Clock, AlertCircle, Ar
 
 const steps = [
   {
-    icon: ShieldX,
-    title: "Vulnerabilidade Comercial",
-    description: "Você depende 100% de indicações ou do seu esforço pessoal para atrair novos clientes."
-  },
-  {
-    icon: TrendingDown,
-    title: "Ciclo do Mês Vazio",
-    description: "A falta de previsibilidade cria meses excelentes seguidos de meses preocupantes sem explicação técnica."
+    icon: Users,
+    title: "Dependência do Boca a Boca",
+    description: "Seu faturamento oscila como uma montanha-russa porque você não controla a entrada de novos clientes."
   },
   {
     icon: Target,
-    title: "Posicionamento Fraco",
-    description: "Sua competência é alta, mas seu conteúdo atrai curiosos em vez de clientes com poder de compra."
+    title: "Google vs Instagram",
+    description: "Você tenta vender no Instagram como se fosse Google (ou vice-versa) e acaba perdendo leads qualificados."
   },
   {
-    icon: Users,
-    title: "Leads Desqualificados",
-    description: "Seu funil (se existir) não filtra quem realmente pode pagar pelo seu serviço, drenando seu tempo."
+    icon: ShieldX,
+    title: "Fantasma Digital",
+    description: "Seu perfil no Google Meu Negócio está abandonado ou inexistente, deixando você invisível na hora da compra."
   },
   {
-    icon: BarChart3,
-    title: "Falta de Métricas Reais",
-    description: "Você não sabe quanto custa atrair um cliente e vive no 'marketing de esperança'."
+    icon: TrendingDown,
+    title: "Panfleto Digital",
+    description: "Você trata seu Instagram como um catálogo de produtos chato, o que zera seu engajamento e autoridade."
   },
   {
     icon: AlertCircle,
-    title: "Ausência de Funil",
-    description: "Não existe um caminho estruturado do primeiro contato ao fechamento do contrato."
+    title: "Perfil Amador",
+    description: "Uma bio confusa e falta de profissionalismo visual espantam o cliente High-Ticket antes mesmo do contato."
+  },
+  {
+    icon: BarChart3,
+    title: "Vendas no Acaso",
+    description: "Sem um funil definido, você espera que o cliente feche sozinho e acaba perdendo 99% das oportunidades."
   },
   {
     icon: Clock,
-    title: "Processo Manual",
-    description: "Você gasta horas respondendo as mesmas dúvidas básicas em vez de automatizar a educação do lead."
+    title: "Falta de Estratégia",
+    description: "Postar 'quando dá tempo' sem métricas mata seu crescimento. Marketing sem estratégia é só barulho."
   }
 ];
 

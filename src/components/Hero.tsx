@@ -22,18 +22,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold leading-tight mb-6">
-            7 Passos para <br />
-            Identificar <span className="text-[#D4AF37] italic">Erros Ocultos</span>
+            7 Passos para Identificar <br />
+            Por que Você Está <span className="text-[#D4AF37] italic">Perdendo Clientes</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
-            O checklist estratégico testado em mais de 50 nichos diferentes. Descubra onde sua empresa está perdendo previsibilidade e lucro.
+            Você trabalha muito mas cresce pouco? O erro não está na sua competência técnica, mas no seu sistema de aquisição. Descubra os 7 sinais que mostram que você está deixando dinheiro na mesa.
           </p>
 
           <ul className="space-y-4 mb-10 inline-block lg:block text-left">
             {[
-              'Checklist de 7 sinais críticos em qualquer nicho',
-              'Correção de rota para recuperar seu lucro'
+              'Identifique onde o seu faturamento está escorrendo todos os meses',
+              'Como parar de depender mortalmente do boca a boca',
+              'Por que o seu Instagram pode estar espantando clientes premium'
             ].map((benefit, idx) => (
               <li key={idx} className="flex items-center gap-3 text-gray-300 font-light">
                 <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0" />
