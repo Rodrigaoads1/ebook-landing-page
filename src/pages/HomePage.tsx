@@ -146,38 +146,68 @@ export function HomePage() {
                         <p className="text-gray-500 font-light">Uma jornada pensada para cada momento do seu negócio.</p>
                     </div>
 
-                    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {/* Passo 1 */}
-                        <div className="p-10 rounded-[40px] bg-white/[0.02] border border-white/5 flex flex-col items-center text-center">
-                            <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8">
-                                <Download className="w-8 h-8 text-[#D4AF37]" />
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {/* Passo 1 - Ebook */}
+                        <div className="p-8 rounded-[32px] bg-white/[0.02] border border-white/5 flex flex-col items-center text-center hover:border-[#D4AF37]/20 transition-all group">
+                            <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#D4AF37]/10 transition-colors">
+                                <Download className="w-6 h-6 text-[#D4AF37]" />
                             </div>
-                            <h3 className="text-xl font-bold mb-4">O Mapa (Ebook)</h3>
-                            <p className="text-gray-500 text-sm mb-8 leading-relaxed">Identifique os gargalos que estão drenando seu lucro hoje.</p>
-                            <p className="text-[#D4AF37] font-black text-2xl mb-8">R$ 19,90</p>
-                            <Link to="/ebook" className="w-full py-4 rounded-xl border border-[#D4AF37]/30 text-[#D4AF37] font-bold hover:bg-[#D4AF37] hover:text-black transition-all">Garantir Meu Mapa</Link>
+                            <h3 className="text-lg font-bold mb-2">Checklist Estratégico</h3>
+                            <p className="text-gray-400 text-xs mb-6 leading-relaxed h-12">
+                                Para profissionais que estão perdendo clientes e precisam de uma correção de rota imediata.
+                            </p>
+                            <p className="text-[#D4AF37] font-black text-xl mb-6">R$ 19,90</p>
+                            <Link to="/ebook" className="w-full py-3 rounded-lg border border-[#D4AF37]/30 text-[#D4AF37] text-sm font-bold hover:bg-[#D4AF37] hover:text-black transition-all">
+                                Baixar Agora
+                            </Link>
                         </div>
 
-                        {/* Passo 2 */}
-                        <div className="p-10 rounded-[40px] bg-[#D4AF37]/5 border border-[#D4AF37]/30 flex flex-col items-center text-center scale-105 shadow-2xl shadow-[#D4AF37]/5 z-10">
-                            <div className="w-16 h-16 bg-[#D4AF37]/20 rounded-2xl flex items-center justify-center mb-8">
-                                <Target className="w-8 h-8 text-[#D4AF37]" />
+                        {/* Passo 2 - Diagnóstico */}
+                        <div className="p-8 rounded-[32px] bg-[#D4AF37]/5 border border-[#D4AF37]/30 flex flex-col items-center text-center relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 bg-[#D4AF37] text-black text-[9px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-widest">
+                                Recomendado
                             </div>
-                            <h3 className="text-xl font-bold mb-4">O GPS (Análise)</h3>
-                            <p className="text-white text-sm mb-8 leading-relaxed">Um diagnóstico individual e cirúrgico da sua presença digital.</p>
-                            <p className="text-[#D4AF37] font-black text-2xl mb-8">R$ 197,00</p>
-                            <Link to="/analise-profissional-de-presenca-digital-02" className="w-full py-4 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-black hover:scale-[1.02] transition-all">Solicitar Meu GPS</Link>
+                            <div className="w-14 h-14 bg-[#D4AF37]/20 rounded-2xl flex items-center justify-center mb-6">
+                                <Target className="w-6 h-6 text-[#D4AF37]" />
+                            </div>
+                            <h3 className="text-lg font-bold mb-2">Diagnóstico Digital</h3>
+                            <p className="text-white text-xs mb-6 leading-relaxed h-12">
+                                Uma análise individual e cirúrgica da sua presença digital para encontrar pontos cegos.
+                            </p>
+                            <p className="text-[#D4AF37] font-black text-xl mb-6">R$ 197,00</p>
+                            <Link to="/analise-profissional-de-presenca-digital-02" className="w-full py-3 rounded-lg bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black text-sm font-black hover:opacity-90 transition-all">
+                                Solicitar Análise
+                            </Link>
                         </div>
 
-                        {/* Passo 3 */}
-                        <div className="p-10 rounded-[40px] bg-white/[0.02] border border-white/5 flex flex-col items-center text-center">
-                            <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-8">
-                                <ShieldCheck className="w-8 h-8 text-[#D4AF37]" />
+                        {/* Passo 3 - Consultoria Completa */}
+                        <div className="p-8 rounded-[32px] bg-white/[0.02] border border-white/5 flex flex-col items-center text-center hover:border-[#D4AF37]/20 transition-all group">
+                            <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#D4AF37]/10 transition-colors">
+                                <ShieldCheck className="w-6 h-6 text-[#D4AF37]" />
                             </div>
-                            <h3 className="text-xl font-bold mb-4">A Estrutura (Consultoria)</h3>
-                            <p className="text-gray-500 text-sm mb-8 leading-relaxed">Implementação completa do sistema de aquisição previsível.</p>
-                            <p className="text-[#D4AF37] font-black text-lg mb-8 uppercase tracking-widest">Sob Consulta</p>
-                            <a href="https://wa.me/5521979043854?text=Olá%2C+vi+a+consultoria+no+site+e+gostaria+de+mais+informações." className="w-full py-4 rounded-xl border border-white/10 text-white font-bold hover:bg-white/5 transition-all">Falar com Estrategista</a>
+                            <h3 className="text-lg font-bold mb-2">Sistema de Aquisição</h3>
+                            <p className="text-gray-400 text-xs mb-6 leading-relaxed h-12">
+                                Implementação completa do funil de vendas + Gerenciamento profissional de anúncios.
+                            </p>
+                            <p className="text-[#D4AF37] font-black text-sm mb-6 uppercase tracking-widest py-1">Sob Aplicação</p>
+                            <a href="https://wa.me/5521979043854?text=Olá%2C+tenho+interesse+na+implementação+do+sistema+de+aquisição." className="w-full py-3 rounded-lg border border-white/10 text-white text-sm font-bold hover:bg-white/5 transition-all">
+                                Falar com Estrategista
+                            </a>
+                        </div>
+
+                        {/* Passo 4 - Outros Serviços */}
+                        <div className="p-8 rounded-[32px] bg-white/[0.02] border border-white/5 flex flex-col items-center text-center hover:border-[#D4AF37]/20 transition-all group">
+                            <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#D4AF37]/10 transition-colors">
+                                <Zap className="w-6 h-6 text-[#D4AF37]" />
+                            </div>
+                            <h3 className="text-lg font-bold mb-2">Outros Serviços</h3>
+                            <p className="text-gray-400 text-xs mb-6 leading-relaxed h-12">
+                                Criação de Landing Pages, Automações com IA, Recuperação de Vendas e mais.
+                            </p>
+                            <p className="text-gray-600 font-bold text-sm mb-6 uppercase tracking-widest py-1">Projetos Pontuais</p>
+                            <a href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+saber+sobre+outros+serviços+digitais." className="w-full py-3 rounded-lg border border-white/10 text-white text-sm font-bold hover:bg-white/5 transition-all">
+                                Consultar Disponibilidade
+                            </a>
                         </div>
                     </div>
                 </section>
