@@ -104,7 +104,7 @@ export function AnalysisPage() {
                             <ul className="space-y-6">
                                 {[
                                     { t: "Diagnóstico da Presença Digital", d: "Análise fria de como o seu cliente te enxerga hoje." },
-                                    { t: "Identificação do Gargalo Real", d: "Onde o dinheiro está escorrendo: Atração, Conversão ou Venda?" },
+                                    { t: "Identificação do Ponto Real de Perda", d: "Onde o dinheiro está escorrendo: Atração, Conversão ou Venda?" },
                                     { t: "Plano de Ação Imediata", d: "Três mudanças prioritárias para estancar a perda de faturamento." },
                                     { t: "Call Estratégica", d: "30 minutos de call para alinharmos a implementação desses ajustes." }
                                 ].map((item, i) => (
