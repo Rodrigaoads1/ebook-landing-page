@@ -282,7 +282,7 @@ export const SocialProof: React.FC = () => {
             {/* --- VIDEO TESTIMONIALS (CAROUSEL) --- */}
             <div className="mb-12">
                <div className="text-center mb-16">
-                  <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">A Voz da <span className="text-[#D4AF37]">Experiência</span></h3>
+                  <h3 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Veja a <span className="text-[#D4AF37]">experiência de alguns clientes</span> que já atendemos</h3>
                   <div className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full opacity-50" />
                </div>
 
