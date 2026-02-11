@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, Users, Zap, TrendingUp, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Mail, Users, Zap, TrendingUp, ShieldCheck, Rss, ArrowUpRight } from 'lucide-react';
 import { posts } from '../data/posts';
 import { SEOHelmet } from '../components/SEOHelmet';
 import { SocialProof } from '../components/SocialProof';
@@ -20,234 +20,195 @@ export function BlogPage() {
         ? posts
         : posts.filter(post => post.category === activeCategory);
 
-    const featuredPosts = posts.slice(0, 2);
-    const restPosts = filteredPosts.slice(2);
+    const mainPost = posts[0];
+    const secondaryPosts = posts.slice(1, 4);
+    const regularPosts = filteredPosts.filter(p => p.id !== mainPost.id && !secondaryPosts.find(s => s.id === p.id));
 
     return (
-        <div className="min-h-screen bg-white text-[#111111] font-sans selection:bg-[#B8960C]/20 selection:text-[#B8960C] overflow-x-hidden">
+        <div className="min-h-screen bg-[#FAF9F6] text-[#111111] font-sans selection:bg-[#BD9F67]/20 selection:text-[#BD9F67] overflow-x-hidden">
             <SEOHelmet
-                title="Blog Migração Digital | Estratégia de Alto Padrão"
-                description="Marketing sem estratégia é só barulho. Aprenda a construir previsibilidade para sua empresa ou clínica."
+                title="Intelligence | Migração Digital"
+                description="O blog para estrategistas e empresários que buscam o lugar de direito no mercado."
             />
 
-            {/* Sticky Header */}
-            <header className="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-xl border-b border-gray-100 py-6 px-6 md:px-12">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-[#B8960C] rounded-sm flex items-center justify-center font-black text-white text-xl">MD</div>
-                        <span className="text-2xl font-heading font-bold tracking-tighter text-black">MIGRAÇÃO<span className="text-[#B8960C]">DIGITAL</span></span>
-                    </Link>
-
-                    <nav className="hidden lg:flex items-center gap-10 text-black">
-                        {['Estratégia', 'Funis', 'Escala'].map(item => (
-                            <button key={item} className="text-[11px] font-black uppercase tracking-[0.2em] text-gray-400 hover:text-[#B8960C] transition-all">
-                                {item}
-                            </button>
-                        ))}
-                    </nav>
-
-                    <Link to="/ebook" className="text-[10px] font-black uppercase tracking-[0.3em] px-8 py-3.5 rounded-sm bg-[#B8960C] text-white hover:bg-black transition-all">
-                        Baixar Ebook
-                    </Link>
+            {/* Navigation Prestige */}
+            <nav className="fixed top-0 w-full z-[110] mix-blend-difference py-8 px-6 md:px-20 flex justify-between items-center pointer-events-none">
+                <Link to="/" className="pointer-events-auto">
+                    <span className="text-xl font-serif font-bold tracking-tight text-white uppercase italic">M. Digital</span>
+                </Link>
+                <div className="flex gap-12 pointer-events-auto">
+                    <Link to="/ebook" className="text-[9px] font-black uppercase tracking-[0.4em] text-white hover:text-[#BD9F67] transition-all">Explorar Estratégias</Link>
                 </div>
-            </header>
+            </nav>
 
-            <main className="pt-24 relative z-10">
+            <main className="relative">
 
-                {/* HERO SECTION */}
-                <section className="relative pt-32 pb-40 px-6 overflow-hidden bg-white border-b border-gray-50">
-                    <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: `radial-gradient(#B8960C 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#B8960C]/5 to-transparent pointer-events-none" />
-
-                    <div className="max-w-7xl mx-auto relative flex flex-col items-start">
-                        <div className="inline-block px-4 py-1.5 bg-[#B8960C]/10 border border-[#B8960C]/20 text-[#B8960C] text-[10px] font-black uppercase tracking-[0.3em] mb-8 rounded-sm">
-                            &bull; INSIGHTS ESTRATÉGICOS
+                {/* HERO: EDITORIAL IMPACT */}
+                <section className="min-h-screen flex flex-col justify-center px-6 md:px-20 relative overflow-hidden border-b border-[#BD9F67]/10">
+                    <div className="max-w-7xl mx-auto w-full pt-40 md:pt-0">
+                        <div className="flex flex-col gap-4 mb-20">
+                            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#BD9F67]">Volume I — Inteligência Digital</span>
+                            <h1 className="text-7xl md:text-[10rem] font-serif font-bold leading-[0.85] tracking-tighter text-[#111111]">
+                                Estratégia <br />
+                                <span className="italic relative">
+                                    Previsível.
+                                    <div className="absolute -bottom-4 right-0 w-1/2 h-[1px] bg-[#BD9F67]" />
+                                </span>
+                            </h1>
                         </div>
 
-                        <div className="flex flex-col lg:flex-row gap-16 items-start w-full">
-                            <div className="flex-1">
-                                <h1 className="text-6xl md:text-8xl font-serif font-bold text-black mb-8 leading-[1.05] tracking-tight">
-                                    Marketing sem estratégia <br />
-                                    é só <span className="text-[#B8960C] italic text-transparent bg-clip-text bg-gradient-to-r from-[#B8960C] to-[#D4AF37]">barulho.</span>
-                                </h1>
-                                <p className="text-gray-500 text-xl max-w-2xl font-light leading-relaxed mb-12">
-                                    Clareza antes da conversão. Escute o que os bastidores de mais de 50 nichos diferentes me ensinaram sobre previsibilidade comercial.
-                                </p>
-                                <a href="#artigos" className="px-10 py-5 bg-black text-white text-[11px] font-black uppercase tracking-[0.3em] rounded-sm hover:bg-[#B8960C] transition-all mb-16 shadow-xl inline-block">
-                                    Explorar Artigos
-                                </a>
-                            </div>
-
-                            {/* Stats Blocks */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full lg:w-auto">
-                                {[
-                                    { v: '+5', l: 'ANOS DE MERCADO', i: TrendingUp },
-                                    { v: '50+', l: 'NICHOS ATENDIDOS', i: Users },
-                                    { v: '100+', l: 'FUNIS ESTRUTURADOS', i: Zap }
-                                ].map((s, i) => (
-                                    <div key={i} className="p-8 bg-[#F9F9F9] border border-gray-100 rounded-sm min-w-[200px] group hover:border-[#B8960C]/30 transition-all shadow-sm">
-                                        <s.i className="w-8 h-8 text-[#B8960C] mb-6" />
-                                        <div className="text-4xl font-serif font-bold text-black mb-2">{s.v}</div>
-                                        <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{s.l}</div>
-                                    </div>
-                                ))}
+                        <div className="flex flex-col md:flex-row gap-20 items-end justify-between">
+                            <p className="max-w-xl text-gray-500 text-xl font-light leading-relaxed">
+                                Transformamos conhecimento técnico em autoridade comercial. O blog da Migração Digital é o diário oficial de bastidores de quem já escalou +50 nichos diferentes.
+                            </p>
+                            <div className="flex items-center gap-10">
+                                <div className="text-right">
+                                    <div className="text-4xl font-serif font-bold mb-1">5.0+</div>
+                                    <div className="text-[8px] font-black uppercase tracking-widest text-gray-400">Anos de Domínio</div>
+                                </div>
+                                <div className="w-[1px] h-20 bg-gray-100" />
+                                <div className="text-right">
+                                    <div className="text-4xl font-serif font-bold mb-1">XP</div>
+                                    <div className="text-[8px] font-black uppercase tracking-widest text-gray-400">Consultoria de Alto Padrão</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <div className="max-w-7xl mx-auto px-6 pb-32" id="artigos">
+                {/* FEATURED: THE COVER STORY */}
+                <section className="py-40 px-6 md:px-20 bg-white">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
 
-                    {/* SECTION: EM DESTAQUE */}
-                    <div className="mb-24 mt-24">
-                        <h2 className="text-[12px] font-black uppercase tracking-[0.4em] text-[#B8960C] mb-12 flex items-center gap-4">
-                            Em Destaque <div className="h-[1px] flex-grow bg-gray-100" />
-                        </h2>
-
-                        <div className="space-y-6">
-                            {featuredPosts.map((post, idx) => (
-                                <article key={post.id} className="group bg-[#F9F9F9] border border-gray-100 rounded-sm overflow-hidden flex flex-col md:flex-row items-center hover:border-[#B8960C]/20 transition-all shadow-sm hover:shadow-md">
-                                    <div className="w-full md:w-[400px] h-[250px] bg-white border-r border-gray-100 relative shrink-0 overflow-hidden">
-                                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale-[0.5] group-hover:grayscale-0" />
-                                        <div className="absolute top-6 left-6">
-                                            <span className="px-3 py-1 bg-[#B8960C] text-white text-[9px] font-black uppercase tracking-widest">{post.category}</span>
+                            <div className="lg:col-span-8 group relative">
+                                <Link to={`/blog/${mainPost.slug}`} className="block">
+                                    <div className="relative aspect-[16/10] overflow-hidden mb-12 shadow-2xl">
+                                        <div className="absolute inset-0 bg-[#111111]/10 group-hover:bg-transparent transition-all z-10" />
+                                        <img src={mainPost.coverImage} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={mainPost.title} />
+                                        <div className="absolute top-10 left-10 z-20">
+                                            <span className="px-6 py-2 bg-white text-[#111111] text-[10px] font-black uppercase tracking-widest shadow-xl">Story #01</span>
                                         </div>
                                     </div>
-                                    <div className="p-12">
-                                        <div className="flex items-center gap-4 text-[10px] font-black text-gray-400 uppercase tracking-widest mb-6">
-                                            <span>{post.date}</span> &bull; <span>7 min</span>
+                                    <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 group-hover:translate-x-4 transition-transform leading-tight">
+                                        {mainPost.title}
+                                    </h2>
+                                    <p className="text-gray-500 text-xl font-light leading-relaxed mb-10 max-w-2xl">
+                                        {mainPost.excerpt}
+                                    </p>
+                                    <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-[#BD9F67]">
+                                        Acessar o Full Report <ArrowRight className="w-4 h-4" />
+                                    </div>
+                                </Link>
+                            </div>
+
+                            <div className="lg:col-span-4 flex flex-col justify-center space-y-24">
+                                <div className="border-l-4 border-[#BD9F67] pl-10 py-10">
+                                    <h3 className="text-[12px] font-black uppercase tracking-[0.4em] text-gray-300 mb-10">Latest Insights</h3>
+                                    <div className="space-y-16">
+                                        {secondaryPosts.map(post => (
+                                            <Link key={post.id} to={`/blog/${post.slug}`} className="group block">
+                                                <span className="text-[9px] font-black text-[#BD9F67] uppercase tracking-[0.2em] block mb-4 italic">{post.category}</span>
+                                                <h4 className="text-2xl font-serif font-bold text-[#111111] group-hover:text-[#BD9F67] transition-all leading-tight">
+                                                    {post.title}
+                                                </h4>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                                <Link to="/ebook" className="group block p-12 bg-[#FAF9F6] border border-gray-100 hover:border-[#BD9F67]/30 transition-all text-center">
+                                    <Mail className="w-8 h-8 mx-auto mb-6 text-[#BD9F67]" />
+                                    <p className="text-sm font-light text-gray-500 mb-6">Assine nosso feed de estratégias via WhatsApp e e-mail.</p>
+                                    <span className="text-[10px] font-black uppercase tracking-widest block border-t border-gray-100 pt-6 group-hover:text-[#BD9F67]">Agendar Notificação</span>
+                                </Link>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <SocialProof />
+
+                {/* COLLECTION: THE ARCHIVE */}
+                <section className="py-40 px-6 md:px-20 bg-[#FAF9F6]">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="flex flex-col md:flex-row justify-between items-end gap-10 mb-24 border-b border-gray-200 pb-16">
+                            <div>
+                                <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">Explorar Acervo.</h2>
+                                <p className="text-gray-400 font-light italic">Selecione uma especialidade abaixo</p>
+                            </div>
+                            <div className="flex flex-wrap gap-4">
+                                {categories.map(cat => (
+                                    <button
+                                        key={cat}
+                                        onClick={() => setActiveCategory(cat)}
+                                        className={`px-8 py-3 text-[10px] font-black uppercase tracking-[0.2em] transition-all ${activeCategory === cat ? 'bg-[#111111] text-white' : 'text-gray-400 hover:text-black'}`}
+                                    >
+                                        {cat}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-32 gap-x-16">
+                            {regularPosts.map((post, idx) => (
+                                <article key={post.id} className={`group cursor-pointer ${idx % 2 !== 0 ? 'md:mt-24' : ''}`}>
+                                    <Link to={`/blog/${post.slug}`} className="block">
+                                        <div className="aspect-[4/5] overflow-hidden mb-10 relative bg-gray-100">
+                                            <img src={post.coverImage} className="w-full h-full object-cover group-hover:scale-110 grayscale-[0.8] group-hover:grayscale-0 transition-all duration-1000" alt={post.title} />
+                                            <div className="absolute inset-0 border border-white/20 m-6" />
+                                            <div className="absolute bottom-10 right-10 text-white z-20 flex flex-col items-end opacity-0 group-hover:opacity-100 transition-opacity">
+                                                <ArrowUpRight className="w-10 h-10 border border-white p-2" />
+                                            </div>
                                         </div>
-                                        <h3 className="text-3xl font-serif font-bold text-black mb-6 group-hover:text-[#B8960C] transition-all leading-tight">
+                                        <div className="flex items-center gap-6 mb-8">
+                                            <div className="h-[1px] w-12 bg-[#BD9F67]" />
+                                            <span className="text-[9px] font-black uppercase tracking-widest text-gray-300">{post.date}</span>
+                                        </div>
+                                        <h3 className="text-3xl font-serif font-bold text-[#111111] group-hover:text-[#BD9F67] transition-all mb-6 leading-tight">
                                             {post.title}
                                         </h3>
-                                        <p className="text-gray-500 font-light mb-8 line-clamp-2 max-w-xl">
+                                        <p className="text-gray-400 font-light line-clamp-2 leading-relaxed italic">
                                             {post.excerpt}
                                         </p>
-                                        <Link to={`/blog/${post.slug}`} className="text-[#B8960C] text-[10px] font-black uppercase tracking-[0.3em] flex items-center gap-2 hover:gap-4 transition-all">
-                                            Ler artigo completo <ArrowRight className="w-4 h-4" />
-                                        </Link>
-                                    </div>
+                                    </Link>
                                 </article>
                             ))}
                         </div>
                     </div>
-
-                    <SocialProof />
-
-                    {/* SECTION: TODOS OS ARTIGOS */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
-
-                        <div className="lg:col-span-8">
-                            <div className="flex items-center justify-between mb-16">
-                                <h2 className="text-[12px] font-black uppercase tracking-[0.4em] text-black">Artigos e Insights</h2>
-                                <div className="hidden md:flex gap-2">
-                                    {categories.map(cat => (
-                                        <button
-                                            key={cat}
-                                            onClick={() => setActiveCategory(cat)}
-                                            className={`px-4 py-2 border rounded-sm text-[9px] font-black uppercase tracking-widest transition-all ${activeCategory === cat ? 'bg-[#B8960C] border-[#B8960C] text-white shadow-lg shadow-[#B8960C]/20' : 'bg-transparent border-gray-200 text-gray-400 hover:text-black hover:border-black'}`}
-                                        >
-                                            {cat}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                                {restPosts.map((post, idx) => (
-                                    <article key={post.id} className="group bg-[#F9F9F9] border border-gray-100 rounded-sm overflow-hidden hover:border-[#B8960C]/20 transition-all flex flex-col shadow-sm">
-                                        <div className="aspect-video bg-white flex items-center justify-center relative border-b border-gray-100 overflow-hidden">
-                                            <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale-[0.2] group-hover:grayscale-0" />
-                                            <div className="absolute top-4 left-4">
-                                                <span className="px-2 py-1 border border-gray-100 text-gray-500 text-[8px] font-black uppercase tracking-widest bg-white/80 backdrop-blur-md shadow-sm">{post.category}</span>
-                                            </div>
-                                        </div>
-                                        <div className="p-8 flex-grow flex flex-col">
-                                            <div className="flex items-center gap-4 text-[9px] font-black text-gray-400 uppercase tracking-widest mb-4">
-                                                <span>{post.date}</span> &bull; <span>5 min</span>
-                                            </div>
-                                            <h4 className="text-xl font-serif font-bold text-black mb-6 group-hover:text-[#B8960C] transition-all leading-tight">
-                                                {post.title}
-                                            </h4>
-                                            <Link to={`/blog/${post.slug}`} className="mt-auto text-[#B8960C] text-[9px] font-black uppercase tracking-[0.3em] flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                                                Ler mais <ArrowRight className="w-3 h-3" />
-                                            </Link>
-                                        </div>
-                                    </article>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* SIDEBAR */}
-                        <aside className="lg:col-span-4 space-y-20">
-
-                            {/* CTA Ebook V3 */}
-                            <div className="bg-black text-white rounded-sm overflow-hidden group shadow-2xl">
-                                <div className="p-4 bg-[#B8960C] text-black text-center text-[10px] font-black uppercase tracking-[0.3em]">
-                                    Primeira Vitória por R$ 19,90
-                                </div>
-                                <div className="p-10">
-                                    <h4 className="text-2xl font-serif font-bold text-white mb-6 leading-tight">Checklist Estratégico: 7 Sinais de Perda de Faturamento</h4>
-                                    <p className="text-gray-400 text-sm font-light mb-8 leading-relaxed">O guia testado em 50+ nichos para estancar furos na sua presença digital agora.</p>
-                                    <Link to="/ebook" className="block w-full text-center bg-white text-black text-[10px] font-black uppercase tracking-[0.3em] py-5 rounded-sm hover:bg-[#B8960C] hover:text-white transition-all">
-                                        Baixar Material &rarr;
-                                    </Link>
-                                </div>
-                            </div>
-
-                            {/* Tags */}
-                            <div>
-                                <h5 className="text-[10px] font-black uppercase tracking-[0.4em] text-black mb-8 border-b border-gray-100 pb-4">Tópicos Recorrentes</h5>
-                                <div className="flex flex-wrap gap-2">
-                                    {['Estratégia', 'Posicionamento', 'Funis de Venda', 'Previsibilidade', 'Escala Digital', 'Analytics'].map(tag => (
-                                        <button key={tag} className="px-3 py-2 bg-white border border-gray-100 text-[9px] text-gray-400 font-black uppercase tracking-widest hover:border-[#B8960C] hover:text-[#B8960C] transition-all">
-                                            {tag}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                        </aside>
-
-                    </div>
-                </div>
-
-                {/* SIGNATURE */}
-                <section className="bg-[#F9F9F9] py-32 border-t border-gray-100 text-center">
-                    <p className="text-3xl md:text-5xl font-serif font-bold italic text-gray-200">
-                        "Marketing sem estratégia é só barulho."
-                    </p>
                 </section>
+
+                {/* THE MANIFESTO */}
+                <section className="py-60 px-6 md:px-20 bg-[#111111] text-white text-center overflow-hidden relative">
+                    <div className="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
+                        <span className="text-[25rem] font-serif font-bold whitespace-nowrap">MD STRATEGY</span>
+                    </div>
+                    <div className="max-w-4xl mx-auto relative z-10">
+                        <Rss className="w-12 h-12 text-[#BD9F67] mx-auto mb-10" />
+                        <h2 className="text-5xl md:text-7xl font-serif font-bold mb-10 tracking-tight">O lugar de direito no mercado é seu.</h2>
+                        <p className="text-gray-400 text-xl font-light mb-16 leading-relaxed">
+                            Mantenha-se atualizado com as estratégias que realmente movem o ponteiro de faturamento.
+                        </p>
+                        <div className="flex flex-col sm:flex-row justify-center gap-8">
+                            <a href="/rss.xml" className="text-[11px] font-black uppercase tracking-[0.4em] py-6 px-12 border border-white/20 hover:border-[#BD9F67] transition-all">Acceso ao Feed RSS</a>
+                            <a href="https://wa.me/5521979043854" className="text-[11px] font-black uppercase tracking-[0.4em] py-6 px-12 bg-[#BD9F67] text-black font-bold hover:bg-white transition-all">Falar com Estrategista</a>
+                        </div>
+                    </div>
+                </section>
+
             </main>
 
-            {/* RODAPÉ */}
-            <footer className="bg-white pt-32 pb-16 border-t border-gray-100">
-                <div className="max-w-7xl mx-auto px-6 font-medium">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
-                        <div className="md:col-span-1">
-                            <Link to="/" className="text-2xl font-heading font-bold mb-8 block text-black">MIGRAÇÃO<span className="text-[#B8960C]">DIGITAL</span></Link>
-                            <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light italic">"A Migração Digital ajuda especialistas qualificados a ocuparem seu lugar de direito no mercado."</p>
-                            <div className="flex gap-4">
-                                <a href="https://www.youtube.com/@Rodrigorodrigues-md" className="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-[#B8960C] transition-all">YouTube</a>
-                                <a href="https://wa.me/5521979043854?text=Olá%2C+vi+o+blog+e+gostaria+de+mais+informações." className="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-[#B8960C] transition-all">WhatsApp</a>
-                            </div>
-                        </div>
-                        <div>
-                            <h5 className="text-[11px] font-black uppercase tracking-widest text-black mb-8">Páginas</h5>
-                            <ul className="space-y-4">
-                                {['Home', 'Ebook', 'Análise Profissional', 'Bio Instagram'].map(c => (
-                                    <li key={c}><button className="text-gray-400 hover:text-[#B8960C] text-sm font-light transition-all">{c}</button></li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="md:col-span-2">
-                            <h5 className="text-[11px] font-black uppercase tracking-widest text-black mb-8">Posicionamento</h5>
-                            <p className="text-gray-400 text-sm mb-8 font-light">Estrategista Digital | +5 anos de mercado | +50 nichos atendidos — clínicas, consultórios, empresas de serviços.</p>
-                            <a href="https://wa.me/5521979043854?text=Olá%2C+vi+o+blog+e+gostaria+de+agendar+uma+reunião." className="inline-block bg-[#B8960C] text-white text-[10px] font-black uppercase tracking-[0.3em] py-5 px-10 rounded-sm hover:bg-black transition-all">Agendar Reunião</a>
-                        </div>
+            <footer className="py-20 px-6 md:px-20 bg-white">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+                    <div className="flex items-center gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">
+                        <Link to="/" className="text-[#111111]">Migração Digital</Link>
+                        <span>—</span>
+                        <p>&copy; 2026 Inteligência Digital</p>
                     </div>
-                    <div className="pt-16 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-8 text-[9px] font-black uppercase tracking-[0.4em] text-gray-300">
-                        <p>&copy; 2026 Migração Digital — Todos os direitos reservados. "Marketing sem estratégia é só barulho."</p>
+                    <div className="flex gap-10">
+                        <Link to="/blog" className="text-[9px] font-black uppercase tracking-widest text-[#BD9F67]">Blog</Link>
+                        <Link to="/ebook" className="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-black">Ebook</Link>
+                        <a href="https://wa.me/5521979043854" className="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-black">WhatsApp</a>
                     </div>
                 </div>
             </footer>

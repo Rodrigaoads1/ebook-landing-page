@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Migração Digital | Inteligência Estratégica</title>
+  <link>https://www.migracaodigital.com/blog</link>
+  <description>Marketing sem estratégia é só barulho. Aprenda a construir previsibilidade comercial de elite.</description>
+  <language>pt-br</language>
+  <lastBuildDate>Wed, 11 Feb 2026 18:00:00 GMT</lastBuildDate>
+  <atom:link href="https://www.migracaodigital.com/rss.xml" rel="self" type="application/rss+xml" />
+  
+  <item>
+    <title>Google Ads: O Guia Definitivo para Dominar as Buscas de Alta Intenção</title>
+    <link>https://www.migracaodigital.com/blog/como-dominar-google-ads-para-negocios-locais</link>
+    <description>Aprenda como configurar campanhas de Google Ads que realmente convertem e pare de jogar dinheiro fora com cliques desqualificados.</description>
+    <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.migracaodigital.com/blog/como-dominar-google-ads-para-negocios-locais</guid>
+  </item>
+
+  <item>
+    <title>SEO Local: Como ser o Primeiro em Campo Grande RJ e Região</title>
+    <link>https://www.migracaodigital.com/blog/seo-local-para-agencias-de-marketing-rj</link>
+    <description>Descubra como otimizar seu Google Meu Negócio e site para dominar as buscas locais em bairros específicos do Rio de Janeiro.</description>
+    <pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate>
+    <guid>https://www.migracaodigital.com/blog/seo-local-para-agencias-de-marketing-rj</guid>
+  </item>
+
+</channel>
+</rss>
