@@ -38,87 +38,89 @@ export function HomePage() {
 
             <main>
                 {/* [HERO] SECTION */}
-                <section className="relative pt-32 pb-24 md:pt-48 md:pb-40 px-6 overflow-hidden bg-[#050505]">
+                <section className="relative pt-24 pb-20 md:pt-48 md:pb-40 px-6 overflow-hidden bg-[#050505]">
                     {/* Background Decorative Element */}
                     <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[600px] bg-[#D4AF37]/10 blur-[150px] rounded-full pointer-events-none" />
                     <div className="absolute bottom-[10%] left-[-10%] w-[50%] h-[500px] bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none" />
 
                     <div className="max-w-7xl mx-auto text-center relative z-10">
-                        <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-sm font-black uppercase tracking-[0.4em] mb-12 animate-fade-in shadow-2xl shadow-[#D4AF37]/10">
-                            Marketing de Elite • Vendas Previsíveis • Autoridade
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-[10px] md:text-sm font-black uppercase tracking-[0.3em] md:tracking-[0.4em] mb-8 md:mb-12 animate-fade-in shadow-2xl shadow-[#D4AF37]/10">
+                            Marketing de Elite • Vendas Previsíveis
                         </div>
 
-                        <h1 className="text-4xl md:text-[7.5rem] font-serif font-bold leading-[0.9] tracking-tighter mb-10 text-white">
+                        <h1 className="text-4xl md:text-[7.5rem] font-serif font-bold leading-[1.1] md:leading-[0.9] tracking-tighter mb-8 md:mb-10 text-white">
                             Marketing sem estratégia <br className="hidden md:block" />
-                            é só <span className="text-[#D4AF37] italic decoration-[#D4AF37]/20 underline underline-offset-[20px]">barulho.</span>
+                            é só <span className="text-[#D4AF37] italic decoration-[#D4AF37]/20 underline underline-offset-[10px] md:underline-offset-[20px]">barulho.</span>
                         </h1>
 
-                        <div className="max-w-4xl mx-auto mb-16 space-y-6">
-                            <h2 className="text-xl md:text-3xl font-serif text-[#D4AF37] font-medium leading-relaxed italic">
-                                "Não vendo marketing. Vendo estrutura comercial e previsibilidade para empresas, clínicas e profissionais liberais."
+                        <div className="max-w-4xl mx-auto mb-10 md:mb-16 space-y-4 md:space-y-6">
+                            <h2 className="text-lg md:text-3xl font-serif text-[#D4AF37] font-medium leading-relaxed italic px-4">
+                                "Não vendo marketing. Vendo estrutura comercial e previsibilidade."
                             </h2>
-                            <p className="text-lg md:text-xl text-gray-500 font-light leading-relaxed">
+                            <p className="hidden md:block text-lg md:text-xl text-gray-500 font-light leading-relaxed">
                                 Desenho sistemas de aquisição para quem cansou do marketing de fachada e busca converter autoridade técnica em faturamento real.
                             </p>
                         </div>
 
-                        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
                             <a
                                 href="#servicos"
-                                className="w-full md:w-auto bg-gradient-to-br from-[#D4AF37] via-[#B8960C] to-[#8A6D3B] text-black font-black py-8 px-14 rounded-3xl flex items-center justify-center gap-4 hover:scale-[1.05] hover:shadow-[0_30px_60px_rgba(212,175,55,0.3)] transition-all text-2xl group border border-white/20"
+                                className="w-full md:w-auto bg-gradient-to-br from-[#D4AF37] via-[#B8960C] to-[#8A6D3B] text-black font-black py-6 md:py-8 px-10 md:px-14 rounded-2xl md:rounded-3xl flex items-center justify-center gap-3 md:gap-4 hover:scale-[1.05] hover:shadow-[0_30px_60px_rgba(212,175,55,0.3)] transition-all text-xl md:text-2xl group border border-white/20"
                             >
-                                <Zap className="w-8 h-8 group-hover:fill-black transition-all" />
+                                <Zap className="w-6 h-6 md:w-8 md:h-8 group-hover:fill-black transition-all" />
                                 Conhecer Soluções
                             </a>
-                            <Link to="/blog" className="text-gray-400 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors border-b border-transparent hover:border-[#D4AF37] pb-1">
+                            <Link to="/blog" className="text-gray-400 hover:text-white font-bold uppercase tracking-widest text-[10px] md:text-xs transition-colors border-b border-transparent hover:border-[#D4AF37] pb-1">
                                 Ler Artigos Estratégicos
                             </Link>
                         </div>
                     </div>
                 </section>
 
+                {/* ... (Middle sections omitted for brevity, keeping existing code) ... */}
+
                 {/* [DORES DE ELITE] SECTION */}
-                <section className="py-32 bg-[#080808] border-y border-white/5 px-6 relative overflow-hidden">
+                <section className="py-24 md:py-32 bg-[#080808] border-y border-white/5 px-6 relative overflow-hidden">
                     <div className="max-w-7xl mx-auto relative z-10">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center mb-16 md:mb-24">
                             <div>
-                                <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight">
+                                <h2 className="text-3xl md:text-6xl font-serif font-bold mb-6 md:mb-8 leading-tight">
                                     Pare de perder dinheiro com <br /><span className="text-[#D4AF37] italic">Marketing de Fachada.</span>
                                 </h2>
-                                <p className="text-xl text-gray-400 font-light leading-relaxed mb-10">
+                                <p className="text-lg md:text-xl text-gray-400 font-light leading-relaxed mb-8 md:mb-10">
                                     Muitas agências entregam curtidas, seguidores e posts bonitos. <br />
                                     <span className="text-white font-medium">Eu entrego estrutura de vendas, processos e previsibilidade de caixa.</span>
                                 </p>
                             </div>
-                            <div className="bg-white/[0.02] border border-white/10 p-12 rounded-[40px] shadow-3xl">
-                                <h3 className="text-2xl font-serif font-bold mb-6 text-white italic">"Sua agenda está vazia?"</h3>
-                                <p className="text-gray-500 mb-8 leading-relaxed">
+                            <div className="bg-white/[0.02] border border-white/10 p-8 md:p-12 rounded-[32px] md:rounded-[40px] shadow-3xl">
+                                <h3 className="text-xl md:text-2xl font-serif font-bold mb-4 md:mb-6 text-white italic">"Sua agenda está vazia?"</h3>
+                                <p className="text-gray-500 mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
                                     Pare de brincar de marketing e comece a faturar de verdade. O erro não está no seu serviço, está no seu funil de aquisição.
                                 </p>
-                                <div className="space-y-4">
-                                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                                <div className="space-y-3 md:space-y-4">
+                                    <div className="flex items-center gap-3 md:gap-4 text-sm text-gray-400">
                                         <XCircle className="w-5 h-5 text-red-500/50" /> Dependência de indicações
                                     </div>
-                                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                                    <div className="flex items-center gap-3 md:gap-4 text-sm text-gray-400">
                                         <XCircle className="w-5 h-5 text-red-500/50" /> Posts que não convertem
                                     </div>
-                                    <div className="flex items-center gap-4 text-sm text-gray-400">
+                                    <div className="flex items-center gap-3 md:gap-4 text-sm text-gray-400">
                                         <XCircle className="w-5 h-5 text-red-500/50" /> Leads curiosos e sem verba
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                             {[
                                 { title: "Vulnerabilidade Comercial", desc: "Você vive o ciclo do 'mês bom e mês ruim' porque não controla a entrada de novos negócios." },
                                 { title: "Invisibilidade de Elite", desc: "Sua competência técnica é alta, mas seu posicionamento online é comum e não atrai o High-Ticket." },
                                 { title: "Dreno de Tempo", desc: "Você gasta horas educando leads que nunca vão comprar, em vez de filtrar no automático." },
                                 { title: "Falta de Rastreio", desc: "Não sabe de onde vem o lucro nem o custo de aquisição. Joga dinheiro no escuro." }
                             ].map((item, i) => (
-                                <div key={i} className="p-8 bg-black/40 border border-white/5 rounded-3xl hover:border-[#D4AF37]/40 transition-all group backdrop-blur-sm">
-                                    <h3 className="text-xl font-bold mb-4 text-[#D4AF37] uppercase tracking-tighter">{item.title}</h3>
-                                    <p className="text-gray-500 text-sm font-light leading-relaxed">{item.desc}</p>
+                                <div key={i} className="p-6 md:p-8 bg-black/40 border border-white/5 rounded-3xl hover:border-[#D4AF37]/40 transition-all group backdrop-blur-sm">
+                                    <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-[#D4AF37] uppercase tracking-tighter">{item.title}</h3>
+                                    <p className="text-gray-500 text-xs md:text-sm font-light leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -126,39 +128,39 @@ export function HomePage() {
                 </section>
 
                 {/* [COMO FUNCIONA / MÉTODO] SECTION */}
-                <section id="metodo" className="py-32 px-6 relative overflow-hidden">
-                    <div className="max-w-7xl mx-auto text-center mb-24">
-                        <div className="inline-block px-4 py-2 bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-black uppercase tracking-widest rounded-full mb-6">
+                <section id="metodo" className="py-24 md:py-32 px-6 relative overflow-hidden">
+                    <div className="max-w-7xl mx-auto text-center mb-16 md:mb-24">
+                        <div className="inline-block px-4 py-2 bg-[#D4AF37]/10 text-[#D4AF37] text-[10px] md:text-xs font-black uppercase tracking-widest rounded-full mb-6">
                             Minha Metodologia
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8">Sistema de Aquisição <span className="text-[#D4AF37] italic">Previsível™</span></h2>
-                        <p className="text-gray-400 text-xl max-w-2xl mx-auto font-light">Estrutura antes do tráfego. Clareza antes da conversão.</p>
+                        <h2 className="text-3xl md:text-6xl font-serif font-bold mb-6 md:mb-8">Sistema de Aquisição <span className="text-[#D4AF37] italic">Previsível™</span></h2>
+                        <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light">Estrutura antes do tráfego. Clareza antes da conversão.</p>
                     </div>
 
-                    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative z-10">
                         {[
                             { step: "01", title: "Fundação Estratégica", desc: "Ajustamos sua mensagem e posicionamento para atrair o cliente ideal, não apenas curiosos." },
                             { step: "02", title: "Estrutura de Conversão", desc: "Criamos os ativos (landing pages, funis, automações) que preparam o lead para a compra." },
                             { step: "03", title: "Escala com Tráfego", desc: "Injetamos audiência qualificada em um sistema que já sabemos que funciona." }
                         ].map((item, i) => (
-                            <div key={i} className="relative p-10 bg-[#111] rounded-[40px] border border-white/5 hover:border-[#D4AF37]/20 transition-all">
-                                <span className="text-5xl font-serif font-black text-white/5 absolute top-8 right-10">{item.step}</span>
-                                <h4 className="text-2xl font-bold mb-6">{item.title}</h4>
-                                <p className="text-gray-500 font-light leading-relaxed">{item.desc}</p>
+                            <div key={i} className="relative p-8 md:p-10 bg-[#111] rounded-[32px] md:rounded-[40px] border border-white/5 hover:border-[#D4AF37]/20 transition-all">
+                                <span className="text-4xl md:text-5xl font-serif font-black text-white/5 absolute top-6 right-8 md:top-8 md:right-10">{item.step}</span>
+                                <h4 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">{item.title}</h4>
+                                <p className="text-gray-500 font-light leading-relaxed text-sm md:text-base">{item.desc}</p>
                             </div>
                         ))}
                     </div>
                 </section>
 
                 {/* [ESCADA DE VALOR] SECTION */}
-                <section id="servicos" className="py-24 px-6 bg-[#0a0a0a]">
-                    <div className="max-w-7xl mx-auto text-center mb-16">
+                <section id="servicos" className="py-20 md:py-24 px-6 bg-[#0a0a0a]">
+                    <div className="max-w-7xl mx-auto text-center mb-12 md:mb-16">
                         <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">Como podemos <span className="text-[#D4AF37]">trabalhar juntos?</span></h2>
                         <p className="text-gray-500 font-light">Uma jornada pensada para cada momento do seu negócio.</p>
                     </div>
 
                     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {/* Passo 1 - Ebook */}
+                        {/* Passo 1 - Checklist */}
                         <div className="p-8 rounded-[32px] bg-white/[0.02] border border-white/5 flex flex-col items-center text-center hover:border-[#D4AF37]/20 transition-all group">
                             <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#D4AF37]/10 transition-colors">
                                 <Download className="w-6 h-6 text-[#D4AF37]" />
@@ -224,45 +226,45 @@ export function HomePage() {
                 </section>
 
                 {/* [SOCIAL PROOF / AUTHORITY] SECTION */}
-                <section id="sobre" className="py-32 px-6 bg-[#050505]">
-                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                        <div className="relative">
+                <section id="sobre" className="py-24 md:py-32 px-6 bg-[#050505]">
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+                        <div className="relative order-2 lg:order-1">
                             <div className="absolute -inset-10 bg-[#D4AF37]/10 blur-[100px] rounded-full opacity-40 animate-pulse" />
-                            <div className="relative rounded-[60px] overflow-hidden border border-white/10 shadow-2xl bg-[#0a0a0a]">
+                            <div className="relative rounded-[40px] md:rounded-[60px] overflow-hidden border border-white/10 shadow-2xl bg-[#0a0a0a]">
                                 <img
                                     src={profileImg}
                                     alt="Rodrigo Rodrigues"
                                     className="w-full h-auto grayscale-[20%] contrast-110"
                                 />
-                                <div className="absolute bottom-10 left-10 p-6 bg-black/60 backdrop-blur-md rounded-2xl border border-white/10">
-                                    <p className="text-2xl font-bold text-[#D4AF37]">Rodrigo Rodrigues</p>
-                                    <p className="text-gray-400 text-sm">Estrategista Digital</p>
+                                <div className="absolute bottom-6 md:bottom-10 left-6 md:left-10 p-4 md:p-6 bg-black/60 backdrop-blur-md rounded-2xl border border-white/10">
+                                    <p className="text-xl md:text-2xl font-bold text-[#D4AF37]">Rodrigo Rodrigues</p>
+                                    <p className="text-gray-400 text-xs md:text-sm">Estrategista Digital</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div>
-                            <div className="inline-block px-4 py-2 bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-black uppercase tracking-widest rounded-full mb-8">
+                        <div className="order-1 lg:order-2">
+                            <div className="inline-block px-4 py-2 bg-[#D4AF37]/10 text-[#D4AF37] text-[10px] md:text-xs font-black uppercase tracking-widest rounded-full mb-6 md:mb-8">
                                 O Estrategista
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">5 anos de mercado, <br /><span className="text-[#D4AF37]">50+ nichos atendidos.</span></h2>
+                            <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 md:mb-8 leading-tight">5 anos de mercado, <br /><span className="text-[#D4AF37]">50+ nichos atendidos.</span></h2>
 
-                            <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-light">
+                            <div className="space-y-4 md:space-y-6 text-gray-400 text-base md:text-lg leading-relaxed font-light">
                                 <p>Vi os bastidores de empresas reais — de clínicas a grandes operações de serviços. Descobri que experts vivem de indicações instáveis simplesmente por falta de um sistema digital estruturado.</p>
                                 <p>Você passou anos estudando para ser excelente no que faz, mas a faculdade nunca preencheu a lacuna de <strong className="text-white">como captar clientes de forma previsível</strong>. Estou aqui para preencher esse espaço.</p>
                                 <p>Meu trabalho é desenhar o funil completo: atração, conversão e venda. <strong className="text-white">"Marketing sem estratégia é só barulho."</strong></p>
                             </div>
 
-                            <div className="mt-12 grid grid-cols-2 gap-8">
+                            <div className="mt-8 md:mt-12 grid grid-cols-2 gap-6 md:gap-8">
                                 <div className="flex flex-col">
-                                    <CheckCircle2 className="w-8 h-8 text-[#D4AF37] mb-3" />
-                                    <p className="text-white font-bold text-sm uppercase tracking-widest">+50 Nichos Atendidos</p>
-                                    <p className="text-gray-600 text-xs text-balance">Clínicas, consultórios e empresas de serviços.</p>
+                                    <CheckCircle2 className="w-6 h-6 md:w-8 md:h-8 text-[#D4AF37] mb-3" />
+                                    <p className="text-white font-bold text-xs md:text-sm uppercase tracking-widest">+50 Nichos Atendidos</p>
+                                    <p className="text-gray-600 text-[10px] md:text-xs text-balance">Clínicas, consultórios e empresas de serviços.</p>
                                 </div>
                                 <div className="flex flex-col">
-                                    <CheckCircle2 className="w-8 h-8 text-[#D4AF37] mb-3" />
-                                    <p className="text-white font-bold text-sm uppercase tracking-widest">+100 Funis Estruturados</p>
-                                    <p className="text-gray-600 text-xs">Transformando tráfego em faturamento real.</p>
+                                    <CheckCircle2 className="w-6 h-6 md:w-8 md:h-8 text-[#D4AF37] mb-3" />
+                                    <p className="text-white font-bold text-xs md:text-sm uppercase tracking-widest">+100 Funis Estruturados</p>
+                                    <p className="text-gray-600 text-[10px] md:text-xs">Transformando tráfego em faturamento real.</p>
                                 </div>
                             </div>
                         </div>
@@ -272,32 +274,32 @@ export function HomePage() {
                 <SocialProof />
 
                 {/* [OFERTA] SECTION */}
-                <section className="py-40 px-6 relative overflow-hidden bg-white/[0.01]">
+                <section className="py-32 md:py-40 px-6 relative overflow-hidden bg-white/[0.01]">
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[800px] bg-[#D4AF37]/5 blur-[150px] rounded-full pointer-events-none" />
 
                     <div className="max-w-4xl mx-auto text-center relative z-10">
-                        <div className="inline-block px-4 py-1.5 bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.3em] mb-8 rounded-full">
+                        <div className="inline-block px-4 py-1.5 bg-[#D4AF37]/20 border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.3em] mb-6 md:mb-8 rounded-full">
                             Próximo Passo
                         </div>
-                        <h2 className="text-5xl md:text-7xl font-serif font-bold mb-8 tracking-tighter">
+                        <h2 className="text-4xl md:text-7xl font-serif font-bold mb-6 md:mb-8 tracking-tighter">
                             Pronto para <span className="text-[#D4AF37] italic">Escalar?</span>
                         </h2>
 
-                        <p className="text-xl md:text-2xl text-gray-400 mb-12 font-light leading-relaxed">
+                        <p className="text-lg md:text-2xl text-gray-400 mb-10 md:mb-12 font-light leading-relaxed">
                             Não deixe seu faturamento depender da sorte ou de indicações aleatórias. <br className="hidden md:block" />
                             <span className="text-white font-medium">Vamos desenhar a estrutura de aquisição da sua empresa.</span>
                         </p>
 
-                        <div className="flex flex-col items-center gap-8">
+                        <div className="flex flex-col items-center gap-6 md:gap-8">
                             <a
-                                href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+agendar+uma+reunião+estratégica."
-                                className="w-full md:w-auto bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-black py-8 px-16 rounded-[32px] flex items-center justify-center gap-3 hover:scale-[1.05] hover:shadow-[0_20px_50px_rgba(212,175,55,0.4)] transition-all text-2xl group"
+                                href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+solicitar+um+diagnóstico+estratégico."
+                                className="w-full md:w-auto bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black font-black py-6 md:py-8 px-10 md:px-16 rounded-[32px] flex items-center justify-center gap-3 hover:scale-[1.05] hover:shadow-[0_20px_50px_rgba(212,175,55,0.4)] transition-all text-xl md:text-2xl group"
                             >
-                                <Zap className="w-8 h-8 group-hover:fill-black transition-all" />
-                                Agendar Reunião Estratégica
+                                <Zap className="w-6 h-6 md:w-8 md:h-8 group-hover:fill-black transition-all" />
+                                Solicitar Diagnóstico
                             </a>
-                            <div className="flex items-center gap-4 text-gray-500 text-xs font-black uppercase tracking-[0.3em]">
-                                <ShieldCheck className="w-5 h-5 text-[#D4AF37]" /> Atenção Exclusiva de Senior
+                            <div className="flex items-center gap-3 md:gap-4 text-gray-500 text-[10px] md:text-xs font-black uppercase tracking-[0.3em]">
+                                <ShieldCheck className="w-4 h-4 md:w-5 md:h-5 text-[#D4AF37]" /> Atenção Exclusiva de Senior
                             </div>
                         </div>
                     </div>
@@ -344,7 +346,7 @@ export function HomePage() {
                         <div className="flex flex-col gap-4">
                             <h5 className="text-white font-black mb-2">Páginas</h5>
                             <Link to="/blog" className="hover:text-[#D4AF37]">Blog de Estratégia</Link>
-                            <Link to="/ebook" className="hover:text-[#D4AF37]">Ebook Checklist</Link>
+                            <Link to="/ebook" className="hover:text-[#D4AF37]">Checklist Estratégico</Link>
                             <Link to="/analise-profissional-de-presenca-digital-02" className="hover:text-[#D4AF37]">Análise Profissional</Link>
                         </div>
                         <div className="flex flex-col gap-4">

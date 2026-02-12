@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { X, Target, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export const ExitIntentPopup: React.FC = () => {
+interface ExitIntentPopupProps {
+    ctaLink?: string;
+}
+
+export const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ ctaLink = "/ebook" }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [hasShown, setHasShown] = useState(false);
 
@@ -54,6 +58,8 @@ export const ExitIntentPopup: React.FC = () => {
     };
 
     if (!isVisible) return null;
+
+    const isExternal = ctaLink.startsWith('http');
 
     return (
         <>
@@ -122,14 +128,24 @@ export const ExitIntentPopup: React.FC = () => {
                         </div>
 
                         {/* CTA */}
-                        <Link
-                            to="/ebook"
-                            onClick={handleClose}
-                            className="inline-flex items-center gap-3 bg-[#111111] text-white text-sm font-black uppercase tracking-[0.3em] py-5 px-12 hover:bg-[#BD9F67] hover:text-black transition-all shadow-xl group"
-                        >
-                            Garantir Checklist Agora
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Link>
+                        {isExternal ? (
+                            <a
+                                href={ctaLink}
+                                className="inline-flex items-center gap-3 bg-[#111111] text-white text-sm font-black uppercase tracking-[0.3em] py-5 px-12 hover:bg-[#BD9F67] hover:text-black transition-all shadow-xl group"
+                            >
+                                Garantir Checklist Agora
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </a>
+                        ) : (
+                            <Link
+                                to={ctaLink}
+                                onClick={handleClose}
+                                className="inline-flex items-center gap-3 bg-[#111111] text-white text-sm font-black uppercase tracking-[0.3em] py-5 px-12 hover:bg-[#BD9F67] hover:text-black transition-all shadow-xl group"
+                            >
+                                Garantir Checklist Agora
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Link>
+                        )}
 
                         {/* Trust */}
                         <p className="text-xs text-gray-400 mt-8 uppercase tracking-widest">

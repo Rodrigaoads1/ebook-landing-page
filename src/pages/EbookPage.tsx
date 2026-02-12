@@ -7,6 +7,8 @@ import { LeadModal } from '../components/LeadModal';
 import { SocialProof } from '../components/SocialProof';
 import { FAQ } from '../components/FAQ';
 
+import { ExitIntentPopup } from '../components/ExitIntentPopup';
+
 export function EbookPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -15,6 +17,7 @@ export function EbookPage() {
 
     return (
         <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
+            <ExitIntentPopup ctaLink="https://pay.kiwify.com.br/GhaKpCv" />
             <main>
                 <Hero onOpenModal={openModal} />
                 <ContentSection onOpenModal={openModal} />

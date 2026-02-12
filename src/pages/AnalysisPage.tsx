@@ -8,9 +8,13 @@ import profileExtra from '../assets/rodrigo_analise_extra.png';
 import { SocialProof } from '../components/SocialProof';
 import { Link } from 'react-router-dom';
 
+import { ExitIntentPopup } from '../components/ExitIntentPopup';
+
 export function AnalysisPage() {
     return (
         <div className="min-h-screen bg-[#050505] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] font-sans">
+            <ExitIntentPopup />
+
             {/* Header / Nav */}
             <nav className="p-6 border-b border-white/5 bg-black/50 backdrop-blur-md sticky top-0 z-[100]">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -21,7 +25,20 @@ export function AnalysisPage() {
                     <div className="hidden md:flex items-center gap-6">
                         <span className="text-[10px] uppercase tracking-[0.3em] text-gray-500 font-black">Diagnóstico Premium</span>
                         <div className="h-4 w-[1px] bg-white/10" />
-                        <span className="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] font-black animate-pulse">Vagas semanais limitadas</span>
+
+                        {/* Visual Scarcity Indicator */}
+                        <div className="flex items-center gap-3 bg-[#D4AF37]/10 px-4 py-1.5 rounded-full border border-[#D4AF37]/20">
+                            <div className="flex gap-1 justify-end items-end h-4">
+                                <div className="w-1 h-3 bg-[#D4AF37] rounded-sm" />
+                                <div className="w-1 h-4 bg-[#D4AF37] rounded-sm" />
+                                <div className="w-1 h-2 bg-[#D4AF37] rounded-sm" />
+                                <div className="w-1 h-4 bg-[#D4AF37]/20 rounded-sm animate-pulse" />
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-[9px] font-black uppercase text-[#D4AF37] leading-none mb-0.5">Vagas da Semana</span>
+                                <span className="text-[9px] text-gray-400 leading-none">Restam apenas 2</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -38,7 +55,7 @@ export function AnalysisPage() {
                             </div>
 
                             <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold leading-tight mb-8">
-                                O Ebook é o mapa. <br />
+                                O Checklist é o mapa. <br />
                                 <span className="text-[#D4AF37] italic">A Análise é o seu GPS.</span>
                             </h1>
 
@@ -84,7 +101,7 @@ export function AnalysisPage() {
                 <section className="py-24 bg-[#080808] border-y border-white/5 px-6 font-light">
                     <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div className="p-10 bg-white/5 rounded-3xl border border-white/10">
-                            <h3 className="text-[#D4AF37] font-bold text-2xl mb-4">O Ebook (Mapa)</h3>
+                            <h3 className="text-[#D4AF37] font-bold text-2xl mb-4">O Checklist (Mapa)</h3>
                             <p className="text-gray-400 leading-relaxed">Mostra o território. Você descobre as dores, os sinais de alerta e entende o conceito do Sistema de Aquisição Previsível.</p>
                         </div>
                         <div className="p-10 bg-[#D4AF37]/5 rounded-3xl border border-[#D4AF37]/30">
