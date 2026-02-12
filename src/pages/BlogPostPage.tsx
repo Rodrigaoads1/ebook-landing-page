@@ -5,7 +5,7 @@ import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, MessageSquare, Arro
 import { posts } from '../data/posts';
 import { SEOHelmet } from '../components/SEOHelmet';
 import { SocialProof } from '../components/SocialProof';
-import profileImg from '../assets/perfil.jpg';
+import profileImg from '../assets/profile.png';
 
 export function BlogPostPage() {
     const { slug } = useParams();
@@ -60,7 +60,7 @@ export function BlogPostPage() {
                     {/* Editorial Header */}
                     <div className="flex flex-col items-start mb-24">
                         <div className="inline-block px-6 py-2 bg-[#BD9F67]/5 border border-[#BD9F67]/20 text-[#BD9F67] text-[10px] font-black uppercase tracking-[0.4em] mb-12">
-                            Investigation {post.id % 100} — {post.category}
+                            Investigation {parseInt(post.id, 10) % 100} — {post.category}
                         </div>
                         <h1 className="text-6xl md:text-8xl font-serif font-bold text-[#111111] mb-12 leading-[0.95] tracking-tighter">
                             {post.title}

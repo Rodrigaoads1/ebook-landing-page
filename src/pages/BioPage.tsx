@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Youtube, Star, Instagram, MessageCircle, ExternalLink, Download, Target, ShieldCheck, ArrowRight } from 'lucide-react';
-import profileImg from '../assets/perfil.jpg';
+import profileImg from '../assets/profile.png';
 import { SocialProof } from '../components/SocialProof';
 import { Link } from 'react-router-dom';
 
