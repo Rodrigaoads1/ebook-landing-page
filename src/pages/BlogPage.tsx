@@ -27,14 +27,18 @@ export function BlogPage() {
     return (
         <div className="min-h-screen bg-[#FAF9F6] text-[#111111] font-sans selection:bg-[#BD9F67]/20 selection:text-[#BD9F67] overflow-x-hidden">
             <SEOHelmet
-                title="Intelligence | Migração Digital"
-                description="O blog para estrategistas e empresários que buscam o lugar de direito no mercado."
+                title="Blog | Migração Digital"
+                description="Estratégia, Posicionamento e Tecnologia para marcas que buscam o lugar de direito no mercado."
             />
 
             {/* Navigation Prestige */}
             <nav className="fixed top-0 w-full z-[110] mix-blend-difference py-8 px-6 md:px-20 flex justify-between items-center pointer-events-none">
-                <Link to="/" className="pointer-events-auto">
-                    <span className="text-xl font-serif font-bold tracking-tight text-white uppercase italic">M. Digital</span>
+                <Link to="/" className="pointer-events-auto flex items-center gap-4 group">
+                    <img src="/logo.png" alt="Migração Digital" className="h-10 w-auto object-contain mix-blend-screen opacity-90 group-hover:opacity-100 transition-opacity" />
+                    <div className="flex flex-col">
+                        <span className="text-lg font-serif font-bold tracking-tight text-white uppercase italic leading-none group-hover:text-[#BD9F67] transition-colors">Migração Digital</span>
+                        <span className="text-[8px] font-sans font-medium tracking-[0.3em] text-white/60 uppercase leading-none mt-1 group-hover:text-white transition-colors">Intelligence & Strategy</span>
+                    </div>
                 </Link>
                 <div className="flex gap-12 pointer-events-auto">
                     <Link to="/ebook" className="text-[9px] font-black uppercase tracking-[0.4em] text-white hover:text-[#BD9F67] transition-all">Explorar Estratégias</Link>

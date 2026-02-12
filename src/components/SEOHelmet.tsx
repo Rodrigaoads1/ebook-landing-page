@@ -9,7 +9,10 @@ interface SEOProps {
 
 export function SEOHelmet({ title, description, slug, article }: SEOProps) {
     useEffect(() => {
-        document.title = `${title} | Migração Digital`;
+        const titleSuffix = ' | Migração Digital';
+        document.title = title.endsWith(titleSuffix) || title.includes('Migração Digital') 
+            ? title 
+            : `${title}${titleSuffix}`;
 
         // Update meta description
         let metaDesc = document.querySelector('meta[name="description"]');
