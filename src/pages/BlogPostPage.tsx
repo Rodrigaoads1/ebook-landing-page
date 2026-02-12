@@ -132,9 +132,11 @@ export function BlogPostPage() {
                             </p>
                         </div>
                     </div>
+                </article>
 
-                    <SocialProof />
+                <SocialProof />
 
+                <article className="max-w-4xl mx-auto px-6">
                     {/* The Final Verdict CTA */}
                     <div className="mt-40 pt-32 border-t border-gray-100 flex flex-col items-center">
                         <span className="text-[11px] font-black uppercase tracking-[0.5em] text-[#BD9F67] mb-12">The Next Step</span>
@@ -144,7 +146,6 @@ export function BlogPostPage() {
                             <a href="https://wa.me/5521979043854" className="flex-1 border border-black/10 text-black text-[11px] font-black uppercase tracking-[0.4em] py-8 text-center hover:bg-black hover:text-white transition-all">Falar com Estrategista &rarr;</a>
                         </div>
                     </div>
-
                 </article>
 
                 {/* Footnotes: Recommended Intelligence */}
