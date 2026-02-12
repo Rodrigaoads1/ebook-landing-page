@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Quote, Star, Globe, CheckCircle2, ArrowUpRight, Instagram, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { OptimizedImage } from './OptimizedImage';
 
 // --- DATA ---
 const resultsGallery = [
@@ -268,7 +269,7 @@ export const SocialProof: React.FC = () => {
                               playsInline
                            />
                         ) : (
-                           <img
+                           <OptimizedImage
                               src={item.url}
                               alt={item.label}
                               className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000"

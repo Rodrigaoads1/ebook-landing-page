@@ -1,10 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, MessageSquare, ArrowRight, Target, ShieldCheck, Users, Rss, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock, Share2, Bookmark, MessageSquare, ArrowRight, Target, ShieldCheck, Users, Rss, Facebook, Twitter, Linkedin, Menu } from 'lucide-react';
 import { posts } from '../data/posts';
 import { SEOHelmet } from '../components/SEOHelmet';
 import { SocialProof } from '../components/SocialProof';
+import { OptimizedImage } from '../components/OptimizedImage';
+import { ExitIntentPopup } from '../components/ExitIntentPopup';
+import { AnalysisBanner } from '../components/AnalysisBanner';
 import profileImg from '../assets/profile.png';
 
 export function BlogPostPage() {
@@ -30,6 +33,9 @@ export function BlogPostPage() {
                 title={`${post.title} | Intelligence Bureau`}
                 description={post.excerpt}
             />
+
+            {/* Exit Intent Popup */}
+            <ExitIntentPopup />
 
             {/* Reading Progress Bar */}
             <div className="fixed top-0 left-0 w-full h-[3px] bg-gray-100 z-[150]">
@@ -74,7 +80,11 @@ export function BlogPostPage() {
 
                     {/* Showcase Image */}
                     <div className="relative aspect-[16/9] bg-gray-50 overflow-hidden mb-24 shadow-2xl border border-gray-100">
-                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-1000" />
+                        <OptimizedImage
+                            src={post.coverImage}
+                            alt={post.title}
+                            className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-1000"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/10 to-transparent" />
                     </div>
 
@@ -88,9 +98,9 @@ export function BlogPostPage() {
                             [&>div>p:first-child]:first-letter:mr-6 
                             [&>div>p:first-child]:first-letter:float-left 
                             [&>div>p:first-child]:first-letter:leading-[0.8]
-                            [&>div>p]:text-gray-500 [&>div>p]:font-light [&>div>p]:leading-relaxed [&>div>p]:mb-10
+                            [&>div>p]:text-gray-600 [&>div>p]:font-light [&>div>p]:leading-relaxed [&>div>p]:mb-10
                             [&>div>h3]:font-serif [&>div>h3]:text-3xl [&>div>h3]:text-[#111111] [&>div>h3]:mt-16 [&>div>h3]:mb-8
-                            [&>div>ul]:mb-10 [&>div>ul]:list-disc [&>div>ul]:pl-6 [&>div>ul>li]:text-gray-500 [&>div>ul>li]:font-light [&>div>ul>li]:mb-4
+                            [&>div>ul]:mb-10 [&>div>ul]:list-disc [&>div>ul]:pl-6 [&>div>ul>li]:text-gray-600 [&>div>ul>li]:font-light [&>div>ul>li]:mb-4
                             [&>div>blockquote]:border-l-4 [&>div>blockquote]:border-[#BD9F67] [&>div>blockquote]:pl-6 [&>div>blockquote]:italic [&>div>blockquote]:text-2xl [&>div>blockquote]:text-gray-700 [&>div>blockquote]:my-12
                         ">
                             <div dangerouslySetInnerHTML={{ __html: post.content }} />
@@ -136,6 +146,9 @@ export function BlogPostPage() {
 
                 <SocialProof />
 
+                {/* Analysis Banner - High Ticket Offer */}
+                <AnalysisBanner />
+
                 <article className="max-w-4xl mx-auto px-6">
                     {/* The Final Verdict CTA */}
                     <div className="mt-40 pt-32 border-t border-gray-100 flex flex-col items-center">
@@ -158,7 +171,11 @@ export function BlogPostPage() {
                         {posts.slice(0, 2).map((p, i) => (
                             <Link key={i} to={`/blog/${p.slug}`} className="group block">
                                 <div className="aspect-[16/10] bg-gray-100 overflow-hidden mb-12 relative">
-                                    <img src={p.coverImage} alt={p.title} className="w-full h-full object-cover grayscale-[1] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                                    <OptimizedImage
+                                        src={p.coverImage}
+                                        alt={p.title}
+                                        className="w-full h-full object-cover grayscale-[1] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                                    />
                                     <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all" />
                                 </div>
                                 <span className="text-[9px] font-black text-[#BD9F67] uppercase tracking-widest block mb-4">{p.category}</span>

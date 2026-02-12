@@ -7,6 +7,7 @@ import { SEOHelmet } from '../components/SEOHelmet';
 import { SocialProof } from '../components/SocialProof';
 import { ExitIntentPopup } from '../components/ExitIntentPopup';
 import { AnalysisBanner } from '../components/AnalysisBanner';
+import { OptimizedImage } from '../components/OptimizedImage';
 
 const categories = [
     'Todos',
@@ -111,7 +112,11 @@ export function BlogPage() {
                                 <Link to={`/blog/${mainPost.slug}`} className="block">
                                     <div className="relative aspect-[16/10] overflow-hidden mb-12 shadow-2xl">
                                         <div className="absolute inset-0 bg-[#111111]/10 group-hover:bg-transparent transition-all z-10" />
-                                        <img src={mainPost.coverImage} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={mainPost.title} />
+                                        <OptimizedImage
+                                            src={mainPost.coverImage}
+                                            alt={mainPost.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                        />
                                         <div className="absolute top-10 left-10 z-20">
                                             <span className="px-6 py-2 bg-white text-[#111111] text-[10px] font-black uppercase tracking-widest shadow-xl">Story #01</span>
                                         </div>
@@ -184,7 +189,11 @@ export function BlogPage() {
                                 <article key={post.id} className={`group cursor-pointer ${idx % 2 !== 0 ? 'md:mt-24' : ''}`}>
                                     <Link to={`/blog/${post.slug}`} className="block">
                                         <div className="aspect-[4/5] overflow-hidden mb-10 relative bg-gray-100">
-                                            <img src={post.coverImage} className="w-full h-full object-cover group-hover:scale-110 grayscale-[0.8] group-hover:grayscale-0 transition-all duration-1000" alt={post.title} />
+                                            <OptimizedImage
+                                                src={post.coverImage}
+                                                alt={post.title}
+                                                className="w-full h-full object-cover group-hover:scale-110 grayscale-[0.8] group-hover:grayscale-0 transition-all duration-1000"
+                                            />
                                             <div className="absolute inset-0 border border-white/20 m-6" />
                                             <div className="absolute bottom-10 right-10 text-white z-20 flex flex-col items-end opacity-0 group-hover:opacity-100 transition-opacity">
                                                 <ArrowUpRight className="w-10 h-10 border border-white p-2" />
