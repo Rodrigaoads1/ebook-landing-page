@@ -15,113 +15,111 @@ export interface BlogPost {
 export const posts: BlogPost[] = [
   {
     id: '1',
-    slug: 'como-dominar-google-ads-para-negocios-locais',
-    title: 'Google Ads: O Guia Definitivo para Dominar as Buscas de Alta Intenção',
-    category: 'Tráfego Pago',
-    excerpt: 'Aprenda como configurar campanhas de Google Ads que realmente convertem e pare de jogar dinheiro fora com cliques desqualificados.',
+    slug: 'estrategia-posicionamento-digital',
+    title: 'Estratégia e Posicionamento: Por que sua Marca não Vende Mais?',
+    category: 'Estratégia',
+    excerpt: 'Descubra os pilares fundamentais para posicionar sua marca no digital e parar de brigar por preço.',
     content: `
-      <p>O Google Ads é a ferramenta mais poderosa para capturar clientes que já estão procurando pelo seu serviço. Se você não está lá, seu concorrente está.</p>
-      <h3>Estratégias de Palavras-Chave Fundo de Funil</h3>
-      <p>Muitos empresários cometem o erro de anunciar para termos muito genéricos. O segredo está em focar em termos de <strong>intenção de compra direta</strong>.</p>
-      <blockquote>"O Google Ads não é sobre quem paga mais por clique, mas sobre quem entrega a melhor solução para o problema do usuário."</blockquote>
-      <p>Nosso checklist detalha exatamente como estruturar essas campanhas para ROI de 8x.</p>
+      <p>Muitas marcas sofrem do que chamamos de "invisibilidade estratégica". Elas têm bons produtos, bons serviços, mas se comunicam de forma genérica.</p>
+      <p>O primeiro passo para mudar isso é entender seu <strong>Posicionamento Único</strong>. O que você faz que ninguém mais faz? Como você resolve o problema do cliente de uma forma que ele valorize?</p>
+      <h3>Os 3 Pilares da Autoridade</h3>
+      <ul>
+        <li><strong>Clareza:</strong> Seu cliente entende o que você vende em 3 segundos?</li>
+        <li><strong>Consistência:</strong> Você fala a mesma língua em todos os canais?</li>
+        <li><strong>Prova:</strong> Você mostra resultados reais ou apenas promessas?</li>
+      </ul>
+      <p>Sem esses pilares, qualquer tráfego que você comprar será desperdiçado em um "balde furado".</p>
     `,
-    date: '2026-02-06',
+    date: '2026-02-12',
     author: 'Rodrigo Rodrigues',
-    coverImage: 'https://images.unsplash.com/photo-1551288049-bbbda536ad79?auto=format&fit=crop&q=80',
-    localKeywords: ['Google Ads', 'Tráfego Pago', 'Gestão de Tráfego'],
-    metaDescription: 'Guia definitivo de Google Ads para atrair clientes prontos para comprar.'
+    coverImage: 'https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=1964&auto=format&fit=crop',
+    localKeywords: ['Posicionamento', 'Estratégia Digital', 'Branding'],
+    metaDescription: 'Entenda como posicionar sua marca corretamente e sair da guerra de preços no digital.'
   },
   {
     id: '2',
-    slug: 'seo-local-para-agencias-de-marketing-rj',
-    title: 'SEO Local: Como ser o Primeiro em Campo Grande RJ e Região',
-    category: 'SEO Local',
-    excerpt: 'Descubra como otimizar seu Google Meu Negócio e site para dominar as buscas locais em bairros específicos do Rio de Janeiro.',
-    content: `<p>SEO Local é a arte de aparecer quando alguém pesquisa por serviços "perto de mim". Para negócios em Campo Grande, isso é vital.</p>`,
-    date: '2026-02-05',
+    slug: 'funil-de-vendas-alta-conversao',
+    title: 'Anatomia de um Funil de Vendas de Alta Conversão',
+    category: 'Funis',
+    excerpt: 'Não basta ter um site. Você precisa de um caminho claro que transforme visitantes em clientes pagantes.',
+    content: `
+      <p>Um funil de vendas não é mágica, é engenharia. É conduzir o cliente por uma jornada lógica de convencimento.</p>
+      <p>Se você joga tráfego direto para o WhatsApp sem qualificar, você vira um "tirador de dúvidas" e não um vendedor.</p>
+      <h3>Fases do Funil</h3>
+      <ol>
+        <li><strong>Topo:</strong> Consciência do problema.</li>
+        <li><strong>Meio:</strong> Consideração da solução.</li>
+        <li><strong>Fundo:</strong> Decisão de compra.</li>
+      </ol>
+      <p>Pare de tentar vender casamento no primeiro encontro. Construa o relacionamento e a venda virá naturalmente.</p>
+    `,
+    date: '2026-02-11',
     author: 'Rodrigo Rodrigues',
-    coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
-    localKeywords: ['SEO Local', 'Campo Grande RJ', 'Marketing Digital'],
-    metaDescription: 'Domine o SEO local em Campo Grande RJ e atraia clientes da sua região.'
+    coverImage: 'https://images.unsplash.com/photo-1551288049-bbbda536ad79?q=80&w=2070&auto=format&fit=crop',
+    localKeywords: ['Funil de Vendas', 'Conversão', 'Marketing Digital'],
+    metaDescription: 'Aprenda a estruturar um funil de vendas que qualifica leads e aumenta sua conversão.'
   },
   {
     id: '3',
-    slug: 'meta-ads-estrategias-de-escala-vendas',
-    title: 'Meta Ads: Transformando Instagram e Facebook em Máquinas de Vendas',
-    category: 'Meta Ads',
-    excerpt: 'As estratégias de escala que usamos para gerar centenas de leads diários para nossos clientes usando criativos disruptivos.',
-    content: `<p>O segredo do Meta Ads não está mais na segmentação, mas nos <strong>criativos</strong>. Se sua imagem não para o scroll, seu dinheiro é desperdiçado.</p>`,
-    date: '2026-02-04',
+    slug: 'trafego-pago-alem-do-botao-impulsionar',
+    title: 'Tráfego Pago: Pare de Queimar Dinheiro no Botão Impulsionar',
+    category: 'Tráfego Pago',
+    excerpt: 'O botão impulsionar é a forma mais rápida de perder dinheiro. Veja como profissionais escalam campanhas.',
+    content: `
+      <p>O botão impulsionar existe para o dono da plataforma ficar rico, não você. Ele busca engajamento, não vendas.</p>
+      <p>Para ter ROI (Retorno sobre Investimento), você precisa usar o Gerenciador de Anúncios e segmentar com inteligência.</p>
+      <p>Não anuncie para todo mundo. Anuncie para quem tem a dor que você resolve e o dinheiro para pagar pela solução.</p>
+      <blockquote>"Tráfego sem oferta validada é apenas uma forma rápida de descobrir que seu produto é ruim."</blockquote>
+    `,
+    date: '2026-02-10',
     author: 'Rodrigo Rodrigues',
-    coverImage: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80',
-    localKeywords: ['Meta Ads', 'Instagram Ads', 'Vendas Online'],
-    metaDescription: 'Como escalar suas vendas usando tráfego pago no Instagram e Facebook.'
+    coverImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop',
+    localKeywords: ['Tráfego Pago', 'Facebook Ads', 'Google Ads'],
+    metaDescription: 'Descubra a diferença entre impulsionar e gerenciar tráfego profissionalmente.'
   },
   {
     id: '4',
-    slug: 'guia-google-analytics-ga4-para-empresarios',
-    title: 'Google Analytics (GA4): O que Você Realmente Precisa Medir',
-    category: 'GA4',
-    excerpt: 'Não se perca em dados inúteis. Aprenda as métricas que realmente indicam se o seu marketing está gerando lucro ou prejuízo.',
-    content: `<p>O GA4 pode ser intimidador, mas focar em <strong>eventos de conversão</strong> é o que separa amadores de profissionais.</p>`,
-    date: '2026-02-03',
+    slug: 'copywriting-palavras-que-vendem',
+    title: 'Copywriting: Como Escrever Textos que Vendem Sozinhos',
+    category: 'Conversão',
+    excerpt: 'A diferença entre um texto bonito e um texto que vende está na psicologia aplicada. Aprenda os gatilhos certos.',
+    content: `
+      <p>Ninguém lê textão? Mentira. As pessoas leem o que interessa a elas. Se seu texto fala sobre a dor delas, elas vão ler até o final.</p>
+      <p>Copywriting é a arte de vender com palavras. É entender as objeções do cliente antes mesmo dele falar.</p>
+      <h3>Estrutura AIDA</h3>
+      <ul>
+        <li><strong>Atenção:</strong> O título deve parar o scroll.</li>
+        <li><strong>Interesse:</strong> Fale do problema.</li>
+        <li><strong>Desejo:</strong> Apresente a solução irresistível.</li>
+        <li><strong>Ação:</strong> Diga o que fazer agora.</li>
+      </ul>
+    `,
+    date: '2026-02-09',
     author: 'Rodrigo Rodrigues',
-    coverImage: 'https://images.unsplash.com/photo-1551288049-bbbda536ad79?auto=format&fit=crop&q=80',
-    localKeywords: ['GA4', 'Analytics', 'Métricas de Marketing'],
-    metaDescription: 'Mensure o que importa no seu marketing com o Google Analytics GA4.'
+    coverImage: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2073&auto=format&fit=crop',
+    localKeywords: ['Copywriting', 'Vendas', 'Persuasão'],
+    metaDescription: 'Técnicas de copywriting para transformar leitores em compradores recorrentes.'
   },
   {
     id: '5',
-    slug: 'landing-pages-de-alta-conversao-checklist',
-    title: 'Landing Pages: A Anatomia de uma Página que Vende Sozinha',
-    category: 'Landing Pages',
-    excerpt: 'Onde o tráfego se torna lucro. Descubra os elementos psicológicos essenciais para uma landing page de alta autoridade.',
-    content: `<p>Uma Landing Page sem uma oferta clara e prova social forte é apenas um panfleto digital desperdiçado.</p>`,
-    date: '2026-02-02',
+    slug: 'inteligencia-artificial-nos-negocios',
+    title: 'Inteligência Artificial: O Fim do Amadorismo no Marketing',
+    category: 'Tecnologia',
+    excerpt: 'Como usar IA para acelerar sua produção de conteúdo e análise de dados, deixando seus concorrentes para trás.',
+    content: `
+      <p>A IA não veio para substituir o estrategista, mas para substituir o executor mediano. Quem souber usar, vai voar.</p>
+      <p>Use IA para:</p>
+      <ul>
+        <li>Analisar grandes volumes de dados de clientes.</li>
+        <li>Gerar ideias de conteúdo infinitas.</li>
+        <li>Otimizar campanhas em tempo real.</li>
+      </ul>
+      <p>O futuro pertence a quem combina estratégia humana com velocidade de máquina.</p>
+    `,
+    date: '2026-02-08',
     author: 'Rodrigo Rodrigues',
-    coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
-    localKeywords: ['Landing Page', 'Cro', 'Conversão'],
-    metaDescription: 'Aprenda a criar páginas de vendas que convertem visitantes em clientes.'
-  },
-  {
-    id: '6',
-    slug: 'instagram-organico-posicionamento-de-elite',
-    title: 'Instagram Orgânico: Como Criar Autoridade sem Depender apenas de Ads',
-    category: 'Instagram Orgânico',
-    excerpt: 'O jogo do conteúdo estratégico. Como se posicionar como especialista e atrair clientes premium através do seu perfil.',
-    content: `<p>Seu perfil do Instagram é seu cartão de visitas digital de elite. Ele passa confiança ou amadorismo?</p>`,
-    date: '2026-02-01',
-    author: 'Rodrigo Rodrigues',
-    coverImage: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80',
-    localKeywords: ['Instagram Orgânico', 'Conteúdo Estratégico', 'Social Media'],
-    metaDescription: 'Estratégias de conteúdo para crescer autoridade no Instagram organicamente.'
-  },
-  {
-    id: '7',
-    slug: 'como-escolher-a-melhor-agencia-de-marketing',
-    title: 'Como Escolher a Agência de Marketing Certa (e Fugir de Amadores)',
-    category: 'Escolha de Agência',
-    excerpt: 'X sinais de que você está contratando uma agência que só vai queimar seu dinheiro. O guia do empresário inteligente.',
-    content: `<p>Fuja de agências que prometem "curtidas" ou "seguidores". Você precisa de faturamento no bolso.</p>`,
-    date: '2026-01-31',
-    author: 'Rodrigo Rodrigues',
-    coverImage: 'https://images.unsplash.com/photo-1541746972996-4e0b0f43e01a?auto=format&fit=crop&q=80',
-    localKeywords: ['Agência de Marketing', 'Consultoria Digital', 'Parceiro Estratégico'],
-    metaDescription: 'O que observar antes de contratar uma agência de marketing para seu negócio.'
-  },
-  {
-    id: '8',
-    slug: 'remarketing-a-estrategia-para-fechar-vendas-perdidas',
-    title: 'Remarketing: O Segredo para "Perseguir" e Converter Clientes Indecisos',
-    category: 'Remarketing',
-    excerpt: 'A maioria das vendas não acontece no primeiro contato. Aprenda como o remarketing multicanal recupera lucros perdidos.',
-    content: `<p>O Remarketing é onde a mágica da conversão acontece. Não deixe seus leads esquecerem de você.</p>`,
-    date: '2026-01-30',
-    author: 'Rodrigo Rodrigues',
-    coverImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80',
-    localKeywords: ['Remarketing', 'Conversão', 'Funil de Vendas'],
-    metaDescription: 'Recupere vendas perdidas com estratégias de remarketing inteligentes.'
+    coverImage: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',
+    localKeywords: ['Inteligência Artificial', 'Automação', 'Produtividade'],
+    metaDescription: 'Como a IA está revolucionando o marketing e como você pode aproveitar essa onda.'
   }
 ];
-
