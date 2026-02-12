@@ -241,7 +241,7 @@ export function BlogPage() {
                     <div className="flex items-center gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
                         <Link to="/" className="text-[#111111]">Migração Digital</Link>
                         <span>—</span>
-                        <p>&copy; 2026 Inteligência Digital</p>
+                        <p>&copy; 2026 Inteligência Digital (v2.1)</p>
                     </div>
                     <div className="flex gap-10">
                         <Link to="/blog" className="text-[9px] font-black uppercase tracking-widest text-[#BD9F67]">Blog</Link>
