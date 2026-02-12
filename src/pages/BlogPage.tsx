@@ -1,10 +1,12 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, Users, Zap, TrendingUp, ShieldCheck, Rss, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Mail, Users, Zap, TrendingUp, ShieldCheck, Rss, ArrowUpRight, Menu } from 'lucide-react';
 import { posts } from '../data/posts';
 import { SEOHelmet } from '../components/SEOHelmet';
 import { SocialProof } from '../components/SocialProof';
+import { ExitIntentPopup } from '../components/ExitIntentPopup';
+import { AnalysisBanner } from '../components/AnalysisBanner';
 
 const categories = [
     'Todos',
@@ -31,41 +33,61 @@ export function BlogPage() {
                 description="Estratégia, Posicionamento e Tecnologia para marcas que buscam o lugar de direito no mercado."
             />
 
+            {/* Exit Intent Popup */}
+            <ExitIntentPopup />
+
             {/* Navigation Prestige */}
-            <nav className="fixed top-0 w-full z-[110] mix-blend-difference py-8 px-6 md:px-20 flex justify-between items-center pointer-events-none">
-                <Link to="/" className="pointer-events-auto flex items-center gap-4 group">
-                    <img src="/logo.png" alt="Migração Digital" className="h-10 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" />
-                    <div className="flex flex-col">
+            <nav className="fixed top-0 w-full z-[110] mix-blend-difference py-6 md:py-8 px-6 md:px-20 flex justify-between items-center pointer-events-none">
+                <Link to="/" className="pointer-events-auto flex items-center gap-3 md:gap-4 group">
+                    <img src="/logo.png" alt="Migração Digital" className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                    <div className="hidden md:flex flex-col">
                         <span className="text-lg font-serif font-bold tracking-tight text-white uppercase italic leading-none group-hover:text-[#BD9F67] transition-colors">Migração Digital</span>
                         <span className="text-[8px] font-sans font-medium tracking-[0.3em] text-white/60 uppercase leading-none mt-1 group-hover:text-white transition-colors">Intelligence & Strategy</span>
                     </div>
                 </Link>
-                <div className="flex gap-12 pointer-events-auto">
-                    <Link to="/ebook" className="text-[9px] font-black uppercase tracking-[0.4em] text-white hover:text-[#BD9F67] transition-all">Explorar Estratégias</Link>
+                <div className="flex gap-6 md:gap-12 pointer-events-auto items-center">
+                    {/* Mobile: Hamburger Icon */}
+                    <Link to="/ebook" className="md:hidden p-2 text-white hover:text-[#BD9F67] transition-all">
+                        <Menu className="w-6 h-6" />
+                    </Link>
+                    {/* Desktop: Text Link */}
+                    <Link to="/ebook" className="hidden md:block text-[9px] font-black uppercase tracking-[0.4em] text-white hover:text-[#BD9F67] transition-all">Checklist Estratégico</Link>
                 </div>
             </nav>
 
             <main className="relative">
 
-                {/* HERO: EDITORIAL IMPACT */}
+                {/* HERO: EDITORIAL IMPACT - Mobile Optimized */}
                 <section className="min-h-screen flex flex-col justify-center px-6 md:px-20 relative overflow-hidden border-b border-[#BD9F67]/10">
-                    <div className="max-w-7xl mx-auto w-full pt-40 md:pt-0">
-                        <div className="flex flex-col gap-4 mb-20">
+                    <div className="max-w-7xl mx-auto w-full pt-32 md:pt-0">
+                        <div className="flex flex-col gap-3 md:gap-4 mb-12 md:mb-20">
                             <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#BD9F67]">Volume I — Inteligência Digital</span>
-                            <h1 className="text-7xl md:text-[10rem] font-serif font-bold leading-[0.85] tracking-tighter text-[#111111]">
+                            <h1 className="text-5xl md:text-[10rem] font-serif font-bold leading-[0.9] md:leading-[0.85] tracking-tighter text-[#111111]">
                                 Estratégia <br />
                                 <span className="italic relative">
                                     Previsível.
-                                    <div className="absolute -bottom-4 right-0 w-1/2 h-[1px] bg-[#BD9F67]" />
+                                    <div className="absolute -bottom-2 md:-bottom-4 right-0 w-1/2 h-[1px] bg-[#BD9F67]" />
                                 </span>
                             </h1>
                         </div>
 
-                        <div className="flex flex-col md:flex-row gap-20 items-end justify-between">
-                            <p className="max-w-xl text-gray-500 text-xl font-light leading-relaxed">
+                        <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-start md:items-end justify-between">
+                            <p className="max-w-xl text-gray-600 text-lg md:text-xl font-light leading-relaxed">
                                 Transformamos conhecimento técnico em autoridade comercial. O blog da Migração Digital é o diário oficial de bastidores de quem já escalou +50 nichos diferentes.
                             </p>
-                            <div className="flex items-center gap-10">
+
+                            {/* CTA - Visible on Mobile Above Fold */}
+                            <div className="w-full md:w-auto">
+                                <Link
+                                    to="/ebook"
+                                    className="block md:inline-block text-center bg-[#111111] text-white text-xs md:text-sm font-black uppercase tracking-[0.3em] py-4 md:py-5 px-8 md:px-12 hover:bg-[#BD9F67] hover:text-black transition-all shadow-xl"
+                                >
+                                    Checklist R$ 19,90 →
+                                </Link>
+                                <p className="text-xs text-gray-400 text-center md:text-left mt-3 uppercase tracking-widest">Diagnóstico em 15 min</p>
+                            </div>
+
+                            <div className="hidden md:flex items-center gap-10">
                                 <div className="text-right">
                                     <div className="text-4xl font-serif font-bold mb-1">5.0+</div>
                                     <div className="text-[8px] font-black uppercase tracking-widest text-gray-400">Anos de Domínio</div>
@@ -97,7 +119,7 @@ export function BlogPage() {
                                     <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 group-hover:translate-x-4 transition-transform leading-tight">
                                         {mainPost.title}
                                     </h2>
-                                    <p className="text-gray-500 text-xl font-light leading-relaxed mb-10 max-w-2xl">
+                                    <p className="text-gray-600 text-xl font-light leading-relaxed mb-10 max-w-2xl">
                                         {mainPost.excerpt}
                                     </p>
                                     <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-[#BD9F67]">
@@ -108,7 +130,7 @@ export function BlogPage() {
 
                             <div className="lg:col-span-4 flex flex-col justify-center space-y-24">
                                 <div className="border-l-4 border-[#BD9F67] pl-10 py-10">
-                                    <h3 className="text-[12px] font-black uppercase tracking-[0.4em] text-gray-300 mb-10">Latest Insights</h3>
+                                    <h3 className="text-[12px] font-black uppercase tracking-[0.4em] text-gray-400 mb-10">Latest Insights</h3>
                                     <div className="space-y-16">
                                         {secondaryPosts.map(post => (
                                             <Link key={post.id} to={`/blog/${post.slug}`} className="group block">
@@ -122,8 +144,8 @@ export function BlogPage() {
                                 </div>
                                 <Link to="/ebook" className="group block p-12 bg-[#FAF9F6] border border-gray-100 hover:border-[#BD9F67]/30 transition-all text-center">
                                     <Mail className="w-8 h-8 mx-auto mb-6 text-[#BD9F67]" />
-                                    <p className="text-sm font-light text-gray-500 mb-6">Assine nosso feed de estratégias via WhatsApp e e-mail.</p>
-                                    <span className="text-[10px] font-black uppercase tracking-widest block border-t border-gray-100 pt-6 group-hover:text-[#BD9F67]">Agendar Notificação</span>
+                                    <p className="text-sm font-light text-gray-600 mb-6">Garanta o Checklist Estratégico e descubra os erros ocultos no seu funil.</p>
+                                    <span className="text-[10px] font-black uppercase tracking-widest block border-t border-gray-100 pt-6 group-hover:text-[#BD9F67]">Acessar por R$ 19,90</span>
                                 </Link>
                             </div>
 
@@ -132,6 +154,9 @@ export function BlogPage() {
                 </section>
 
                 <SocialProof />
+
+                {/* Analysis Banner - R$ 197 Product */}
+                <AnalysisBanner />
 
                 {/* COLLECTION: THE ARCHIVE */}
                 <section className="py-40 px-6 md:px-20 bg-[#FAF9F6]">
@@ -167,12 +192,12 @@ export function BlogPage() {
                                         </div>
                                         <div className="flex items-center gap-6 mb-8">
                                             <div className="h-[1px] w-12 bg-[#BD9F67]" />
-                                            <span className="text-[9px] font-black uppercase tracking-widest text-gray-300">{post.date}</span>
+                                            <span className="text-[9px] font-black uppercase tracking-widest text-gray-400">{post.date}</span>
                                         </div>
                                         <h3 className="text-3xl font-serif font-bold text-[#111111] group-hover:text-[#BD9F67] transition-all mb-6 leading-tight">
                                             {post.title}
                                         </h3>
-                                        <p className="text-gray-400 font-light line-clamp-2 leading-relaxed italic">
+                                        <p className="text-gray-500 font-light line-clamp-2 leading-relaxed italic">
                                             {post.excerpt}
                                         </p>
                                     </Link>
@@ -204,14 +229,14 @@ export function BlogPage() {
 
             <footer className="py-20 px-6 md:px-20 bg-white">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-                    <div className="flex items-center gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">
+                    <div className="flex items-center gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
                         <Link to="/" className="text-[#111111]">Migração Digital</Link>
                         <span>—</span>
                         <p>&copy; 2026 Inteligência Digital</p>
                     </div>
                     <div className="flex gap-10">
                         <Link to="/blog" className="text-[9px] font-black uppercase tracking-widest text-[#BD9F67]">Blog</Link>
-                        <Link to="/ebook" className="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-black">Ebook</Link>
+                        <Link to="/ebook" className="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-black">Checklist</Link>
                         <a href="https://wa.me/5521979043854" className="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-black">WhatsApp</a>
                     </div>
                 </div>
