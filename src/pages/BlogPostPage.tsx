@@ -80,36 +80,34 @@ export function BlogPostPage() {
 
                     {/* Editorial Body */}
                     <div className="max-w-none">
-                        <div className="prose prose-xl prose-stone">
-                            {post.content.split('\n').filter(p => p.trim() !== '').map((para, i) => {
-                                if (i === 0) {
-                                    return (
-                                        <p key={i} className="first-letter:text-8xl first-letter:font-serif first-letter:font-bold first-letter:text-[#BD9F67] first-letter:mr-6 first-letter:float-left first-letter:leading-[0.8] leading-relaxed text-2xl mb-16 font-light text-gray-600">
-                                            {para}
-                                        </p>
-                                    );
-                                }
+                        <div className="prose prose-xl prose-stone max-w-none
+                            [&>div>p:first-child]:first-letter:text-8xl 
+                            [&>div>p:first-child]:first-letter:font-serif 
+                            [&>div>p:first-child]:first-letter:font-bold 
+                            [&>div>p:first-child]:first-letter:text-[#BD9F67] 
+                            [&>div>p:first-child]:first-letter:mr-6 
+                            [&>div>p:first-child]:first-letter:float-left 
+                            [&>div>p:first-child]:first-letter:leading-[0.8]
+                            [&>div>p]:text-gray-500 [&>div>p]:font-light [&>div>p]:leading-relaxed [&>div>p]:mb-10
+                            [&>div>h3]:font-serif [&>div>h3]:text-3xl [&>div>h3]:text-[#111111] [&>div>h3]:mt-16 [&>div>h3]:mb-8
+                            [&>div>ul]:mb-10 [&>div>ul]:list-disc [&>div>ul]:pl-6 [&>div>ul>li]:text-gray-500 [&>div>ul>li]:font-light [&>div>ul>li]:mb-4
+                            [&>div>blockquote]:border-l-4 [&>div>blockquote]:border-[#BD9F67] [&>div>blockquote]:pl-6 [&>div>blockquote]:italic [&>div>blockquote]:text-2xl [&>div>blockquote]:text-gray-700 [&>div>blockquote]:my-12
+                        ">
+                            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                        </div>
 
-                                // Boutique CTA Block
-                                if (i === 3) {
-                                    return (
-                                        <div key="cta" className="my-24 p-16 bg-[#111111] text-white relative overflow-hidden group shadow-3xl">
-                                            <div className="absolute top-0 right-0 p-8 opacity-[0.03]">
-                                                <Target className="w-64 h-64 text-[#BD9F67]" />
-                                            </div>
-                                            <div className="relative z-10 text-center">
-                                                <h3 className="text-4xl font-serif font-bold text-white mb-8 leading-tight italic">O conhecimento vem antes da escala.</h3>
-                                                <p className="text-gray-400 mb-12 max-w-xl mx-auto font-light text-lg">Pare de tentar hacks baratos. Nosso Checklist Estratégico revela os pilares de autoridade que sustentam +5 anos de mercado.</p>
-                                                <Link to="/ebook" className="inline-block bg-[#BD9F67] text-black text-[10px] font-black uppercase tracking-[0.4em] py-6 px-12 hover:bg-white transition-all shadow-xl shadow-[#BD9F67]/20 font-bold">
-                                                    Garantir Checklist R$ 19,90 &rarr;
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    );
-                                }
-
-                                return <p key={i} className="leading-relaxed text-xl mb-10 text-gray-500 font-light">{para}</p>;
-                            })}
+                        {/* Boutique CTA Block */}
+                        <div className="my-24 p-16 bg-[#111111] text-white relative overflow-hidden group shadow-3xl">
+                            <div className="absolute top-0 right-0 p-8 opacity-[0.03]">
+                                <Target className="w-64 h-64 text-[#BD9F67]" />
+                            </div>
+                            <div className="relative z-10 text-center">
+                                <h3 className="text-4xl font-serif font-bold text-white mb-8 leading-tight italic">O conhecimento vem antes da escala.</h3>
+                                <p className="text-gray-400 mb-12 max-w-xl mx-auto font-light text-lg">Pare de tentar hacks baratos. Nosso Checklist Estratégico revela os pilares de autoridade que sustentam +5 anos de mercado.</p>
+                                <Link to="/ebook" className="inline-block bg-[#BD9F67] text-black text-[10px] font-black uppercase tracking-[0.4em] py-6 px-12 hover:bg-white transition-all shadow-xl shadow-[#BD9F67]/20 font-bold">
+                                    Garantir Checklist R$ 19,90 &rarr;
+                                </Link>
+                            </div>
                         </div>
                     </div>
 

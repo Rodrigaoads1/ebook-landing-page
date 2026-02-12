@@ -5,9 +5,12 @@ export const Footer: React.FC = () => {
   return (
     <footer className="py-16 px-6 border-t border-white/5 bg-black">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
-        <span className="text-xl font-black bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] bg-clip-text text-transparent tracking-tighter mb-4">
-          MIGRAÇÃO DIGITAL
-        </span>
+        <div className="flex items-center gap-3 mb-4">
+          <img src="/logo.png" alt="Migração Digital" className="h-8 w-auto object-contain brightness-0 invert opacity-80" />
+          <span className="text-xl font-black bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] bg-clip-text text-transparent tracking-tighter">
+            MIGRAÇÃO DIGITAL
+          </span>
+        </div>
         <p className="text-gray-600 text-sm max-w-md text-center mb-10 font-light">
           Estrutura comercial e previsibilidade para profissionais liberais, clínicas e empresas de serviços.
         </p>

@@ -11,9 +11,17 @@ export function HomePage() {
             {/* Nav */}
             <nav className="fixed top-0 w-full z-[100] bg-black/50 backdrop-blur-xl border-b border-white/5 py-5 px-6">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <span className="text-xl md:text-2xl font-black bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] bg-clip-text text-transparent tracking-tighter">
-                        MIGRAÇÃO DIGITAL
-                    </span>
+                    <Link to="/" className="flex items-center gap-3 group">
+                        <img src="/logo.png" alt="Migração Digital" className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                        <div className="flex flex-col">
+                            <span className="text-lg md:text-xl font-black bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] bg-clip-text text-transparent tracking-tighter leading-none group-hover:to-white transition-all">
+                                MIGRAÇÃO DIGITAL
+                            </span>
+                            <span className="text-[8px] font-medium tracking-[0.3em] text-white/40 uppercase leading-none mt-1 group-hover:text-white/80 transition-colors">
+                                Intelligence & Strategy
+                            </span>
+                        </div>
+                    </Link>
                     <div className="hidden md:flex items-center gap-8">
                         <a href="#metodo" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">O Método</a>
                         <Link to="/blog" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Blog & Insights</Link>
@@ -325,7 +333,10 @@ export function HomePage() {
             <footer className="py-20 border-t border-white/5 bg-black">
                 <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12 font-medium">
                     <div className="text-center md:text-left">
-                        <span className="text-2xl font-black bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] bg-clip-text text-transparent tracking-tighter mb-4 block">MIGRAÇÃO DIGITAL</span>
+                        <div className="flex items-center gap-3 justify-center md:justify-start mb-4">
+                            <img src="/logo.png" alt="Migração Digital" className="h-8 w-auto object-contain brightness-0 invert opacity-80" />
+                            <span className="text-xl font-black bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] bg-clip-text text-transparent tracking-tighter block">MIGRAÇÃO DIGITAL</span>
+                        </div>
                         <p className="text-gray-600 text-sm max-w-xs">Estrutura comercial e previsibilidade para profissionais liberais e empresas de serviços.</p>
                     </div>
 

@@ -34,7 +34,7 @@ export function BlogPage() {
             {/* Navigation Prestige */}
             <nav className="fixed top-0 w-full z-[110] mix-blend-difference py-8 px-6 md:px-20 flex justify-between items-center pointer-events-none">
                 <Link to="/" className="pointer-events-auto flex items-center gap-4 group">
-                    <img src="/logo.png" alt="Migração Digital" className="h-10 w-auto object-contain mix-blend-screen opacity-90 group-hover:opacity-100 transition-opacity" />
+                    <img src="/logo.png" alt="Migração Digital" className="h-10 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" />
                     <div className="flex flex-col">
                         <span className="text-lg font-serif font-bold tracking-tight text-white uppercase italic leading-none group-hover:text-[#BD9F67] transition-colors">Migração Digital</span>
                         <span className="text-[8px] font-sans font-medium tracking-[0.3em] text-white/60 uppercase leading-none mt-1 group-hover:text-white transition-colors">Intelligence & Strategy</span>
