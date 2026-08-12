@@ -71,10 +71,6 @@ export function BlogPage() {
                     <div className="absolute top-10 left-1/4 w-96 h-96 bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none" />
                     
                     <div className="max-w-7xl mx-auto text-left">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-xs font-mono tracking-wider mb-6">
-                            <Rss className="w-3.5 h-3.5 text-[#D4AF37]" />
-                            MAGAZINE & BASTIDORES • MIGRAÇÃO DIGITAL
-                        </div>
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] max-w-4xl mb-6">
                             Estratégia, Presença Digital e <span className="text-[#D4AF37]">Vendas Reais.</span>
                         </h1>
