@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Target, Zap, ShieldCheck, ArrowRight, CheckCircle2, HelpCircle, MapPin, MessageCircle, XCircle, ChevronRight, Check, ArrowUpRight, Search, PhoneCall, Share2, Sparkles } from 'lucide-react';
-import profileImg from '../assets/rodrigo_analise_hero.png';
+import { Target, Zap, ShieldCheck, ArrowRight, CheckCircle2, HelpCircle, MapPin, MessageCircle, XCircle, ChevronRight, Check, ArrowUpRight, Search, PhoneCall, Share2, Sparkles, Award } from 'lucide-react';
+import profileSofa from '../assets/rodrigo_sofa_branca.png';
+import profileEstudio from '../assets/rodrigo_estudio_preto.jpg';
+import profileJeans from '../assets/rodrigo_externa_jeans.jpg';
 import { SocialProof } from '../components/SocialProof';
 import { SEOHelmet } from '../components/SEOHelmet';
 
@@ -365,44 +367,88 @@ export function HomePage() {
                 </section>
 
 
-                {/* [QUEM SOU - RODRIGO RODRIGUES] */}
+                {/* [SOBRE RODRIGO RODRIGUES - GALERIA DAS 3 NOVAS FOTOS REAIS DO CLIENTE] */}
                 <section id="sobre" className="py-24 md:py-32 px-6 bg-[#080808] border-b border-white/5">
-                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-                        <div className="relative">
-                            <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0a0a0a]">
-                                <img
-                                    src={profileImg}
-                                    alt="Rodrigo Rodrigues - Estrategista Comercial"
-                                    className="w-full h-auto grayscale-[10%] contrast-105 object-cover"
-                                />
-                                <div className="p-6 bg-black/90 border-t border-white/10">
-                                    <p className="text-lg font-bold text-[#D4AF37]">Rodrigo Rodrigues</p>
-                                    <p className="text-gray-400 text-xs font-mono uppercase tracking-wider mt-1">Estrategista Comercial & Fundador da Migração Digital</p>
+                    <div className="max-w-7xl mx-auto space-y-16">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+                            <div className="relative">
+                                <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0a0a0a] group">
+                                    <img
+                                        src={profileSofa}
+                                        alt="Rodrigo Rodrigues - Estrategista Comercial"
+                                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="p-6 bg-black/90 border-t border-white/10 flex items-center justify-between">
+                                        <div>
+                                            <p className="text-lg font-bold text-[#D4AF37]">Rodrigo Rodrigues</p>
+                                            <p className="text-gray-400 text-xs font-mono uppercase tracking-wider mt-1">Estrategista Comercial & Fundador da Migração Digital</p>
+                                        </div>
+                                        <Award className="w-6 h-6 text-[#D4AF37]" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="space-y-6 text-left">
+                                <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block">Quem Constrói Suas Campanhas</span>
+                                <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                                    Atendimento direto com quem entende de negócio.
+                                </h2>
+                                <div className="space-y-4 text-gray-400 font-light text-base md:text-lg leading-relaxed">
+                                    <p>
+                                        Você não será atendido por um estagiário de agência. Eu mesmo desenho a estratégia, acompanho a execução e garanto a estrutura comercial da sua empresa.
+                                    </p>
+                                    <p>
+                                        Meu objetivo é simples: <strong className="text-white font-medium">garantir que pessoas com capacidade de pagamento encontrem o seu trabalho e entrem em contato pelo WhatsApp.</strong>
+                                    </p>
+                                </div>
+                                <div className="pt-4 flex items-center gap-8 text-xs font-mono text-gray-400">
+                                    <div>
+                                        <p className="text-2xl font-bold text-[#D4AF37]">+50</p>
+                                        <p className="mt-1">Projetos Atendidos</p>
+                                    </div>
+                                    <div>
+                                        <p className="text-2xl font-bold text-[#D4AF37]">5 Anos</p>
+                                        <p className="mt-1">De Atuação Comercial</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="space-y-6 text-left">
-                            <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block">Quem Constrói Suas Campanhas</span>
-                            <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                                Atendimento direto com quem entende de negócio.
-                            </h2>
-                            <div className="space-y-4 text-gray-400 font-light text-base md:text-lg leading-relaxed">
-                                <p>
-                                    Você não será atendido por um estagiário de agência. Eu mesmo desenho a estratégia e acompanho a estrutura comercial da sua empresa.
-                                </p>
-                                <p>
-                                    Meu objetivo é simples: <strong className="text-white font-medium">garantir que pessoas com capacidade de pagamento encontrem o seu trabalho e entrem em contato pelo WhatsApp.</strong>
-                                </p>
-                            </div>
-                            <div className="pt-4 flex items-center gap-8 text-xs font-mono text-gray-400">
-                                <div>
-                                    <p className="text-2xl font-bold text-[#D4AF37]">+50</p>
-                                    <p className="mt-1">Projetos Atendidos</p>
+                        {/* GALERIA EDITORIAL DAS 3 FOTOS DO CLIENTE */}
+                        <div className="pt-8 border-t border-white/10">
+                            <span className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest block mb-6 text-center">Posicionamento & Presença de Marca</span>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {/* Foto 1 */}
+                                <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a] group relative">
+                                    <img src={profileSofa} alt="Rodrigo Rodrigues - Liderança" className="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-5">
+                                        <div>
+                                            <p className="text-sm font-bold text-white">Estratégia & Liderança</p>
+                                            <p className="text-[11px] text-gray-400">Visão de negócios e gestão de crescimento</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p className="text-2xl font-bold text-[#D4AF37]">5 Anos</p>
-                                    <p className="mt-1">De Atuação Comercial</p>
+
+                                {/* Foto 2 */}
+                                <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a] group relative">
+                                    <img src={profileEstudio} alt="Rodrigo Rodrigues - Execução" className="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-5">
+                                        <div>
+                                            <p className="text-sm font-bold text-white">Foco na Execução</p>
+                                            <p className="text-[11px] text-gray-400">Desenvolvimento cirúrgico de campanhas</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Foto 3 */}
+                                <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a] group relative">
+                                    <img src={profileJeans} alt="Rodrigo Rodrigues - Presença" className="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-5">
+                                        <div>
+                                            <p className="text-sm font-bold text-white">Relacionamento Real</p>
+                                            <p className="text-[11px] text-gray-400">Proximidade e parceria transparente</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
