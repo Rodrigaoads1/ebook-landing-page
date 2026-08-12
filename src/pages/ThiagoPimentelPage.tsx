@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
     ArrowRight, MessageCircle, ChevronDown, Sparkles,
-    Check, Send, ArrowUpRight, Play, Quote
+    Check, Send, ArrowUpRight, Quote
 } from 'lucide-react';
 import { SEOHelmet } from '../components/SEOHelmet';
 
-// Fotos Reais do Thiago Pimentel (Originais fornecidas pelo usuário)
+// Fotos Reais do Thiago Pimentel
 import thiagoBracosCruzadosImg from '../assets/thiago_bracos_cruzados.jpg';
 import thiagoSorrindoImg from '../assets/thiago_sorrindo.jpg';
 import thiagoPodcastImg from '../assets/thiago_podcast.jpg';
@@ -38,33 +38,40 @@ export function ThiagoPimentelPage() {
 
     const faqs = [
         {
-            q: "Como funciona o primeiro atendimento?",
-            a: "A primeira conversa serve para entender sua realidade, seus objetivos e seu momento atual. Não vendemos produtos de prateleira; primeiro entendemos você para avaliar a melhor estratégia."
-        },
-        {
-            q: "Quanto custa a assessoria de investimentos?",
-            a: "O modelo de atendimento através da Volare Investimentos (credenciada à XP) é transparente. Explicamos todos os custos e modelos de remuneração de forma clara antes de qualquer decisão."
-        },
-        {
-            q: "Preciso ter muito dinheiro para conversar com a equipe?",
+            q: "Preciso ter muito dinheiro para conversar?",
             a: "Atendemos investidores em diferentes estágios da vida financeira: desde quem está organizando os primeiros passos até empresários e famílias com patrimônio consolidado."
         },
         {
-            q: "Como o conteúdo do Instagram se conecta com a assessoria?",
-            a: "O conteúdo serve para desmistificar o mercado e trazer clareza. Quando você decide sair das dicas soltas e quer uma estratégia personalizada para o seu patrimônio, a equipe da Volare assume a execução técnica."
+            q: "A conversa é uma recomendação de investimento?",
+            a: "A primeira conversa serve para entender sua realidade, seus objetivos e seu momento atual. Não é uma recomendação imediata; primeiro entendemos seu contexto."
+        },
+        {
+            q: "Quanto custa a assessoria?",
+            a: "O modelo de atendimento através da Volare Investimentos (credenciada à XP) é transparente. Explicamos todos os custos e modelos de remuneração de forma clara antes de qualquer decisão."
+        },
+        {
+            q: "Vocês garantem rentabilidade?",
+            a: "Não. Nenhuma assessoria séria promete rentabilidade garantida. O trabalho é focado em eficiência, gestão de risco e alinhamento com seus objetivos de vida."
+        },
+        {
+            q: "A Volare é ligada à XP?",
+            a: "Sim, a Volare Investimentos é um escritório de assessoria de investimentos devidamente credenciado à XP Investimentos."
+        },
+        {
+            q: "Posso falar apenas sobre uma dúvida?",
+            a: "Sim. A equipe está preparada para responder suas dúvidas e avaliar se faz sentido avançar para um plano de acompanhamento."
         }
     ];
 
-    // Logo TP Padronizada (Header & Footer)
+    // Logo Fiel à Imagem de Referência (Texto DM Serif Display + Subtítulo em Verde)
     const BrandLogo = () => (
-        <a href="#topo" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#36E58D] text-[#101713] font-extrabold flex items-center justify-center text-sm shadow-sm group-hover:scale-105 transition-transform">
-                TP
-            </div>
-            <div className="flex flex-col text-left">
-                <span className="text-base font-bold text-[#F6F1E8] leading-none tracking-tight font-sans">Thiago Pimentel</span>
-                <span className="text-[10px] font-mono tracking-widest text-[#B9C7BE] uppercase leading-none mt-1">O Investidor Agoniado</span>
-            </div>
+        <a href="#topo" className="flex flex-col text-left group">
+            <span className="font-serif text-xl md:text-2xl font-normal text-[#F6F1E8] leading-none tracking-tight">
+                Thiago Pimentel
+            </span>
+            <span className="text-[10px] md:text-[11px] font-mono tracking-[0.18em] text-[#1E9B65] font-bold uppercase leading-none mt-1.5">
+                O INVESTIDOR AGONIADO
+            </span>
         </a>
     );
 
@@ -75,7 +82,7 @@ export function ThiagoPimentelPage() {
                 description="Menos agonia, mais clareza para investir. Conteúdo direto sobre dinheiro e assessoria de investimentos com a Volare, credenciada à XP."
             />
 
-            {/* 4. CABEÇALHO COMPACTO E ELEGANTE */}
+            {/* HEADER COMPACTO FIEL AO PRINTSCREEN */}
             <nav className="fixed top-0 w-full z-[100] bg-[#06120D]/90 backdrop-blur-2xl border-b border-[#1B3A2C] py-4 px-6">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     <BrandLogo />
@@ -84,23 +91,24 @@ export function ThiagoPimentelPage() {
                         <a href="#metodo" className="hover:text-[#36E58D] transition-colors">Como funciona</a>
                         <a href="#conteudos" className="hover:text-[#36E58D] transition-colors">Conteúdos</a>
                         <a href="#sobre" className="hover:text-[#36E58D] transition-colors">Sobre o Thiago</a>
-                        <a
-                            href="#formulario"
-                            className="bg-[#36E58D] hover:bg-[#1E9B65] text-[#101713] px-6 py-2.5 rounded-full font-bold transition-all shadow-md flex items-center gap-2 text-xs uppercase tracking-wider"
-                        >
-                            Quero organizar minha estratégia
-                        </a>
                     </div>
+
+                    <a
+                        href="#formulario"
+                        className="bg-[#36E58D] hover:bg-[#1E9B65] text-[#101713] px-6 py-2.5 rounded-full font-bold transition-all shadow-md flex items-center gap-2 text-xs uppercase tracking-wider"
+                    >
+                        Quero organizar meus investimentos
+                    </a>
                 </div>
             </nav>
 
             <main className="pt-28 md:pt-36">
-                {/* 5. HERO PRINCIPAL (SEÇÃO 1 - FUNDO VERDE QUASE PRETO #06120D) */}
+                {/* HERO PRINCIPAL */}
                 <section id="topo" className="px-6 pb-20 md:pb-32 border-b border-[#1B3A2C] relative overflow-hidden bg-[#06120D]">
                     <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#36E58D]/5 blur-[180px] rounded-full pointer-events-none" />
 
                     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-                        {/* Texto Alinhado à Esquerda */}
+                        {/* Texto no Lado Esquerdo */}
                         <div className="lg:col-span-7 text-left space-y-8">
                             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#10251D] border border-[#1B3A2C] text-[#36E58D] text-xs font-mono tracking-widest uppercase font-bold">
                                 <Sparkles className="w-3.5 h-3.5" />
@@ -165,7 +173,7 @@ export function ThiagoPimentelPage() {
                         </div>
                     </div>
 
-                    {/* Cards Horizontais de Autoridade na Parte Inferior */}
+                    {/* Cards Horizontais de Autoridade */}
                     <div className="pt-20 max-w-7xl mx-auto">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div className="p-6 bg-[#10251D] border border-[#1B3A2C] rounded-2xl text-left">
@@ -185,7 +193,7 @@ export function ThiagoPimentelPage() {
                     </div>
                 </section>
 
-                {/* 7. SEÇÃO DE IDENTIFICAÇÃO DA DOR (SEÇÃO 2 - FUNDO CREME QUENTE #F3EFE6) */}
+                {/* IDENTIFICAÇÃO DA DOR (CREME QUENTE #F3EFE6) */}
                 <section className="py-20 md:py-28 px-6 border-b border-[#D9D4C8] bg-[#F3EFE6] text-[#101713]">
                     <div className="max-w-6xl mx-auto space-y-16">
                         <div className="text-left max-w-3xl space-y-4">
@@ -200,7 +208,6 @@ export function ThiagoPimentelPage() {
                             </p>
                         </div>
 
-                        {/* 4 Cards Claros #FAF8F2 */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="p-8 bg-[#FAF8F2] border border-[#D9D4C8] rounded-2xl text-left shadow-sm hover:border-[#1E9B65] transition-colors space-y-3">
                                 <Quote className="w-5 h-5 text-[#1E9B65]" />
@@ -226,10 +233,9 @@ export function ThiagoPimentelPage() {
                     </div>
                 </section>
 
-                {/* 8. SEÇÃO SOBRE O THIAGO (SEÇÃO 3 - FUNDO VERDE QUASE PRETO #06120D) */}
+                {/* SOBRE O THIAGO */}
                 <section id="sobre" className="py-20 md:py-28 px-6 border-b border-[#1B3A2C] bg-[#06120D]">
                     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        {/* Imagem Real do Podcast no Lado Esquerdo */}
                         <div className="lg:col-span-5 relative">
                             <div className="relative rounded-3xl overflow-hidden border border-[#1B3A2C] shadow-2xl bg-[#10251D] p-2">
                                 <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
@@ -242,7 +248,6 @@ export function ThiagoPimentelPage() {
                             </div>
                         </div>
 
-                        {/* Texto no Lado Direito */}
                         <div className="lg:col-span-7 space-y-6 text-left">
                             <span className="text-xs font-mono text-[#36E58D] uppercase tracking-widest block font-bold">SOBRE O THIAGO</span>
                             <h2 className="text-3xl md:text-5xl font-normal font-serif text-[#F6F1E8] leading-tight">
@@ -271,7 +276,7 @@ export function ThiagoPimentelPage() {
                     </div>
                 </section>
 
-                {/* 9. SEÇÃO DO MÉTODO (SEÇÃO 4 - FUNDO VERDE PROFUNDO #0B2118) */}
+                {/* MÉTODO */}
                 <section id="metodo" className="py-20 md:py-28 px-6 border-b border-[#1B3A2C] bg-[#0B2118]">
                     <div className="max-w-7xl mx-auto space-y-16">
                         <div className="text-left max-w-3xl space-y-4">
@@ -284,7 +289,6 @@ export function ThiagoPimentelPage() {
                             </p>
                         </div>
 
-                        {/* 4 Cards Alinhados Horizontalmente */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             <div className="p-8 bg-[#10251D] border border-[#1B3A2C] rounded-3xl text-left space-y-3 hover:border-[#36E58D] transition-colors">
                                 <span className="text-4xl font-mono font-extrabold text-[#36E58D]">01</span>
@@ -325,7 +329,7 @@ export function ThiagoPimentelPage() {
                     </div>
                 </section>
 
-                {/* 10. SEÇÃO “PARA QUEM É” (SEÇÃO 5 - FUNDO VERDE QUASE PRETO #06120D COM FOTO REAL SORRINDO) */}
+                {/* PARA QUEM É */}
                 <section className="py-20 md:py-28 px-6 border-b border-[#1B3A2C] bg-[#06120D]">
                     <div className="max-w-7xl mx-auto space-y-16">
                         <div className="text-left max-w-3xl space-y-4">
@@ -336,7 +340,6 @@ export function ThiagoPimentelPage() {
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                            {/* Cards de Perfis (Grade 2x2 no Desktop) */}
                             <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <a href="#formulario" className="group p-8 bg-[#10251D] border border-[#1B3A2C] hover:border-[#36E58D] rounded-3xl text-left transition-all block">
                                     <h3 className="text-xl font-bold text-[#F6F1E8]">Para quem está começando</h3>
@@ -363,7 +366,6 @@ export function ThiagoPimentelPage() {
                                 </a>
                             </div>
 
-                            {/* Foto Real Sorrindo na Seção de Proximidade */}
                             <div className="lg:col-span-5 relative">
                                 <div className="relative rounded-3xl overflow-hidden border border-[#1B3A2C] shadow-2xl bg-[#10251D] p-2">
                                     <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
@@ -379,7 +381,7 @@ export function ThiagoPimentelPage() {
                     </div>
                 </section>
 
-                {/* 11. SEÇÃO DE CONTEÚDOS (SEÇÃO 6 - FUNDO CREME QUENTE #F3EFE6) */}
+                {/* CONTEÚDOS (CREME QUENTE #F3EFE6) */}
                 <section id="conteudos" className="py-20 md:py-28 px-6 border-b border-[#D9D4C8] bg-[#F3EFE6] text-[#101713]">
                     <div className="max-w-7xl mx-auto space-y-16">
                         <div className="text-left max-w-3xl space-y-4">
@@ -388,11 +390,10 @@ export function ThiagoPimentelPage() {
                                 A pergunta que você tem provavelmente já apareceu por aqui.
                             </h2>
                             <p className="text-[#566158] font-light text-base leading-relaxed">
-                                No Instagram, eu respondo perguntas sobre bitcoin, imóveis, comportamento, consumo, trabalho, empreendedorismo e investimentos. Aqui, você encontra os conteúdos organizados para entender não apenas a resposta rápida, mas também o contexto por trás dela.
+                                No Instagram, eu respondo perguntas sobre bitcoin, imóveis, comportamento, consumo, trabalho, empreendedorismo e investimentos. Aqui, você encontra os conteúdos organizados para entender o contexto por trás.
                             </p>
                         </div>
 
-                        {/* 4 Categorias de Conteúdos */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             <div className="p-6 bg-[#FAF8F2] border border-[#D9D4C8] rounded-2xl space-y-2 text-left">
                                 <h3 className="text-lg font-bold text-[#101713]">Tira a agonia</h3>
@@ -415,7 +416,6 @@ export function ThiagoPimentelPage() {
                             </div>
                         </div>
 
-                        {/* 4 Cards Verticais Escuros com Perguntas Reais */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
                             <div className="bg-[#10251D] border border-[#1B3A2C] text-[#F6F1E8] p-6 rounded-2xl text-left space-y-4 shadow-lg flex flex-col justify-between">
                                 <div>
@@ -460,7 +460,7 @@ export function ThiagoPimentelPage() {
                     </div>
                 </section>
 
-                {/* 12. SEÇÃO DE ESTRUTURA PROFISSIONAL (SEÇÃO 7 - FUNDO VERDE QUASE PRETO #06120D) */}
+                {/* ESTRUTURA PROFISSIONAL */}
                 <section className="py-20 md:py-28 px-6 border-b border-[#1B3A2C] bg-[#06120D]">
                     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                         <div className="lg:col-span-6 text-left space-y-6">
@@ -497,50 +497,68 @@ export function ThiagoPimentelPage() {
                     </div>
                 </section>
 
-                {/* 13. SEÇÃO DE PRIMEIRA CONVERSA (SEÇÃO 8 - FUNDO VERDE QUASE PRETO #06120D) */}
-                <section className="py-20 md:py-28 px-6 border-b border-[#1B3A2C] bg-[#06120D]">
-                    <div className="max-w-7xl mx-auto space-y-16">
-                        <div className="text-left max-w-3xl space-y-4">
-                            <span className="text-xs font-mono text-[#36E58D] uppercase tracking-widest block font-bold">A PRIMEIRA CONVERSA</span>
-                            <h2 className="text-3xl md:text-5xl font-normal font-serif text-[#F6F1E8] leading-tight">
-                                A conversa pode começar com uma dúvida. O atendimento continua com método.
+                {/* FAQ NOVO ESTILO (PERGUNTAS FREQUENTES EM CREME QUENTE FIEL AO PRINTSCREEN 2) */}
+                <section className="py-20 md:py-28 px-6 border-b border-[#D9D4C8] bg-[#F3EFE6] text-[#101713]">
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                        {/* Lado Esquerdo */}
+                        <div className="lg:col-span-5 text-left space-y-4">
+                            <span className="text-xs font-mono text-[#1E9B65] uppercase tracking-widest block font-bold">PERGUNTAS FREQUENTES</span>
+                            <h2 className="text-3xl md:text-5xl font-normal font-serif text-[#101713] leading-tight">
+                                Dúvidas antes de começar a conversa.
                             </h2>
-                            <p className="text-[#B9C7BE] font-light text-base leading-relaxed">
-                                Você não precisa chegar com tudo decidido. A primeira conversa serve para entender seu momento e avaliar se existe uma forma adequada de ajudar.
-                            </p>
                         </div>
 
-                        {/* 3 Cards Horizontais */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div className="p-8 bg-[#10251D] border border-[#1B3A2C] rounded-3xl text-left space-y-3">
-                                <span className="w-10 h-10 rounded-full bg-[#36E58D] text-[#101713] font-bold flex items-center justify-center text-base font-mono">1</span>
-                                <p className="text-base font-bold text-[#F6F1E8] pt-2">Você preenche um breve formulário.</p>
-                            </div>
-
-                            <div className="p-8 bg-[#10251D] border border-[#1B3A2C] rounded-3xl text-left space-y-3">
-                                <span className="w-10 h-10 rounded-full bg-[#36E58D] text-[#101713] font-bold flex items-center justify-center text-base font-mono">2</span>
-                                <p className="text-base font-bold text-[#F6F1E8] pt-2">A equipe entra em contato.</p>
-                            </div>
-
-                            <div className="p-8 bg-[#10251D] border border-[#1B3A2C] rounded-3xl text-left space-y-3">
-                                <span className="w-10 h-10 rounded-full bg-[#36E58D] text-[#101713] font-bold flex items-center justify-center text-base font-mono">3</span>
-                                <p className="text-base font-bold text-[#F6F1E8] pt-2">Vocês entendem o seu contexto.</p>
-                            </div>
-                        </div>
-
-                        <div className="pt-4 text-left">
-                            <a
-                                href="#formulario"
-                                className="inline-flex items-center gap-3 bg-[#36E58D] hover:bg-[#1E9B65] text-[#101713] font-bold text-xs uppercase tracking-wider py-4 px-8 rounded-full transition-all shadow-lg"
-                            >
-                                Quero iniciar uma conversa
-                            </a>
+                        {/* Lado Direito - Lista com Linhas Divisórias Limpas */}
+                        <div className="lg:col-span-7 space-y-0 text-left">
+                            {faqs.map((faq, idx) => (
+                                <div key={idx} className="border-b border-[#D9D4C8] py-5">
+                                    <button
+                                        onClick={() => toggleFaq(idx)}
+                                        className="w-full text-left font-serif font-normal text-lg md:text-xl text-[#101713] flex justify-between items-center gap-4 hover:text-[#1E9B65] transition-colors"
+                                    >
+                                        <span>{faq.q}</span>
+                                        <ChevronDown className={`w-5 h-5 text-[#1E9B65] transition-transform ${faqOpen === idx ? 'rotate-180' : ''}`} />
+                                    </button>
+                                    {faqOpen === idx && (
+                                        <div className="pt-3 text-sm text-[#566158] font-light leading-relaxed">
+                                            {faq.a}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
 
-                {/* 14. FORMULÁRIO (SEÇÃO 9 - CARD CENTRAL ESCURO #10251D) */}
-                <section id="formulario" className="py-20 md:py-28 px-6 border-b border-[#1B3A2C] bg-[#06120D]">
+                {/* SEÇÃO "CHEGA DE TOMAR DECISÃO FINANCEIRA NO ESCURO" (FIEL AO PRINTSCREEN 2) */}
+                <section className="py-24 md:py-32 px-6 border-b border-[#1B3A2C] bg-[#06120D] text-center">
+                    <div className="max-w-4xl mx-auto space-y-8">
+                        <h2 className="text-4xl md:text-6xl font-normal font-serif text-[#F6F1E8] leading-tight">
+                            Chega de tomar decisão financeira <span className="italic text-[#36E58D]">no escuro.</span>
+                        </h2>
+
+                        <p className="text-base md:text-lg text-[#B9C7BE] font-light max-w-2xl mx-auto leading-relaxed">
+                            Você não precisa entender tudo antes de começar uma conversa. Precisa apenas dar o primeiro passo com as informações que já tem hoje.
+                        </p>
+
+                        <div className="pt-4">
+                            <a
+                                href="#formulario"
+                                className="inline-flex items-center gap-3 bg-[#36E58D] hover:bg-[#1E9B65] text-[#101713] font-bold text-xs uppercase tracking-wider py-4 px-9 rounded-full transition-all shadow-xl hover:scale-105"
+                            >
+                                Quero organizar minha estratégia
+                                <ArrowRight className="w-4 h-4" />
+                            </a>
+                        </div>
+
+                        <p className="text-xs text-[#B9C7BE]/60 font-mono max-w-xl mx-auto pt-2">
+                            Sem promessa de rentabilidade. Sem fórmula mágica. Uma conversa sobre contexto, objetivos e próximos passos.
+                        </p>
+                    </div>
+                </section>
+
+                {/* FORMULÁRIO CENTRALIZADO EM CARD ESCURO */}
+                <section id="formulario" className="py-20 md:py-28 px-6 bg-[#06120D]">
                     <div className="max-w-3xl mx-auto space-y-12">
                         <div className="text-center space-y-4">
                             <span className="text-xs font-mono text-[#36E58D] uppercase tracking-widest block font-bold">Formulário</span>
@@ -622,7 +640,7 @@ export function ThiagoPimentelPage() {
                             </div>
 
                             <div>
-                                <label className="block text-xs font-mono uppercase tracking-wider text-[#B9C7BE] mb-2 font-bold">Qual é seu principal objetivo ou agonia hoje?</label>
+                                <label className="block text-[#B9C7BE] text-xs font-mono uppercase tracking-wider mb-2 font-bold">Qual é seu principal objetivo ou agonia hoje?</label>
                                 <textarea
                                     rows={3}
                                     value={formData.agonia}
@@ -661,40 +679,9 @@ export function ThiagoPimentelPage() {
                         </form>
                     </div>
                 </section>
-
-                {/* FAQ */}
-                <section className="py-20 md:py-28 px-6 bg-[#06120D]">
-                    <div className="max-w-4xl mx-auto space-y-12">
-                        <div className="text-center space-y-4">
-                            <span className="text-xs font-mono text-[#36E58D] uppercase tracking-widest block font-bold">PERGUNTAS FREQUENTES</span>
-                            <h2 className="text-3xl md:text-5xl font-normal font-serif text-[#F6F1E8]">
-                                Chega de tomar decisão financeira no escuro.
-                            </h2>
-                        </div>
-
-                        <div className="space-y-4 text-left">
-                            {faqs.map((faq, idx) => (
-                                <div key={idx} className="bg-[#10251D] border border-[#1B3A2C] rounded-2xl overflow-hidden">
-                                    <button
-                                        onClick={() => toggleFaq(idx)}
-                                        className="w-full p-6 text-left font-bold text-base md:text-lg text-[#F6F1E8] flex justify-between items-center gap-4 hover:text-[#36E58D] transition-colors"
-                                    >
-                                        <span>{faq.q}</span>
-                                        <ChevronDown className={`w-5 h-5 text-[#36E58D] transition-transform ${faqOpen === idx ? 'rotate-180' : ''}`} />
-                                    </button>
-                                    {faqOpen === idx && (
-                                        <div className="p-6 pt-0 text-sm text-[#B9C7BE] font-light leading-relaxed border-t border-[#1B3A2C]">
-                                            {faq.a}
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
             </main>
 
-            {/* 10. RODAPÉ (SEÇÃO 10 - FUNDO #06120D COM LOGO IDÊNTICA) */}
+            {/* RODAPÉ FIEL AO REQUISITO E IMAGENS */}
             <footer className="py-12 bg-[#06120D] border-t border-[#1B3A2C] text-[#B9C7BE] text-xs font-mono">
                 <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
                     <BrandLogo />
