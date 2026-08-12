@@ -23,9 +23,22 @@ export function SEOHelmet({ title, description, slug, article }: SEOProps) {
         }
         metaDesc.setAttribute('content', description);
 
-        // Update Open Graph tags (basic implementation)
+        // Update Canonical Tag to fix Google Search Console duplicates
+        const pageUrl = slug ? `https://migracaodigital.com.br/blog/${slug}` : `https://migracaodigital.com.br${window.location.pathname}`;
+        let canonical = document.querySelector('link[rel="canonical"]');
+        if (!canonical) {
+            canonical = document.createElement('link');
+            canonical.setAttribute('rel', 'canonical');
+            document.head.appendChild(canonical);
+        }
+        canonical.setAttribute('href', pageUrl);
+
+        // Update Open Graph tags
         const ogTitle = document.querySelector('meta[property="og:title"]');
         if (ogTitle) ogTitle.setAttribute('content', title);
+
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) ogUrl.setAttribute('content', pageUrl);
 
         // JSON-LD for Local SEO and Articles
         const scriptId = 'json-ld-seo';
@@ -41,23 +54,23 @@ export function SEOHelmet({ title, description, slug, article }: SEOProps) {
         const businessData = {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Migração Digital",
-            "image": "https://www.migracaodigital.com/assets/rodrigo_analise_extra.png",
-            "@id": "https://www.migracaodigital.com",
-            "url": "https://www.migracaodigital.com",
-            "telephone": "+5511999999999",
+            "name": "Agência Migração Digital",
+            "image": "https://migracaodigital.com.br/logo.png",
+            "@id": "https://migracaodigital.com.br/#organization",
+            "url": "https://migracaodigital.com.br",
+            "telephone": "+5521979043854",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Estrategista Digital em Campo Grande",
-                "addressLocality": "Campo Grande",
+                "streetAddress": "Campo Grande / Santíssimo",
+                "addressLocality": "Rio de Janeiro",
                 "addressRegion": "RJ",
                 "postalCode": "23000-000",
                 "addressCountry": "BR"
             },
             "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": -22.9035,
-                "longitude": -43.5591
+                "latitude": -22.8715,
+                "longitude": -43.5292
             },
             "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
@@ -84,14 +97,14 @@ export function SEOHelmet({ title, description, slug, article }: SEOProps) {
             },
             "publisher": {
                 "@type": "Organization",
-                "name": "Migração Digital",
+                "name": "Agência Migração Digital",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://www.migracaodigital.com/assets/rodrigo_analise_extra.png"
+                    "url": "https://migracaodigital.com.br/logo.png"
                 }
             },
             "datePublished": "2026-02-06",
-            "url": `https://www.migracaodigital.com/blog/${slug}`
+            "url": pageUrl
         } : null;
 
         script.text = JSON.stringify(article ? [businessData, articleData] : businessData);

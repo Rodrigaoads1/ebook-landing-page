@@ -1,4 +1,11 @@
 {
+    "redirects": [
+        { "source": "/hidden-(.*)", "statusCode": 308, "destination": "https://migracaodigital.com.br" },
+        { "source": "/wp-(.*)", "statusCode": 308, "destination": "https://migracaodigital.com.br" },
+        { "source": "/category/(.*)", "statusCode": 308, "destination": "https://migracaodigital.com.br" },
+        { "source": "/tag/(.*)", "statusCode": 308, "destination": "https://migracaodigital.com.br" },
+        { "source": "/page/(.*)", "statusCode": 308, "destination": "https://migracaodigital.com.br" }
+    ],
     "rewrites": [
         {
             "source": "/(.*)",
