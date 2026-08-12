@@ -7,6 +7,7 @@ import { AnalysisPage } from './pages/AnalysisPage';
 import { BioPage } from './pages/BioPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
+import { ThiagoPimentelPage } from './pages/ThiagoPimentelPage';
 import { WhatsAppChat } from './components/WhatsAppChat';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/bio-instagram" element={<BioPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/thiagopimentel" element={<ThiagoPimentelPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <WhatsAppChat />
