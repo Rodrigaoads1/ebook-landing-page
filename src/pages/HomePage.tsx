@@ -367,16 +367,16 @@ export function HomePage() {
                 </section>
 
 
-                {/* [SOBRE RODRIGO RODRIGUES - GALERIA DAS 3 NOVAS FOTOS REAIS DO CLIENTE] */}
+                {/* [SOBRE RODRIGO RODRIGUES - APENAS FOTO DE JAQUETA JEANS] */}
                 <section id="sobre" className="py-24 md:py-32 px-6 bg-[#080808] border-b border-white/5">
-                    <div className="max-w-7xl mx-auto space-y-16">
+                    <div className="max-w-7xl mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
                             <div className="relative">
                                 <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0a0a0a] group">
                                     <img
-                                        src={profileSofa}
+                                        src={profileJeans}
                                         alt="Rodrigo Rodrigues - Estrategista Comercial"
-                                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="w-full h-[450px] md:h-[550px] object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                     />
                                     <div className="p-6 bg-black/90 border-t border-white/10 flex items-center justify-between">
                                         <div>
@@ -409,45 +409,6 @@ export function HomePage() {
                                     <div>
                                         <p className="text-2xl font-bold text-[#D4AF37]">5 Anos</p>
                                         <p className="mt-1">De Atuação Comercial</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* GALERIA EDITORIAL DAS 3 FOTOS DO CLIENTE */}
-                        <div className="pt-8 border-t border-white/10">
-                            <span className="text-xs font-mono text-[#D4AF37] uppercase tracking-widest block mb-6 text-center">Posicionamento & Presença de Marca</span>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {/* Foto 1 */}
-                                <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a] group relative">
-                                    <img src={profileSofa} alt="Rodrigo Rodrigues - Liderança" className="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-5">
-                                        <div>
-                                            <p className="text-sm font-bold text-white">Estratégia & Liderança</p>
-                                            <p className="text-[11px] text-gray-400">Visão de negócios e gestão de crescimento</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Foto 2 */}
-                                <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a] group relative">
-                                    <img src={profileEstudio} alt="Rodrigo Rodrigues - Execução" className="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-5">
-                                        <div>
-                                            <p className="text-sm font-bold text-white">Foco na Execução</p>
-                                            <p className="text-[11px] text-gray-400">Desenvolvimento cirúrgico de campanhas</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Foto 3 */}
-                                <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a] group relative">
-                                    <img src={profileJeans} alt="Rodrigo Rodrigues - Presença" className="w-full h-80 object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-5">
-                                        <div>
-                                            <p className="text-sm font-bold text-white">Relacionamento Real</p>
-                                            <p className="text-[11px] text-gray-400">Proximidade e parceria transparente</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
