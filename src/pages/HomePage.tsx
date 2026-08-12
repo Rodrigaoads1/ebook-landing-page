@@ -1,285 +1,288 @@
 import { Link } from 'react-router-dom';
-import { Target, Zap, ShieldCheck, ArrowRight, CheckCircle2, HelpCircle, MapPin, MessageCircle, XCircle, ChevronRight, Check } from 'lucide-react';
+import { Target, Zap, ShieldCheck, ArrowRight, CheckCircle2, HelpCircle, MapPin, MessageCircle, XCircle, ChevronRight, Check, ArrowUpRight, Search, PhoneCall } from 'lucide-react';
 import profileImg from '../assets/rodrigo_analise_extra.png';
 import { SocialProof } from '../components/SocialProof';
 import { SEOHelmet } from '../components/SEOHelmet';
 
 export function HomePage() {
     return (
-        <div className="min-h-screen bg-[#050505] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] font-sans overflow-x-hidden">
+        <div className="min-h-screen bg-[#050505] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] font-sans overflow-x-hidden antialiased">
             <SEOHelmet 
-                title="Agência de Marketing Digital & Captação Comercial | Migração Digital"
-                description="Captação comercial ética e previsível para empresas, clínicas e prestadores de serviços. Clientes qualificados no seu WhatsApp."
+                title="Agência de Captação Comercial & Estratégia Digital | Migração Digital"
+                description="Estrutura de atração de clientes para empresas, clínicas e prestadores de serviços. Receba contatos qualificados no WhatsApp."
             />
 
             {/* Navigation Bar */}
             <nav className="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-2xl border-b border-white/5 py-4 px-6">
                 <div className="max-w-7xl mx-auto flex justify-between items-center">
                     <Link to="/" className="flex items-center gap-3 group">
-                        <img src="/logo.png" alt="Migração Digital" className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                        <img src="/logo.png" alt="Migração Digital" className="h-8 md:h-9 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" />
                         <div className="flex flex-col">
-                            <span className="text-lg md:text-xl font-black bg-gradient-to-r from-[#D4AF37] via-[#F4D03F] to-[#FFFFFF] bg-clip-text text-transparent tracking-tighter leading-none">
+                            <span className="text-base md:text-lg font-bold tracking-tight bg-gradient-to-r from-[#D4AF37] via-[#F4D03F] to-[#FFFFFF] bg-clip-text text-transparent leading-none">
                                 MIGRAÇÃO DIGITAL
                             </span>
-                            <span className="text-[8px] font-medium tracking-[0.3em] text-white/40 uppercase leading-none mt-1 group-hover:text-white/80 transition-colors">
-                                Estratégia de Captação Comercial
+                            <span className="text-[9px] font-mono tracking-widest text-white/40 uppercase leading-none mt-1 group-hover:text-white/70 transition-colors">
+                                Captação Comercial
                             </span>
                         </div>
                     </Link>
                     <div className="hidden md:flex items-center gap-8">
-                        <a href="#como-funciona" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Como Funciona</a>
-                        <a href="#solucoes" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">O Que Fazemos</a>
-                        <Link to="/blog" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Blog</Link>
-                        <a href="#sobre" className="text-sm font-medium text-gray-400 hover:text-[#D4AF37] transition-colors">Quem Sou</a>
+                        <a href="#como-funciona" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">Como Funciona</a>
+                        <a href="#processo" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">O Processo</a>
+                        <Link to="/blog" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">Blog</Link>
+                        <a href="#sobre" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">Quem Sou</a>
                         <a
-                            href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+saber+como+atrair+mais+clientes+para+o+meu+WhatsApp."
+                            href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+conversar+sobre+uma+estrutura+de+captação+para+o+meu+negócio."
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-gradient-to-r from-[#D4AF37] to-[#B8960C] text-black px-6 py-2.5 rounded-full text-xs font-black uppercase tracking-wider hover:scale-[1.05] transition-all shadow-lg shadow-[#D4AF37]/20 flex items-center gap-2"
+                            className="bg-white/5 hover:bg-[#D4AF37] hover:text-black border border-[#D4AF37]/30 text-[#D4AF37] px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2"
                         >
-                            <MessageCircle className="w-4 h-4 fill-black" />
-                            Falar no WhatsApp
+                            <MessageCircle className="w-3.5 h-3.5" />
+                            Falar com Estrategista
                         </a>
                     </div>
                 </div>
             </nav>
 
             <main>
-                {/* [HERO SECTION] - NACIONAL, DIRETA, ÉTICA & REALISTA */}
-                <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-[#050505] border-b border-white/5">
-                    {/* Elementos de Iluminação Editorial */}
-                    <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#D4AF37]/10 blur-[160px] rounded-full pointer-events-none" />
-                    <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#D4AF37]/5 blur-[140px] rounded-full pointer-events-none" />
+                {/* [HERO SECTION SPLIT - DESIGN EDITORIAL DE ALTA CONVERSÃO] */}
+                <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 px-6 bg-[#050505] border-b border-white/5">
+                    {/* Luzes sutis de estúdio */}
+                    <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none" />
+                    <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none" />
 
-                    <div className="max-w-7xl mx-auto text-center relative z-10">
-                        {/* Tag Nacional */}
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-[10px] md:text-xs font-black uppercase tracking-[0.3em] mb-6">
-                            <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
-                            Captação Comercial Sem MISTÉRIO • Estrutura Nacional
-                        </div>
-
-                        {/* PALAVRA DE IMPACTO */}
-                        <div className="mb-4">
-                            <span className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter uppercase leading-none bg-gradient-to-b from-[#FFFFFF] via-[#D4AF37] to-[#8A6D3B] bg-clip-text text-transparent block drop-shadow-2xl">
-                                NOVOS CLIENTES
-                            </span>
-                        </div>
-
-                        {/* TÍTULO PRINCIPAL NACIONAL */}
-                        <h1 className="text-2xl md:text-5xl lg:text-6xl font-serif font-bold text-white max-w-5xl mx-auto leading-tight mb-8">
-                            Leve pessoas interessadas para o seu WhatsApp todas as semanas — <span className="text-[#D4AF37] italic">sem ilusões, sem virar "blogueiro".</span>
-                        </h1>
-
-                        {/* TEXTO DE APOIO UNIVERSAL */}
-                        <p className="text-base md:text-2xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed mb-12">
-                            Criamos a estrutura para a sua empresa ser encontrada no momento exato em que o cliente procura pelo seu serviço. <strong className="text-white font-medium">Você foca em prestar um ótimo atendimento; nós cuidamos de fazer o contato acontecer.</strong>
-                        </p>
-
-                        {/* BOTOES DE AÇÃO */}
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 max-w-xl mx-auto">
-                            <a
-                                href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+conversar+sobre+uma+estrutura+de+captação+para+o+meu+negócio."
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full sm:w-auto bg-gradient-to-r from-[#D4AF37] via-[#F5D142] to-[#B8960C] text-black font-black py-5 px-10 rounded-2xl flex items-center justify-center gap-3 hover:scale-[1.03] active:scale-[0.98] transition-all text-lg shadow-2xl shadow-[#D4AF37]/25"
-                            >
-                                <MessageCircle className="w-5 h-5 fill-black" />
-                                Conversar no WhatsApp
-                            </a>
-                            <a
-                                href="#como-funciona"
-                                className="w-full sm:w-auto bg-white/5 border border-white/10 text-gray-300 font-bold py-5 px-8 rounded-2xl flex items-center justify-center gap-2 hover:bg-white/10 hover:text-white transition-all text-sm uppercase tracking-wider"
-                            >
-                                Entender Como Funciona
-                                <ChevronRight className="w-4 h-4 text-[#D4AF37]" />
-                            </a>
-                        </div>
-
-                        {/* Selos de Honestidade */}
-                        <div className="mt-16 pt-10 border-t border-white/5 flex flex-wrap justify-center items-center gap-8 md:gap-16 text-gray-500 text-xs font-semibold uppercase tracking-widest">
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
-                                Sem Promessas Inalcançáveis
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+                        {/* Coluna da Esquerda (Mensagem & Ação) */}
+                        <div className="lg:col-span-7 space-y-6 text-left">
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-xs font-mono tracking-wider">
+                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                AQUISIÇÃO DE CLIENTES • ESTRATÉGIA COMERCIAL
                             </div>
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
-                                Empresas, Clínicas & Serviços
+
+                            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+                                Atraia pessoas interessadas para o seu WhatsApp <span className="text-[#D4AF37]">todas as semanas.</span>
+                            </h1>
+
+                            <p className="text-base md:text-xl text-gray-400 font-light leading-relaxed max-w-2xl">
+                                Sem precisar virar "blogueiro", sem criar conteúdos exaustivos e sem promessas falsas. Construímos a presença digital para o seu negócio ser a primeira escolha de quem já busca pelo seu serviço.
+                            </p>
+
+                            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                                <a
+                                    href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+conversar+sobre+uma+estrutura+de+captação+para+o+meu+negócio."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-[#D4AF37] hover:bg-[#F5D142] text-black font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all shadow-xl shadow-[#D4AF37]/15 text-base"
+                                >
+                                    <MessageCircle className="w-5 h-5 fill-black" />
+                                    Conversar no WhatsApp
+                                </a>
+                                <a
+                                    href="#como-funciona"
+                                    className="bg-white/5 hover:bg-white/10 text-gray-300 font-medium py-4 px-6 rounded-xl flex items-center justify-center gap-2 border border-white/10 transition-all text-sm"
+                                >
+                                    Entender o Processo
+                                    <ArrowRight className="w-4 h-4 text-gray-400" />
+                                </a>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
-                                Atendimento Direto com Estrategista
+
+                            {/* Prova Social Discreta */}
+                            <div className="pt-6 flex items-center gap-6 text-xs text-gray-500 font-mono border-t border-white/5">
+                                <div className="flex items-center gap-2">
+                                    <Check className="w-4 h-4 text-[#D4AF37]" />
+                                    +50 Projetos Atendidos
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Check className="w-4 h-4 text-[#D4AF37]" />
+                                    Empresas & Clínicas
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Check className="w-4 h-4 text-[#D4AF37]" />
+                                    Sem Fidelidade Forçada
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Coluna da Direita (Painel Visual de Demonstração Real) */}
+                        <div className="lg:col-span-5">
+                            <div className="p-6 md:p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl shadow-2xl relative overflow-hidden group">
+                                <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#D4AF37]/10 rounded-full blur-2xl group-hover:bg-[#D4AF37]/20 transition-all" />
+                                
+                                <div className="flex items-center justify-between pb-6 border-b border-white/10">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                                        <span className="text-xs font-mono uppercase tracking-wider text-gray-400">Fluxo de Captação Ativo</span>
+                                    </div>
+                                    <span className="text-[10px] font-mono bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-[#D4AF37]">
+                                        Google → WhatsApp
+                                    </span>
+                                </div>
+
+                                <div className="py-6 space-y-4">
+                                    {/* Item de Notificação 1 */}
+                                    <div className="p-4 bg-white/[0.03] border border-white/5 rounded-2xl flex items-start gap-3">
+                                        <div className="w-8 h-8 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                                            <Search className="w-4 h-4 text-emerald-400" />
+                                        </div>
+                                        <div>
+                                            <p className="text-xs font-semibold text-white">Cliente pesquisa no Google</p>
+                                            <p className="text-[11px] text-gray-400 font-light mt-0.5">"Dr. Mário - Consulta de Ortopedia na região"</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Item de Notificação 2 */}
+                                    <div className="p-4 bg-white/[0.03] border border-white/5 rounded-2xl flex items-start gap-3">
+                                        <div className="w-8 h-8 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center shrink-0 mt-0.5">
+                                            <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" />
+                                        </div>
+                                        <div>
+                                            <p className="text-xs font-semibold text-white">Acessa a Página de Apresentação</p>
+                                            <p className="text-[11px] text-gray-400 font-light mt-0.5">Encontra horários, especialidade e depoimentos em 10 segundos.</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Item de Notificação 3 */}
+                                    <div className="p-4 bg-emerald-950/20 border border-emerald-500/30 rounded-2xl flex items-start gap-3">
+                                        <div className="w-8 h-8 rounded-xl bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                                            <PhoneCall className="w-4 h-4 text-emerald-400" />
+                                        </div>
+                                        <div>
+                                            <p className="text-xs font-bold text-emerald-300">Nova Mensagem no WhatsApp</p>
+                                            <p className="text-[11px] text-emerald-100/70 font-light mt-0.5">"Olá! Vi o site de vocês e gostaria de agendar um horário."</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="pt-4 border-t border-white/5 flex justify-between items-center text-[11px] text-gray-500">
+                                    <span>Processo Direto & Transparente</span>
+                                    <span className="text-[#D4AF37] font-mono">Sem Enrolação</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* [O SONHO VS A REALIDADE] - DIAGNÓSTICO DIRETO */}
+                {/* [O PROCESSO EM 3 ETAPAS - LAYOUT NUMÉRICO EDITORIAL] */}
                 <section id="como-funciona" className="py-24 md:py-32 bg-[#080808] px-6 border-b border-white/5">
                     <div className="max-w-7xl mx-auto">
-                        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-                            <span className="text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] block mb-3">Sem Enrolação</span>
-                            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight">
-                                O que realmente faz o seu <br /><span className="text-[#D4AF37] italic">WhatsApp tocar com clientes?</span>
+                        <div className="max-w-3xl mb-16 md:mb-24 text-left">
+                            <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-3">Como Funciona na Prática</span>
+                            <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                                3 Passos para colocar clientes <br className="hidden md:block" />no seu WhatsApp.
                             </h2>
-                            <p className="text-gray-400 mt-4 text-base md:text-lg font-light">
-                                Não é fazer dancinhas, postar fotos de café ou gastar fortuna com agências que só prometem curtidas. O segredo é estar presente no momento exato em que a dor do cliente surge.
-                            </p>
                         </div>
 
-                        {/* COMPARATIVO DIRETO */}
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
-                            {/* LADO 1: O Que Não Funciona Mais */}
-                            <div className="p-8 md:p-12 bg-white/[0.02] border border-white/10 rounded-3xl relative">
-                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 text-red-400 text-xs font-bold uppercase tracking-wider rounded-lg mb-6">
-                                    <XCircle className="w-4 h-4 text-red-400" />
-                                    O caminho cansativo e sem garantia
-                                </div>
-                                <h3 className="text-2xl font-bold text-white mb-6">Ficar refém das redes sociais</h3>
-                                <ul className="space-y-4 text-gray-400 text-sm md:text-base font-light">
-                                    <li className="flex items-start gap-3">
-                                        <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                                        <span> Ter que gravar vídeos diários mesmo odiando aparecer.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                                        <span> Pagar mensalidades para agências criarem artes bonitas que ninguém compra.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                                        <span> Ficar dependendo apenas de indicações que oscilam mês a mês.</span>
-                                    </li>
-                                </ul>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                            {/* Passo 01 */}
+                            <div className="space-y-4 border-t border-white/10 pt-8">
+                                <span className="text-4xl md:text-5xl font-mono font-bold text-[#D4AF37]/40 block">01</span>
+                                <h3 className="text-xl font-bold text-white">Atração no Momento da Busca</h3>
+                                <p className="text-gray-400 text-sm font-light leading-relaxed">
+                                    Seu negócio é posicionado em destaque no Google para pessoas que estão ativamente pesquisando pelo seu serviço com intenção de contratar.
+                                </p>
                             </div>
 
-                            {/* LADO 2: A Solução Direta */}
-                            <div className="p-8 md:p-12 bg-[#D4AF37]/5 border border-[#D4AF37]/30 rounded-3xl relative shadow-2xl shadow-[#D4AF37]/10">
-                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#D4AF37]/20 text-[#D4AF37] text-xs font-bold uppercase tracking-wider rounded-lg mb-6">
-                                    <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
-                                    A Solução Prática e Honesta
-                                </div>
-                                <h3 className="text-2xl font-bold text-white mb-6">Captação Direta de Oportunidades</h3>
-                                <ul className="space-y-4 text-gray-200 text-sm md:text-base font-light">
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                                        <span> <strong className="text-white">Presença no momento da pesquisa:</strong> Quando alguém busca pelo seu serviço no Google, sua empresa aparece em destaque.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                                        <span> <strong className="text-white">Página de Atendimento Limpa:</strong> O visitante encontra as informações exatas e clica para falar no seu WhatsApp.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                                        <span> <strong className="text-white">Processo Transparente:</strong> Você acompanha quantos contatos reais entraram no mês e ajusta a capacidade do seu negócio.</span>
-                                    </li>
-                                </ul>
+                            {/* Passo 02 */}
+                            <div className="space-y-4 border-t border-white/10 pt-8">
+                                <span className="text-4xl md:text-5xl font-mono font-bold text-[#D4AF37]/40 block">02</span>
+                                <h3 className="text-xl font-bold text-white">Página de Apresentação Limpa</h3>
+                                <p className="text-gray-400 text-sm font-light leading-relaxed">
+                                    O visitante entra em uma página rápida, elegante e objetiva que transmite autoridade imediata e responde às dúvidas principais do cliente.
+                                </p>
+                            </div>
+
+                            {/* Passo 03 */}
+                            <div className="space-y-4 border-t border-white/10 pt-8">
+                                <span className="text-4xl md:text-5xl font-mono font-bold text-[#D4AF37] block">03</span>
+                                <h3 className="text-xl font-bold text-white">Contato no Seu WhatsApp</h3>
+                                <p className="text-gray-400 text-sm font-light leading-relaxed">
+                                    Com um único clique, o cliente abre a conversa diretamente com a sua equipe ou recepção pronto para alinhar detalhes e fechar.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* [O QUE FAZEMOS / COMO ESTRUTURAMOS] */}
-                <section id="solucoes" className="py-24 md:py-32 px-6 bg-[#050505] border-b border-white/5">
+                {/* [COMPARATIVO ÉTICO SEM CLICHÊS] */}
+                <section id="processo" className="py-24 md:py-32 bg-[#050505] px-6 border-b border-white/5">
                     <div className="max-w-7xl mx-auto">
-                        <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-                            <span className="text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] block mb-3">Na Prática</span>
-                            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white">
-                                As 3 Etapas da Sua <span className="text-[#D4AF37] italic">Estrutura de Captação</span>
-                            </h2>
-                            <p className="text-gray-400 mt-4 text-base font-light">
-                                Sem termos técnicos complicados. Tudo pensado para ser simples e funcionar.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {/* Etapa 1 */}
-                            <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl flex flex-col justify-between">
-                                <div>
-                                    <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] font-black text-lg mb-6">
-                                        1
-                                    </div>
-                                    <h3 className="text-xl font-bold text-white mb-3">Atração no Momento Certo</h3>
-                                    <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
-                                        Colocamos o seu negócio no topo das buscas no Google quando clientes pesquisam exatamente o serviço que você oferece.
-                                    </p>
-                                </div>
-                                <div className="text-xs text-[#D4AF37] font-semibold flex items-center gap-2">
-                                    <Check className="w-4 h-4" /> Encontrado por quem quer comprar
-                                </div>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-3">A Verdade Sobre o Marketing</span>
+                                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                                    Por que postar conteúdo no Instagram raramente vende?
+                                </h2>
+                                <p className="text-gray-400 font-light text-base md:text-lg leading-relaxed mb-6">
+                                    Redes sociais funcionam para engajamento, mas quando a pessoa está com uma dor real no dente, uma goteira no teto ou precisando de um advogado, ela vai ao Google pesquisar.
+                                </p>
+                                <p className="text-gray-300 font-medium text-base leading-relaxed">
+                                    Nós colocamos o seu negócio exatamente onde o dinheiro e a intenção de compra estão reunidos.
+                                </p>
                             </div>
 
-                            {/* Etapa 2 */}
-                            <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl flex flex-col justify-between">
-                                <div>
-                                    <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] font-black text-lg mb-6">
-                                        2
+                            <div className="space-y-4">
+                                <div className="p-6 bg-[#0a0a0a] border border-white/10 rounded-2xl">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <XCircle className="w-5 h-5 text-red-400 shrink-0" />
+                                        <h4 className="text-base font-bold text-white">O Modelo Cansativo</h4>
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-3">Apresentação Limpa e Clara</h3>
-                                    <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
-                                        Desenvolvemos uma página rápida e objetiva, focada em mostrar o valor do seu trabalho sem distração ou poluição visual.
+                                    <p className="text-xs text-gray-400 font-light leading-relaxed pl-8">
+                                        Gravar vídeos diários, contratar agências para criar artes bonitas e ficar torcendo para que alguém mande mensagem no direct.
                                     </p>
                                 </div>
-                                <div className="text-xs text-[#D4AF37] font-semibold flex items-center gap-2">
-                                    <Check className="w-4 h-4" /> Facilidade de leitura e decisão
-                                </div>
-                            </div>
 
-                            {/* Etapa 3 */}
-                            <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl flex flex-col justify-between">
-                                <div>
-                                    <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] font-black text-lg mb-6">
-                                        3
+                                <div className="p-6 bg-[#D4AF37]/5 border border-[#D4AF37]/30 rounded-2xl">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0" />
+                                        <h4 className="text-base font-bold text-white">A Estrutura Direta da Migração Digital</h4>
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-3">Contato Direto no WhatsApp</h3>
-                                    <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
-                                        O visitante clica em um botão em destaque e inicia uma conversa diretamente com você ou com a recepção da sua empresa.
+                                    <p className="text-xs text-gray-300 font-light leading-relaxed pl-8">
+                                        Aparecer no topo das pesquisas quando o cliente precisa do seu serviço e direcioná-lo direto para o seu WhatsApp.
                                     </p>
-                                </div>
-                                <div className="text-xs text-[#D4AF37] font-semibold flex items-center gap-2">
-                                    <Check className="w-4 h-4" /> Sem formulários longos e chatos
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* [SOBRE RODRIGO RODRIGUES - PROPOSTA ÉTICA E SINCERA] */}
+                {/* [QUEM SOU - RODRIGO RODRIGUES] */}
                 <section id="sobre" className="py-24 md:py-32 px-6 bg-[#080808] border-b border-white/5">
-                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
                         <div className="relative">
-                            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0a0a0a]">
+                            <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0a0a0a]">
                                 <img
                                     src={profileImg}
                                     alt="Rodrigo Rodrigues - Estrategista Comercial"
-                                    className="w-full h-auto grayscale-[15%] contrast-110 object-cover"
+                                    className="w-full h-auto grayscale-[10%] contrast-105 object-cover"
                                 />
-                                <div className="absolute bottom-6 left-6 right-6 p-6 bg-black/80 backdrop-blur-xl rounded-2xl border border-white/10">
-                                    <p className="text-xl font-bold text-[#D4AF37]">Rodrigo Rodrigues</p>
-                                    <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">Estrategista Comercial & Fundador da Migração Digital</p>
+                                <div className="p-6 bg-black/90 border-t border-white/10">
+                                    <p className="text-lg font-bold text-[#D4AF37]">Rodrigo Rodrigues</p>
+                                    <p className="text-gray-400 text-xs font-mono uppercase tracking-wider mt-1">Estrategista Comercial & Fundador da Migração Digital</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div>
-                            <span className="text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] block mb-3">Compromisso com a Verdade</span>
-                            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
-                                "Sem promessas milagrosas. O que entrego é trabalho sério e processo."
+                        <div className="space-y-6 text-left">
+                            <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block">Quem Constrói Suas Campanhas</span>
+                            <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                                Atendimento direto com quem entende de negócio.
                             </h2>
                             <div className="space-y-4 text-gray-400 font-light text-base md:text-lg leading-relaxed">
                                 <p>
-                                    Não acredito em fórmulas mágicas para enriquecer da noite para o dia. Sei como é difícil administrar uma empresa de verdade, pagar contas e cuidar de funcionários.
+                                    Você não será atendido por um estagiário de agência. Eu mesmo desenho a estratégia e acompanho a estrutura comercial da sua empresa.
                                 </p>
                                 <p>
-                                    Meu trabalho nos últimos 5 anos tem sido simples: <strong className="text-white">ajudar empresários e profissionais liberais éticos a serem encontrados por quem precisa do serviço deles</strong>, gerando um fluxo constante e honesto de contatos no WhatsApp.
+                                    Meu objetivo é simples: <strong className="text-white font-medium">garantir que pessoas com capacidade de pagamento encontrem o seu trabalho e entrem em contato pelo WhatsApp.</strong>
                                 </p>
                             </div>
-                            <div className="mt-8 pt-8 border-t border-white/10 flex items-center gap-8">
+                            <div className="pt-4 flex items-center gap-8 text-xs font-mono text-gray-400">
                                 <div>
-                                    <p className="text-3xl font-black text-[#D4AF37]">+50</p>
-                                    <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Nichos Atendidos</p>
+                                    <p className="text-2xl font-bold text-[#D4AF37]">+50</p>
+                                    <p className="mt-1">Projetos Atendidos</p>
                                 </div>
                                 <div>
-                                    <p className="text-3xl font-black text-[#D4AF37]">100%</p>
-                                    <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Foco em Resultados</p>
+                                    <p className="text-2xl font-bold text-[#D4AF37]">5 Anos</p>
+                                    <p className="mt-1">De Atuação Comercial</p>
                                 </div>
                             </div>
                         </div>
@@ -288,27 +291,27 @@ export function HomePage() {
 
                 <SocialProof />
 
-                {/* [DÚVIDAS FREQUENTES ÉTICAS] */}
+                {/* [DÚVIDAS FREQUENTES] */}
                 <section className="py-24 px-6 bg-[#030303] border-t border-white/5">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="text-[#D4AF37] text-xs font-black uppercase tracking-[0.3em] block mb-2">Transparência</span>
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold">Perguntas Frequentes</h2>
+                    <div className="max-w-3xl mx-auto">
+                        <div className="text-left mb-16">
+                            <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-2">Perguntas Frequentes</span>
+                            <h2 className="text-3xl md:text-4xl font-bold">Respostas Diretas</h2>
                         </div>
 
-                        <div className="space-y-6">
+                        <div className="space-y-4">
                             {[
-                                { q: "Vocês garantem uma quantidade exata de vendas por mês?", a: "Não. Nenhuma empresa séria pode garantir vendas exatas, pois a venda final depende do seu atendimento no WhatsApp e da qualidade do seu serviço. O que nós garantimos é colocar pessoas qualificadas e interessadas em contato direto com você." },
+                                { q: "Vocês garantem uma quantidade exata de vendas por mês?", a: "Não. Nenhuma empresa séria pode garantir vendas exatas, pois a conversão final depende do seu atendimento no WhatsApp e da qualidade do seu serviço. O que nós garantimos é colocar pessoas qualificadas e interessadas em contato direto com você." },
                                 { q: "Preciso ter uma equipe de marketing na minha empresa?", a: "Não. Nós cuidamos de toda a parte de estruturação e captação. Você só precisa ter alguém (ou você mesmo) para responder às mensagens no WhatsApp." },
-                                { q: "Em quanto tempo os primeiros contatos começam a chegar?", a: "Assim que a estrutura entra no ar, os primeiros contatos costumam chegar no seu WhatsApp em poucos dias, à medida que as buscas ocorrem no Google." },
+                                { q: "Em quanto tempo os primeiros contatos começam a chegar?", a: "Assim que a estrutura entra no ar, os primeiros contatos costumam chegar no seu WhatsApp em poucos dias, à medida que as pesquisas ocorrem no Google." },
                                 { q: "Como começamos o trabalho?", a: "Basta clicar no botão e nos enviar uma mensagem no WhatsApp. Vamos conversar sobre o seu negócio, entender seu momento atual e apresentar a melhor proposta." }
                             ].map((faq, idx) => (
-                                <div key={idx} className="p-6 md:p-8 bg-white/[0.02] border border-white/5 rounded-2xl">
-                                    <h4 className="text-lg font-bold text-white mb-3 flex items-start gap-3">
-                                        <HelpCircle className="w-5 h-5 text-[#D4AF37] shrink-0 mt-1" />
+                                <div key={idx} className="p-6 bg-white/[0.02] border border-white/5 rounded-2xl text-left">
+                                    <h4 className="text-base font-bold text-white mb-2 flex items-center gap-3">
+                                        <HelpCircle className="w-4 h-4 text-[#D4AF37] shrink-0" />
                                         {faq.q}
                                     </h4>
-                                    <p className="text-gray-400 font-light text-sm pl-8 leading-relaxed">{faq.a}</p>
+                                    <p className="text-gray-400 font-light text-xs md:text-sm pl-7 leading-relaxed">{faq.a}</p>
                                 </div>
                             ))}
                         </div>
@@ -317,26 +320,24 @@ export function HomePage() {
             </main>
 
             {/* Rodapé Prestígio */}
-            <footer className="py-16 bg-black border-t border-white/10 text-gray-500 font-sans">
-                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="text-center md:text-left">
-                        <div className="flex items-center gap-3 justify-center md:justify-start mb-3">
-                            <img src="/logo.png" alt="Migração Digital" className="h-8 w-auto object-contain brightness-0 invert" />
-                            <span className="text-xl font-black text-white tracking-tighter">MIGRAÇÃO DIGITAL</span>
-                        </div>
-                        <p className="text-xs text-gray-500 max-w-sm">Captação comercial ética e previsível para empresas, clínicas e prestadores de serviço.</p>
+            <footer className="py-12 bg-black border-t border-white/10 text-gray-500 font-sans">
+                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="flex items-center gap-3">
+                        <img src="/logo.png" alt="Migração Digital" className="h-7 w-auto object-contain brightness-0 invert opacity-80" />
+                        <span className="text-base font-bold text-white tracking-tight">MIGRAÇÃO DIGITAL</span>
                     </div>
 
-                    <div className="flex items-center gap-6 text-xs uppercase tracking-widest">
+                    <div className="flex items-center gap-6 text-xs font-mono uppercase tracking-widest text-gray-400">
                         <Link to="/blog" className="hover:text-[#D4AF37] transition-colors">Blog</Link>
                         <Link to="/ebook" className="hover:text-[#D4AF37] transition-colors">Checklist</Link>
                         <a href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+falar+com+o+estrategista." target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">WhatsApp</a>
                     </div>
                 </div>
-                <div className="mt-12 text-center text-[10px] uppercase tracking-widest text-gray-600">
+                <div className="mt-8 text-center text-[10px] font-mono uppercase tracking-widest text-gray-600">
                     &copy; 2026 Agência Migração Digital — Todos os direitos reservados.
                 </div>
             </footer>
         </div>
     );
 }
+

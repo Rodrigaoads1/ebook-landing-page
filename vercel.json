@@ -10,7 +10,7 @@
     ],
     "rewrites": [
         {
-            "source": "/((?!assets/|logo.png|favicon.png|favicon.ico|sitemap.xml|robots.txt).*).*",
+            "source": "/:path*",
             "destination": "/index.html"
         }
     ]
