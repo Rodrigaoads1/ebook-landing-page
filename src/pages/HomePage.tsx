@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Target, Zap, ShieldCheck, ArrowRight, CheckCircle2, HelpCircle, MapPin, MessageCircle, XCircle, ChevronRight, Check, ArrowUpRight, Search, PhoneCall } from 'lucide-react';
-import profileImg from '../assets/rodrigo_analise_extra.png';
+import { Target, Zap, ShieldCheck, ArrowRight, CheckCircle2, HelpCircle, MapPin, MessageCircle, XCircle, ChevronRight, Check, ArrowUpRight, Search, PhoneCall, Share2, Sparkles } from 'lucide-react';
+import profileImg from '../assets/rodrigo_analise_hero.png';
 import { SocialProof } from '../components/SocialProof';
 import { SEOHelmet } from '../components/SEOHelmet';
 
@@ -9,7 +9,7 @@ export function HomePage() {
         <div className="min-h-screen bg-[#050505] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] font-sans overflow-x-hidden antialiased">
             <SEOHelmet 
                 title="Agência de Captação Comercial & Estratégia Digital | Migração Digital"
-                description="Estrutura de atração de clientes para empresas, clínicas e prestadores de serviços. Receba contatos qualificados no WhatsApp."
+                description="Estrutura de atração de clientes e gestão estratégica de redes sociais para empresas, clínicas e prestadores de serviços. Receba contatos qualificados no WhatsApp."
             />
 
             {/* Navigation Bar */}
@@ -22,13 +22,13 @@ export function HomePage() {
                                 MIGRAÇÃO DIGITAL
                             </span>
                             <span className="text-[9px] font-mono tracking-widest text-white/40 uppercase leading-none mt-1 group-hover:text-white/70 transition-colors">
-                                Captação Comercial
+                                Estratégia Comercial & Mídias
                             </span>
                         </div>
                     </Link>
                     <div className="hidden md:flex items-center gap-8">
                         <a href="#como-funciona" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">Como Funciona</a>
-                        <a href="#processo" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">O Processo</a>
+                        <a href="#solucoes" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">Soluções</a>
                         <Link to="/blog" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">Blog</Link>
                         <a href="#sobre" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">Quem Sou</a>
                         <a
@@ -64,7 +64,7 @@ export function HomePage() {
                             </h1>
 
                             <p className="text-base md:text-xl text-gray-400 font-light leading-relaxed max-w-2xl">
-                                Sem precisar virar "blogueiro", sem criar conteúdos exaustivos e sem promessas falsas. Construímos a presença digital para o seu negócio ser a primeira escolha de quem já busca pelo seu serviço.
+                                Construímos a presença digital completa e estratégica para o seu negócio ser a primeira escolha dos seus clientes nas redes sociais e nas pesquisas.
                             </p>
 
                             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
@@ -114,7 +114,7 @@ export function HomePage() {
                                         <span className="text-xs font-mono uppercase tracking-wider text-gray-400">Fluxo de Captação Ativo</span>
                                     </div>
                                     <span className="text-[10px] font-mono bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-[#D4AF37]">
-                                        Google → WhatsApp
+                                        Redes Sociais & Google → WhatsApp
                                     </span>
                                 </div>
 
@@ -125,8 +125,8 @@ export function HomePage() {
                                             <Search className="w-4 h-4 text-emerald-400" />
                                         </div>
                                         <div>
-                                            <p className="text-xs font-semibold text-white">Cliente pesquisa no Google</p>
-                                            <p className="text-[11px] text-gray-400 font-light mt-0.5">"Dr. Mário - Consulta de Ortopedia na região"</p>
+                                            <p className="text-xs font-semibold text-white">Cliente encontra a empresa no Google & Instagram</p>
+                                            <p className="text-[11px] text-gray-400 font-light mt-0.5">Visualiza autoridade, especialidade e depoimentos.</p>
                                         </div>
                                     </div>
 
@@ -137,7 +137,7 @@ export function HomePage() {
                                         </div>
                                         <div>
                                             <p className="text-xs font-semibold text-white">Acessa a Página de Apresentação</p>
-                                            <p className="text-[11px] text-gray-400 font-light mt-0.5">Encontra horários, especialidade e depoimentos em 10 segundos.</p>
+                                            <p className="text-[11px] text-gray-400 font-light mt-0.5">Encontra horários e informações claras em segundos.</p>
                                         </div>
                                     </div>
 
@@ -148,14 +148,14 @@ export function HomePage() {
                                         </div>
                                         <div>
                                             <p className="text-xs font-bold text-emerald-300">Nova Mensagem no WhatsApp</p>
-                                            <p className="text-[11px] text-emerald-100/70 font-light mt-0.5">"Olá! Vi o site de vocês e gostaria de agendar um horário."</p>
+                                            <p className="text-[11px] text-emerald-100/70 font-light mt-0.5">"Olá! Vi o perfil e o site de vocês e gostaria de agendar um horário."</p>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="pt-4 border-t border-white/5 flex justify-between items-center text-[11px] text-gray-500">
-                                    <span>Processo Direto & Transparente</span>
-                                    <span className="text-[#D4AF37] font-mono">Sem Enrolação</span>
+                                    <span>Presença Digital Integrada</span>
+                                    <span className="text-[#D4AF37] font-mono">Alta Performance</span>
                                 </div>
                             </div>
                         </div>
@@ -176,18 +176,18 @@ export function HomePage() {
                             {/* Passo 01 */}
                             <div className="space-y-4 border-t border-white/10 pt-8">
                                 <span className="text-4xl md:text-5xl font-mono font-bold text-[#D4AF37]/40 block">01</span>
-                                <h3 className="text-xl font-bold text-white">Atração no Momento da Busca</h3>
+                                <h3 className="text-xl font-bold text-white">Presença & Conexão</h3>
                                 <p className="text-gray-400 text-sm font-light leading-relaxed">
-                                    Seu negócio é posicionado em destaque no Google para pessoas que estão ativamente pesquisando pelo seu serviço com intenção de contratar.
+                                    Posicionamos a sua empresa em destaque nas redes sociais e no Google para construir autoridade imediata na sua região.
                                 </p>
                             </div>
 
                             {/* Passo 02 */}
                             <div className="space-y-4 border-t border-white/10 pt-8">
                                 <span className="text-4xl md:text-5xl font-mono font-bold text-[#D4AF37]/40 block">02</span>
-                                <h3 className="text-xl font-bold text-white">Página de Apresentação Limpa</h3>
+                                <h3 className="text-xl font-bold text-white">Apresentação Profissional</h3>
                                 <p className="text-gray-400 text-sm font-light leading-relaxed">
-                                    O visitante entra em uma página rápida, elegante e objetiva que transmite autoridade imediata e responde às dúvidas principais do cliente.
+                                    Uma estrutura limpa e elegante que transmite extrema confiança e responde com clareza às principais dúvidas do seu cliente.
                                 </p>
                             </div>
 
@@ -196,7 +196,7 @@ export function HomePage() {
                                 <span className="text-4xl md:text-5xl font-mono font-bold text-[#D4AF37] block">03</span>
                                 <h3 className="text-xl font-bold text-white">Contato no Seu WhatsApp</h3>
                                 <p className="text-gray-400 text-sm font-light leading-relaxed">
-                                    Com um único clique, o cliente abre a conversa diretamente com a sua equipe ou recepção pronto para alinhar detalhes e fechar.
+                                    Com um único clique, o cliente inicia o contato diretamente com você ou com sua recepção para fechar o orçamento.
                                 </p>
                             </div>
                         </div>
@@ -212,46 +212,63 @@ export function HomePage() {
                                 Estrutura comercial completa para <br className="hidden md:block" />atrair e converter clientes.
                             </h2>
                             <p className="text-gray-400 text-sm md:text-base font-light mt-4 leading-relaxed">
-                                Combinamos os principais canais digitais para construir a presença da sua empresa em todas as etapas em que o seu cliente decide contratar.
+                                Combinamos mídias sociais, inteligência de busca e páginas de alta conversão para fortalecer sua marca e trazer vendas reais.
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {/* Serviço 1: Anúncios de Busca & Intenção */}
+                            {/* Serviço 1: Gestão Estratégica de Redes Sociais */}
+                            <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl hover:border-[#D4AF37]/40 transition-all flex flex-col justify-between group">
+                                <div>
+                                    <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
+                                        <Share2 className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
+                                    </div>
+                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">Autoridade & Conexão</span>
+                                    <h3 className="text-xl font-bold text-white mb-3">Gestão de Redes Sociais (Instagram & Mídias)</h3>
+                                    <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
+                                        Planejamento editorial, design de prestígio e posicionamento estratégico no Instagram para conectar sua marca aos clientes e gerar autoridade indiscutível.
+                                    </p>
+                                </div>
+                                <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
+                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Perfil profissional e imponente
+                                </div>
+                            </div>
+
+                            {/* Serviço 2: Anúncios no Instagram & Facebook */}
+                            <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl hover:border-[#D4AF37]/40 transition-all flex flex-col justify-between group">
+                                <div>
+                                    <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
+                                        <Zap className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
+                                    </div>
+                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">Atenção & Alcance</span>
+                                    <h3 className="text-xl font-bold text-white mb-3">Tráfego Pago no Instagram & Meta Ads</h3>
+                                    <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
+                                        Campanhas visuais marcantes direcionadas exclusivamente para os clientes de alto valor da sua cidade e região.
+                                    </p>
+                                </div>
+                                <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
+                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Atração direta no feed e stories
+                                </div>
+                            </div>
+
+                            {/* Serviço 3: Google Ads */}
                             <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl hover:border-[#D4AF37]/40 transition-all flex flex-col justify-between group">
                                 <div>
                                     <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
                                         <Search className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
                                     </div>
                                     <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">Busca & Intenção</span>
-                                    <h3 className="text-xl font-bold text-white mb-3">Google Ads & Atração Direta</h3>
+                                    <h3 className="text-xl font-bold text-white mb-3">Google Ads & Busca Direta</h3>
                                     <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Posicionamos a sua empresa no topo quando o cliente digita exatamente o serviço que você oferece com prontidão para fechar negócio.
+                                        Posicionamos a sua empresa no topo quando o cliente digita exatamente o serviço que você oferece no momento da decisão.
                                     </p>
                                 </div>
                                 <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Clientes com alta intenção de compra
+                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Presença na hora da necessidade
                                 </div>
                             </div>
 
-                            {/* Serviço 2: Anúncios de Impacto Social */}
-                            <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl hover:border-[#D4AF37]/40 transition-all flex flex-col justify-between group">
-                                <div>
-                                    <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
-                                        <Zap className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
-                                    </div>
-                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">Atenção & Desejo</span>
-                                    <h3 className="text-xl font-bold text-white mb-3">Anúncios no Instagram & Facebook</h3>
-                                    <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Campanhas visuais direcionadas para o público ideal da sua região, apresentando o seu serviço para quem ainda não conhecia sua marca.
-                                    </p>
-                                </div>
-                                <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Alcance estratégico de novos públicos
-                                </div>
-                            </div>
-
-                            {/* Serviço 3: SEO Local & Google Mapas */}
+                            {/* Serviço 4: SEO Local & Google Mapas */}
                             <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl hover:border-[#D4AF37]/40 transition-all flex flex-col justify-between group">
                                 <div>
                                     <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
@@ -260,24 +277,24 @@ export function HomePage() {
                                     <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">Dominância Regional</span>
                                     <h3 className="text-xl font-bold text-white mb-3">SEO Local & Google Meu Negócio</h3>
                                     <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Otimização completa do seu perfil no mapa local para destacar a sua empresa entre as principais opções da sua cidade ou bairro.
+                                        Otimização completa do seu perfil no mapa local para destacar a sua empresa entre as primeiras opções no seu bairro.
                                     </p>
                                 </div>
                                 <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Destaque orgânico na sua região
+                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Destaque orgânico na sua cidade
                                 </div>
                             </div>
 
-                            {/* Serviço 4: Landing Pages & Sites de Conversão */}
+                            {/* Serviço 5: Landing Pages & Sites de Conversão */}
                             <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl hover:border-[#D4AF37]/40 transition-all flex flex-col justify-between group">
                                 <div>
                                     <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
                                         <ArrowUpRight className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
                                     </div>
                                     <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">Estrutura de Conversão</span>
-                                    <h3 className="text-xl font-bold text-white mb-3">Landing Pages & Sites de Alta Performance</h3>
+                                    <h3 className="text-xl font-bold text-white mb-3">Landing Pages & Sites Profissionais</h3>
                                     <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Desenvolvimento de páginas ultra-rápidas e limpas, desenhadas para guiar o visitante diretamente ao botão de atendimento do WhatsApp.
+                                        Desenvolvimento de páginas ultra-rápidas e elegantes, projetadas para transformar visitantes em mensagens de WhatsApp.
                                     </p>
                                 </div>
                                 <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
@@ -285,7 +302,7 @@ export function HomePage() {
                                 </div>
                             </div>
 
-                            {/* Serviço 5: Otimização Comercial de WhatsApp */}
+                            {/* Serviço 6: Estrutura Comercial de WhatsApp */}
                             <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl hover:border-[#D4AF37]/40 transition-all flex flex-col justify-between group">
                                 <div>
                                     <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
@@ -294,75 +311,59 @@ export function HomePage() {
                                     <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">Fechamento Comercial</span>
                                     <h3 className="text-xl font-bold text-white mb-3">Estrutura Comercial de WhatsApp</h3>
                                     <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Orientação e alinhamento dos roteiros de atendimento para que a sua recepção ou equipe comercial responda com rapidez e converta as oportunidades.
+                                        Alinhamento e roteiros de atendimento para que sua equipe receba os contatos e os transforme em contratos fechados.
                                     </p>
                                 </div>
                                 <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Aproveitamento de cada oportunidade
-                                </div>
-                            </div>
-
-                            {/* Serviço 6: Diagnóstico & Consultoria */}
-                            <div className="p-8 bg-[#0a0a0a] border border-white/10 rounded-3xl hover:border-[#D4AF37]/40 transition-all flex flex-col justify-between group">
-                                <div>
-                                    <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
-                                        <Target className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
-                                    </div>
-                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">Análise Estratégica</span>
-                                    <h3 className="text-xl font-bold text-white mb-3">Diagnóstico de Presença Comercial</h3>
-                                    <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Avaliação cirúrgica da sua presença digital atual apontando vazamentos no funil e exatamente o que precisa ser ajustado para vender mais.
-                                    </p>
-                                </div>
-                                <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Clareza e direção para seu investimento
+                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Aproveitamento total dos contatos
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* [COMPARATIVO ÉTICO SEM CLICHÊS] */}
+                {/* [A FORÇA COMBINADA DE REDES SOCIAIS + BUSCAS] */}
                 <section id="processo" className="py-24 md:py-32 bg-[#050505] px-6 border-b border-white/5">
                     <div className="max-w-7xl mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
-                                <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-3">A Verdade Sobre o Marketing</span>
+                                <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-3">Estratégia Multicanal</span>
                                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                                    Por que postar conteúdo no Instagram raramente vende?
+                                    A união perfeita entre Redes Sociais e Inteligência de Busca.
                                 </h2>
                                 <p className="text-gray-400 font-light text-base md:text-lg leading-relaxed mb-6">
-                                    Redes sociais funcionam para engajamento, mas quando a pessoa está com uma dor real no dente, uma goteira no teto ou precisando de um advogado, ela vai ao Google pesquisar.
+                                    O Instagram constrói desejo, autoridade visual e conexão emocional com o seu cliente. O Google captura quem já está pronto para contratar imediatamente.
                                 </p>
                                 <p className="text-gray-300 font-medium text-base leading-relaxed">
-                                    Nós colocamos o seu negócio exatamente onde o dinheiro e a intenção de compra estão reunidos.
+                                    Quando combinamos mídias sociais fortes com campanhas de busca ativas, sua empresa domina a atenção do mercado.
                                 </p>
                             </div>
 
                             <div className="space-y-4">
-                                <div className="p-6 bg-[#0a0a0a] border border-white/10 rounded-2xl">
+                                <div className="p-6 bg-[#D4AF37]/5 border border-[#D4AF37]/30 rounded-2xl">
                                     <div className="flex items-center gap-3 mb-2">
-                                        <XCircle className="w-5 h-5 text-red-400 shrink-0" />
-                                        <h4 className="text-base font-bold text-white">O Modelo Cansativo</h4>
+                                        <Sparkles className="w-5 h-5 text-[#D4AF37] shrink-0" />
+                                        <h4 className="text-base font-bold text-white">Redes Sociais (Instagram & Facebook)</h4>
                                     </div>
-                                    <p className="text-xs text-gray-400 font-light leading-relaxed pl-8">
-                                        Gravar vídeos diários, contratar agências para criar artes bonitas e ficar torcendo para que alguém mande mensagem no direct.
+                                    <p className="text-xs text-gray-300 font-light leading-relaxed pl-8">
+                                        Criações visuais de prestígio que encantam o cliente, geram confiança e provam o valor da sua marca antes mesmo do primeiro atendimento.
                                     </p>
                                 </div>
 
-                                <div className="p-6 bg-[#D4AF37]/5 border border-[#D4AF37]/30 rounded-2xl">
+                                <div className="p-6 bg-white/[0.03] border border-white/10 rounded-2xl">
                                     <div className="flex items-center gap-3 mb-2">
-                                        <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0" />
-                                        <h4 className="text-base font-bold text-white">A Estrutura Direta da Migração Digital</h4>
+                                        <Search className="w-5 h-5 text-emerald-400 shrink-0" />
+                                        <h4 className="text-base font-bold text-white">Buscas Diretas (Google & Mapas)</h4>
                                     </div>
-                                    <p className="text-xs text-gray-300 font-light leading-relaxed pl-8">
-                                        Aparecer no topo das pesquisas quando o cliente precisa do seu serviço e direcioná-lo direto para o seu WhatsApp.
+                                    <p className="text-xs text-gray-400 font-light leading-relaxed pl-8">
+                                        Presença imbatível no exato momento em que o cliente pesquisa pela solução que você oferece na sua região.
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
 
                 {/* [QUEM SOU - RODRIGO RODRIGUES] */}
                 <section id="sobre" className="py-24 md:py-32 px-6 bg-[#080808] border-b border-white/5">

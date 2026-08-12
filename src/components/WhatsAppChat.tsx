@@ -75,11 +75,11 @@ export const WhatsAppChat: React.FC = () => {
                     {/* Background Pattern */}
                     <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: `url('https://i.pinimg.com/originals/97/c0/07/97c00754ca36034e4023c72b22bb8fa2.jpg')` }} />
 
-                    <div className="relative z-10 bg-white p-4 rounded-2xl rounded-tl-none shadow-sm max-w-[80%] mb-4">
-                        <p className="text-sm text-gray-800 leading-relaxed italic">
-                            "Marketing sem estratégia é só barulho. Como posso ajudar seu negócio hoje?"
+                    <div className="relative z-10 bg-white p-4 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] mb-4">
+                        <p className="text-xs text-gray-800 leading-relaxed font-medium">
+                            "Olá! Como posso ajudar a estruturar o crescimento comercial e a presença digital do seu negócio hoje?"
                         </p>
-                        <span className="text-[9px] text-gray-400 block text-right mt-1">16:40</span>
+                        <span className="text-[9px] text-gray-400 block text-right mt-2 font-mono">Online</span>
                     </div>
                 </div>
 
