@@ -8,8 +8,8 @@ export function HomePage() {
     return (
         <div className="min-h-screen bg-[#050505] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] font-sans overflow-x-hidden">
             <SEOHelmet 
-                title="Agência de Marketing Digital no Rio de Janeiro | Migração Digital"
-                description="Captação comercial ética e previsível para empresas e clínicas no Rio de Janeiro. Clientes qualificados no seu WhatsApp."
+                title="Agência de Marketing Digital & Captação Comercial | Migração Digital"
+                description="Captação comercial ética e previsível para empresas, clínicas e prestadores de serviços. Clientes qualificados no seu WhatsApp."
             />
 
             {/* Navigation Bar */}
@@ -22,7 +22,7 @@ export function HomePage() {
                                 MIGRAÇÃO DIGITAL
                             </span>
                             <span className="text-[8px] font-medium tracking-[0.3em] text-white/40 uppercase leading-none mt-1 group-hover:text-white/80 transition-colors">
-                                Captação Comercial no RJ
+                                Estratégia de Captação Comercial
                             </span>
                         </div>
                     </Link>
@@ -45,17 +45,17 @@ export function HomePage() {
             </nav>
 
             <main>
-                {/* [HERO SECTION] - BIG IDEA 2 ÉTICA & REALISTA: CLIENTES QUALIFICADOS NO WHATSAPP */}
+                {/* [HERO SECTION] - NACIONAL, DIRETA, ÉTICA & REALISTA */}
                 <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-[#050505] border-b border-white/5">
                     {/* Elementos de Iluminação Editorial */}
                     <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-[#D4AF37]/10 blur-[160px] rounded-full pointer-events-none" />
                     <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-[#D4AF37]/5 blur-[140px] rounded-full pointer-events-none" />
 
                     <div className="max-w-7xl mx-auto text-center relative z-10">
-                        {/* Tag de Transparência */}
+                        {/* Tag Nacional */}
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-[10px] md:text-xs font-black uppercase tracking-[0.3em] mb-6">
-                            <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
-                            Captação Comercial Sem MISTÉRIO • Rio de Janeiro
+                            <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
+                            Captação Comercial Sem MISTÉRIO • Estrutura Nacional
                         </div>
 
                         {/* PALAVRA DE IMPACTO */}
@@ -65,14 +65,14 @@ export function HomePage() {
                             </span>
                         </div>
 
-                        {/* TÍTULO PRINCIPAL - TEMA 2 (Focado no WhatsApp + Ético) */}
+                        {/* TÍTULO PRINCIPAL NACIONAL */}
                         <h1 className="text-2xl md:text-5xl lg:text-6xl font-serif font-bold text-white max-w-5xl mx-auto leading-tight mb-8">
                             Leve pessoas interessadas para o seu WhatsApp todas as semanas — <span className="text-[#D4AF37] italic">sem ilusões, sem virar "blogueiro".</span>
                         </h1>
 
-                        {/* TEXTO DE APOIO (Simples, direto e verdadeiro) */}
+                        {/* TEXTO DE APOIO UNIVERSAL */}
                         <p className="text-base md:text-2xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed mb-12">
-                            Criamos a estrutura para a sua empresa ser encontrada no Rio de Janeiro no momento exato em que o cliente procura pelo seu serviço. <strong className="text-white font-medium">Você foca em prestar um ótimo atendimento; nós cuidamos de fazer o contato acontecer.</strong>
+                            Criamos a estrutura para a sua empresa ser encontrada no momento exato em que o cliente procura pelo seu serviço. <strong className="text-white font-medium">Você foca em prestar um ótimo atendimento; nós cuidamos de fazer o contato acontecer.</strong>
                         </p>
 
                         {/* BOTOES DE AÇÃO */}
@@ -103,7 +103,7 @@ export function HomePage() {
                             </div>
                             <div className="flex items-center gap-2">
                                 <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
-                                Foco em PMEs e Clínicas no RJ
+                                Empresas, Clínicas & Serviços
                             </div>
                             <div className="flex items-center gap-2">
                                 <CheckCircle2 className="w-4 h-4 text-[#D4AF37]" />
@@ -161,7 +161,7 @@ export function HomePage() {
                                 <ul className="space-y-4 text-gray-200 text-sm md:text-base font-light">
                                     <li className="flex items-start gap-3">
                                         <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                                        <span> <strong className="text-white">Presença no momento da pesquisa:</strong> Quando alguém no RJ busca pelo seu serviço no Google, sua empresa aparece em destaque.</span>
+                                        <span> <strong className="text-white">Presença no momento da pesquisa:</strong> Quando alguém busca pelo seu serviço no Google, sua empresa aparece em destaque.</span>
                                     </li>
                                     <li className="flex items-start gap-3">
                                         <CheckCircle2 className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
@@ -199,7 +199,7 @@ export function HomePage() {
                                     </div>
                                     <h3 className="text-xl font-bold text-white mb-3">Atração no Momento Certo</h3>
                                     <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
-                                        Colocamos o seu negócio no topo das buscas no Google quando clientes na sua cidade ou bairro pesquisam exatamente o serviço que você oferece.
+                                        Colocamos o seu negócio no topo das buscas no Google quando clientes pesquisam exatamente o serviço que você oferece.
                                     </p>
                                 </div>
                                 <div className="text-xs text-[#D4AF37] font-semibold flex items-center gap-2">
@@ -266,7 +266,7 @@ export function HomePage() {
                             </h2>
                             <div className="space-y-4 text-gray-400 font-light text-base md:text-lg leading-relaxed">
                                 <p>
-                                    Não acredito em fórmulas mágicas para enriquecer da noite para o dia. Sei como é difícil administrar uma empresa de verdade no Rio de Janeiro, pagar contas e cuidar de funcionários.
+                                    Não acredito em fórmulas mágicas para enriquecer da noite para o dia. Sei como é difícil administrar uma empresa de verdade, pagar contas e cuidar de funcionários.
                                 </p>
                                 <p>
                                     Meu trabalho nos últimos 5 anos tem sido simples: <strong className="text-white">ajudar empresários e profissionais liberais éticos a serem encontrados por quem precisa do serviço deles</strong>, gerando um fluxo constante e honesto de contatos no WhatsApp.
@@ -278,8 +278,8 @@ export function HomePage() {
                                     <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Nichos Atendidos</p>
                                 </div>
                                 <div>
-                                    <p className="text-3xl font-black text-[#D4AF37]">RJ</p>
-                                    <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Foco no Mercado Local</p>
+                                    <p className="text-3xl font-black text-[#D4AF37]">100%</p>
+                                    <p className="text-xs text-gray-400 uppercase tracking-wider mt-1">Foco em Resultados</p>
                                 </div>
                             </div>
                         </div>
@@ -324,7 +324,7 @@ export function HomePage() {
                             <img src="/logo.png" alt="Migração Digital" className="h-8 w-auto object-contain brightness-0 invert" />
                             <span className="text-xl font-black text-white tracking-tighter">MIGRAÇÃO DIGITAL</span>
                         </div>
-                        <p className="text-xs text-gray-500 max-w-sm">Captação comercial ética e previsível para empresas e clínicas no Rio de Janeiro - RJ.</p>
+                        <p className="text-xs text-gray-500 max-w-sm">Captação comercial ética e previsível para empresas, clínicas e prestadores de serviço.</p>
                     </div>
 
                     <div className="flex items-center gap-6 text-xs uppercase tracking-widest">
