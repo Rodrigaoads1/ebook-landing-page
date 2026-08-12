@@ -1,17 +1,10 @@
 {
-    "cleanUrls": true,
-    "framework": "vite",
-    "redirects": [
-        { "source": "/hidden-(.*)", "statusCode": 308, "destination": "https://migracaodigital.com" },
-        { "source": "/wp-(.*)", "statusCode": 308, "destination": "https://migracaodigital.com" },
-        { "source": "/category/(.*)", "statusCode": 308, "destination": "https://migracaodigital.com" },
-        { "source": "/tag/(.*)", "statusCode": 308, "destination": "https://migracaodigital.com" },
-        { "source": "/page/(.*)", "statusCode": 308, "destination": "https://migracaodigital.com" }
-    ],
-    "rewrites": [
-        {
-            "source": "/:path*",
-            "destination": "/index.html"
-        }
-    ]
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/((?!assets/|sitemap.xml|robots.txt|favicon.ico|logo.png).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
