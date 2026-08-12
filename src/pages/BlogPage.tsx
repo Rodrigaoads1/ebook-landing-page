@@ -1,20 +1,18 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, Users, Zap, TrendingUp, ShieldCheck, Rss, ArrowUpRight, Menu } from 'lucide-react';
+import { ArrowRight, Mail, Users, Zap, TrendingUp, ShieldCheck, Rss, ArrowUpRight, Clock, Calendar, User, Search, MessageCircle, ChevronRight } from 'lucide-react';
 import { posts } from '../data/posts';
 import { SEOHelmet } from '../components/SEOHelmet';
 import { SocialProof } from '../components/SocialProof';
 import { ExitIntentPopup } from '../components/ExitIntentPopup';
-import { AnalysisBanner } from '../components/AnalysisBanner';
-import { OptimizedImage } from '../components/OptimizedImage';
 
 const categories = [
     'Todos',
     'Estratégia',
     'Funis',
     'Tráfego Pago',
-    'Conversão'
+    'Conversão',
+    'Tecnologia'
 ];
 
 export function BlogPage() {
@@ -25,158 +23,162 @@ export function BlogPage() {
 
     const mainPost = posts[0];
     const secondaryPosts = posts.slice(1, 4);
-    const regularPosts = filteredPosts.filter(p => p.id !== mainPost.id && !secondaryPosts.find(s => s.id === p.id));
+    const regularPosts = filteredPosts.filter(p => p.id !== mainPost.id);
 
     return (
-        <div className="min-h-screen bg-[#FAF9F6] text-[#111111] font-sans selection:bg-[#BD9F67]/20 selection:text-[#BD9F67] overflow-x-hidden">
+        <div className="min-h-screen bg-[#050505] text-white selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] font-sans overflow-x-hidden antialiased">
             <SEOHelmet
-                title="Blog | Migração Digital"
-                description="Estratégia, Posicionamento e Tecnologia para marcas que buscam o lugar de direito no mercado."
+                title="Blog & Bastidores da Captação Comercial | Migração Digital"
+                description="Artigos, análises de mercado e estratégias diretas de vendas no WhatsApp e presença digital para empresas e clínicas."
             />
 
-            {/* Exit Intent Popup */}
             <ExitIntentPopup />
 
-            {/* Navigation Prestige */}
-            <nav className="fixed top-0 w-full z-[110] mix-blend-difference py-6 md:py-8 px-6 md:px-20 flex justify-between items-center pointer-events-none">
-                <Link to="/" className="pointer-events-auto flex items-center gap-3 md:gap-4 group">
-                    <img src="/logo.png" alt="Migração Digital" className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" />
-                    <div className="hidden md:flex flex-col">
-                        <span className="text-lg font-serif font-bold tracking-tight text-white uppercase italic leading-none group-hover:text-[#BD9F67] transition-colors">Migração Digital</span>
-                        <span className="text-[8px] font-sans font-medium tracking-[0.3em] text-white/60 uppercase leading-none mt-1 group-hover:text-white transition-colors">Intelligence & Strategy</span>
-                    </div>
-                </Link>
-                <div className="flex gap-6 md:gap-12 pointer-events-auto items-center">
-                    {/* Mobile: Hamburger Icon */}
-                    <Link to="/ebook" className="md:hidden p-2 text-white hover:text-[#BD9F67] transition-all">
-                        <Menu className="w-6 h-6" />
+            {/* Header Navigation */}
+            <nav className="fixed top-0 w-full z-[100] bg-black/80 backdrop-blur-2xl border-b border-white/5 py-4 px-6">
+                <div className="max-w-7xl mx-auto flex justify-between items-center">
+                    <Link to="/" className="flex items-center gap-3 group">
+                        <img src="/logo.png" alt="Migração Digital" className="h-8 md:h-9 w-auto object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                        <div className="flex flex-col">
+                            <span className="text-base md:text-lg font-bold tracking-tight bg-gradient-to-r from-[#D4AF37] via-[#F4D03F] to-[#FFFFFF] bg-clip-text text-transparent leading-none">
+                                MIGRAÇÃO DIGITAL
+                            </span>
+                            <span className="text-[9px] font-mono tracking-widest text-white/40 uppercase leading-none mt-1 group-hover:text-white/70 transition-colors">
+                                Blog & Bastidores
+                            </span>
+                        </div>
                     </Link>
-                    {/* Desktop: Text Link */}
-                    <Link to="/ebook" className="hidden md:block text-[9px] font-black uppercase tracking-[0.4em] text-white hover:text-[#BD9F67] transition-all">Checklist Estratégico</Link>
+                    <div className="hidden md:flex items-center gap-8">
+                        <Link to="/" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">Home</Link>
+                        <a href="#artigos" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">Artigos</a>
+                        <Link to="/ebook" className="text-xs uppercase tracking-wider font-semibold text-gray-400 hover:text-[#D4AF37] transition-colors">Checklist</Link>
+                        <a
+                            href="https://wa.me/5521979043854?text=Olá%2C+li+o+blog+da+Migração+Digital+e+gostaria+de+conversar."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/5 hover:bg-[#D4AF37] hover:text-black border border-[#D4AF37]/30 text-[#D4AF37] px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2"
+                        >
+                            <MessageCircle className="w-3.5 h-3.5" />
+                            Falar no WhatsApp
+                        </a>
+                    </div>
                 </div>
             </nav>
 
-            <main className="relative">
-
-                {/* HERO: EDITORIAL IMPACT - Mobile Optimized */}
-                <section className="min-h-screen flex flex-col justify-center px-6 md:px-20 relative overflow-hidden border-b border-[#BD9F67]/10">
-                    <div className="max-w-7xl mx-auto w-full pt-32 md:pt-0">
-                        <div className="flex flex-col gap-3 md:gap-4 mb-12 md:mb-20">
-                            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#BD9F67]">Volume I — Inteligência Digital</span>
-                            <h1 className="text-5xl md:text-[10rem] font-serif font-bold leading-[0.9] md:leading-[0.85] tracking-tighter text-[#111111]">
-                                Estratégia <br />
-                                <span className="italic relative">
-                                    Previsível.
-                                    <div className="absolute -bottom-2 md:-bottom-4 right-0 w-1/2 h-[1px] bg-[#BD9F67]" />
-                                </span>
-                            </h1>
+            <main className="pt-28 md:pt-36">
+                {/* [HERO EDITORIAL - ESTILO STUDIO & MAGAZINE] */}
+                <section className="px-6 pb-16 md:pb-24 border-b border-white/5 relative">
+                    <div className="absolute top-10 left-1/4 w-96 h-96 bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none" />
+                    
+                    <div className="max-w-7xl mx-auto text-left">
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-[#D4AF37] text-xs font-mono tracking-wider mb-6">
+                            <Rss className="w-3.5 h-3.5 text-[#D4AF37]" />
+                            MAGAZINE & BASTIDORES • MIGRAÇÃO DIGITAL
                         </div>
-
-                        <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-start md:items-end justify-between">
-                            <p className="max-w-xl text-gray-600 text-lg md:text-xl font-light leading-relaxed">
-                                Transformamos conhecimento técnico em autoridade comercial. O blog da Migração Digital é o diário oficial de bastidores de quem já escalou +50 nichos diferentes.
-                            </p>
-
-                            {/* CTA - Visible on Mobile Above Fold */}
-                            <div className="w-full md:w-auto">
-                                <Link
-                                    to="/ebook"
-                                    className="block md:inline-block text-center bg-[#111111] text-white text-xs md:text-sm font-black uppercase tracking-[0.3em] py-4 md:py-5 px-8 md:px-12 hover:bg-[#BD9F67] hover:text-black transition-all shadow-xl"
-                                >
-                                    Checklist R$ 19,90 →
-                                </Link>
-                                <p className="text-xs text-gray-400 text-center md:text-left mt-3 uppercase tracking-widest">Diagnóstico em 15 min</p>
-                            </div>
-
-                            <div className="hidden md:flex items-center gap-10">
-                                <div className="text-right">
-                                    <div className="text-4xl font-serif font-bold mb-1">5.0+</div>
-                                    <div className="text-[8px] font-black uppercase tracking-widest text-gray-400">Anos de Domínio</div>
-                                </div>
-                                <div className="w-[1px] h-20 bg-gray-100" />
-                                <div className="text-right">
-                                    <div className="text-4xl font-serif font-bold mb-1">XP</div>
-                                    <div className="text-[8px] font-black uppercase tracking-widest text-gray-400">Consultoria de Alto Padrão</div>
-                                </div>
-                            </div>
-                        </div>
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] max-w-4xl mb-6">
+                            Estratégia, Presença Digital e <span className="text-[#D4AF37]">Vendas Reais.</span>
+                        </h1>
+                        <p className="text-base md:text-xl text-gray-400 font-light max-w-2xl leading-relaxed">
+                            Artigos diretos e análises de bastidores sobre como empresas e clínicas constroem autoridade no Instagram e captam clientes qualificados no Google.
+                        </p>
                     </div>
                 </section>
 
-                {/* FEATURED: THE COVER STORY */}
-                <section className="py-40 px-6 md:px-20 bg-white">
+                {/* [ARTIGO EM DESTAQUE - HERO STORY] */}
+                <section className="py-16 md:py-24 px-6 border-b border-white/5 bg-[#080808]">
                     <div className="max-w-7xl mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+                        <div className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] mb-8 block">Destaque do Mês</div>
 
-                            <div className="lg:col-span-8 group relative">
-                                <Link to={`/blog/${mainPost.slug}`} className="block">
-                                    <div className="relative aspect-[16/10] overflow-hidden mb-12 shadow-2xl">
-                                        <div className="absolute inset-0 bg-[#111111]/10 group-hover:bg-transparent transition-all z-10" />
-                                        <OptimizedImage
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                            {/* Card de Capa Grande */}
+                            <div className="lg:col-span-7">
+                                <Link to={`/blog/${mainPost.slug}`} className="group block relative rounded-3xl overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-2xl">
+                                    <div className="aspect-[16/10] overflow-hidden relative">
+                                        <img
                                             src={mainPost.coverImage}
                                             alt={mainPost.title}
-                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-90 group-hover:brightness-100"
                                         />
-                                        <div className="absolute top-10 left-10 z-20">
-                                            <span className="px-6 py-2 bg-white text-[#111111] text-[10px] font-black uppercase tracking-widest shadow-xl">Story #01</span>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                                        <span className="absolute top-6 left-6 px-4 py-1.5 bg-[#D4AF37] text-black text-xs font-bold uppercase tracking-wider rounded-lg shadow-lg">
+                                            {mainPost.category}
+                                        </span>
+                                    </div>
+                                    <div className="p-8 space-y-4">
+                                        <div className="flex items-center gap-4 text-xs font-mono text-gray-400">
+                                            <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5 text-[#D4AF37]" /> {mainPost.date}</span>
+                                            <span className="flex items-center gap-1.5"><User className="w-3.5 h-3.5 text-[#D4AF37]" /> {mainPost.author}</span>
+                                            <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5 text-[#D4AF37]" /> 5 min leitura</span>
+                                        </div>
+                                        <h2 className="text-2xl md:text-4xl font-bold text-white group-hover:text-[#D4AF37] transition-colors leading-tight">
+                                            {mainPost.title}
+                                        </h2>
+                                        <p className="text-gray-400 font-light text-sm md:text-base leading-relaxed line-clamp-3">
+                                            {mainPost.excerpt}
+                                        </p>
+                                        <div className="pt-2 flex items-center gap-2 text-xs font-bold text-[#D4AF37] uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+                                            Ler Artigo Completo <ArrowRight className="w-4 h-4" />
                                         </div>
                                     </div>
-                                    <h2 className="text-5xl md:text-6xl font-serif font-bold mb-8 group-hover:translate-x-4 transition-transform leading-tight">
-                                        {mainPost.title}
-                                    </h2>
-                                    <p className="text-gray-600 text-xl font-light leading-relaxed mb-10 max-w-2xl">
-                                        {mainPost.excerpt}
-                                    </p>
-                                    <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-[#BD9F67]">
-                                        Acessar o Full Report <ArrowRight className="w-4 h-4" />
-                                    </div>
                                 </Link>
                             </div>
 
-                            <div className="lg:col-span-4 flex flex-col justify-center space-y-24">
-                                <div className="border-l-4 border-[#BD9F67] pl-10 py-10">
-                                    <h3 className="text-[12px] font-black uppercase tracking-[0.4em] text-gray-400 mb-10">Latest Insights</h3>
-                                    <div className="space-y-16">
-                                        {secondaryPosts.map(post => (
-                                            <Link key={post.id} to={`/blog/${post.slug}`} className="group block">
-                                                <span className="text-[9px] font-black text-[#BD9F67] uppercase tracking-[0.2em] block mb-4 italic">{post.category}</span>
-                                                <h4 className="text-2xl font-serif font-bold text-[#111111] group-hover:text-[#BD9F67] transition-all leading-tight">
-                                                    {post.title}
-                                                </h4>
-                                            </Link>
-                                        ))}
-                                    </div>
+                            {/* Coluna de Leituras Recentes */}
+                            <div className="lg:col-span-5 space-y-6">
+                                <h3 className="text-xs font-mono uppercase tracking-widest text-gray-400 pb-2 border-b border-white/10">Mais Lidos da Semana</h3>
+                                <div className="space-y-4">
+                                    {secondaryPosts.map((post) => (
+                                        <Link key={post.id} to={`/blog/${post.slug}`} className="group p-5 bg-[#0a0a0a] border border-white/5 hover:border-[#D4AF37]/30 rounded-2xl block transition-all">
+                                            <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-1">{post.category}</span>
+                                            <h4 className="text-base font-bold text-white group-hover:text-[#D4AF37] transition-colors leading-snug">
+                                                {post.title}
+                                            </h4>
+                                            <span className="text-[11px] text-gray-500 font-mono mt-2 block">{post.date}</span>
+                                        </Link>
+                                    ))}
                                 </div>
-                                <Link to="/ebook" className="group block p-12 bg-[#FAF9F6] border border-gray-100 hover:border-[#BD9F67]/30 transition-all text-center">
-                                    <Mail className="w-8 h-8 mx-auto mb-6 text-[#BD9F67]" />
-                                    <p className="text-sm font-light text-gray-600 mb-6">Garanta o Checklist Estratégico e descubra os erros ocultos no seu funil.</p>
-                                    <span className="text-[10px] font-black uppercase tracking-widest block border-t border-gray-100 pt-6 group-hover:text-[#BD9F67]">Acessar por R$ 19,90</span>
-                                </Link>
-                            </div>
 
+                                {/* Banner Checklist */}
+                                <div className="p-6 bg-[#D4AF37]/5 border border-[#D4AF37]/30 rounded-2xl text-left space-y-3">
+                                    <div className="w-10 h-10 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37]">
+                                        <Zap className="w-5 h-5" />
+                                    </div>
+                                    <h4 className="text-base font-bold text-white">Checklist Estratégico de Captação</h4>
+                                    <p className="text-xs text-gray-400 font-light leading-relaxed">
+                                        Descubra os pontos cegos que estão fazendo seu negócio perder clientes no WhatsApp.
+                                    </p>
+                                    <Link
+                                        to="/ebook"
+                                        className="inline-flex items-center gap-2 text-xs font-bold text-black bg-[#D4AF37] hover:bg-[#F5D142] px-4 py-2.5 rounded-xl transition-all"
+                                    >
+                                        Baixar Checklist por R$ 19,90 <ArrowUpRight className="w-4 h-4" />
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <SocialProof />
-
-                {/* Analysis Banner - R$ 197 Product */}
-                <AnalysisBanner />
-
-                {/* COLLECTION: THE ARCHIVE */}
-                <section className="py-40 px-6 md:px-20 bg-[#FAF9F6]">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="flex flex-col md:flex-row justify-between items-end gap-10 mb-24 border-b border-gray-200 pb-16">
+                {/* [CATEGORIAS & NAVEGAÇÃO DO ACERVO] */}
+                <section id="artigos" className="py-20 px-6 bg-[#050505]">
+                    <div className="max-w-7xl mx-auto space-y-12">
+                        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 pb-8 border-b border-white/10">
                             <div>
-                                <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6">Explorar Acervo.</h2>
-                                <p className="text-gray-400 font-light italic">Selecione uma especialidade abaixo</p>
+                                <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-2">Acervo Completo</span>
+                                <h2 className="text-3xl md:text-5xl font-bold text-white">Explorar Artigos</h2>
                             </div>
-                            <div className="flex flex-wrap gap-4">
-                                {categories.map(cat => (
+
+                            {/* Filtro de Categorias em Pills */}
+                            <div className="flex flex-wrap gap-2">
+                                {categories.map((cat) => (
                                     <button
                                         key={cat}
                                         onClick={() => setActiveCategory(cat)}
-                                        className={`px-8 py-3 text-[10px] font-black uppercase tracking-[0.2em] transition-all ${activeCategory === cat ? 'bg-[#111111] text-white' : 'text-gray-400 hover:text-black'}`}
+                                        className={`px-5 py-2 rounded-xl text-xs font-mono uppercase tracking-wider transition-all border ${
+                                            activeCategory === cat
+                                                ? 'bg-[#D4AF37] text-black border-[#D4AF37] font-bold'
+                                                : 'bg-white/5 text-gray-400 border-white/10 hover:border-white/30 hover:text-white'
+                                        }`}
                                     >
                                         {cat}
                                     </button>
@@ -184,70 +186,68 @@ export function BlogPage() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-32 gap-x-16">
-                            {regularPosts.map((post, idx) => (
-                                <article key={post.id} className={`group cursor-pointer ${idx % 2 !== 0 ? 'md:mt-24' : ''}`}>
-                                    <Link to={`/blog/${post.slug}`} className="block">
-                                        <div className="aspect-[4/5] overflow-hidden mb-10 relative bg-gray-100">
-                                            <OptimizedImage
+                        {/* GRID DE ARTIGOS */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {regularPosts.map((post) => (
+                                <Link
+                                    key={post.id}
+                                    to={`/blog/${post.slug}`}
+                                    className="group bg-[#0a0a0a] border border-white/10 hover:border-[#D4AF37]/40 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between"
+                                >
+                                    <div>
+                                        <div className="aspect-[16/10] overflow-hidden relative">
+                                            <img
                                                 src={post.coverImage}
                                                 alt={post.title}
-                                                className="w-full h-full object-cover group-hover:scale-110 grayscale-[0.8] group-hover:grayscale-0 transition-all duration-1000"
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-90 group-hover:brightness-100"
                                             />
-                                            <div className="absolute inset-0 border border-white/20 m-6" />
-                                            <div className="absolute bottom-10 right-10 text-white z-20 flex flex-col items-end opacity-0 group-hover:opacity-100 transition-opacity">
-                                                <ArrowUpRight className="w-10 h-10 border border-white p-2" />
+                                            <span className="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md text-[#D4AF37] border border-[#D4AF37]/30 text-[10px] font-mono uppercase tracking-wider rounded-lg">
+                                                {post.category}
+                                            </span>
+                                        </div>
+                                        <div className="p-6 space-y-3">
+                                            <div className="flex items-center gap-3 text-[11px] font-mono text-gray-500">
+                                                <span>{post.date}</span>
+                                                <span>•</span>
+                                                <span>{post.author}</span>
                                             </div>
+                                            <h3 className="text-xl font-bold text-white group-hover:text-[#D4AF37] transition-colors leading-tight">
+                                                {post.title}
+                                            </h3>
+                                            <p className="text-xs text-gray-400 font-light leading-relaxed line-clamp-3">
+                                                {post.excerpt}
+                                            </p>
                                         </div>
-                                        <div className="flex items-center gap-6 mb-8">
-                                            <div className="h-[1px] w-12 bg-[#BD9F67]" />
-                                            <span className="text-[9px] font-black uppercase tracking-widest text-gray-400">{post.date}</span>
-                                        </div>
-                                        <h3 className="text-3xl font-serif font-bold text-[#111111] group-hover:text-[#BD9F67] transition-all mb-6 leading-tight">
-                                            {post.title}
-                                        </h3>
-                                        <p className="text-gray-500 font-light line-clamp-2 leading-relaxed italic">
-                                            {post.excerpt}
-                                        </p>
-                                    </Link>
-                                </article>
+                                    </div>
+                                    <div className="p-6 pt-0 flex items-center justify-between text-xs font-bold text-[#D4AF37] border-t border-white/5 mt-4">
+                                        <span>Ler Artigo</span>
+                                        <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                                    </div>
+                                </Link>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* THE MANIFESTO */}
-                <section className="py-60 px-6 md:px-20 bg-[#111111] text-white text-center overflow-hidden relative">
-                    <div className="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
-                        <span className="text-[25rem] font-serif font-bold whitespace-nowrap">MD STRATEGY</span>
-                    </div>
-                    <div className="max-w-4xl mx-auto relative z-10">
-                        <Rss className="w-12 h-12 text-[#BD9F67] mx-auto mb-10" />
-                        <h2 className="text-5xl md:text-7xl font-serif font-bold mb-10 tracking-tight">O lugar de direito no mercado é seu.</h2>
-                        <p className="text-gray-400 text-xl font-light mb-16 leading-relaxed">
-                            Mantenha-se atualizado com as estratégias que realmente movem o ponteiro de faturamento.
-                        </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-8">
-                            <a href="/rss.xml" className="text-[11px] font-black uppercase tracking-[0.4em] py-6 px-12 border border-white/20 hover:border-[#BD9F67] transition-all">Acceso ao Feed RSS</a>
-                            <a href="https://wa.me/5521979043854" className="text-[11px] font-black uppercase tracking-[0.4em] py-6 px-12 bg-[#BD9F67] text-black font-bold hover:bg-white transition-all">Falar com Estrategista</a>
-                        </div>
-                    </div>
-                </section>
-
+                <SocialProof />
             </main>
 
-            <footer className="py-20 px-6 md:px-20 bg-white">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-                    <div className="flex items-center gap-10 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
-                        <Link to="/" className="text-[#111111]">Migração Digital</Link>
-                        <span>—</span>
-                        <p>&copy; 2026 Inteligência Digital</p>
+            {/* Footer Prestígio */}
+            <footer className="py-12 bg-black border-t border-white/10 text-gray-500 font-sans">
+                <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="flex items-center gap-3">
+                        <img src="/logo.png" alt="Migração Digital" className="h-7 w-auto object-contain brightness-0 invert opacity-80" />
+                        <span className="text-base font-bold text-white tracking-tight">MIGRAÇÃO DIGITAL</span>
                     </div>
-                    <div className="flex gap-10">
-                        <Link to="/blog" className="text-[9px] font-black uppercase tracking-widest text-[#BD9F67]">Blog</Link>
-                        <Link to="/ebook" className="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-black">Checklist</Link>
-                        <a href="https://wa.me/5521979043854" className="text-[9px] font-black uppercase tracking-widest text-gray-400 hover:text-black">WhatsApp</a>
+
+                    <div className="flex items-center gap-6 text-xs font-mono uppercase tracking-widest text-gray-400">
+                        <Link to="/" className="hover:text-[#D4AF37] transition-colors">Home</Link>
+                        <Link to="/ebook" className="hover:text-[#D4AF37] transition-colors">Checklist</Link>
+                        <a href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+falar+com+o+estrategista." target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">WhatsApp</a>
                     </div>
+                </div>
+                <div className="mt-8 text-center text-[10px] font-mono uppercase tracking-widest text-gray-600">
+                    &copy; 2026 Agência Migração Digital — Todos os direitos reservados.
                 </div>
             </footer>
         </div>
