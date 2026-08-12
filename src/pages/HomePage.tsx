@@ -168,57 +168,36 @@ export function HomePage() {
                             </div>
                         </div>
 
-                        {/* Coluna da Direita (Painel Visual de Demonstração Comercial) */}
-                        <div className="lg:col-span-5">
-                            <div className="p-6 md:p-8 bg-[#0D0D0D] border border-[#D4AF37]/20 rounded-3xl shadow-2xl relative overflow-hidden group text-left">
-                                <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#D4AF37]/10 rounded-full blur-2xl group-hover:bg-[#D4AF37]/20 transition-all" />
+                        {/* Coluna da Direita (Foto Real de Rodrigo em Jaqueta Jeans) */}
+                        <div className="lg:col-span-5 relative mt-4 lg:mt-0">
+                            <div className="relative rounded-3xl overflow-hidden border border-[#D4AF37]/30 shadow-2xl bg-[#0D0D0D] p-2 group">
+                                <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
+                                    <img
+                                        src={profileJeans}
+                                        alt="Rodrigo Rodrigues em jaqueta jeans - Estrategista Comercial"
+                                        className="w-full h-full object-cover object-bottom transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-70" />
+                                </div>
 
-                                <div className="flex items-center justify-between pb-6 border-b border-white/10">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                                        <span className="text-xs font-mono uppercase tracking-wider text-gray-400">Fluxo Comercial Ativo</span>
+                                <div className="p-4 text-left border-t border-white/10 flex items-center justify-between bg-black/90">
+                                    <div>
+                                        <p className="text-sm font-bold text-[#D4AF37] font-serif">Rodrigo Rodrigues</p>
+                                        <p className="text-[10px] font-mono uppercase text-gray-400 tracking-wider mt-0.5">Estrategista Comercial & Fundador</p>
                                     </div>
-                                    <span className="text-[10px] font-mono bg-white/5 border border-[#D4AF37]/30 px-2.5 py-1 rounded-full text-[#D4AF37]">
-                                        Redes Sociais + Google → WhatsApp
+                                    <span className="px-2.5 py-1 bg-[#D4AF37]/10 text-[#D4AF37] text-[9px] font-mono font-bold uppercase rounded-md border border-[#D4AF37]/30">
+                                        Migração Digital
                                     </span>
                                 </div>
+                            </div>
 
-                                <div className="py-6 space-y-4">
-                                    <div className="p-4 bg-white/[0.03] border border-white/5 rounded-2xl flex items-start gap-3">
-                                        <div className="w-8 h-8 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center shrink-0 mt-0.5">
-                                            <Search className="w-4 h-4 text-[#D4AF37]" />
-                                        </div>
-                                        <div>
-                                            <p className="text-xs font-semibold text-white">Cliente encontra a empresa no Google & Instagram</p>
-                                            <p className="text-[11px] text-gray-400 font-light mt-0.5">Visualiza autoridade, fotos reais e depoimentos.</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="p-4 bg-white/[0.03] border border-white/5 rounded-2xl flex items-start gap-3">
-                                        <div className="w-8 h-8 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center shrink-0 mt-0.5">
-                                            <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" />
-                                        </div>
-                                        <div>
-                                            <p className="text-xs font-semibold text-white">Acessa a Página Profissional de Apresentação</p>
-                                            <p className="text-[11px] text-gray-400 font-light mt-0.5">Entende o serviço e as informações com clareza.</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="p-4 bg-emerald-950/30 border border-emerald-500/40 rounded-2xl flex items-start gap-3">
-                                        <div className="w-8 h-8 rounded-xl bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
-                                            <PhoneCall className="w-4 h-4 text-emerald-400" />
-                                        </div>
-                                        <div>
-                                            <p className="text-xs font-bold text-emerald-300">Nova Mensagem no WhatsApp</p>
-                                            <p className="text-[11px] text-emerald-100/80 font-light mt-0.5">"Olá! Vi o trabalho de vocês e gostaria de um orçamento."</p>
-                                        </div>
-                                    </div>
+                            {/* Badge Flutuante de Atração */}
+                            <div className="absolute -bottom-5 -left-4 max-w-[240px] bg-[#0D0D0D]/95 border border-[#D4AF37]/40 p-3.5 rounded-2xl shadow-2xl backdrop-blur-md text-left">
+                                <div className="flex items-center gap-2 text-[#D4AF37] text-[10px] font-mono uppercase font-bold tracking-wider">
+                                    <Sparkles className="w-3.5 h-3.5" />
+                                    ATENDIMENTO DIRETO
                                 </div>
-
-                                <div className="pt-4 border-t border-white/5 flex justify-between items-center text-[11px] text-gray-500 font-mono">
-                                    <span>Presença Comercial Integrada</span>
-                                    <span className="text-[#D4AF37]">Alta Conversão</span>
-                                </div>
+                                <p className="text-xs text-gray-200 mt-1 leading-snug font-medium">Estrutura comercial conduzida diretamente pelo estrategista.</p>
                             </div>
                         </div>
                     </div>
