@@ -24,7 +24,7 @@ export function SEOHelmet({ title, description, slug, article }: SEOProps) {
         metaDesc.setAttribute('content', description);
 
         // Update Canonical Tag to fix Google Search Console duplicates
-        const pageUrl = slug ? `https://migracaodigital.com.br/blog/${slug}` : `https://migracaodigital.com.br${window.location.pathname}`;
+        const pageUrl = slug ? `https://migracaodigital.com/blog/${slug}` : `https://migracaodigital.com${window.location.pathname}`;
         let canonical = document.querySelector('link[rel="canonical"]');
         if (!canonical) {
             canonical = document.createElement('link');
@@ -55,9 +55,9 @@ export function SEOHelmet({ title, description, slug, article }: SEOProps) {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Agência Migração Digital",
-            "image": "https://migracaodigital.com.br/logo.png",
-            "@id": "https://migracaodigital.com.br/#organization",
-            "url": "https://migracaodigital.com.br",
+            "image": "https://migracaodigital.com/logo.png",
+            "@id": "https://migracaodigital.com/#organization",
+            "url": "https://migracaodigital.com",
             "telephone": "+5521979043854",
             "address": {
                 "@type": "PostalAddress",
@@ -100,7 +100,7 @@ export function SEOHelmet({ title, description, slug, article }: SEOProps) {
                 "name": "Agência Migração Digital",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://migracaodigital.com.br/logo.png"
+                    "url": "https://migracaodigital.com/logo.png"
                 }
             },
             "datePublished": "2026-02-06",
