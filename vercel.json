@@ -1,4 +1,6 @@
 {
+    "cleanUrls": true,
+    "framework": "vite",
     "redirects": [
         { "source": "/hidden-(.*)", "statusCode": 308, "destination": "https://migracaodigital.com" },
         { "source": "/wp-(.*)", "statusCode": 308, "destination": "https://migracaodigital.com" },
@@ -8,7 +10,7 @@
     ],
     "rewrites": [
         {
-            "source": "/(.*)",
+            "source": "/((?!assets/|logo.png|favicon.png|favicon.ico|sitemap.xml|robots.txt).*).*",
             "destination": "/index.html"
         }
     ]
