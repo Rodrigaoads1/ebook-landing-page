@@ -376,7 +376,7 @@ export function HomePage() {
                                     <img
                                         src={profileJeans}
                                         alt="Rodrigo Rodrigues - Estrategista Comercial"
-                                        className="w-full h-[450px] md:h-[550px] object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                                        className="w-full h-[450px] md:h-[580px] object-cover object-bottom transition-transform duration-500 group-hover:scale-105"
                                     />
                                     <div className="p-6 bg-black/90 border-t border-white/10 flex items-center justify-between">
                                         <div>
