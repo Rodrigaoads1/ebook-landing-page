@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { MessageCircle, X, Send, User, Phone } from 'lucide-react';
 
 export const WhatsAppChat: React.FC = () => {
+    const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
     const [showBadge, setShowBadge] = useState(false);
+
+    // Ocultar na página do Thiago Pimentel para não sobrepor os botões de CTA no celular
+    if (location.pathname === '/thiagopimentel') {
+        return null;
+    }
 
     useEffect(() => {
         // Mostra o badge após 5 segundos para chamar atenção de forma sutil

@@ -82,9 +82,9 @@ export function ThiagoPimentelPage() {
                 description="Menos agonia, mais clareza para investir. Conteúdo direto sobre dinheiro e assessoria de investimentos com a Volare, credenciada à XP."
             />
 
-            {/* HEADER COMPACTO FIEL AO PRINTSCREEN */}
-            <nav className="fixed top-0 w-full z-[100] bg-[#06120D]/90 backdrop-blur-2xl border-b border-[#1B3A2C] py-4 px-6">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
+            {/* HEADER COMPACTO E RESPONSIVO */}
+            <nav className="fixed top-0 w-full z-[100] bg-[#06120D]/95 backdrop-blur-2xl border-b border-[#1B3A2C] py-3.5 px-4 md:px-6">
+                <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
                     <BrandLogo />
 
                     <div className="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-wider text-[#B9C7BE]">
@@ -93,68 +93,70 @@ export function ThiagoPimentelPage() {
                         <a href="#sobre" className="hover:text-[#36E58D] transition-colors">Sobre o Thiago</a>
                     </div>
 
+                    {/* Botão no Header: Versão Compacta no Mobile */}
                     <a
                         href="#formulario"
-                        className="bg-[#36E58D] hover:bg-[#1E9B65] text-[#101713] px-6 py-2.5 rounded-full font-bold transition-all shadow-md flex items-center gap-2 text-xs uppercase tracking-wider"
+                        className="bg-[#36E58D] hover:bg-[#1E9B65] text-[#101713] px-3.5 py-2 md:px-6 md:py-2.5 rounded-full font-bold transition-all shadow-md text-[10px] md:text-xs uppercase tracking-wider whitespace-nowrap"
                     >
-                        Quero organizar meus investimentos
+                        <span className="md:hidden">Organizar</span>
+                        <span className="hidden md:inline">Quero organizar meus investimentos</span>
                     </a>
                 </div>
             </nav>
 
-            <main className="pt-28 md:pt-36">
-                {/* HERO PRINCIPAL */}
-                <section id="topo" className="px-6 pb-20 md:pb-32 border-b border-[#1B3A2C] relative overflow-hidden bg-[#06120D]">
+            <main className="pt-24 md:pt-36">
+                {/* HERO PRINCIPAL - OTIMIZADO PARA MOBILE */}
+                <section id="topo" className="px-4 md:px-6 pb-16 md:pb-32 border-b border-[#1B3A2C] relative overflow-hidden bg-[#06120D]">
                     <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#36E58D]/5 blur-[180px] rounded-full pointer-events-none" />
 
-                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-                        {/* Texto no Lado Esquerdo */}
-                        <div className="lg:col-span-7 text-left space-y-8">
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#10251D] border border-[#1B3A2C] text-[#36E58D] text-xs font-mono tracking-widest uppercase font-bold">
-                                <Sparkles className="w-3.5 h-3.5" />
-                                MENOS AGONIA. MAIS CLAREZA PARA INVESTIR.
+                    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
+                        {/* Texto Alinhado à Esquerda */}
+                        <div className="lg:col-span-7 text-left space-y-6 md:space-y-8">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-[#10251D] border border-[#1B3A2C] text-[#36E58D] text-[10px] md:text-xs font-mono tracking-widest uppercase font-bold">
+                                <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5 shrink-0" />
+                                <span>MENOS AGONIA. MAIS CLAREZA PARA INVESTIR.</span>
                             </div>
 
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-normal font-serif tracking-tight leading-[1.02] text-[#F6F1E8]">
+                            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-normal font-serif tracking-tight leading-[1.08] text-[#F6F1E8]">
                                 O dinheiro não precisa ser uma fonte permanente de <br className="hidden sm:block" />
                                 <span className="text-[#36E58D]">
                                     agonia.
                                 </span>
                             </h1>
 
-                            <div className="space-y-4 text-base md:text-lg text-[#B9C7BE] font-light leading-relaxed max-w-2xl">
+                            <div className="space-y-3 text-sm md:text-lg text-[#B9C7BE] font-light leading-relaxed max-w-2xl">
                                 <p>
                                     Eu sou <strong className="text-[#F6F1E8] font-semibold">Thiago Pimentel</strong>, o Investidor Agoniado. Falo sobre dinheiro, investimentos e comportamento financeiro de um jeito direto, sem transformar complexidade em espetáculo.
                                 </p>
-                                <p className="text-sm md:text-base">
+                                <p className="text-xs md:text-base">
                                     Quando você quiser sair das dicas soltas e começar a organizar uma estratégia para a sua realidade, minha equipe pode ajudar.
                                 </p>
                             </div>
 
-                            <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                            <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
                                 <a
                                     href="#formulario"
-                                    className="w-full sm:w-auto bg-[#36E58D] hover:bg-[#1E9B65] text-[#101713] font-bold text-xs uppercase tracking-wider py-4 px-8 rounded-full transition-all shadow-lg flex items-center justify-center gap-3"
+                                    className="w-full sm:w-auto bg-[#36E58D] hover:bg-[#1E9B65] text-[#101713] font-bold text-xs uppercase tracking-wider py-3.5 px-6 md:py-4 md:px-8 rounded-full transition-all shadow-lg flex items-center justify-center gap-2"
                                 >
-                                    Quero organizar minha estratégia
+                                    <span>Quero organizar minha estratégia</span>
                                     <ArrowRight className="w-4 h-4" />
                                 </a>
                                 <a
                                     href="#conteudos"
-                                    className="w-full sm:w-auto bg-transparent hover:bg-white/5 text-[#F6F1E8] border border-[#1B3A2C] text-xs font-bold uppercase tracking-wider py-4 px-8 rounded-full transition-all flex items-center justify-center"
+                                    className="w-full sm:w-auto bg-transparent hover:bg-white/5 text-[#F6F1E8] border border-[#1B3A2C] text-xs font-bold uppercase tracking-wider py-3.5 px-6 md:py-4 md:px-8 rounded-full transition-all flex items-center justify-center"
                                 >
                                     Conhecer os conteúdos
                                 </a>
                             </div>
 
-                            <p className="text-xs text-[#B9C7BE]/70 font-mono">
+                            <p className="text-[11px] md:text-xs text-[#B9C7BE]/70 font-mono">
                                 Educação financeira, visão prática e assessoria para quem quer tomar decisões com mais clareza.
                             </p>
                         </div>
 
-                        {/* Imagem Real do Thiago de Braços Cruzados (Lado Direito) */}
-                        <div className="lg:col-span-5 relative">
-                            <div className="relative rounded-3xl overflow-hidden border border-[#1B3A2C] shadow-2xl bg-[#10251D] p-2">
+                        {/* Imagem Real do Thiago no Mobile */}
+                        <div className="lg:col-span-5 relative mt-4 lg:mt-0">
+                            <div className="relative rounded-3xl overflow-hidden border border-[#1B3A2C] shadow-2xl bg-[#10251D] p-1.5 md:p-2">
                                 <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
                                     <img
                                         src={thiagoBracosCruzadosImg}
@@ -165,10 +167,10 @@ export function ThiagoPimentelPage() {
                                 </div>
                             </div>
 
-                            {/* Caixinha Flutuante de Pergunta */}
-                            <div className="absolute -bottom-6 -left-6 max-w-[260px] bg-[#10251D]/95 border border-[#1B3A2C] p-4 rounded-2xl shadow-2xl backdrop-blur-md text-left">
-                                <p className="text-[10px] font-mono uppercase text-[#36E58D] tracking-wider font-bold">Caixinha de perguntas</p>
-                                <p className="text-xs text-[#F6F1E8] mt-1 leading-snug font-medium">Você investe ou só acompanha conteúdo sobre investimentos?</p>
+                            {/* Caixinha Flutuante de Pergunta (Adaptada para Mobile) */}
+                            <div className="absolute -bottom-4 left-2 md:-bottom-6 md:-left-6 max-w-[210px] md:max-w-[260px] bg-[#10251D]/95 border border-[#1B3A2C] p-3 md:p-4 rounded-2xl shadow-2xl backdrop-blur-md text-left">
+                                <p className="text-[9px] md:text-[10px] font-mono uppercase text-[#36E58D] tracking-wider font-bold">Caixinha de perguntas</p>
+                                <p className="text-[11px] md:text-xs text-[#F6F1E8] mt-0.5 leading-snug font-medium">Você investe ou só acompanha conteúdo sobre investimentos?</p>
                             </div>
                         </div>
                     </div>
