@@ -92,7 +92,7 @@ export function HomePage() {
                             <div className="pt-6 flex items-center gap-6 text-xs text-gray-500 font-mono border-t border-white/5">
                                 <div className="flex items-center gap-2">
                                     <Check className="w-4 h-4 text-[#D4AF37]" />
-                                    +50 Projetos Atendidos
+                                    +100 Empresas Atendidas
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <Check className="w-4 h-4 text-[#D4AF37]" />
@@ -403,8 +403,8 @@ export function HomePage() {
                                 </div>
                                 <div className="pt-4 flex items-center gap-8 text-xs font-mono text-gray-400">
                                     <div>
-                                        <p className="text-2xl font-bold text-[#D4AF37]">+50</p>
-                                        <p className="mt-1">Projetos Atendidos</p>
+                                        <p className="text-2xl font-bold text-[#D4AF37]">+100</p>
+                                        <p className="mt-1">Empresas Atendidas</p>
                                     </div>
                                     <div>
                                         <p className="text-2xl font-bold text-[#D4AF37]">5 Anos</p>
