@@ -12,7 +12,17 @@ import thiagoSorrindoImg from '../assets/thiago_sorrindo.jpg';
 import thiagoPodcastImg from '../assets/thiago_podcast.jpg';
 
 export function ThiagoPimentelPage() {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [faqOpen, setFaqOpen] = useState<number | null>(null);
+
+    if (!isAuthenticated) {
+        const password = prompt("Página protegida. Digite a senha:");
+        if (password === "123456") {
+            setIsAuthenticated(true);
+        } else {
+            return <div style={{ textAlign: 'center', padding: '50px', fontFamily: 'sans-serif', color: 'white' }}>Acesso Negado</div>;
+        }
+    }
     const [formData, setFormData] = useState({
         nome: '',
         whatsapp: '',
