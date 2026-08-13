@@ -459,7 +459,6 @@ export function HomePage() {
 
                     <div className="flex flex-wrap justify-center items-center gap-6 text-xs font-mono uppercase tracking-widest text-gray-400">
                         <Link to="/blog" className="hover:text-[#D4AF37] transition-colors">Blog</Link>
-                        <Link to="/thiagopimentel" className="hover:text-[#D4AF37] transition-colors">Thiago Pimentel</Link>
                         <a href="https://wa.me/5521979043854?text=Olá%2C+gostaria+de+falar+com+o+estrategista." target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">WhatsApp</a>
                     </div>
                 </div>
