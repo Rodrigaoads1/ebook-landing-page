@@ -121,15 +121,15 @@ export function HomePage() {
                         <div className="lg:col-span-7 space-y-6 md:space-y-8 text-left">
                             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] md:text-xs font-mono tracking-wider">
                                 <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-                                AQUISIÇÃO DE CLIENTES • ESTRATÉGIA COMERCIAL
+                                PLANO DE MIGRAÇÃO PARA O DIGITAL
                             </div>
 
                             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif tracking-tight text-white leading-[1.12]">
-                                Atraia pessoas interessadas para o seu WhatsApp <span className="text-[#D4AF37]">todas as semanas.</span>
+                                Transforme estratégia em reconhecimento e <span className="text-[#D4AF37]">crescimento digital.</span>
                             </h1>
 
                             <p className="text-base md:text-xl text-gray-300 font-light leading-relaxed max-w-2xl">
-                                Construímos a presença digital completa e estratégica para o seu negócio ser a primeira escolha dos seus clientes nas redes sociais e nas pesquisas do Google.
+                                Diagnóstico, posicionamento, comunicação e aceleração. Ampliamos a presença da sua marca e aceleramos a geração de oportunidades comerciais.
                             </p>
 
                             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
@@ -203,72 +203,82 @@ export function HomePage() {
                     </div>
                 </section>
 
-                {/* 3. PROCESSO EM 3 ETAPAS */}
+                {/* 3. METODOLOGIA: O PLANO DE TRANSFORMAÇÃO */}
                 <section id="como-funciona" className="py-20 md:py-28 bg-[#080808] px-4 md:px-6 border-b border-white/5">
                     <div className="max-w-7xl mx-auto">
                         <div className="max-w-3xl mb-16 text-left">
-                            <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-3">COMO FUNCIONA NA PRÁTICA</span>
+                            <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-3">O PLANO DE TRANSFORMAÇÃO</span>
                             <h2 className="text-3xl md:text-5xl font-bold font-serif text-white leading-tight">
-                                3 Passos para colocar clientes qualificados <br className="hidden md:block" />no seu WhatsApp.
+                                Uma estratégia conectada, da compreensão do negócio à ampliação do alcance.
                             </h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-left">
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10 text-left">
                             <div className="space-y-4 border-t border-[#D4AF37]/30 pt-8">
                                 <span className="text-4xl md:text-5xl font-mono font-bold text-[#D4AF37]/50 block">01</span>
-                                <h3 className="text-xl font-bold text-white">Presença & Autoridade</h3>
+                                <h3 className="text-xl font-bold text-white">Diagnóstico</h3>
                                 <p className="text-gray-400 text-sm font-light leading-relaxed">
-                                    Posicionamos sua empresa no topo das buscas do Google, nos mapas locais e no Instagram com design profissional e reputação sólida.
+                                    Compreender o cenário atual do seu negócio, identificar desafios e definir uma direção clara através de um briefing detalhado.
                                 </p>
                             </div>
 
                             <div className="space-y-4 border-t border-[#D4AF37]/30 pt-8">
                                 <span className="text-4xl md:text-5xl font-mono font-bold text-[#D4AF37]/50 block">02</span>
-                                <h3 className="text-xl font-bold text-white">Apresentação Profissional</h3>
+                                <h3 className="text-xl font-bold text-white">Posicionamento</h3>
                                 <p className="text-gray-400 text-sm font-light leading-relaxed">
-                                    Uma estrutura limpa e elegante que transmite extrema confiança e responde com clareza às principais dúvidas do seu cliente antes do primeiro contato.
+                                    A intersecção entre Empresa, Público e Mercado. Definimos como o seu negócio deve ser percebido e qual espaço deve ocupar.
                                 </p>
                             </div>
 
                             <div className="space-y-4 border-t border-[#D4AF37]/30 pt-8">
                                 <span className="text-4xl md:text-5xl font-mono font-bold text-[#D4AF37] block">03</span>
-                                <h3 className="text-xl font-bold text-white">Conversão no WhatsApp</h3>
+                                <h3 className="text-xl font-bold text-white">Comunicação</h3>
                                 <p className="text-gray-400 text-sm font-light leading-relaxed">
-                                    O cliente clica e inicia o diálogo direto com a sua equipe ou recepção com um roteiro preparado para agendamento e fechamento.
+                                    Dar vida ao posicionamento com linhas editoriais, roteirização, design e uma presença digital coerente e orientada por dados.
+                                </p>
+                            </div>
+
+                            <div className="space-y-4 border-t border-[#D4AF37]/30 pt-8">
+                                <span className="text-4xl md:text-5xl font-mono font-bold text-[#D4AF37] block">04</span>
+                                <h3 className="text-xl font-bold text-white">Aceleração</h3>
+                                <p className="text-gray-400 text-sm font-light leading-relaxed">
+                                    Campanhas de distribuição, direcionamento de público e monitoramento para ampliar o alcance e acelerar a geração de oportunidades.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 4. SOLUÇÕES INTEGRADAS */}
+                {/* 4. COMO ESSA ESTRATÉGIA GANHA VIDA */}
                 <section id="solucoes" className="py-20 md:py-28 bg-[#050505] px-4 md:px-6 border-b border-white/5">
                     <div className="max-w-7xl mx-auto">
                         <div className="max-w-3xl mb-16 text-left">
-                            <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-3">SOLUÇÕES COMERCIAIS</span>
+                            <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-3">ENTREGÁVEIS</span>
                             <h2 className="text-3xl md:text-5xl font-bold font-serif text-white leading-tight">
-                                Estrutura completa de aquisição e posicionamento.
+                                Como essa estratégia ganha vida.
                             </h2>
                             <p className="text-gray-400 text-sm md:text-base font-light mt-4 leading-relaxed">
-                                Combinamos mídias sociais, inteligência de busca no Google e páginas de alta conversão para fortalecer sua marca e trazer vendas reais.
+                                Apresentamos de forma objetiva o que está incluído na operação, considerando as necessidades e os objetivos discutidos.
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                             {/* Card 1 */}
                             <div className="p-8 bg-[#0D0D0D] border border-white/10 rounded-3xl hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between group">
                                 <div>
                                     <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
-                                        <Share2 className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
+                                        <Layers className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
                                     </div>
-                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">AUTORIDADE & CONEXÃO</span>
-                                    <h3 className="text-xl font-bold text-white mb-3">Gestão de Redes Sociais (Instagram)</h3>
+                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">APENAS INSTAGRAM</span>
+                                    <h3 className="text-xl font-bold text-white mb-3">Gestão & Conteúdo</h3>
                                     <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Planejamento editorial, identidade de prestígio e posicionamento estratégico no Instagram para construir reputação inquestionável na sua região.
+                                        Planejamento editorial, definição de pautas, textos, roteiros e criação de capas e carrosséis.
                                     </p>
                                 </div>
-                                <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Perfil profissional e imponente
+                                <div className="text-xs font-semibold text-gray-300 flex flex-col gap-2 border-t border-white/5 pt-4">
+                                    <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#D4AF37]" /> 12 Conteúdos por Mês</span>
+                                    <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#D4AF37]" /> Agendamento e Publicação</span>
+                                    <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#D4AF37]" /> Acompanhamento de Métricas</span>
                                 </div>
                             </div>
 
@@ -276,16 +286,18 @@ export function HomePage() {
                             <div className="p-8 bg-[#0D0D0D] border border-white/10 rounded-3xl hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between group">
                                 <div>
                                     <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
-                                        <Zap className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
+                                        <Sparkles className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
                                     </div>
-                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">ATRAÇÃO & ALCANCE</span>
-                                    <h3 className="text-xl font-bold text-white mb-3">Tráfego Pago no Meta Ads</h3>
+                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">AUDIOVISUAL PROFISSIONAL</span>
+                                    <h3 className="text-xl font-bold text-white mb-3">Captação e Produção</h3>
                                     <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Campanhas patrocinadas direcionadas exatamente para os clientes com poder de compra da sua cidade e bairro.
+                                        Captação com profissional especializado, equipamentos profissionais e direção durante a gravação.
                                     </p>
                                 </div>
-                                <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Atração direta no feed e stories
+                                <div className="text-xs font-semibold text-gray-300 flex flex-col gap-2 border-t border-white/5 pt-4">
+                                    <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#D4AF37]" /> 1 Sessão de Captação/mês</span>
+                                    <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#D4AF37]" /> Preparação e Organização</span>
+                                    <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#D4AF37]" /> Edição e Finalização dos vídeos</span>
                                 </div>
                             </div>
 
@@ -293,121 +305,78 @@ export function HomePage() {
                             <div className="p-8 bg-[#0D0D0D] border border-white/10 rounded-3xl hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between group">
                                 <div>
                                     <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
-                                        <Search className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
+                                        <Target className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
                                     </div>
-                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">BUSCA DIRETA</span>
-                                    <h3 className="text-xl font-bold text-white mb-3">Google Ads & Busca Direta</h3>
+                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">MÍDIA PAGA</span>
+                                    <h3 className="text-xl font-bold text-white mb-3">Campanhas & Distribuição</h3>
                                     <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Sua empresa no topo do Google no exato momento em que o cliente pesquisa pela solução que você oferece.
+                                        Gestão de anúncios no Meta Ads. Planejamento, configuração, definição de públicos e segmentações.
                                     </p>
                                 </div>
-                                <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Presença na hora da decisão
-                                </div>
-                            </div>
-
-                            {/* Card 4 */}
-                            <div className="p-8 bg-[#0D0D0D] border border-white/10 rounded-3xl hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between group">
-                                <div>
-                                    <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
-                                        <MapPin className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
-                                    </div>
-                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">PRESENÇA REGIONAL</span>
-                                    <h3 className="text-xl font-bold text-white mb-3">SEO Local & Google Meu Negócio</h3>
-                                    <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Otimização completa do perfil no mapa para que sua clínica ou empresa seja referência número um da região.
-                                    </p>
-                                </div>
-                                <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Destaque orgânico no mapa
-                                </div>
-                            </div>
-
-                            {/* Card 5 */}
-                            <div className="p-8 bg-[#0D0D0D] border border-white/10 rounded-3xl hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between group">
-                                <div>
-                                    <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
-                                        <ArrowUpRight className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
-                                    </div>
-                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">ESTRUTURA DE CONVERSÃO</span>
-                                    <h3 className="text-xl font-bold text-white mb-3">Landing Pages & Sites Profissionais</h3>
-                                    <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Desenvolvimento de páginas ultrarrápidas, elegantes e otimizadas para levar o visitante direto para o WhatsApp.
-                                    </p>
-                                </div>
-                                <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Alta velocidade de carregamento
-                                </div>
-                            </div>
-
-                            {/* Card 6 */}
-                            <div className="p-8 bg-[#0D0D0D] border border-white/10 rounded-3xl hover:border-[#D4AF37]/50 transition-all flex flex-col justify-between group">
-                                <div>
-                                    <div className="w-12 h-12 rounded-2xl bg-[#D4AF37]/10 flex items-center justify-center mb-6 group-hover:bg-[#D4AF37] transition-colors">
-                                        <MessageCircle className="w-6 h-6 text-[#D4AF37] group-hover:text-black transition-colors" />
-                                    </div>
-                                    <span className="text-[10px] font-mono text-[#D4AF37] uppercase tracking-wider block mb-2">FECHAMENTO COMERCIAL</span>
-                                    <h3 className="text-xl font-bold text-white mb-3">Roteiros de Atendimento Comercial</h3>
-                                    <p className="text-gray-400 text-xs md:text-sm font-light leading-relaxed mb-6">
-                                        Alinhamento e roteiros para que sua equipe atenda aos contatos com rapidez e garanta alta taxa de conversão em vendas.
-                                    </p>
-                                </div>
-                                <div className="text-xs font-semibold text-gray-300 flex items-center gap-2 border-t border-white/5 pt-4">
-                                    <Check className="w-4 h-4 text-[#D4AF37]" /> Aproveitamento total dos contatos
+                                <div className="text-xs font-semibold text-gray-300 flex flex-col gap-2 border-t border-white/5 pt-4">
+                                    <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#D4AF37]" /> Criação de Criativos para anúncios</span>
+                                    <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#D4AF37]" /> Distribuição estratégica de conteúdos</span>
+                                    <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#D4AF37]" /> Monitoramento e Otimização</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 5. SOBRE RODRIGO RODRIGUES (COM A FOTO REAL DE GOLA POLO PRETA TRICOTADA!) */}
+                {/* 5. QUEM ESTÁ POR TRÁS DA METODOLOGIA */}
                 <section id="sobre" className="py-20 md:py-28 px-4 md:px-6 bg-[#080808] border-b border-white/5">
                     <div className="max-w-7xl mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center text-left">
-                            {/* FOTO REAL SOLICITADA: GOLA POLO PRETA TRICOTADA */}
-                            <div className="lg:col-span-5 relative">
-                                <div className="rounded-3xl overflow-hidden border border-[#D4AF37]/30 shadow-2xl bg-[#0D0D0D] group">
-                                    <div className="aspect-[3/4] overflow-hidden relative">
-                                        <img
-                                            src={profileEstudio}
-                                            alt="Rodrigo Rodrigues em gola polo preta tricotada"
-                                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
+                        <div className="text-center mb-16">
+                            <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block mb-3">EXPERIÊNCIA E AUTORIDADE</span>
+                            <h2 className="text-3xl md:text-5xl font-bold font-serif text-white leading-tight">
+                                Quem está por trás da metodologia?
+                            </h2>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start text-left">
+                            {/* RODRIGO RODRIGUES */}
+                            <div className="relative group">
+                                <div className="rounded-3xl overflow-hidden border border-[#D4AF37]/30 shadow-2xl bg-[#0D0D0D] mb-6 aspect-square max-w-md mx-auto relative">
+                                    <img
+                                        src={profileEstudio}
+                                        alt="Rodrigo Rodrigues"
+                                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
+                                    
+                                    <div className="absolute bottom-0 left-0 p-6">
+                                        <p className="text-2xl font-bold font-serif text-[#D4AF37]">RODRIGO RODRIGUES</p>
+                                        <p className="text-white text-xs font-mono uppercase tracking-widest mt-1">ESTRATEGISTA DE MARKETING</p>
                                     </div>
-                                    <div className="p-5 bg-black/90 border-t border-white/10 flex items-center justify-between">
-                                        <div>
-                                            <p className="text-lg font-bold font-serif text-[#D4AF37]">Rodrigo Rodrigues</p>
-                                            <p className="text-gray-400 text-xs font-mono uppercase tracking-wider mt-0.5">Estrategista Comercial & Fundador</p>
-                                        </div>
-                                        <Award className="w-6 h-6 text-[#D4AF37]" />
-                                    </div>
+                                </div>
+                                <div className="space-y-3 max-w-md mx-auto text-gray-400 text-sm font-light">
+                                    <p className="flex items-center gap-2"><ArrowUpRight className="w-4 h-4 text-[#D4AF37]" /> 5 anos de experiência</p>
+                                    <p className="flex items-center gap-2"><ArrowUpRight className="w-4 h-4 text-[#D4AF37]" /> Geração de Demanda</p>
+                                    <p className="flex items-center gap-2"><ArrowUpRight className="w-4 h-4 text-[#D4AF37]" /> Meta Ads e Google Ads</p>
+                                    <p className="flex items-center gap-2"><ArrowUpRight className="w-4 h-4 text-[#D4AF37]" /> Estratégia de Vendas</p>
                                 </div>
                             </div>
 
-                            {/* TEXTO AUTORAL DO RODRIGO */}
-                            <div className="lg:col-span-7 space-y-6">
-                                <span className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest block">QUEM CONSTRÓI A SUA ESTRUTURA</span>
-                                <h2 className="text-3xl md:text-5xl font-bold font-serif text-white leading-tight">
-                                    Eu não construí a Migração Digital para vender ferramentas. Construí para ajudar negócios bons a serem percebidos como bons.
-                                </h2>
-                                <div className="space-y-4 text-gray-400 font-light text-base md:text-lg leading-relaxed">
-                                    <p>
-                                        Sou <strong className="text-white font-medium">Rodrigo Rodrigues</strong>, empresário e fundador da Migração Digital. Trabalho com vendas, estratégias de aquisição e mídias sociais porque acredito que crescimento comercial não é sobre postar artes decorativas. É sobre criar um canal previsível que traga clientes reais para o seu WhatsApp.
-                                    </p>
-                                    <p>
-                                        Nossa agência é guiada por princípios claros: responsabilidade com o investimento do cliente, disciplina na execução técnica, honestidade nos diagnósticos e trabalho focado em gerar valor.
-                                    </p>
+                            {/* ANDERSON SOARES */}
+                            <div className="relative group">
+                                <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-[#0D0D0D] mb-6 aspect-square max-w-md mx-auto relative">
+                                    {/* Placeholder para a foto do Anderson até que o usuário envie */}
+                                    <div className="w-full h-full bg-[#111] flex flex-col items-center justify-center grayscale transition-transform duration-500 group-hover:scale-105">
+                                        <User className="w-16 h-16 text-white/20 mb-4" />
+                                        <span className="text-white/30 text-xs font-mono tracking-widest uppercase">Foto pendente</span>
+                                    </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-80" />
+                                    
+                                    <div className="absolute bottom-0 right-0 p-6 text-right">
+                                        <p className="text-2xl font-bold font-serif text-white">ANDERSON SOARES</p>
+                                        <p className="text-[#D4AF37] text-xs font-mono uppercase tracking-widest mt-1">ESTRATEGISTA DE CONTEÚDO</p>
+                                    </div>
                                 </div>
-                                <div className="pt-4 flex flex-wrap items-center gap-8 text-xs font-mono text-gray-400">
-                                    <div>
-                                        <p className="text-2xl font-bold font-mono text-[#D4AF37]">+100</p>
-                                        <p className="mt-1">Empresas Atendidas</p>
-                                    </div>
-                                    <div>
-                                        <p className="text-2xl font-bold font-mono text-[#D4AF37]">Campo Grande</p>
-                                        <p className="mt-1">Rio de Janeiro / RJ & Brasil</p>
-                                    </div>
+                                <div className="space-y-3 max-w-md mx-auto text-gray-400 text-sm font-light flex flex-col items-end">
+                                    <p className="flex items-center gap-2">9 anos de experiência <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" /></p>
+                                    <p className="flex items-center gap-2">Design e audiovisual <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" /></p>
+                                    <p className="flex items-center gap-2">Direção criativa <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" /></p>
+                                    <p className="flex items-center gap-2">Posicionamento e conteúdo <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" /></p>
                                 </div>
                             </div>
                         </div>
