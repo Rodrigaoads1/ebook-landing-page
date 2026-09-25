@@ -71,33 +71,45 @@ export function BioPage() {
 
                 {/* Links Stack */}
                 <div className="w-full space-y-5">
-                    {links.map((link, idx) => (
-                        <Link
-                            key={idx}
-                            to={link.url.startsWith('http') ? { pathname: link.url } : link.url}
-                            target={link.url.startsWith('http') ? "_blank" : "_self"}
-                            rel={link.url.startsWith('http') ? "noopener noreferrer" : ""}
-                            className={`
-                                group w-full flex items-center p-5 rounded-[28px] border transition-all duration-500
-                                ${link.highlight
-                                    ? 'bg-gradient-to-r from-[#D4AF37] to-[#B8960C] border-transparent text-black shadow-[0_15px_40px_rgba(212,175,55,0.2)] hover:shadow-[0_20px_50px_rgba(212,175,55,0.3)] hover:scale-[1.03]'
-                                    : 'bg-white/[0.03] border-white/5 hover:border-[#D4AF37]/40 text-white hover:bg-white/[0.05] hover:scale-[1.01]'
-                                }
-                            `}
-                        >
-                            <div className={`
-                                w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg
-                                ${link.highlight ? 'bg-black/10' : 'bg-black/40 border border-white/5 group-hover:border-[#D4AF37]/20'}
-                            `}>
-                                <link.icon className={`w-7 h-7 ${link.highlight ? 'text-black' : 'text-[#D4AF37]'}`} />
-                            </div>
+                    {links.map((link, idx) => {
+                        const isExternal = link.url.startsWith('http');
+                        const cardClasses = `
+                            group w-full flex items-center p-5 rounded-[28px] border transition-all duration-500
+                            ${link.highlight
+                                ? 'bg-gradient-to-r from-[#D4AF37] to-[#B8960C] border-transparent text-black shadow-[0_15px_40px_rgba(212,175,55,0.2)] hover:shadow-[0_20px_50px_rgba(212,175,55,0.3)] hover:scale-[1.03]'
+                                : 'bg-white/[0.03] border-white/5 hover:border-[#D4AF37]/40 text-white hover:bg-white/[0.05] hover:scale-[1.01]'
+                            }
+                        `;
+                        const innerContent = (
+                            <>
+                                <div className={`
+                                    w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-lg
+                                    ${link.highlight ? 'bg-black/10' : 'bg-black/40 border border-white/5 group-hover:border-[#D4AF37]/20'}
+                                `}>
+                                    <link.icon className={`w-7 h-7 ${link.highlight ? 'text-black' : 'text-[#D4AF37]'}`} />
+                                </div>
+    
+                                <div className="ml-5 flex-grow text-left">
+                                    <h3 className={`font-bold text-lg leading-tight ${link.highlight ? 'text-black' : 'text-white'}`}>{link.title}</h3>
+                                    <p className={`text-xs mt-1 ${link.highlight ? 'text-black/60 font-medium' : 'text-gray-600 font-light'}`}>{link.subtitle}</p>
+                                </div>
+                            </>
+                        );
 
-                            <div className="ml-5 flex-grow text-left">
-                                <h3 className={`font-bold text-lg leading-tight ${link.highlight ? 'text-black' : 'text-white'}`}>{link.title}</h3>
-                                <p className={`text-xs mt-1 ${link.highlight ? 'text-black/60 font-medium' : 'text-gray-600 font-light'}`}>{link.subtitle}</p>
-                            </div>
-                        </Link>
-                    ))}
+                        if (isExternal) {
+                            return (
+                                <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" className={cardClasses}>
+                                    {innerContent}
+                                </a>
+                            );
+                        }
+
+                        return (
+                            <Link key={idx} to={link.url} className={cardClasses}>
+                                {innerContent}
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 <div className="w-full mt-20 bg-white/[0.02] border border-white/5 rounded-[48px] overflow-hidden shadow-3xl">
