@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Youtube, Star, Instagram, MessageCircle, ExternalLink, Download, Target, ShieldCheck } from 'lucide-react';
-import profileImg from '../assets/rodrigo_analise_hero.png';
+import profileImg from '../assets/profile.png';
 import { SocialProof } from '../components/SocialProof';
 import { Link } from 'react-router-dom';
 
@@ -15,31 +14,10 @@ export function BioPage() {
             highlight: true
         },
         {
-            title: "Checklist Estratégico (R$ 19,90)",
-            subtitle: "Identifique exatamente onde você perde dinheiro",
-            url: "/ebook",
-            icon: Download,
-            highlight: false
-        },
-        {
-            title: "Diagnóstico GPS (R$ 197)",
-            subtitle: "Análise individual da sua estrutura atual",
-            url: "/analise-profissional-de-presenca-digital-02",
-            icon: Target,
-            highlight: false
-        },
-        {
             title: "Blog Migração Digital",
             subtitle: "Estratégias de alto nível para sua empresa",
             url: "/blog",
             icon: Star,
-            highlight: false
-        },
-        {
-            title: "Canal no YouTube",
-            subtitle: "Conteúdo denso sobre funis e previsibilidade",
-            url: "https://www.youtube.com/@Rodrigorodrigues-md",
-            icon: Youtube,
             highlight: false
         }
     ];
@@ -65,9 +43,6 @@ export function BioPage() {
                 <div className="text-center mb-12">
                     <h1 className="text-3xl font-serif font-bold mb-3 tracking-tight">Rodrigo Rodrigues</h1>
                     <p className="text-[#D4AF37] text-[10px] font-black tracking-[0.4em] uppercase mb-6">Estrategista Digital | Vendas Previsíveis</p>
-                    <p className="text-gray-500 text-sm font-light leading-relaxed max-w-[280px] mx-auto italic">
-                        "Marketing sem estratégia é só barulho."
-                    </p>
 
                     <div className="flex gap-6 mt-8 justify-center">
                         <a href="https://www.youtube.com/@Rodrigorodrigues-md" className="text-gray-600 hover:text-[#D4AF37] transition-all"><Youtube className="w-5 h-5" /></a>
