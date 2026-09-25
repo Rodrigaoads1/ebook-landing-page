@@ -8,11 +8,18 @@ import { Link } from 'react-router-dom';
 export function BioPage() {
     const links = [
         {
+            title: "Falar com o Rodrigo (WhatsApp)",
+            subtitle: "Tire suas dúvidas ou agende uma consultoria",
+            url: "https://wa.me/5521979043854?text=Olá%2C+vim+pelo+link+da+bio+e+gostaria+de+mais+informações.",
+            icon: MessageCircle,
+            highlight: true
+        },
+        {
             title: "Checklist Estratégico (R$ 19,90)",
             subtitle: "Identifique exatamente onde você perde dinheiro",
             url: "/ebook",
             icon: Download,
-            highlight: true
+            highlight: false
         },
         {
             title: "Diagnóstico GPS (R$ 197)",
