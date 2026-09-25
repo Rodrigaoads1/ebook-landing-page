@@ -1,6 +1,6 @@
 import React from 'react';
 import { Youtube, Star, Instagram, MessageCircle, ExternalLink, Download, Target, ShieldCheck } from 'lucide-react';
-import profileImg from '../assets/profile.png';
+import profileImg from '../assets/rodrigo_nova.jpg';
 import { SocialProof } from '../components/SocialProof';
 import { Link } from 'react-router-dom';
 
@@ -42,7 +42,7 @@ export function BioPage() {
 
                 <div className="text-center mb-12">
                     <h1 className="text-3xl font-serif font-bold mb-3 tracking-tight">Rodrigo Rodrigues</h1>
-                    <p className="text-[#D4AF37] text-[10px] font-black tracking-[0.4em] uppercase mb-6">Estrategista Digital | Vendas Previsíveis</p>
+                    <p className="text-[#D4AF37] text-[10px] font-black tracking-[0.4em] uppercase mb-6">Estrategista de Marketing | Vendas Previsíveis</p>
 
                     <div className="flex gap-6 mt-8 justify-center">
                         <a href="https://www.youtube.com/@Rodrigorodrigues-md" className="text-gray-600 hover:text-[#D4AF37] transition-all"><Youtube className="w-5 h-5" /></a>
