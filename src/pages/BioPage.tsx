@@ -45,7 +45,6 @@ export function BioPage() {
                     <p className="text-[#D4AF37] text-[10px] font-black tracking-[0.4em] uppercase mb-6">Estrategista de Marketing | Vendas Previsíveis</p>
 
                     <div className="flex gap-6 mt-8 justify-center">
-                        <a href="https://www.youtube.com/@Rodrigorodrigues-md" className="text-gray-600 hover:text-[#D4AF37] transition-all"><Youtube className="w-5 h-5" /></a>
                         <a href="https://instagram.com/migracaodigital" className="text-gray-600 hover:text-[#D4AF37] transition-all"><Instagram className="w-5 h-5" /></a>
                         <a href="https://wa.me/5521979043854?text=Olá%2C+vim+pelo+link+da+bio+e+gostaria+de+mais+informações." className="text-gray-600 hover:text-[#D4AF37] transition-all"><MessageCircle className="w-5 h-5" /></a>
                     </div>
